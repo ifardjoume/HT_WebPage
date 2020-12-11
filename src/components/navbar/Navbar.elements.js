@@ -57,7 +57,7 @@ export const NavMenu = styled.ul`
   @media screen and (max-width: 960px) {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 50%;
     height: 90vh;
     position: absolute;
     top: 80px;
@@ -75,7 +75,7 @@ export const NavItem = styled.li`
     border-bottom: 2px solid #4b59f7;
   }
   @media screen and (max-width: 960px) {
-    width: 100%;
+    width: 50%;
     &:hover {
       border: none;
     }
