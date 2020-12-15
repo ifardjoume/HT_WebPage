@@ -7,7 +7,9 @@ Para clonar el repositorio.
 
 2. cd HT_WebPage
 
-3. npm start
+3. npm install
+
+4.npm start
 
 
 
