@@ -49,26 +49,28 @@ const Footer = () => {
                 <FooterLinksWrapper>
                     <FooterLinkItems>
                         {/* //Falta agregar rutas de los diferentes links */}
-                        <FooterLinkTitle>About Us</FooterLinkTitle>
                         <FooterLink to='/sign-in'>Press</FooterLink>
                         <FooterLink to='/sign-in'>Jobs</FooterLink>
-                        <FooterLink to='/sign-in'>Contact</FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                        <FooterLinkTitle>Policy</FooterLinkTitle>
                         <FooterLink to='/sign-in'>Company</FooterLink>
                         <FooterLink to='/sign-in'>Ensurance Quality</FooterLink>
-                        <FooterLink to='/sign-in'>Cookies</FooterLink>
                     </FooterLinkItems>
+                    <FooterLinkItems>
+                        {/* //Falta agregar rutas de los diferentes links */}
+                        <FooterLink to='/sign-in'>Cookies</FooterLink>
+                        <FooterLink to='/sign-in'>Contact</FooterLink>
+                    </FooterLinkItems>
+
                 </FooterLinksWrapper>
             </FooterLinksContainer>
             <SocialMedia>
         <SocialMediaWrap>
           <SocialLogo to='/'>
             <SocialIcon />
-            H-TRACE
+            H+TRACE
           </SocialLogo>
-          <WebsiteRights>H-TRACE © 2019</WebsiteRights>
+          <WebsiteRights>H+TRACE © 2020</WebsiteRights>
           <SocialIcons>
             <SocialIconLink href='/' target='_blank' aria-label='Facebook'>
               <FaFacebook />
