@@ -27,11 +27,12 @@ const InfoSection = ({
     img,
     alt,
     start,
-    buttonAppereance
+    buttonAppereance,
+    id
     }) => {
     return (
         <>
-            <InfoSec lightBg={lightBg}>
+            <InfoSec lightBg={lightBg} id={id}>
                 <Container>
                     <InfoRow imgStart={imgStart}>
                         <InfoColumn>

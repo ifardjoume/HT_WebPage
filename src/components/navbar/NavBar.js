@@ -1,5 +1,6 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import { FaBars } from 'react-icons/fa';
+import {animateScroll as scroll} from 'react-scroll';
 import {
   Nav,
   NavbarContainer,
@@ -17,12 +18,29 @@ import {
 
 
 const Navbar = ({ toggle }) => {
+  const [scrollNav, setScrollNav] = useState(false);
+
+  const changeNav = () => {
+    if(window.scrollY >= 80){
+      setScrollNav(true)
+    } else{
+      setScrollNav(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll',changeNav)
+  })
+
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  }
   return (
     <>
-        <Nav>
+        <Nav scrollNav={scrollNav}>
           <NavbarContainer>
-            <NavLogo to='/'>
-              <NavIcon />
+            <NavLogo to='/' onClick={toggleHome}>
+              <NavIcon  />
               H+Trace
             </NavLogo>
             <MobileIcon onClick={toggle}>
@@ -30,17 +48,38 @@ const Navbar = ({ toggle }) => {
             </MobileIcon>
             <NavMenu>
               <NavItem>
-                <NavLinks to="discover">
+                <NavLinks to="discover"
+                smooth={true}
+                duration={600}
+                spy={true}
+                exact='true'
+                offset={-80}
+                activeClass="active"
+                >
                   Discover
                 </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks to="about">
+                <NavLinks to="about"
+                smooth={true}
+                duration={600}
+                spy={true}
+                exact='true'
+                offset={-80}
+                activeClass="active"
+                >
                   About Us
                 </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks to="contact">
+                <NavLinks to="contact"
+                smooth={true}
+                duration={600}
+                spy={true}
+                exact='true'
+                offset={-80}
+                activeClass="active"
+                >
                   Contact
                 </NavLinks>
               </NavItem>

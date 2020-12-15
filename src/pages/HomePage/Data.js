@@ -11,7 +11,8 @@ export const homeObjOne = {
     topLine: 'Time for change',
     img: require('../../images/moving_foward.svg').default,
     alt: 'Image_future',
-    start:''
+    start:'',
+    id: 'discover'
 }
 
 export const homeObjTwo = {
@@ -27,7 +28,8 @@ export const homeObjTwo = {
     topLine: 'Innovation',
     img: require('../../images/new_standard.svg').default,
     alt: 'Image_standard',
-    start:'true'
+    start:'true',
+    id: 'about'
 }
 
 export const homeObjThree = {
@@ -43,5 +45,6 @@ export const homeObjThree = {
     topLine: 'Solution',
     img: require('../../images/data_report.svg').default,
     alt: 'Image_data',
-    start:''
+    start:'',
+    id: 'contact'
 }

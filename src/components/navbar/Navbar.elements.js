@@ -5,8 +5,9 @@ import { Link as LinkS } from 'react-scroll';
 import { Container } from '../../globalStyles';
 
 export const Nav = styled.nav`
-  background: #101522;
+  background: ${({scrollNav}) => (scrollNav ? '#000' : 'transparent')};
   height: 60px;
+  margin-top:-80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +24,7 @@ export const Nav = styled.nav`
 export const NavbarContainer = styled(Container)`
   display: flex;
   justify-content: space-between;
-  height: 80px;
+  height: 60px;
   ${Container}
 `;
 
@@ -87,7 +88,7 @@ export const NavLinks = styled(LinkS)`
   height: 100%;
   cursor: pointer;
   &.active{
-    border-bottom: 3px solid #01bf71;
+    border-bottom: 8px solid #01bf71;
   }
     &:hover {
       color: #4b59f7;
