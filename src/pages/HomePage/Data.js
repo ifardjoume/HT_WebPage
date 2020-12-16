@@ -29,7 +29,7 @@ export const homeObjTwo = {
     img: require('../../images/new_standard.svg').default,
     alt: 'Image_standard',
     start:'true',
-    id: 'about'
+    id: ''
 }
 
 export const homeObjThree = {
@@ -48,3 +48,21 @@ export const homeObjThree = {
     start:'',
     id: 'contact'
 }
+
+export const homeObjFour = {
+    lightBg:true,
+    primary: true,
+    imgStart:'',
+    lightTopLine:true,
+    lightTextDesc:true,
+    buttonLabel: '',
+    description:"Founded in 2019 by a team of professionals from various fields with the aim of incorporating innovation and technology at the service of health. We seek to consolidate a new standard of good health transport practices.",
+    headline:'H+trace',
+    lightText:true,
+    topLine: 'About Us',
+    img: require('../../images/about.svg').default,
+    alt: 'Image_data',
+    start:'',
+    id: 'about'
+}
+

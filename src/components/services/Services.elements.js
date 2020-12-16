@@ -46,7 +46,7 @@ export const ServicesContainer = styled.div`
   align-items: center;
   background: #6155a6;
 
-  @media screen and (max-width:768px) {
+  @media screen and (max-width:990px) {
     height:1100px;
   }
 
