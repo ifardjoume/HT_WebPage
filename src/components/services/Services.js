@@ -1,82 +1,39 @@
 import React from 'react';
-import { Button } from '../../globalStyles';
-import { GiHealthNormal } from 'react-icons/gi';
-import { GiHealthPotion, GiHealthCapsule } from 'react-icons/gi';
-import { IconContext } from 'react-icons/lib';
+import Icon1 from '../../images/samples.svg'
+import Icon2 from '../../images/heart.svg'
+import Icon3 from '../../images/organ.svg'
 import {
-    ServicesSection,
+    ServicesIcon,
     ServicesWrapper,
-    ServicesHeading,
+    ServicesH1,
+    ServicesH2,
     ServicesContainer,
     ServicesCard,
-    ServicesCardInfo,
-    ServicesCardIcon,
-    ServicesCardPlan,
-    ServicesCardCost,
-    ServicesCardLength,
-    ServicesCardFeatures,
-    ServicesCardFeature
+    ServicesP
 } from './Services.elements';
 
-function Pricing() {
+function Services() {
   return (
-    <IconContext.Provider value={{ color: '#a9b3c1', size: 64 }}>
-      <ServicesSection>
-        <ServicesWrapper>
-          <ServicesHeading>Our Services</ServicesHeading>
-          <ServicesContainer>
-            <ServicesCard to='/sign-up'>
-              <ServicesCardInfo>
-                <ServicesCardIcon>
-                  <GiHealthCapsule />
-                </ServicesCardIcon>
-                <ServicesCardPlan>Biological Samples</ServicesCardPlan>
-                <ServicesCardCost></ServicesCardCost>
-                <ServicesCardLength></ServicesCardLength>
-                <ServicesCardFeatures>
-                  <ServicesCardFeature></ServicesCardFeature>
-                  <ServicesCardFeature></ServicesCardFeature>
-                  <ServicesCardFeature></ServicesCardFeature>
-                </ServicesCardFeatures>
-                <Button primary>View More</Button>
-              </ServicesCardInfo>
-            </ServicesCard>
-            <ServicesCard to='/sign-up'>
-              <ServicesCardInfo>
-                <ServicesCardIcon>
-                  <GiHealthNormal />
-                </ServicesCardIcon>
-                <ServicesCardPlan>COVID-19</ServicesCardPlan>
-                <ServicesCardCost></ServicesCardCost>
-                <ServicesCardLength></ServicesCardLength>
-                <ServicesCardFeatures>
-                  <ServicesCardFeature></ServicesCardFeature>
-                  <ServicesCardFeature></ServicesCardFeature>
-                  <ServicesCardFeature></ServicesCardFeature>
-                </ServicesCardFeatures>
-                <Button primary>View More</Button>
-              </ServicesCardInfo>
-            </ServicesCard>
-            <ServicesCard to='/sign-up'>
-              <ServicesCardInfo>
-                <ServicesCardIcon>
-                  <GiHealthPotion />
-                </ServicesCardIcon>
-                <ServicesCardPlan>Organ Transplant</ServicesCardPlan>
-                <ServicesCardCost></ServicesCardCost>
-                <ServicesCardLength></ServicesCardLength>
-                <ServicesCardFeatures>
-                  <ServicesCardFeature></ServicesCardFeature>
-                  <ServicesCardFeature></ServicesCardFeature>
-                  <ServicesCardFeature></ServicesCardFeature>
-                </ServicesCardFeatures>
-                <Button primary>View More</Button>
-              </ServicesCardInfo>
-            </ServicesCard>
-          </ServicesContainer>
-        </ServicesWrapper>
-      </ServicesSection>
-    </IconContext.Provider>
-  );
+    <ServicesContainer id="services">
+      <ServicesH1>Our Services</ServicesH1>
+      <ServicesWrapper>
+        <ServicesCard>
+          <ServicesIcon src={Icon1}/>
+          <ServicesH2>Biological Samples</ServicesH2>
+          <ServicesP>We bring traceability to your samples!</ServicesP>
+        </ServicesCard>
+        <ServicesCard>
+          <ServicesIcon src={Icon2}/>
+          <ServicesH2>COVID-19</ServicesH2>
+          <ServicesP>We bring traceability to your vaccines!</ServicesP>
+        </ServicesCard>
+        <ServicesCard>
+          <ServicesIcon src={Icon3}/>
+          <ServicesH2>Organ Transplant</ServicesH2>
+          <ServicesP>We bring traceability to your transplants!</ServicesP>
+        </ServicesCard>
+      </ServicesWrapper>
+    </ServicesContainer>
+  )
 }
-export default Pricing;
+export default Services;

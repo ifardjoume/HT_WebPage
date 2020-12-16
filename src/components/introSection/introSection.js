@@ -28,7 +28,13 @@ const IntroSection = () => {
                 <IntroH1> Welcome to the new Standard</IntroH1>
                 <IntroP>The time has come to join the future for healthcare</IntroP>
                 <IntroBtnWrapper>
-                    <Button to="discover" onMouseEnter={onHover} onMouseLeave={onHover}>
+                    <Button to="discover" onMouseEnter={onHover} onMouseLeave={onHover}
+                    smooth={true}
+                    duration={600}
+                    spy={true}
+                    exact='true'
+                    offset={-80}
+                    activeClass="active">
                          Begin {hover ? <ArrowForward /> : <ArrowRight />}
                     </Button>
                 </IntroBtnWrapper>
