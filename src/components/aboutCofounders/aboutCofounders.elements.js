@@ -55,6 +55,7 @@ export const AboutCard = styled(Link)`
     transform: scale(1.06);
     transition: all 0.3s ease-out;
     color: #1c2237;
+    text-decoration:none;
   }
   @media screen and (max-width: 960px) {
     width: 90%;

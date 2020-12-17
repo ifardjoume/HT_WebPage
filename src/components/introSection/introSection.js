@@ -25,8 +25,8 @@ const IntroSection = () => {
                 <VideoBg autoPlay loop muted src={Video} type= 'video/mp4' />
             </IntroBg>
             <IntroContent>
-                <IntroH1> Welcome to the new Standard</IntroH1>
-                <IntroP>The time has come to join the future for healthcare</IntroP>
+                <IntroH1> Un nuevo estándar mundial en calidad y seguridad para salud</IntroH1>
+                <IntroP>Han pasado muchas décadas sin innovar en la logística al servicio de la salud. Y sabemos que lo que no se mide, no se puede mejorar</IntroP>
                 <IntroBtnWrapper>
                     <Button to="discover" onMouseEnter={onHover} onMouseLeave={onHover}
                     smooth={true}
@@ -35,7 +35,7 @@ const IntroSection = () => {
                     exact='true'
                     offset={-80}
                     activeClass="active">
-                         Begin {hover ? <ArrowForward /> : <ArrowRight />}
+                         Comenzar {hover ? <ArrowForward /> : <ArrowRight />}
                     </Button>
                 </IntroBtnWrapper>
             </IntroContent>

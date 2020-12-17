@@ -55,6 +55,7 @@ export const FooterLink = styled(Link)`
   &:hover {
     color: #0467fb;
     transition: 0.3s ease-out;
+    text-decoration:none;
   }
 `;
 
@@ -84,6 +85,10 @@ export const SocialLogo = styled(Link)`
   display: flex;
   align-items: center;
   margin-bottom: 16px;
+  &:hover{
+    text-decoration:none;
+    color:#fff;
+  }
 `;
 
 export const SocialIcon = styled(FaMagento)`
@@ -105,4 +110,8 @@ export const SocialIcons = styled.div`
 export const SocialIconLink = styled.a`
   color: #fff;
   font-size: 24px;
+  &:hover{
+    text-decoration:none;
+    color:#fff;
+  }
 `;

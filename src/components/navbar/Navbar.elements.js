@@ -36,6 +36,10 @@ export const NavLogo = styled(Link)`
   font-size: 2rem;
   display: flex;
   align-items: center;
+  &:hover{
+    text-decoration:none;
+    color:#fff;
+  }
 `;
 
 export const NavIcon = styled(FaMagento)`
@@ -87,17 +91,20 @@ export const NavLinks = styled(LinkS)`
   padding: 0rem 1rem;
   height: 90%;
   cursor: pointer;
+  margin-top:10px;
   &.active{
-    border-bottom: 5px solid #21209c;
+    border-bottom: 4px solid #21209c;
   }
     &:hover {
       color: #4b59f7;
       transition: all 0.3s ease;
+      text-decoration:none;
     }
 `
 
 export const NavBtnLink = styled(Link)`
   border-radius:50px;
+  margin-top:10px;
   background: #153e90;
   white-space:nowrap;
   padding: 10px 22px;
@@ -111,5 +118,6 @@ export const NavBtnLink = styled(Link)`
       color: #0a043c;
       transition: all 0.2s ease-in-out;
       background:#98acf8;
+      text-decoration:none;
     }
 `;
