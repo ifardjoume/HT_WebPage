@@ -25,7 +25,7 @@ const IntroSection = () => {
                 <VideoBg autoPlay loop muted src={Video} type= 'video/mp4' />
             </IntroBg>
             <IntroContent>
-                <IntroH1> Un nuevo estándar mundial en calidad y seguridad para salud</IntroH1>
+                <IntroH1> Un nuevo estándar mundial<br/> en calidad y seguridad para salud</IntroH1>
                 <IntroP>Han pasado muchas décadas sin innovar en la logística al servicio de la salud. Y sabemos que lo que no se mide, no se puede mejorar</IntroP>
                 <IntroBtnWrapper>
                     <Button to="discover" onMouseEnter={onHover} onMouseLeave={onHover}

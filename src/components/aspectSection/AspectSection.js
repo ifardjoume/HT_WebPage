@@ -35,7 +35,7 @@ const AspectSection = () => {
             <AspectWrapper>
                 <AspectList>
                 <ListItem><ListIcon><FaMapMarkerAlt/></ListIcon>Geolocalización</ListItem>
-                <ListItem><ListIcon><FaTemperatureLow/></ListIcon>Mantenimiento Isotérmico personalizado</ListItem>
+                <ListItem><ListIcon><FaTemperatureLow/></ListIcon>Mantenimiento<br/> Isotérmico personalizado</ListItem>
                 <ListItem><ListIcon><GiSpill/></ListIcon>Empaque Inteligente Anti-derrame</ListItem>
                 </AspectList>
                 <Separator />
