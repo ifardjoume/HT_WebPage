@@ -7,6 +7,7 @@ import IntroSection from '../../components/introSection/introSection';
 import AboutCofounders from '../../components/aboutCofounders/aboutCofounders'
 import GraphSection from '../../components/graphSection/graphSection';
 import TableSection from '../../components/tableSection/tableSection';
+import AspectSection from '../../components/aspectSection/AspectSection';
 
 const Home = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -24,6 +25,7 @@ const Home = () => {
         <InfoSection {...homeObjTwo}/>
         <TableSection></TableSection>
         <GraphSection />
+        <AspectSection />
         <Services />
         <InfoSection {...homeObjFour}/>
         <AboutCofounders />
