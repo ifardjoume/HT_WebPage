@@ -19,7 +19,8 @@ color: black;
 export const TableWrapper = styled.div`
  display:flex;
   align-items: center;
-  justify-content: center;`
+  justify-content: center;
+  `
 
 
 export const TableH1 = styled.h1`

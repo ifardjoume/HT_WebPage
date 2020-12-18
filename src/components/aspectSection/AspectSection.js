@@ -6,7 +6,7 @@ import {
     ListItem,
     Separator,
     ListIcon
-} from './AspectSecction.elements'
+} from './AspectSection.elements'
 import { 
     FaMapMarkerAlt,
     FaTemperatureLow,
