@@ -28,10 +28,10 @@ export default function ContactUs() {
     return (
             <ContactContainer id="contact">
             <ContactWrapper>
-                <ContactH1>Contact Us</ContactH1>
+                <ContactH1>Contacto</ContactH1>
                 <StyledFormWrapper>
         <StyledForm  className="contact-form"  onSubmit={sendEmail}>
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">Nombre</label>
             <StyledInput
             type="text"
             name="user_name"
@@ -41,7 +41,7 @@ export default function ContactUs() {
             type="email"
             name="user_email"
             />
-        <label htmlFor="message">Message</label>
+        <label htmlFor="message">Mensaje</label>
         <StyledTextArea
             name="message"
             />
@@ -50,7 +50,7 @@ export default function ContactUs() {
             <p>Mail correctly Sent</p>
             </StyledError>
             )}
-        <StyledButton type="submit" value="Send">Send Message</StyledButton>
+        <StyledButton type="submit" value="Send">Enviar</StyledButton>
         </StyledForm>
         </StyledFormWrapper>
             </ContactWrapper>

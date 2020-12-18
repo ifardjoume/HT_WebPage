@@ -56,7 +56,7 @@ const Navbar = ({ toggle }) => {
                 offset={-80}
                 activeClass="active"
                 >
-                  Discover
+                  Descubre
                 </NavLinks>
               </NavItem>
               <NavItem>
@@ -68,7 +68,7 @@ const Navbar = ({ toggle }) => {
                 offset={-80}
                 activeClass="active"
                 >
-                  About Us
+                  Nosotros
                 </NavLinks>
               </NavItem>
               <NavItem>
@@ -80,12 +80,12 @@ const Navbar = ({ toggle }) => {
                 offset={-80}
                 activeClass="active"
                 >
-                  Contact
+                  Contacto
                 </NavLinks>
               </NavItem>
               <NavBtn>
                   <NavBtnLink to='/sign-in'>
-                    User Area
+                    Usuario
                   </NavBtnLink>
               </NavBtn>
             </NavMenu>

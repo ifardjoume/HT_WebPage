@@ -33,7 +33,7 @@ function AboutCofounders() {
               </AboutCardIcon>
                 <AboutCardPlan>Emiliano Buitrago</AboutCardPlan>
                 <AboutCardCost>CEO</AboutCardCost>
-                <AboutCardLength>Quality assurance & management.</AboutCardLength>
+                <AboutCardLength>Quality Assurance & Management</AboutCardLength>
                 <AboutCardFeatures>
                   <AboutCardFeature></AboutCardFeature>
                   <AboutCardFeature></AboutCardFeature>
@@ -48,7 +48,7 @@ function AboutCofounders() {
               </AboutCardIcon>
                 <AboutCardPlan>Iván Fardjoume</AboutCardPlan>
                 <AboutCardCost>CTO</AboutCardCost>
-                <AboutCardLength>Hardware & coding.</AboutCardLength>
+                <AboutCardLength>Hardware & Coding</AboutCardLength>
                 <AboutCardFeatures>
                   <AboutCardFeature></AboutCardFeature>
                   <AboutCardFeature></AboutCardFeature>
@@ -63,7 +63,7 @@ function AboutCofounders() {
               </AboutCardIcon>
                 <AboutCardPlan>Javier Cuello</AboutCardPlan>
                 <AboutCardCost>CFO</AboutCardCost>
-                <AboutCardLength>Business development.</AboutCardLength>
+                <AboutCardLength>Business Development</AboutCardLength>
                 <AboutCardFeatures>
                   <AboutCardFeature></AboutCardFeature>
                   <AboutCardFeature></AboutCardFeature>
