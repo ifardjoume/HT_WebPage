@@ -59,7 +59,7 @@ export const homeObjFour = {
     description:"Fue fundada en 2019 por un equipo de profesionales de diversos ámbitos con el objetivo de incorporar innovación y tecnología al servicio de la salud. Buscamos consolidar un nuevo estándar de buenas prácticas de transporte en salud.",
     headline:'H+Trace',
     lightText:true,
-    topLine: 'Sobre Nosotros',
+    topLine: '',
     img: require('../../images/about.svg').default,
     alt: 'Image_data',
     start:'',

@@ -30,7 +30,7 @@ line-height: 1.1;
   align-items: left;
   font-size:2rem;
   margin-bottom:64px;
-  padding:50px;
+  padding:100px;
 
 `
 

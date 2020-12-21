@@ -4,11 +4,12 @@ export const AspectContainer = styled.div`
     color: black;
     background:#949cdf;
   align-items:center;
-  padding: 70px 70px;
   display:flex;
+  padding-top:40px;
   align-items: center;
   justify-content: center;
   flex-direction:column;
+  width:100%;
 `
 
 export const AspectWrapper = styled.div`
@@ -16,6 +17,7 @@ export const AspectWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction:row;
+  width:100%;
 
   @media screen and (max-width:620px) {
     flex-direction:column;
@@ -33,7 +35,7 @@ export const ListItem = styled.li`
   align-items: center;
   font-size:1rem;
   color:black;
-  margin-bottom:64px;
+  margin-bottom:60px;
   padding:10px;
 
   @media screen and (max-width:768px) {

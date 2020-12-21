@@ -28,7 +28,7 @@ export default function ContactUs() {
     return (
             <ContactContainer id="contact">
             <ContactWrapper>
-                <ContactH1>Contacto</ContactH1>
+                <ContactH1></ContactH1>
                 <StyledFormWrapper>
         <StyledForm  className="contact-form"  onSubmit={sendEmail}>
         <label htmlFor="name">Nombre</label>
