@@ -47,6 +47,19 @@ const Navbar = ({ toggle }) => {
               <FaBars />
             </MobileIcon>
             <NavMenu>
+            <NavItem>
+                <NavLinks to='/' 
+                onClick={toggleHome}
+                smooth={true}
+                duration={600}
+                spy={true}
+                exact='true'
+                offset={-80}
+                activeClass="active"
+                >
+                  Home
+                </NavLinks>
+              </NavItem>
               <NavItem>
                 <NavLinks to="discover"
                 smooth={true}
@@ -57,6 +70,18 @@ const Navbar = ({ toggle }) => {
                 activeClass="active"
                 >
                   Descubre
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks to="services"
+                smooth={true}
+                duration={600}
+                spy={true}
+                exact='true'
+                offset={-80}
+                activeClass="active"
+                >
+                  Servicios
                 </NavLinks>
               </NavItem>
               <NavItem>
@@ -85,7 +110,7 @@ const Navbar = ({ toggle }) => {
               </NavItem>
               <NavBtn>
                   <NavBtnLink to='/sign-in'>
-                    Usuario
+                    LOGIN
                   </NavBtnLink>
               </NavBtn>
             </NavMenu>

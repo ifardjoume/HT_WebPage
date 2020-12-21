@@ -9,7 +9,7 @@ color: black;
   display:flex;
   align-items: center;
   justify-content: center;
-  flex-direction:column;
+  flex-direction:row;
   height:900px;
 
   @media screen and (max-width:998px) {
@@ -27,9 +27,11 @@ export const TableH1 = styled.h1`
 line-height: 1.1;
   font-weight: 600;
   color: #fff;
-  align-items: center;
+  align-items: left;
   font-size:2rem;
   margin-bottom:64px;
+  padding:50px;
+
 `
 
 export const Row = styled.tr`

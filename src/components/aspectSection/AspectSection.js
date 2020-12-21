@@ -28,27 +28,27 @@ import {
     WiEarthquake
 } from 'react-icons/wi';
 
-
+const sizeVariable = 32;
 const AspectSection = () => {
     return (
         <AspectContainer>
             <AspectWrapper>
                 <AspectList>
-                <ListItem><ListIcon><FaMapMarkerAlt/></ListIcon>Geolocalización</ListItem>
-                <ListItem><ListIcon><FaTemperatureLow/></ListIcon>Mantenimiento<br/> Isotérmico personalizado</ListItem>
-                <ListItem><ListIcon><GiSpill/></ListIcon>Empaque Inteligente Anti-derrame</ListItem>
+                <ListItem><ListIcon><FaMapMarkerAlt size={sizeVariable}/></ListIcon>Geolocalización</ListItem>
+                <ListItem><ListIcon><FaTemperatureLow size={sizeVariable}/></ListIcon>Mantenimiento<br/> Isotérmico personalizado</ListItem>
+                <ListItem><ListIcon><GiSpill size={sizeVariable}/></ListIcon>Empaque Inteligente<br/> Anti-derrame</ListItem>
                 </AspectList>
-                <Separator />
+                {/* <Separator /> */}
                 <AspectList>
-                <ListItem><ListIcon><GrNotes/></ListIcon>Registro de Temperatura</ListItem>
-                <ListItem><ListIcon><FaBoxOpen/></ListIcon>Registro de Apertura de Tapa</ListItem>
-                <ListItem><ListIcon><BiTime/></ListIcon>Alertas en Tiempo Real</ListItem>
+                <ListItem><ListIcon><GrNotes size={sizeVariable}/></ListIcon>Registro de<br/> Temperatura</ListItem>
+                <ListItem><ListIcon><FaBoxOpen size={sizeVariable}/></ListIcon>Registro de<br/> Apertura de Tapa</ListItem>
+                <ListItem><ListIcon><BiTime size={sizeVariable}/></ListIcon>Alertas en<br/> Tiempo Real</ListItem>
                 </AspectList>
-                <Separator />
+                {/* <Separator /> */}
                 <AspectList>
-                <ListItem><ListIcon><GiHeavyFall/></ListIcon>Registro de Golpes y Caída Libre</ListItem>
-                <ListItem><ListIcon><WiEarthquake/></ListIcon>Registro de Vibración</ListItem>
-                <ListItem><ListIcon><GiSpeedometer/></ListIcon>Registro de Aceleración</ListItem>
+                <ListItem><ListIcon><GiHeavyFall size={sizeVariable}/></ListIcon>Registro de<br/> Golpes y Caída Libre</ListItem>
+                <ListItem><ListIcon><WiEarthquake size={sizeVariable}/></ListIcon>Registro de<br/> Vibración</ListItem>
+                <ListItem><ListIcon><GiSpeedometer size={sizeVariable}/></ListIcon>Registro de<br/> Aceleración</ListItem>
                 </AspectList>
             </AspectWrapper>
         </AspectContainer>

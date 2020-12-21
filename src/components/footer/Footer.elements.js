@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const FooterContainer = styled.div`
   background-color: #101522;
-  padding: 4rem 0 2rem 0;
+  padding: 1.5rem 0 1.5rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,8 +36,7 @@ export const FooterLinksWrapper = styled.div`
 export const FooterLinkItems = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  margin: 16px;
+  align-items: center;
   text-align: center;
   width: 160px;
   box-sizing: border-box;
@@ -59,7 +58,6 @@ export const FooterLinkTitle = styled.h2`
 export const FooterLink = styled(Link)`
   color: #fff;
   text-decoration: none;
-  margin-bottom: 0.5rem;
   &:hover {
     color: #0467fb;
     transition: 0.3s ease-out;
@@ -93,7 +91,6 @@ export const SocialLogo = styled(Link)`
   font-size: 2rem;
   display: flex;
   align-items: center;
-  margin-bottom: 16px;
   &:hover{
     text-decoration:none;
     color:#fff;
@@ -106,7 +103,6 @@ export const SocialIcon = styled(FaMagento)`
 
 export const WebsiteRights = styled.small`
   color: #fff;
-  margin-bottom: 16px;
 `;
 
 export const SocialIcons = styled.div`

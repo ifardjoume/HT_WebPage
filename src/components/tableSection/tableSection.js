@@ -14,7 +14,7 @@ import {Table} from 'react-bootstrap';
 const TableSection = () => {
     return (
         <TableContainer>
-            <TableH1>Eliminamos los puntos ciegos en el transporte</TableH1>
+            <TableH1>Eliminamos<br/> los puntos<br/> ciegos en<br/> el transporte</TableH1>
             <TableWrapper>
             <Table responsive borderless>
                 <Row>

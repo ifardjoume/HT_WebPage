@@ -23,13 +23,11 @@ const Home = () => {
         <Navbar toggle= {toggle}/>
         <IntroSection />
         <InfoSection {...homeObjOne}/>
-        <InfoSection {...homeObjTwo}/>
         <TableSection></TableSection>
         <GraphSection />
         <AspectSection />
         <Services />
         <InfoSection {...homeObjFour}/>
-        <AboutCofounders />
         <Contact/>
         </>
     )

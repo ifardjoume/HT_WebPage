@@ -5,7 +5,6 @@ import Icon3 from '../../images/organ.svg'
 import {
     ServicesIcon,
     ServicesWrapper,
-    ServicesH1,
     ServicesH2,
     ServicesContainer,
     ServicesCard,
@@ -15,7 +14,6 @@ import {
 function Services() {
   return (
     <ServicesContainer id="services">
-      <ServicesH1>Nuestros Servicios</ServicesH1>
       <ServicesWrapper>
         <ServicesCard>
           <ServicesIcon src={Icon1}/>

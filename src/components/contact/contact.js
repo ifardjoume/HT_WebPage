@@ -41,10 +41,21 @@ export default function ContactUs() {
             type="email"
             name="user_email"
             />
+            <label htmlFor="tel">Telefono</label>
+            <StyledInput
+            type="tel"
+            name="phone"
+            pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+            />
         <label htmlFor="message">Mensaje</label>
         <StyledTextArea
             name="message"
             />
+
+            {/* <StyledInput
+            type="checkbox"
+            name="newsLetter"
+            /><p>Deseo mantenerme actualizado con novedades sobre el producto</p> */}
            {mailSentCorrectly && (
             <StyledError>
             <p>Mail correctly Sent</p>

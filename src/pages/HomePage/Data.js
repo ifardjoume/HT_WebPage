@@ -5,7 +5,7 @@ export const homeObjOne = {
     lightTopLine:false,
     lightTextDesc:false,
     buttonLabel: '',
-    description:"La trazabilidad total es indispensable para garantizar calidad y brindar confiabilidad en el cuidado y seguridad del paciente.",
+    description:"Para eso desarrollamos THIS (Total Healthcare Insight Solution), una solución integral de bajo costo que combina ciencia de datos, IoT (Internet de las cosas) y un sistema de sensorización con control térmico que permite la personalización del objeto transportado.",
     headline:'Llegó el momento de sumarse al futuro',
     lightText:false,
     topLine: '',

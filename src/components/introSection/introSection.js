@@ -6,10 +6,7 @@ import {
     VideoBg,
     IntroContent,
     IntroH1,
-    IntroP,
-    IntroBtnWrapper,
-    ArrowForward,
-    ArrowRight
+    IntroP
 } from './introSection.elements';
 import { Button } from '../../globalStyles';
 
@@ -27,17 +24,6 @@ const IntroSection = () => {
             <IntroContent>
                 <IntroH1> Un nuevo estándar mundial<br/> en calidad y seguridad para salud</IntroH1>
                 <IntroP>Han pasado muchas décadas sin innovar en la logística al servicio de la salud. Y sabemos que lo que no se mide, no se puede mejorar</IntroP>
-                <IntroBtnWrapper>
-                    <Button to="discover" onMouseEnter={onHover} onMouseLeave={onHover}
-                    smooth={true}
-                    duration={600}
-                    spy={true}
-                    exact='true'
-                    offset={-80}
-                    activeClass="active">
-                         Comenzar {hover ? <ArrowForward /> : <ArrowRight />}
-                    </Button>
-                </IntroBtnWrapper>
             </IntroContent>
         </IntroContainer>
         

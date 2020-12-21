@@ -26,12 +26,12 @@ export const AspectWrapper = styled.div`
 
 export const ListItem = styled.li`
   line-height: 1.1;
-  font-weight: 600;
+  font-weight: 300;
   color: #1c2237;
   display:flex;
   flex-direction:row;
   align-items: center;
-  font-size:1.5rem;
+  font-size:1rem;
   color:black;
   margin-bottom:64px;
   padding:10px;
@@ -52,9 +52,9 @@ export const AspectList = styled.ul`
 
 export const Separator = styled.div`
     height:450px;
-    border: 2px solid #6155a6;
+    border: 1px ridge black;
     width:3px;
-    background:#6155a6;
+    background:black;
     @media screen and (max-width:600px) {
     display:none;
     }

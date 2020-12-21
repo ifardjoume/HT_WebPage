@@ -23,26 +23,30 @@ const Footer = () => {
     return (
         <FooterContainer>
             <FooterLinksContainer>
-            <SocialLogo to='/'>
-            <SocialIcon />
-            H+Trace
-          </SocialLogo>
                 <FooterLinksWrapper>
                     <FooterLinkItems>
-                        {/* //Falta agregar rutas de los diferentes links */}
+                        {/* Falta agregar rutas de los diferentes links */}
                         <FooterLink to='/sign-in'>Prensa</FooterLink>
+                    </FooterLinkItems>
+                    <FooterLinkItems>
                         <FooterLink to='/sign-in'>Trabajos</FooterLink>
+                    </FooterLinkItems>
+                    <FooterLinkItems>
                         <FooterLink to='/sign-in'>Contacto</FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
                         <FooterLink to='/sign-in'>Compania</FooterLink>
+                    </FooterLinkItems>
+                    <FooterLinkItems>
                         <FooterLink to='/sign-in'>Calidad</FooterLink>
+                    </FooterLinkItems>
+                    <FooterLinkItems>
                         <FooterLink to='/sign-in'>Cookies</FooterLink>
                     </FooterLinkItems>
                 </FooterLinksWrapper>
             </FooterLinksContainer>
-            <SocialMedia>
-        <SocialMediaWrap>
+          <SocialMedia>
+       <SocialMediaWrap>
           <WebsiteRights>H+Trace © 2020</WebsiteRights>
         </SocialMediaWrap>
       </SocialMedia>
