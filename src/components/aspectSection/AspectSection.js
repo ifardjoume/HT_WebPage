@@ -28,7 +28,7 @@ import {
     WiEarthquake
 } from 'react-icons/wi';
 
-const sizeVariable = 32;
+const sizeVariable = 64;
 const AspectSection = () => {
     return (
         <AspectContainer>
@@ -38,13 +38,13 @@ const AspectSection = () => {
                 <ListItem><ListIcon><FaTemperatureLow size={sizeVariable}/></ListIcon>Mantenimiento<br/> Isotérmico personalizado</ListItem>
                 <ListItem><ListIcon><GiSpill size={sizeVariable}/></ListIcon>Empaque Inteligente<br/> Anti-derrame</ListItem>
                 </AspectList>
-                {/* <Separator /> */}
+                <Separator />
                 <AspectList>
                 <ListItem><ListIcon><GrNotes size={sizeVariable}/></ListIcon>Registro de<br/> Temperatura</ListItem>
                 <ListItem><ListIcon><FaBoxOpen size={sizeVariable}/></ListIcon>Registro de<br/> Apertura de Tapa</ListItem>
                 <ListItem><ListIcon><BiTime size={sizeVariable}/></ListIcon>Alertas en<br/> Tiempo Real</ListItem>
                 </AspectList>
-                {/* <Separator /> */}
+                <Separator />
                 <AspectList>
                 <ListItem><ListIcon><GiHeavyFall size={sizeVariable}/></ListIcon>Registro de<br/> Golpes y Caída Libre</ListItem>
                 <ListItem><ListIcon><WiEarthquake size={sizeVariable}/></ListIcon>Registro de<br/> Vibración</ListItem>

@@ -14,7 +14,7 @@ import {Table} from 'react-bootstrap';
 const TableSection = () => {
     return (
         <TableContainer>
-            <TableH1>Eliminamos los puntos<br/> ciegos en<br/> el transporte</TableH1>
+            <TableH1>Eliminamos<br/> los puntos<br/> ciegos en<br/> el transporte</TableH1>
             <TableWrapper>
             <Table responsive borderless>
                 <Row>
@@ -34,13 +34,13 @@ const TableSection = () => {
                 </Row>
                 <Row>
                     <RowComponent2>Enfriamiento</RowComponent2>
-                    <RowComponent2>Completamente<br/>
+                    <RowComponent2>Completamente
                      uniforme</RowComponent2>
-                    <RowComponent2>Desigual según<br/>
+                    <RowComponent2>Desigual según
                      ubicación</RowComponent2>
                 </Row>
                 <Row>
-                    <RowComponent1>Evita daños por<br/>
+                    <RowComponent1>Evita daños por
                      sobreenfriamiento</RowComponent1>
                     <RowComponent1><FcCheckmark /></RowComponent1>
                     <RowComponent1><FcCancel /></RowComponent1>
@@ -51,7 +51,7 @@ const TableSection = () => {
                     <RowComponent2><FcCancel /></RowComponent2>
                 </Row>
                 <Row>
-                    <RowComponent1>Monitoreo en tiempo real <br/>
+                    <RowComponent1>Monitoreo en tiempo real
                     con alertas configurables</RowComponent1>
                     <RowComponent1><FcCheckmark /></RowComponent1>
                     <RowComponent1><FcCancel /></RowComponent1>

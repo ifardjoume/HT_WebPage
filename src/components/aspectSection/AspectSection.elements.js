@@ -31,12 +31,14 @@ export const ListItem = styled.li`
   font-weight: 300;
   color: #1c2237;
   display:flex;
-  flex-direction:row;
+  text-align:center;
+  flex-direction:column;
   align-items: center;
   font-size:1rem;
   color:black;
   margin-bottom:60px;
   padding:10px;
+  justify-content:center;
 
   @media screen and (max-width:768px) {
     flex-direction:column;
@@ -46,6 +48,7 @@ export const ListItem = styled.li`
 export const AspectList = styled.ul`
     padding:20px;
     list-style-type:none;
+    align-items:center;
 
     @media screen and (max-width:620px) {
     flex-direction:column;
@@ -54,9 +57,7 @@ export const AspectList = styled.ul`
 
 export const Separator = styled.div`
     height:450px;
-    border: 1px ridge black;
-    width:3px;
-    background:black;
+    width:50px;
     @media screen and (max-width:600px) {
     display:none;
     }

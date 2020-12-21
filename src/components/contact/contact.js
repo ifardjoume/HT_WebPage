@@ -9,9 +9,22 @@ import {
     StyledFormWrapper,
     StyledInput,
     StyledError,
-    StyledTextArea
-
+    StyledTextArea,
+    SocialLinksWrapper,
+    SocialLink,
+    SocialLinkTitle,
+    SocialLinkDescription
 } from './contact.elements';
+import {
+  FaLinkedin
+} from 'react-icons/fa';
+import { ImLocation2 } from 'react-icons/im';
+import { FiMail } from 'react-icons/fi';
+import { AiOutlinePhone } from 'react-icons/ai';
+
+
+const sizeVariable = 40;
+
 export default function ContactUs() {
     var mailSentCorrectly
   function sendEmail(e) {
@@ -65,6 +78,28 @@ export default function ContactUs() {
         </StyledForm>
         </StyledFormWrapper>
             </ContactWrapper>
+            <SocialLinksWrapper>
+                <SocialLink>
+                  <FiMail size={sizeVariable}/>
+                  {/* <SocialLinkTitle>Mail</SocialLinkTitle> */}
+                  <SocialLinkDescription>hello@h-trace.com</SocialLinkDescription>
+                </SocialLink>
+                <SocialLink>
+                <ImLocation2 size={sizeVariable} />
+                {/* <SocialLinkTitle>Ubicación</SocialLinkTitle> */}
+                <SocialLinkDescription>Argentina</SocialLinkDescription>
+                </SocialLink>
+                <SocialLink>
+                <FaLinkedin size={sizeVariable}/>
+                {/* <SocialLinkTitle>Linkedin</SocialLinkTitle> */}
+                <SocialLinkDescription>Unete a través de Linkedin</SocialLinkDescription>
+                </SocialLink>
+                <SocialLink>
+                <AiOutlinePhone size={sizeVariable}/>
+                {/* <SocialLinkTitle>Telefono</SocialLinkTitle> */}
+                <SocialLinkDescription>011+51512+5511</SocialLinkDescription>
+                </SocialLink>
+              </SocialLinksWrapper>
         </ContactContainer>
   );
 };
