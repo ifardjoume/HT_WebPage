@@ -1,8 +1,5 @@
 import React from 'react';
 import {
-    FaLinkedin
-  } from 'react-icons/fa';
-import {
     FooterContainer,
     FooterLinksContainer,
     FooterLinksWrapper,
@@ -10,11 +7,7 @@ import {
     FooterLink,
     SocialMedia,
     SocialMediaWrap,
-    SocialLogo,
-    SocialIcon,
     WebsiteRights,
-    SocialIcons,
-    SocialIconLink
   } from './Footer.elements';
   
 

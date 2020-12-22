@@ -1,9 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import emailjs from 'emailjs-com';
 import { 
     ContactContainer,
     ContactWrapper,
-    ContactH1,
     StyledButton,
     StyledForm,
     StyledFormWrapper,
@@ -12,7 +11,6 @@ import {
     StyledTextArea,
     SocialLinksWrapper,
     SocialLink,
-    SocialLinkTitle,
     SocialLinkDescription,
     StyledColumnForm,
     ButtonContainer
@@ -28,55 +26,96 @@ import { AiOutlinePhone } from 'react-icons/ai';
 const sizeVariable = 40;
 
 export default function ContactUs() {
-    var mailSentCorrectly
   function sendEmail(e) {
     e.preventDefault();
 
     emailjs.sendForm('service_a835aks', 'template_7v5twqo', e.target, 'user_XUInM4n3ub5FOrzhllh8I')
       .then((result) => {
           console.log(result.text);
-          mailSentCorrectly = result.text == "OK";
       }, (error) => {
           console.log(error.text);
       });
   }
+
+  var initialState = {
+    user_name:'',
+    user_email:'',
+    message:'',
+    phone:''
+  }
+  const [state, setState] = useState(initialState);
+    const [error, setError] = useState('');
+    const handleSubmit = e => {
+      e.preventDefault();
+  
+      for (let key in state) {
+        if (state[key] === '') {
+          setError(`Todos los campos son obligatorios`)
+          return
+        }
+      }
+      setError('');
+      // const regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+      // const test = regex.test(state.email);
+      // console.log(test);
+  
+      console.log("Succeeded!!!")
+    };
+  
+    const handleInput = e => {
+      const inputName = e.currentTarget.name;
+      const value = e.currentTarget.value;
+  
+      setState(prev => ({ ...prev, [inputName]: value }));
+    };
+
+
+    const onSubmit = e => {
+      e.preventDefault();
+      handleSubmit(e);
+        if (state.user_email !== '' && state.message !== '' ) {
+          sendEmail(e)
+        } else {
+            alert("Debes completar por lo menos el mail y mensaje")
+      }
+    };
     return (
             <ContactContainer id="contact">
                <SocialLinksWrapper>
                 <SocialLink>
                   <FiMail size={sizeVariable}/>
-                  {/* <SocialLinkTitle>Mail</SocialLinkTitle> */}
                   <SocialLinkDescription>hello@h-trace.com</SocialLinkDescription>
                 </SocialLink>
                 <SocialLink>
                 <ImLocation2 size={sizeVariable} />
-                {/* <SocialLinkTitle>Ubicación</SocialLinkTitle> */}
                 <SocialLinkDescription>Argentina</SocialLinkDescription>
                 </SocialLink>
                 <SocialLink>
                 <FaLinkedin size={sizeVariable}/>
-                {/* <SocialLinkTitle>Linkedin</SocialLinkTitle> */}
                 <SocialLinkDescription>H+Trace</SocialLinkDescription>
                 </SocialLink>
                 <SocialLink>
                 <AiOutlinePhone size={sizeVariable}/>
-                {/* <SocialLinkTitle>Telefono</SocialLinkTitle> */}
                 <SocialLinkDescription>011+51512</SocialLinkDescription>
                 </SocialLink>
               </SocialLinksWrapper>
             <ContactWrapper>
                 <StyledFormWrapper>
-        <StyledForm  className="contact-form"  onSubmit={sendEmail}>
+        <StyledForm  className="contact-form"  onSubmit={onSubmit}>
           <StyledColumnForm>
         <label htmlFor="name">Nombre</label>
             <StyledInput
             type="text"
             name="user_name"
+            value={state.user_name}
+            onChange={handleInput}
             />
         <label htmlFor="email">Email</label>
             <StyledInput
             type="email"
             name="user_email"
+            value={state.user_email}
+            onChange={handleInput}
             />
             </StyledColumnForm>
             <StyledColumnForm>
@@ -84,22 +123,20 @@ export default function ContactUs() {
             <StyledInput
             type="tel"
             name="phone"
-            pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+            value={state.phone}
+            onChange={handleInput}
             />
         <label htmlFor="message">Mensaje</label>
         <StyledTextArea
             name="message"
+            value={state.message}
+            onChange={handleInput}
             />
-
-            {/* <StyledInput
-            type="checkbox"
-            name="newsLetter"
-            /><p>Deseo mantenerme actualizado con novedades sobre el producto</p> */}
-           {mailSentCorrectly && (
+           {error && (
             <StyledError>
-            <p>Mail correctly Sent</p>
+              <p>{error}</p>
             </StyledError>
-            )}
+          )}
             <ButtonContainer>
               <StyledButton type="submit" value="Send">Enviar</StyledButton>
             </ButtonContainer>

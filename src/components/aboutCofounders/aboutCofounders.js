@@ -2,7 +2,7 @@ import React from 'react';
 import Image1 from '../../images/emi.png';
 import Image2 from '../../images/javi.png'
 import Image3 from '../../images/ivan.png';
-import { Container,Button } from '../../globalStyles';
+import { Container} from '../../globalStyles';
 import {
   InfoSec,
   InfoRow,

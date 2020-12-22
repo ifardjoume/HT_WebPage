@@ -5,8 +5,7 @@ import {
     Row,
     Title,
     RowComponent1,
-    RowComponent2,
-    TableWrapper
+    RowComponent2
 } from './tableSection.elements';
 import { FcCheckmark} from 'react-icons/fc';
 import { GoDash } from 'react-icons/go';

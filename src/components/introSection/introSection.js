@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Video from '../../videos/Video.mp4';
 import { 
     IntroContainer,
@@ -8,14 +8,8 @@ import {
     IntroH1,
     IntroP
 } from './introSection.elements';
-import { Button } from '../../globalStyles';
 
 const IntroSection = () => {
-    const [hover,setHover] = useState(false)
-
-    const onHover = () => {
-        setHover(!hover);
-    }
     return (
         <IntroContainer id="home">
             <IntroBg>

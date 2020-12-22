@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { homeObjOne, homeObjTwo, homeObjFour } from './Data';
+import { homeObjOne} from './Data';
 import { InfoSection, Services } from '../../components';
 import SideBar from '../../components/sideBar/sideBar';
 import Navbar from '../../components/navbar/NavBar';
