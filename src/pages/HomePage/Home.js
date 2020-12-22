@@ -27,7 +27,7 @@ const Home = () => {
         <GraphSection />
         <AspectSection />
         <Services />
-        <InfoSection {...homeObjFour}/>
+        <AboutCofounders/>
         <Contact/>
         </>
     )

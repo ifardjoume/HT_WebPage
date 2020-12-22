@@ -2,79 +2,55 @@ import React from 'react';
 import Image1 from '../../images/emi.png';
 import Image2 from '../../images/javi.png'
 import Image3 from '../../images/ivan.png';
-import { IconContext } from 'react-icons/lib';
+import { Container,Button } from '../../globalStyles';
 import {
-    AboutSection,
-    AboutWrapper,
-    AboutHeading,
-    AboutContainer,
-    AboutCard,
-    AboutCardInfo,
-    AboutCardIcon,
-    AboutCardPlan,
-    AboutCardCost,
-    AboutCardLength,
-    AboutCardFeatures,
-    AboutCardFeature,
-    AboutImg
+  InfoSec,
+  InfoRow,
+  InfoColumn,
+  TextWrapper,
+  TopLine,
+  Heading,
+  Subtitle,
+  Img,
+  ImgWrapper,
+  ImgCofounderContainer
 } from './aboutCofounders.elements';
 
 function AboutCofounders() {
   return (
-    <IconContext.Provider value={{ color: '#a9b3c1', size: 64 }}>
-      <AboutSection>
-        <AboutWrapper>
-          <AboutHeading></AboutHeading>
-          <AboutContainer>
-            <AboutCard>
-              <AboutCardInfo>
-              <AboutCardIcon>
-              <AboutImg  src={Image1} alt="Ivan"/>
-              </AboutCardIcon>
-                <AboutCardPlan>Emiliano Buitrago</AboutCardPlan>
-                <AboutCardCost>CEO</AboutCardCost>
-                <AboutCardLength>Quality Assurance & Management</AboutCardLength>
-                <AboutCardFeatures>
-                  <AboutCardFeature></AboutCardFeature>
-                  <AboutCardFeature></AboutCardFeature>
-                  <AboutCardFeature></AboutCardFeature>
-                </AboutCardFeatures>
-              </AboutCardInfo>
-            </AboutCard>
-            <AboutCard>
-              <AboutCardInfo>
-              <AboutCardIcon>
-              <AboutImg  src={Image3} alt="Ivan"/>
-              </AboutCardIcon>
-                <AboutCardPlan>Iván Fardjoume</AboutCardPlan>
-                <AboutCardCost>CTO</AboutCardCost>
-                <AboutCardLength>Hardware & Coding</AboutCardLength>
-                <AboutCardFeatures>
-                  <AboutCardFeature></AboutCardFeature>
-                  <AboutCardFeature></AboutCardFeature>
-                  <AboutCardFeature></AboutCardFeature>
-                </AboutCardFeatures>
-              </AboutCardInfo>
-            </AboutCard>
-            <AboutCard>
-              <AboutCardInfo>
-              <AboutCardIcon>
-              <AboutImg  src={Image2} alt="Ivan"/>
-              </AboutCardIcon>
-                <AboutCardPlan>Javier Cuello</AboutCardPlan>
-                <AboutCardCost>CFO</AboutCardCost>
-                <AboutCardLength>Business Development</AboutCardLength>
-                <AboutCardFeatures>
-                  <AboutCardFeature></AboutCardFeature>
-                  <AboutCardFeature></AboutCardFeature>
-                  <AboutCardFeature></AboutCardFeature>
-                </AboutCardFeatures>
-              </AboutCardInfo>
-            </AboutCard>
-          </AboutContainer>
-        </AboutWrapper>
-      </AboutSection>
-    </IconContext.Provider>
+    <>
+            <InfoSec id="about">
+                <Container>
+                    <InfoRow>
+                        <InfoColumn>
+                            <TextWrapper>
+                                <Heading>H+Trace</Heading>
+                                <Subtitle>Fue fundada en 2019 por un equipo de profesionales de diversos ámbitos con el objetivo de incorporar innovación y tecnología al servicio de la salud. Buscamos consolidar un nuevo estándar de buenas prácticas de transporte en salud.</Subtitle>
+                            </TextWrapper>
+                        </InfoColumn>
+                        <InfoColumn>
+                            <ImgWrapper>
+                                <ImgCofounderContainer>
+                                <Img src={Image1} alt="Emi" />
+                                <TopLine>Emiliano Buitrago</TopLine>
+                                <Subtitle>Control de Calidad</Subtitle>
+                                </ImgCofounderContainer>
+                                <ImgCofounderContainer>
+                                <Img src={Image2} alt="Javi" />
+                                <TopLine>Javier Cuello</TopLine>
+                                <Subtitle>Administración</Subtitle>
+                                </ImgCofounderContainer>
+                                <ImgCofounderContainer>
+                                <Img src={Image3} alt="Ivan" />
+                                <TopLine>Iván Fardjoume</TopLine>
+                                <Subtitle>Tecnología</Subtitle>
+                                </ImgCofounderContainer>
+                            </ImgWrapper>
+                        </InfoColumn>
+                    </InfoRow>
+                </Container>
+            </InfoSec>
+        </>
   );
 }
 export default AboutCofounders;

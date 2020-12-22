@@ -1,112 +1,84 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const AboutSection = styled.div`
-  padding: 50px 0 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #0e49b5;
+export const InfoSec = styled.div`
+    color: #fff;
+    padding: 70px 0;
+    background: ${({ lightBg }) => (lightBg ? '#0e49b5' : '#c9cbff')};
 `;
 
-export const AboutWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-  @media screen and (max-width: 960px) {
-    margin: 0 30px;
+export const InfoRow = styled.div`
     display: flex;
-    flex-direction: column;
+    margin: 0 -15px -15px -15px;
+    flex-wrap: wrap;
     align-items: center;
-  }
+    flex-direction: row;
+    };
 `;
 
-export const AboutHeading = styled.h1`
-  color: #fff;
-  font-size: 48px;
-  margin-bottom: 24px;
-`;
+export const InfoColumn = styled.div`
+    margin-bottom: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 1;
+    max-width: 50%;
+    flex-basis: 50%;
 
-export const AboutContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media screen and (max-width: 960px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-`;
-
-export const AboutCard = styled(Link)`
-  background: #242424;
-  box-shadow: 0 6px 20px rgba(56, 125, 255, 0.2);
-  width: 280px;
-  height: 350px;
-  text-decoration: none;
-  border-radius: 4px;
-  &:nth-child(2) {
-    margin: 24px;
-  }
-  &:hover {
-    transform: scale(1.06);
-    transition: all 0.3s ease-out;
-    color: #1c2237;
-    text-decoration:none;
-  }
-  @media screen and (max-width: 960px) {
-    width: 90%;
-    &:hover {
-      transform: none;
+    @media screen and (max-width: 768px){
+        max-width: 100%;
+        flex-basis:100%;
+        display: flex;
+        justify-content:center;
     }
-  }
-`;
+`
+export const TextWrapper = styled.div`
+    max-width:540px;
+    padding-top:0;
+    padding-bottom:60px;
 
-export const AboutCardInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 500px;
-  padding: 24px;
-  align-items: center;
-  color: #fff;
-`;
+    @media screen and (max-width: 768px){
+        padding-bottom:65px;
+    }
+`
 
-export const AboutCardIcon = styled.div`
-    height:160px;
-  width:160px;
-  margin-bottom:10px;
-`;
-
-export const AboutCardPlan = styled.h3`
-  margin-bottom: 5px;
-  font-size: 24px;
-`;
-
-export const AboutCardCost = styled.h4`
-  font-size: 40px;
-`;
-
-export const AboutCardLength = styled.p`
-  font-size: 14px;
+export const TopLine = styled.div`
+    color: ${({ lightTopLine }) => (lightTopLine ? '#a9b3c1' : '#4B59F7')};
+  font-size: 18px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+`
+export const Heading = styled.h1`
   margin-bottom: 24px;
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 600;
+  color: ${({ lightText }) => (lightText ? '#f7f8fa' : '#1c2237')};
 `;
 
-export const AboutCardFeatures = styled.ul`
-  margin: 16px 0 32px;
-  list-style: none;
+export const Subtitle = styled.p`
+  max-width: 440px;
+  margin-bottom: 35px;
+  font-size: 18px;
+  line-height: 24px;
+  color: ${({ lightTextDesc }) => (lightTextDesc ? '#a9b3c1' : '#1c2237')};
+`;
+
+export const Img = styled.img`
+  padding:5px;
+  max-width: 100%;
+  max-height: 500px;
+`;
+
+export const ImgWrapper = styled.div`
+  max-width: 555px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #a9b3c1;
-`;
-
-export const AboutCardFeature = styled.li`
-  margin-bottom: 10px;
-`;
-
-export const AboutImg= styled.img`
+  justify-content: center;
   align-items:center;
 `;
+
+export const ImgCofounderContainer = styled.div`
+text-align:center;
+padding:5px;
+`

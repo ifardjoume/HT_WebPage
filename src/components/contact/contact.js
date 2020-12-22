@@ -13,7 +13,9 @@ import {
     SocialLinksWrapper,
     SocialLink,
     SocialLinkTitle,
-    SocialLinkDescription
+    SocialLinkDescription,
+    StyledColumnForm,
+    ButtonContainer
 } from './contact.elements';
 import {
   FaLinkedin
@@ -40,10 +42,32 @@ export default function ContactUs() {
   }
     return (
             <ContactContainer id="contact">
+               <SocialLinksWrapper>
+                <SocialLink>
+                  <FiMail size={sizeVariable}/>
+                  {/* <SocialLinkTitle>Mail</SocialLinkTitle> */}
+                  <SocialLinkDescription>hello@h-trace.com</SocialLinkDescription>
+                </SocialLink>
+                <SocialLink>
+                <ImLocation2 size={sizeVariable} />
+                {/* <SocialLinkTitle>Ubicación</SocialLinkTitle> */}
+                <SocialLinkDescription>Argentina</SocialLinkDescription>
+                </SocialLink>
+                <SocialLink>
+                <FaLinkedin size={sizeVariable}/>
+                {/* <SocialLinkTitle>Linkedin</SocialLinkTitle> */}
+                <SocialLinkDescription>H+Trace</SocialLinkDescription>
+                </SocialLink>
+                <SocialLink>
+                <AiOutlinePhone size={sizeVariable}/>
+                {/* <SocialLinkTitle>Telefono</SocialLinkTitle> */}
+                <SocialLinkDescription>011+51512+5511</SocialLinkDescription>
+                </SocialLink>
+              </SocialLinksWrapper>
             <ContactWrapper>
-                <ContactH1></ContactH1>
                 <StyledFormWrapper>
         <StyledForm  className="contact-form"  onSubmit={sendEmail}>
+          <StyledColumnForm>
         <label htmlFor="name">Nombre</label>
             <StyledInput
             type="text"
@@ -54,6 +78,8 @@ export default function ContactUs() {
             type="email"
             name="user_email"
             />
+            </StyledColumnForm>
+            <StyledColumnForm>
             <label htmlFor="tel">Telefono</label>
             <StyledInput
             type="tel"
@@ -74,32 +100,13 @@ export default function ContactUs() {
             <p>Mail correctly Sent</p>
             </StyledError>
             )}
-        <StyledButton type="submit" value="Send">Enviar</StyledButton>
+            <ButtonContainer>
+              <StyledButton type="submit" value="Send">Enviar</StyledButton>
+            </ButtonContainer>
+        </StyledColumnForm>
         </StyledForm>
         </StyledFormWrapper>
             </ContactWrapper>
-            <SocialLinksWrapper>
-                <SocialLink>
-                  <FiMail size={sizeVariable}/>
-                  {/* <SocialLinkTitle>Mail</SocialLinkTitle> */}
-                  <SocialLinkDescription>hello@h-trace.com</SocialLinkDescription>
-                </SocialLink>
-                <SocialLink>
-                <ImLocation2 size={sizeVariable} />
-                {/* <SocialLinkTitle>Ubicación</SocialLinkTitle> */}
-                <SocialLinkDescription>Argentina</SocialLinkDescription>
-                </SocialLink>
-                <SocialLink>
-                <FaLinkedin size={sizeVariable}/>
-                {/* <SocialLinkTitle>Linkedin</SocialLinkTitle> */}
-                <SocialLinkDescription>Unete a través de Linkedin</SocialLinkDescription>
-                </SocialLink>
-                <SocialLink>
-                <AiOutlinePhone size={sizeVariable}/>
-                {/* <SocialLinkTitle>Telefono</SocialLinkTitle> */}
-                <SocialLinkDescription>011+51512+5511</SocialLinkDescription>
-                </SocialLink>
-              </SocialLinksWrapper>
         </ContactContainer>
   );
 };

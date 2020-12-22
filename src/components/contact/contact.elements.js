@@ -6,8 +6,8 @@ export const ContactContainer = styled.div`
   padding: 70px 70px;
   display:flex;
   justify-content: center;
-  align-items: stretch;
-  flex-direction:row;
+  align-items: center;
+  flex-direction:column;
 `
 
 export const ContactWrapper = styled.div`
@@ -15,6 +15,7 @@ export const ContactWrapper = styled.div`
   align-items: stretch;
   justify-content: center;
   flex-direction:row;
+  width:75%;
 `
 
 export const ContactH1 = styled.h1`
@@ -31,6 +32,7 @@ export const StyledFormWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 0px;
+  width:100%;
   @media screen and (max-width:998px) {
     width:100%;
   }
@@ -40,9 +42,22 @@ export const StyledForm = styled.form`
   padding: 40px;
   background-color: #fff;
   border-radius: 10px;
+  width:100%;
   box-sizing: border-box;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". .";
 `;
+
+export const StyledColumnForm = styled.div`
+ margin:15px;
+`
+
+
 
 export const StyledInput = styled.input`
   display: block;
@@ -69,6 +84,13 @@ export const StyledTextArea = styled.textarea`
   padding: 20px;
   box-sizing: border-box;
 `;
+export const ButtonContainer = styled.div`
+ display:flex;
+ justify-content:flex-end;
+`
+
+
+
 export const StyledButton = styled.button`
   display: block;
   background-color: blue;
@@ -90,20 +112,17 @@ export const StyledError = styled.div`
 
 
 export const SocialLinksWrapper = styled.div`
-  width:50%;
+  width:75%;
   padding: 40px;
   background-color: #fff;
   border-radius: 10px;
   box-sizing: border-box;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-  margin-left:20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    ". ."
-    ". .";
+  margin-bottom:20px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
 `
 
 export const SocialLink = styled.div`
@@ -111,6 +130,7 @@ export const SocialLink = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction:column;
+  margin:10px 50px 10px 50px;
 `
 
 export const SocialLinkTitle = styled.h2`
