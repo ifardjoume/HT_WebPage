@@ -17,6 +17,7 @@ export const Nav = styled.nav`
   z-index: 999;
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
+    height: 70px;
   }
 
 `;
@@ -39,6 +40,10 @@ export const NavLogo = styled(Link)`
   &:hover{
     text-decoration:none;
     color:#fff;
+  }
+
+  @media screen and (max-width: 768px) {
+   margin-top:20px;
   }
 `;
 

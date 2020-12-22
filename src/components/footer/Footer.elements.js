@@ -30,6 +30,8 @@ export const FooterLinksWrapper = styled.div`
   flex-direction:row;
   @media screen and (max-width: 820px) {
     flex-direction: column;
+    justify-content:center;
+    align-items:center;
   }
 `;
 

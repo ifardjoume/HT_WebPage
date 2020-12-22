@@ -16,6 +16,10 @@ export const ContactWrapper = styled.div`
   justify-content: center;
   flex-direction:row;
   width:75%;
+  @media screen and (max-width: 768px) {
+    width:100%;
+    padding: 10px;
+  }
 `
 
 export const ContactH1 = styled.h1`
@@ -33,9 +37,6 @@ export const StyledFormWrapper = styled.div`
   align-items: center;
   padding: 0 0px;
   width:100%;
-  @media screen and (max-width:998px) {
-    width:100%;
-  }
 `;
 
 export const StyledForm = styled.form`
@@ -51,6 +52,14 @@ export const StyledForm = styled.form`
   gap: 0px 0px;
   grid-template-areas:
     ". .";
+    @media screen and (max-width:998px) {
+    width:100%;
+    display:flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction:column;
+  padding: 0px;
+  }
 `;
 
 export const StyledColumnForm = styled.div`
@@ -122,6 +131,17 @@ export const SocialLinksWrapper = styled.div`
   display:flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 768px) {
+    display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". ."
+    ". .";
+    width:100%;
+    padding: 10px;
+  }
 
 `
 
@@ -131,6 +151,10 @@ export const SocialLink = styled.div`
   justify-content: center;
   flex-direction:column;
   margin:10px 50px 10px 50px;
+  @media screen and (max-width: 768px) {
+    margin:10px;
+  }
+
 `
 
 export const SocialLinkTitle = styled.h2`

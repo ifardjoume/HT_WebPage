@@ -11,6 +11,9 @@ color: black;
   justify-content: center;
   flex-direction:row;
   height:900px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 
   @media screen and (max-width:998px) {
     height:1300px;
@@ -26,11 +29,18 @@ export const TableWrapper = styled.div`
 export const TableH1 = styled.h1`
 line-height: 1.1;
   font-weight: 600;
+  line-height: 2;
   color: #fff;
   align-items: left;
   font-size:2rem;
   margin-bottom:64px;
   padding:100px;
+  @media screen and (max-width: 768px) {
+    line-height: 1.1;
+    padding:50px;
+    padding-bottom:10px;
+    text-align:center;
+  }
 
 `
 

@@ -61,7 +61,7 @@ export default function ContactUs() {
                 <SocialLink>
                 <AiOutlinePhone size={sizeVariable}/>
                 {/* <SocialLinkTitle>Telefono</SocialLinkTitle> */}
-                <SocialLinkDescription>011+51512+5511</SocialLinkDescription>
+                <SocialLinkDescription>011+51512</SocialLinkDescription>
                 </SocialLink>
               </SocialLinksWrapper>
             <ContactWrapper>
