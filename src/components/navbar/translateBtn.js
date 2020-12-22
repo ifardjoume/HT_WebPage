@@ -11,7 +11,8 @@ export const TranslateBtn = () => {
     const selectStyle = {
         marginTop: "10px",
         marginLeft:"10px",
-        height:"40px"
+        height:"40px",
+        borderRadius:"30%"
     }
     const [currentLocale, setCurrentLocale] = useState(defaultLocale);
     const onChangeLanguage = (e) => {
