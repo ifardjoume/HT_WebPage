@@ -5,7 +5,7 @@ export const homeObjOne = {
     lightTopLine:false,
     lightTextDesc:false,
     buttonLabel: '',
-    description:"Para eso desarrollamos THIS (Total Healthcare Insight Solution), una solución integral de bajo costo que combina ciencia de datos, IoT (Internet de las cosas) y un sistema de sensorización con control térmico que permite la personalización del objeto transportado.<IntroP>Han pasado muchas décadas sin innovar en la logística al servicio de la salud. Y sabemos que lo que no se mide, no se puede mejorar.</IntroP>",
+    description:"Para eso desarrollamos THIS (Total Healthcare Insight Solution), una solución integral de bajo costo que combina ciencia de datos, IoT (Internet de las cosas) y un sistema de sensorización con control térmico que permite la personalización del objeto transportado.Han pasado muchas décadas sin innovar en la logística al servicio de la salud. Y sabemos que lo que no se mide, no se puede mejorar.",
     headline:'Llegó el momento de sumarse al futuro',
     lightText:false,
     topLine: '',

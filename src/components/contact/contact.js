@@ -99,8 +99,6 @@ export default function ContactUs() {
                 <SocialLinkDescription>011+51512</SocialLinkDescription>
                 </SocialLink>
               </SocialLinksWrapper>
-            <ContactWrapper>
-                <StyledFormWrapper>
         <StyledForm  className="contact-form"  onSubmit={onSubmit}>
           <StyledColumnForm>
         <label htmlFor="name">Nombre</label>
@@ -142,8 +140,6 @@ export default function ContactUs() {
             </ButtonContainer>
         </StyledColumnForm>
         </StyledForm>
-        </StyledFormWrapper>
-            </ContactWrapper>
         </ContactContainer>
   );
 };

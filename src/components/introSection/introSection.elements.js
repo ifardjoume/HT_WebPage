@@ -58,6 +58,7 @@ export const IntroH1 = styled.h1`
     color: #fff;
     font-size:55px;
     text-align:center;
+    letter-spacing:10px;
     
     @media screen and (max-width: 768px) {
         font-size:48px;

@@ -1,57 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Container,Button } from '../../globalStyles';
+import { Container} from '../../globalStyles';
 import {
     InfoSec,
     InfoRow,
     InfoColumn,
     TextWrapper,
-    TopLine,
     Heading,
     Subtitle,
     Img,
     ImgWrapper
   } from './InfoSection.elements';
-
-const InfoSection = ({
-    primary,
-    lightBg,
-    imgStart,
-    lightTopLine,
-    lightTextDesc,
-    description,
-    headline,
-    buttonLabel,
-    lightText,
-    topLine,
-    img,
-    alt,
-    start,
-    buttonAppereance,
-    id
-    }) => {
+import img1 from '../../images/Conjunto.png';
+const InfoSection = () => {
     return (
         <>
-            <InfoSec lightBg={lightBg} id={id}>
+            <InfoSec id="discover">
                 <Container>
-                    <InfoRow imgStart={imgStart}>
+                    <InfoRow>
                         <InfoColumn>
                             <TextWrapper>
-                                <TopLine lightTopLine={lightTopLine}>
-                                    {topLine}
-                                </TopLine>
-                                <Heading lightText={lightText}>{headline}</Heading>
-                                <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
-                                {buttonAppereance && <Link to='/sign-up'>
-                                    <Button big fontBig primary={primary}>
-                                    {buttonLabel}
-                                    </Button>
-                                    </Link>}
+                                <Heading>Llegó el momento de sumarse al futuro</Heading>
+                                <Subtitle>Para eso desarrollamos THIS (Total Healthcare Insight Solution), una solución integral de bajo costo que combina ciencia de datos, IoT (Internet de las cosas) y un sistema de sensorización con control térmico que permite la personalización del objeto transportado.Han pasado muchas décadas sin innovar en la logística al servicio de la salud. Y sabemos que lo que no se mide, no se puede mejorar.</Subtitle>
                             </TextWrapper>
                         </InfoColumn>
                         <InfoColumn>
-                            <ImgWrapper start={start}>
-                                <Img src={img} alt={alt} />
+                            <ImgWrapper>
+                                <Img src={img1} alt="product" />
                             </ImgWrapper>
                         </InfoColumn>
                     </InfoRow>

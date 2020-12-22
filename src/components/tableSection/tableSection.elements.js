@@ -58,15 +58,23 @@ export const Title = styled.th`
 `
 
 export const RowComponent1 = styled.td`
-    background:#d0e8f2;
+    background:#fff;
     padding: 15px;
     border-collapse: collapse;
     text-align:center;
 `
 
 export const RowComponent2 = styled.td`
-    background:#fff;
+    background:#d0e8f2;
     padding: 15px;
     border-collapse: collapse;
     text-align:center;
+`
+
+export const GraphImage = styled.img`
+  max-width: 100%;
+  display: inline-block;
+  max-height: 500px;
+  padding:10px;
+  margin-right:40px;
 `
