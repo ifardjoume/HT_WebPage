@@ -16,6 +16,7 @@ const TableSection = () => {
         <TableContainer>
             <TableH1>Eliminamos los puntos ciegos en el transporte</TableH1>
             <Table responsive borderless>
+                <tbody>
                 <Row>
                     <Title>Aspecto</Title>
                     <Title>THIS</Title>
@@ -70,6 +71,7 @@ const TableSection = () => {
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent2><GoDash /></RowComponent2>
                 </Row>
+                </tbody>
             </Table>
         </TableContainer>
     )

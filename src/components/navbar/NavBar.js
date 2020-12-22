@@ -13,6 +13,7 @@ import {
   NavLinks,
   NavBtnLink
 } from './Navbar.elements';
+import { TranslateBtn } from './translateBtn';
 
 
 
@@ -113,6 +114,7 @@ const Navbar = ({ toggle }) => {
                     LOGIN
                   </NavBtnLink>
               </NavBtn>
+              <TranslateBtn />
             </NavMenu>
           </NavbarContainer>
         </Nav>
