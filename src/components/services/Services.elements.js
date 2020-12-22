@@ -32,7 +32,7 @@ export const ServicesH1 = styled.h1`
 `;
 
 export const ServicesH2 = styled.h2`
-  font-size:1rem;
+  font-size:1.5rem;
   margin-bottom:10px;
 `;
 

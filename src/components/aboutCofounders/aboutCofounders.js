@@ -24,8 +24,13 @@ function AboutCofounders() {
                     <InfoRow>
                         <InfoColumn>
                             <TextWrapper>
-                                <Heading>H+Trace</Heading>
-                                <Subtitle>Fue fundada en 2019 por un equipo de profesionales de diversos ámbitos con el objetivo de incorporar innovación y tecnología al servicio de la salud. Buscamos consolidar un nuevo estándar de buenas prácticas de transporte en salud.</Subtitle>
+                                <Heading>Nuestra Empresa</Heading>
+                                <Subtitle>H+Trace fue fundada en 2019 por tres profesionales de ámbitos diversos con el objetivo de incorporar innovación y tecnología a la salud.<br></br> <br></br> 
+                                          Esta industria funciona en base a datos, sea para diagnóstico, tratamiento, cuidado o investigación clínica.
+                                          Sin embargo, la logística es un punto ciego sin información.
+
+                                          H+Trace nació para aportar esos datos indispensables para la mejora del proceso.<br></br><br></br> 
+                                          Buscamos consolidar un nuevo estándar de buenas prácticas de transporte en salud.</Subtitle>
                             </TextWrapper>
                         </InfoColumn>
                         <InfoColumn>
@@ -33,12 +38,12 @@ function AboutCofounders() {
                                 <ImgCofounderContainer>
                                 <Img src={Image1} alt="Emi" />
                                 <TopLine>Emiliano Buitrago</TopLine>
-                                <Subtitle>Control de Calidad</Subtitle>
+                                <Subtitle>Management</Subtitle>
                                 </ImgCofounderContainer>
                                 <ImgCofounderContainer>
                                 <Img src={Image2} alt="Javi" />
                                 <TopLine>Javier Cuello</TopLine>
-                                <Subtitle>Administración</Subtitle>
+                                <Subtitle>Desarrollo de Negocios</Subtitle>
                                 </ImgCofounderContainer>
                                 <ImgCofounderContainer>
                                 <Img src={Image3} alt="Ivan" />

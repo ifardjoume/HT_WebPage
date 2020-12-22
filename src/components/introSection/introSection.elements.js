@@ -7,7 +7,7 @@ export const IntroContainer = styled.div`
     justify-content:center;
     align-items:center;
     padding: 0 30px;
-    height: 800px;
+    height: 600px;
     position:relative;
     z-index: 1;
     :before{
@@ -56,33 +56,19 @@ export const IntroContent = styled.div`
 
 export const IntroH1 = styled.h1`
     color: #fff;
-    font-size:48px;
+    font-size:55px;
     text-align:center;
-
+    
     @media screen and (max-width: 768px) {
+        font-size:48px;
+  }
+
+  @media screen and (max-width: 480px) {
         font-size:40px;
   }
-
-  @media screen and (max-width: 480px) {
-        font-size:32px;
-  }
 `
 
-export const IntroP = styled.p`
-    margin-top:24px;
-    color: #fff;
-    font-size:24px;
-    text-align:center;
-    max-width:600px;
-    @media screen and (max-width: 768px) {
-        font-size:20px;
-  }
 
-  @media screen and (max-width: 480px) {
-        font-size:18px;
-  }
-
-`
 
 export const IntroBtnWrapper = styled.div`
     margin-top:32px;

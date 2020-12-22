@@ -43,7 +43,7 @@ export const StyledForm = styled.form`
   padding: 40px;
   background-color: #fff;
   border-radius: 10px;
-  width:100%;
+  width:50%;
   box-sizing: border-box;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
   display: grid;
@@ -56,7 +56,7 @@ export const StyledForm = styled.form`
     width:100%;
     display:flex;
   align-items: stretch;
-  justify-content: center;
+  justify-content: left;
   flex-direction:column;
   padding: 0px;
   }
@@ -70,7 +70,7 @@ export const StyledColumnForm = styled.div`
 
 export const StyledInput = styled.input`
   display: block;
-  width: 100%;
+  width: 80%;
   background-color: #eee;
   height: 40px;
   border-radius: 5px;

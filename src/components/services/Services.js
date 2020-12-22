@@ -18,17 +18,14 @@ function Services() {
         <ServicesCard>
           <ServicesIcon src={Icon1}/>
           <ServicesH2>Muestras biológicas</ServicesH2>
-          <ServicesP>Llevamos THIS a tus muestras de laboratorio!</ServicesP>
         </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon2}/>
           <ServicesH2>COVID-19</ServicesH2>
-          <ServicesP>Llevamos THIS a tus vacunas contra el coronavirus!</ServicesP>
         </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon3}/>
-          <ServicesH2>Transplante de órganos</ServicesH2>
-          <ServicesP>Llevamos THIS a tus transportes de órganos!</ServicesP>
+          <ServicesH2>Órganos</ServicesH2>
         </ServicesCard>
       </ServicesWrapper>
     </ServicesContainer>
