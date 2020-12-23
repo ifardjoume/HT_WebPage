@@ -5,7 +5,7 @@ color: black;
     background:#10223e;
     margin: 0 auto;
   align-items:center;
-  padding: 20px 20px;
+  padding: 10px 10px;
   display:flex;
   align-items: center;
   justify-content: center;
@@ -23,18 +23,19 @@ export const TableWrapper = styled.div`
  display:flex;
   align-items: center;
   justify-content: center;
+  flex-direction:column;
   `
 
 
 export const TableH1 = styled.h1`
-line-height: 1.1;
+  line-height: 1.1;
   font-weight: 600;
   line-height: 2;
   color: #fff;
-  align-items: left;
+  text-align:left;
   font-size:2rem;
-  margin-bottom:64px;
   padding:10px;
+  margin-bottom:30px;
   @media screen and (max-width: 768px) {
     line-height: 1.1;
     padding:50px;
@@ -77,4 +78,14 @@ export const GraphImage = styled.img`
   height: 400px;
   padding:10px;
   margin-right:35px;
+`
+export const TableDiv = styled.div`
+display:flex;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+`
+
+export const Separator = styled.div`
+  width:350px
 `

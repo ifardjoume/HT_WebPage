@@ -6,10 +6,8 @@ import {
     Title,
     RowComponent1,
     RowComponent2,
-    TableWrapper,
-    GraphImage
+    TableWrapper
 } from './tableSection.elements';
-import Graph from '../../images/Graph.jpg'
 
 import { FcCheckmark} from 'react-icons/fc';
 import { GoDash } from 'react-icons/go';
@@ -18,9 +16,8 @@ import {Table} from 'react-bootstrap';
 const TableSection = () => {
     return (
         <TableContainer>
-            <TableH1>Eliminamos los puntos ciegos en el transporte</TableH1>
             <TableWrapper>
-            <GraphImage src={Graph}/>
+            <TableH1>Eliminamos los puntos ciegos en el transporte</TableH1>
             <Table responsive borderless>
                 <tbody>
                 <Row>

@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const GraphContainer = styled.div`
     color: #fff;
-    background:#c9cbff;
+    background:#10223e;
     margin: 0 auto;
   align-items:center;
-  padding: 70px 70px;
+  padding-bottom:50px;
   display:flex;
   align-items: center;
   justify-content: center;
