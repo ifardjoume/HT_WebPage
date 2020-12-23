@@ -19,19 +19,19 @@ const Footer = () => {
                 <FooterLinksWrapper>
                     <FooterLinkItems>
                         {/* Falta agregar rutas de los diferentes links */}
-                        <FooterLink to='/sign-in'>Prensa</FooterLink>
+                        <FooterLink to='/sign-in'>Press</FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                        <FooterLink to='/sign-in'>Trabajos</FooterLink>
+                        <FooterLink to='/sign-in'>Work</FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                        <FooterLink to='/sign-in'>Contacto</FooterLink>
+                        <FooterLink to='/sign-in'>Contact</FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                        <FooterLink to='/sign-in'>Compania</FooterLink>
+                        <FooterLink to='/sign-in'>Company</FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                        <FooterLink to='/sign-in'>Calidad</FooterLink>
+                        <FooterLink to='/sign-in'>Quality</FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
                         <FooterLink to='/sign-in'>Cookies</FooterLink>

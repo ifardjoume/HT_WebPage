@@ -10,6 +10,7 @@ color: black;
   justify-content: center;
   flex-direction:column;
   height:700px;
+  padding-top: 70px;
   padding-bottom:50px;
   @media screen and (max-width: 768px) {
     flex-direction: column;

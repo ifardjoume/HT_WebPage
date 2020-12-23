@@ -21,17 +21,17 @@ const AspectSection = () => {
         <AspectContainer>
             <AspectWrapper>
                 <AspectList>
-                <ListItem><ListIcon><IconImage src={geolocalizacion}/></ListIcon>Geolocalización</ListItem>
-                <ListItem><ListIcon><IconImage src={isotermico}/></ListIcon>Mantenimiento<br/> Isotérmico Personalizado</ListItem>
-                <ListItem><ListIcon><IconImage src={antiderrame}/></ListIcon>Empaque Inteligente<br/> Anti-derrame</ListItem>
-                <ListItem><ListIcon><IconImage src={temperatura}/></ListIcon>Registro de<br/> Temperatura</ListItem>
-                <ListItem><ListIcon><IconImage src={aperturaTapa}/></ListIcon>Registro de<br/> Apertura de Tapa</ListItem>
+                <ListItem><ListIcon><IconImage src={geolocalizacion}/></ListIcon>Geolocation</ListItem>
+                <ListItem><ListIcon><IconImage src={isotermico}/></ListIcon>Custom Isothermal <br/> Maintenance</ListItem>
+                <ListItem><ListIcon><IconImage src={antiderrame}/></ListIcon>Smart Leak Proof <br/> Packing</ListItem>
+                <ListItem><ListIcon><IconImage src={temperatura}/></ListIcon>Temperature<br/>Log</ListItem>
+                <ListItem><ListIcon><IconImage src={aperturaTapa}/></ListIcon>Lid Opening<br/>Log</ListItem>
                 </AspectList>
                 <AspectList>
-                <ListItem><ListIcon><IconImage src={alertaTiempoReal}/></ListIcon>Alertas en<br/> Tiempo Real</ListItem>
-                <ListItem><ListIcon><IconImage src={golpes}/></ListIcon>Registro de<br/> Golpes y Caída Libre</ListItem>
-                <ListItem><ListIcon><IconImage src={vibraciones}/></ListIcon>Registro de<br/> Vibración</ListItem>
-                <ListItem><ListIcon><IconImage src={aceleracion}/></ListIcon>Registro de<br/> Aceleración</ListItem>
+                <ListItem><ListIcon><IconImage src={alertaTiempoReal}/></ListIcon>Real Time<br/>Alerts</ListItem>
+                <ListItem><ListIcon><IconImage src={golpes}/></ListIcon>Free Fall<br/>Log</ListItem>
+                <ListItem><ListIcon><IconImage src={vibraciones}/></ListIcon>Vibration<br/>Log</ListItem>
+                <ListItem><ListIcon><IconImage src={aceleracion}/></ListIcon>Acceleration<br/>Log</ListItem>
                 </AspectList>
             </AspectWrapper>
         </AspectContainer>

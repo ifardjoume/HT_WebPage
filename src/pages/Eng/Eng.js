@@ -9,6 +9,7 @@ import TableSection from '../../components/EnglishComps/tableSection/tableSectio
 import AspectSection from '../../components/EnglishComps/aspectSection/AspectSection';
 import Contact from '../../components/EnglishComps/contact/contact';
 import GraphSection from '../../components/EnglishComps/graphSection/graphSection';
+import Footer from '../../components/EnglishComps/footer/Footer';
 
 const Eng = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -29,6 +30,7 @@ const Eng = () => {
         <Services />
         <AboutCofounders/>
         <Contact/>
+        <Footer/>
         </>
     )
 }

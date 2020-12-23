@@ -25,13 +25,10 @@ function AboutCofounders() {
                     <InfoRow>
                         <InfoColumn>
                             <TextWrapper>
-                                <Heading>Nuestra Empresa</Heading>
-                                <Subtitle>H+Trace fue fundada en 2019 por tres profesionales de ámbitos diversos con el objetivo de incorporar innovación y tecnología a la salud.<br></br> <br></br> 
-                                          Esta industria funciona en base a datos, sea para diagnóstico, tratamiento, cuidado o investigación clínica.
-                                          Sin embargo, la logística es un punto ciego sin información.
-
-                                          H+Trace nació para aportar esos datos indispensables para la mejora del proceso.<br></br><br></br> 
-                                          Buscamos consolidar un nuevo estándar de buenas prácticas de transporte en salud.</Subtitle>
+                                <Heading>Our Company</Heading>
+                                <Subtitle>H + Trace was founded in 2019 by three professionals from diverse fields with the aim of incorporating innovation and technology into health.<br></br> <br></br> 
+                                          This industry works based on data, be it for diagnosis, treatment, care or clinical research. However, logistics is a blind spot without information. H + Trace was born to provide those essential data to improve the process.<br></br><br></br> 
+                                          We seek to consolidate a new standard of good practices in health transport.</Subtitle>
                             </TextWrapper>
                         </InfoColumn>
                         <InfoColumn>
@@ -47,12 +44,12 @@ function AboutCofounders() {
                                 <ImgCofounderContainer>
                                 <Img src={Image2} alt="Javi" />
                                 <TopLine>Javier Cuello</TopLine>
-                                <Subtitle>Desarrollo de Negocios</Subtitle>
+                                <Subtitle>Bussiness Development</Subtitle>
                                 </ImgCofounderContainer>
                                 <ImgCofounderContainer>
                                 <Img src={Image3} alt="Ivan" />
                                 <TopLine>Iván Fardjoume</TopLine>
-                                <Subtitle>Tecnología</Subtitle>
+                                <Subtitle>IT</Subtitle>
                                 </ImgCofounderContainer>
                                 </ImgWrapperRow>
                             </ImgWrapper>

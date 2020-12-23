@@ -8,6 +8,7 @@ import TableSection from '../../components/tableSection/tableSection';
 import AspectSection from '../../components/aspectSection/AspectSection';
 import Contact from '../../components/contact/contact';
 import GraphSection from '../../components/graphSection/graphSection';
+import Footer from '../../components/footer/Footer';
 
 const Home = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -28,6 +29,7 @@ const Home = () => {
         <Services />
         <AboutCofounders/>
         <Contact/>
+        <Footer/>
         </>
     )
 }

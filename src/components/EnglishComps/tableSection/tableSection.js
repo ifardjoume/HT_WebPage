@@ -17,60 +17,56 @@ const TableSection = () => {
     return (
         <TableContainer>
             <TableWrapper>
-            <TableH1>Eliminamos los puntos ciegos en el transporte</TableH1>
+            <TableH1>No more blind spots in logistics.</TableH1>
             <Table responsive borderless>
                 <tbody>
                 <Row>
-                    <Title>Aspecto</Title>
+                    <Title>Item</Title>
                     <Title>THIS</Title>
-                    <Title>Tradicional</Title>
+                    <Title>Traditional</Title>
                 </Row>
                 <Row>
-                    <RowComponent1><br/><br/><b>Trazabilidad</b></RowComponent1>
-                    <RowComponent2>Temperatura<br />
-                        Apertura de Tapa<br />
-                        Golpes<br />
-                        Vibración<br />
-                        Aceleración<br />
+                    <RowComponent1><br/><br/><b>Traceability</b></RowComponent1>
+                    <RowComponent2>Temperature<br />
+                        Lid Opening<br />
+                        Shake<br />
+                        Damage<br />
+                        Acceleration<br />
                     </RowComponent2>
-                    <RowComponent1><br/><br/>Ninguna</RowComponent1>
+                    <RowComponent1><br/><br/>None</RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1><b>Enfriamiento</b></RowComponent1>
-                    <RowComponent2>Completamente
-                     uniforme</RowComponent2>
-                    <RowComponent1>Desigual según
-                     ubicación</RowComponent1>
+                    <RowComponent1><b>Cooling</b></RowComponent1>
+                    <RowComponent2>Uniform</RowComponent2>
+                    <RowComponent1>Uneven according location</RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1><b>Evita daños por
-                     sobreenfriamiento</b></RowComponent1>
+                    <RowComponent1><b>Avoids Damage by SuperCooling.</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1><b>Rango térmico personalizado</b></RowComponent1>
+                    <RowComponent1><b>Custom Thermal Range.</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1><b>Monitoreo en tiempo real
-                    con alertas configurables</b></RowComponent1>
+                    <RowComponent1><b>Real time Monitoring with configurables alerts.</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1><b>Empaque anti-derrame</b></RowComponent1>
+                    <RowComponent1><b>Leak proof packagin</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1><b>Geolocalización</b></RowComponent1>
+                    <RowComponent1><b>Geolocation</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1><b>Análisis de datos</b></RowComponent1>
+                    <RowComponent1><b>Data Analitycs</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>

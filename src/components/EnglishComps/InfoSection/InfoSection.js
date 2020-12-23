@@ -19,8 +19,9 @@ const InfoSection = () => {
                     <InfoRow>
                         <InfoColumn>
                             <TextWrapper>
-                                <Heading>Llegó el momento de sumarse al futuro</Heading>
-                                <Subtitle>Para eso desarrollamos THIS (Total Healthcare Insight Solution), una solución integral de bajo costo que combina ciencia de datos, IoT (Internet de las cosas) y un sistema de sensorización con control térmico que permite la personalización del objeto transportado.Han pasado muchas décadas sin innovar en la logística al servicio de la salud. Y sabemos que lo que no se mide, no se puede mejorar.</Subtitle>
+                                <Heading>Its time to join the future.</Heading>
+                                <Subtitle>  Many decades have passed without innovating in logistics at the service of health. And we know that what is not measured cannot be improved. <br/><br/>
+                                    For that we developed THIS (Total Healthcare Insight Solution), a comprehensive low-cost solution that combines data science, IoT (Internet of Things) and a sensorization system with thermal control that allows the personalization of the transported object.</Subtitle>
                             </TextWrapper>
                         </InfoColumn>
                         <InfoColumn>

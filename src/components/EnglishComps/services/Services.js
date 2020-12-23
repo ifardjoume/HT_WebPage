@@ -17,7 +17,7 @@ function Services() {
       <ServicesWrapper>
         <ServicesCard>
           <ServicesIcon src={Icon1}/>
-          <ServicesH2>Muestras biológicas</ServicesH2>
+          <ServicesH2>Biological Samples</ServicesH2>
         </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon2}/>
@@ -25,7 +25,7 @@ function Services() {
         </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon3}/>
-          <ServicesH2>Órganos</ServicesH2>
+          <ServicesH2>Organs</ServicesH2>
         </ServicesCard>
       </ServicesWrapper>
     </ServicesContainer>

@@ -5,7 +5,7 @@ export const GraphContainer = styled.div`
     background:#10223e;
     margin: 0 auto;
   align-items:center;
-  padding-bottom:50px;
+  padding-bottom:90px;
   display:flex;
   align-items: center;
   justify-content: center;

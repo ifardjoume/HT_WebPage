@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const TableContainer = styled.div`
 color: black;
     background:#10223e;
+    padding-top: 70px;
     margin: 0 auto;
   align-items:center;
   display:flex;

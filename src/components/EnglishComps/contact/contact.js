@@ -99,7 +99,7 @@ export default function ContactUs() {
               </SocialLinksWrapper>
         <StyledForm  className="contact-form"  onSubmit={onSubmit}>
           <StyledColumnForm>
-        <label htmlFor="name">Nombre</label>
+        <label htmlFor="name">Name</label>
             <StyledInput
             type="text"
             name="user_name"
@@ -115,14 +115,14 @@ export default function ContactUs() {
             />
             </StyledColumnForm>
             <StyledColumnForm>
-            <label htmlFor="tel">Telefono</label>
+            <label htmlFor="tel">Phone</label>
             <StyledInput
             type="tel"
             name="phone"
             value={state.phone}
             onChange={handleInput}
             />
-        <label htmlFor="message">Mensaje</label>
+        <label htmlFor="message">Message</label>
         <StyledTextArea
             name="message"
             value={state.message}

@@ -5,7 +5,7 @@ export const AspectContainer = styled.div`
     background:#00a8c4;
   align-items:center;
   display:flex;
-  padding-top:40px;
+  padding:70px 0;
   align-items: center;
   justify-content: center;
   flex-direction:column;

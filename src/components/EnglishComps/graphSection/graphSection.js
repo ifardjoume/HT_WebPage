@@ -10,7 +10,7 @@ import {
 const graphSection = () => {
     return (
         <GraphContainer>
-        <GraphTitle>Performance Térmica THIS vs. Tradicional</GraphTitle>
+        <GraphTitle>Thermal Performance THIS vs. Traditional</GraphTitle>
         <GraphImage src={Image1} />
         </GraphContainer>
     )

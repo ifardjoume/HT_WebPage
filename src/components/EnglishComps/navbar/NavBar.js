@@ -70,7 +70,7 @@ const Navbar = ({ toggle }) => {
                 offset={-80}
                 activeClass="active"
                 >
-                  Servicios
+                  Services
                 </NavLinks>
               </NavItem>
               <NavItem>
@@ -82,7 +82,7 @@ const Navbar = ({ toggle }) => {
                 offset={-80}
                 activeClass="active"
                 >
-                  Empresa
+                  Company
                 </NavLinks>
               </NavItem>
               <NavItem>
@@ -94,7 +94,7 @@ const Navbar = ({ toggle }) => {
                 offset={-80}
                 activeClass="active"
                 >
-                  Contacto
+                  Contact
                 </NavLinks>
               </NavItem>
               <NavBtn>
