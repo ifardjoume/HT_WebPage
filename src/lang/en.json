@@ -1,0 +1,5 @@
+{
+    "app.header" : "Hello" ,
+    "app.content" : "H-trace" ,
+    "app.channel.plug": "Tutorial brought to you by Lokalise"
+}
