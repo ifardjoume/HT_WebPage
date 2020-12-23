@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const InfoSec = styled.div`
     color: #fff;
     padding: 70px 0;
-    background: ${({ lightBg }) => (lightBg ? '#0e49b5' : '#fff')};
+    background:#00a8c4;
 `;
 
 export const InfoRow = styled.div`
@@ -11,8 +11,7 @@ export const InfoRow = styled.div`
     margin: 0 -15px -15px -15px;
     flex-wrap: wrap;
     align-items: center;
-    flex-direction: ${({imgStart}) => (imgStart ? 'row-reverse' : 'row')
-    };
+    flex-direction:row;
 `;
 
 export const InfoColumn = styled.div`
@@ -41,7 +40,7 @@ export const TextWrapper = styled.div`
 `
 
 export const TopLine = styled.div`
-    color: ${({ lightTopLine }) => (lightTopLine ? '#a9b3c1' : '#4B59F7')};
+    color: #fff;
   font-size: 18px;
   line-height: 16px;
   font-weight: 700;
@@ -53,7 +52,7 @@ export const Heading = styled.h1`
   font-size: 48px;
   line-height: 1.1;
   font-weight: 600;
-  color: ${({ lightText }) => (lightText ? '#f7f8fa' : '#1c2237')};
+  color: #fff;
 `;
 
 export const Subtitle = styled.p`
@@ -61,7 +60,7 @@ export const Subtitle = styled.p`
   margin-bottom: 35px;
   font-size: 18px;
   line-height: 24px;
-  color: ${({ lightTextDesc }) => (lightTextDesc ? '#a9b3c1' : '#1c2237')};
+  color:#fff;
 `;
 
 export const Img = styled.img`

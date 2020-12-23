@@ -84,7 +84,7 @@ const Navbar = ({ toggle }) => {
                 offset={-80}
                 activeClass="active"
                 >
-                  Nosotros
+                  Empresa
                 </NavLinks>
               </NavItem>
               <NavItem>

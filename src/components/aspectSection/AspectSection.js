@@ -22,7 +22,7 @@ const AspectSection = () => {
             <AspectWrapper>
                 <AspectList>
                 <ListItem><ListIcon><IconImage src={geolocalizacion}/></ListIcon>Geolocalización</ListItem>
-                <ListItem><ListIcon><IconImage src={isotermico}/></ListIcon>Mantenimiento<br/> Isotérmico personalizado</ListItem>
+                <ListItem><ListIcon><IconImage src={isotermico}/></ListIcon>Mantenimiento<br/> Isotérmico Personalizado</ListItem>
                 <ListItem><ListIcon><IconImage src={antiderrame}/></ListIcon>Empaque Inteligente<br/> Anti-derrame</ListItem>
                 <ListItem><ListIcon><IconImage src={temperatura}/></ListIcon>Registro de<br/> Temperatura</ListItem>
                 <ListItem><ListIcon><IconImage src={aperturaTapa}/></ListIcon>Registro de<br/> Apertura de Tapa</ListItem>

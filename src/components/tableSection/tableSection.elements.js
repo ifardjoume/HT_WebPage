@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const TableContainer = styled.div`
 color: black;
-    background:#dfdfdf;
+    background:#10223e;
     margin: 0 auto;
   align-items:center;
   padding: 20px 20px;
@@ -72,9 +72,9 @@ export const RowComponent2 = styled.td`
 `
 
 export const GraphImage = styled.img`
-  max-width: 100%;
+  max-width: 625px;
   display: inline-block;
-  max-height: 500px;
+  height: 580px;
   padding:10px;
-  margin-right:40px;
+  margin-right:35px;
 `
