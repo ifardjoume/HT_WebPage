@@ -1,5 +1,5 @@
 import React from 'react';
-import Image1 from '../../images/graphic.svg';
+import Image1 from '../../images/Graph.png';
 import {
     GraphContainer,
     GraphTitle,

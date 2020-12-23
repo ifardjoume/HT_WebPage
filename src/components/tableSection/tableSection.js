@@ -10,7 +10,7 @@ import {
     TableWrapper
 } from './tableSection.elements';
 
-import Image1 from '../../images/graphic.svg';
+import Image1 from '../../images/Graph.png';
 import { FcCheckmark} from 'react-icons/fc';
 import { GoDash } from 'react-icons/go';
 import {Table} from 'react-bootstrap';

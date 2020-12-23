@@ -4,49 +4,34 @@ import {
     AspectWrapper,
     AspectList,
     ListItem,
-    Separator,
+    IconImage,
     ListIcon
 } from './AspectSection.elements'
-import { 
-    FaMapMarkerAlt,
-    FaTemperatureLow,
-    FaBoxOpen
-
-} from 'react-icons/fa';
-import { 
-    GiSpill,
-    GiHeavyFall,
-    GiSpeedometer
-} from 'react-icons/gi';
-import { 
-    GrNotes
-} from 'react-icons/gr';
-import { 
-    BiTime
-} from 'react-icons/bi';
-import { 
-    WiEarthquake
-} from 'react-icons/wi';
-
-const sizeVariable = 64;
+import geolocalizacion from '../../images/icons/geolocalizacion.png';
+import vibraciones from '../../images/icons/vibraciones.png';
+import aceleracion from '../../images/icons/aceleracion.png';
+import alertaTiempoReal from '../../images/icons/alertaTiempoReal.png';
+import antiderrame from '../../images/icons/antiderrame.png';
+import aperturaTapa from '../../images/icons/aperturaTapa.png';
+import golpes from '../../images/icons/golpes.png';
+import isotermico from '../../images/icons/isotermico.png';
+import temperatura from '../../images/icons/temperatura.png';
 const AspectSection = () => {
     return (
         <AspectContainer>
             <AspectWrapper>
                 <AspectList>
-                <ListItem><ListIcon><FaMapMarkerAlt size={sizeVariable}/></ListIcon>Geolocalización</ListItem>
-                <ListItem><ListIcon><FaTemperatureLow size={sizeVariable}/></ListIcon>Mantenimiento<br/> Isotérmico personalizado</ListItem>
-                <ListItem><ListIcon><GiSpill size={sizeVariable}/></ListIcon>Empaque Inteligente<br/> Anti-derrame</ListItem>
+                <ListItem><ListIcon><IconImage src={geolocalizacion}/></ListIcon>Geolocalización</ListItem>
+                <ListItem><ListIcon><IconImage src={isotermico}/></ListIcon>Mantenimiento<br/> Isotérmico personalizado</ListItem>
+                <ListItem><ListIcon><IconImage src={antiderrame}/></ListIcon>Empaque Inteligente<br/> Anti-derrame</ListItem>
+                <ListItem><ListIcon><IconImage src={temperatura}/></ListIcon>Registro de<br/> Temperatura</ListItem>
+                <ListItem><ListIcon><IconImage src={aperturaTapa}/></ListIcon>Registro de<br/> Apertura de Tapa</ListItem>
                 </AspectList>
                 <AspectList>
-                <ListItem><ListIcon><GrNotes size={sizeVariable}/></ListIcon>Registro de<br/> Temperatura</ListItem>
-                <ListItem><ListIcon><FaBoxOpen size={sizeVariable}/></ListIcon>Registro de<br/> Apertura de Tapa</ListItem>
-                <ListItem><ListIcon><BiTime size={sizeVariable}/></ListIcon>Alertas en<br/> Tiempo Real</ListItem>
-                </AspectList>
-                <AspectList>
-                <ListItem><ListIcon><GiHeavyFall size={sizeVariable}/></ListIcon>Registro de<br/> Golpes y Caída Libre</ListItem>
-                <ListItem><ListIcon><WiEarthquake size={sizeVariable}/></ListIcon>Registro de<br/> Vibración</ListItem>
-                <ListItem><ListIcon><GiSpeedometer size={sizeVariable}/></ListIcon>Registro de<br/> Aceleración</ListItem>
+                <ListItem><ListIcon><IconImage src={alertaTiempoReal}/></ListIcon>Alertas en<br/> Tiempo Real</ListItem>
+                <ListItem><ListIcon><IconImage src={golpes}/></ListIcon>Registro de<br/> Golpes y Caída Libre</ListItem>
+                <ListItem><ListIcon><IconImage src={vibraciones}/></ListIcon>Registro de<br/> Vibración</ListItem>
+                <ListItem><ListIcon><IconImage src={aceleracion}/></ListIcon>Registro de<br/> Aceleración</ListItem>
                 </AspectList>
             </AspectWrapper>
         </AspectContainer>

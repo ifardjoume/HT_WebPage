@@ -16,7 +16,7 @@ export const AspectWrapper = styled.div`
     display:flex;
   align-items: center;
   justify-content: center;
-  flex-direction:row;
+  flex-direction:column;
   width:100%;
 
   @media screen and (max-width:620px) {
@@ -26,7 +26,7 @@ export const AspectWrapper = styled.div`
 
 `
 
-export const ListItem = styled.li`
+export const ListItem = styled.div`
   line-height: 1.1;
   font-weight: 300;
   color: #1c2237;
@@ -38,6 +38,7 @@ export const ListItem = styled.li`
   color:black;
   margin-bottom:60px;
   padding:10px;
+  margin:20px;
   justify-content:center;
 
   @media screen and (max-width:768px) {
@@ -45,10 +46,11 @@ export const ListItem = styled.li`
   }
 `
 
-export const AspectList = styled.ul`
+export const AspectList = styled.div`
     padding:20px;
-    list-style-type:none;
-    align-items:center;
+    display:flex;
+    justify-content:center;
+    flex-direction:row;
 
     @media screen and (max-width:620px) {
     flex-direction:column;
@@ -65,4 +67,9 @@ export const Separator = styled.div`
 `
 export const ListIcon = styled.div`
 padding:15px;
+`
+
+export const IconImage = styled.img`
+  width:100px;
+  height:100px;
 `
