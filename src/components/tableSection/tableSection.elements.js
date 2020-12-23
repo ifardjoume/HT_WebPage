@@ -5,12 +5,12 @@ color: black;
     background:#10223e;
     margin: 0 auto;
   align-items:center;
-  padding: 10px 10px;
   display:flex;
   align-items: center;
   justify-content: center;
   flex-direction:column;
-  height:900px;
+  height:700px;
+  padding-bottom:50px;
   @media screen and (max-width: 768px) {
     flex-direction: column;
   }
@@ -28,14 +28,13 @@ export const TableWrapper = styled.div`
 
 
 export const TableH1 = styled.h1`
-  line-height: 1.1;
   font-weight: 600;
   line-height: 2;
   color: #fff;
   text-align:left;
   font-size:2rem;
   padding:10px;
-  margin-bottom:30px;
+  margin-bottom:10px;
   @media screen and (max-width: 768px) {
     line-height: 1.1;
     padding:50px;

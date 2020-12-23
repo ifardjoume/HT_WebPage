@@ -17,7 +17,7 @@ export const GraphTitle = styled.h1`
   font-weight: 600;
   color: #1c2237;
   align-items: center;
-  font-size:2.5rem;
+  font-size:2rem;
   color:#fff;
   margin-bottom:64px;
 `
