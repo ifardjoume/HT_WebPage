@@ -9,7 +9,7 @@ color: black;
   display:flex;
   align-items: center;
   justify-content: center;
-  flex-direction:row;
+  flex-direction:column;
   height:900px;
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -34,7 +34,7 @@ line-height: 1.1;
   align-items: left;
   font-size:2rem;
   margin-bottom:64px;
-  padding:100px;
+  padding:10px;
   @media screen and (max-width: 768px) {
     line-height: 1.1;
     padding:50px;
@@ -72,9 +72,9 @@ export const RowComponent2 = styled.td`
 `
 
 export const GraphImage = styled.img`
-  max-width: 625px;
+  width: 600px;
   display: inline-block;
-  height: 580px;
+  height: 400px;
   padding:10px;
   margin-right:35px;
 `

@@ -6,21 +6,21 @@ import {
     Title,
     RowComponent1,
     RowComponent2,
-    GraphImage,
-    TableWrapper
+    TableWrapper,
+    GraphImage
 } from './tableSection.elements';
+import Graph from '../../images/Graph.jpg'
 
-import Image1 from '../../images/Graph.png';
 import { FcCheckmark} from 'react-icons/fc';
 import { GoDash } from 'react-icons/go';
 import {Table} from 'react-bootstrap';
 
 const TableSection = () => {
     return (
-        // <TableH1>Eliminamos los puntos ciegos en el transporte</TableH1>
         <TableContainer>
+            <TableH1>Eliminamos los puntos ciegos en el transporte</TableH1>
             <TableWrapper>
-            <GraphImage src={Image1} />
+            <GraphImage src={Graph}/>
             <Table responsive borderless>
                 <tbody>
                 <Row>
@@ -29,51 +29,51 @@ const TableSection = () => {
                     <Title>Tradicional</Title>
                 </Row>
                 <Row>
-                    <RowComponent1>Trazabilidad</RowComponent1>
+                    <RowComponent1><br/><br/><b>Trazabilidad</b></RowComponent1>
                     <RowComponent2>Temperatura<br />
                         Apertura de Tapa<br />
                         Golpes<br />
                         Vibración<br />
                         Aceleración<br />
                     </RowComponent2>
-                    <RowComponent1>Ninguna</RowComponent1>
+                    <RowComponent1><br/><br/>Ninguna</RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1>Enfriamiento</RowComponent1>
+                    <RowComponent1><b>Enfriamiento</b></RowComponent1>
                     <RowComponent2>Completamente
                      uniforme</RowComponent2>
                     <RowComponent1>Desigual según
                      ubicación</RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1>Evita daños por
-                     sobreenfriamiento</RowComponent1>
+                    <RowComponent1><b>Evita daños por
+                     sobreenfriamiento</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1>Rango térmico personalizado</RowComponent1>
+                    <RowComponent1><b>Rango térmico personalizado</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1>Monitoreo en tiempo real
-                    con alertas configurables</RowComponent1>
+                    <RowComponent1><b>Monitoreo en tiempo real
+                    con alertas configurables</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1>Empaque anti-derrame</RowComponent1>
+                    <RowComponent1><b>Empaque anti-derrame</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1>Geolocalización</RowComponent1>
+                    <RowComponent1><b>Geolocalización</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1>Análisis de datos</RowComponent1>
+                    <RowComponent1><b>Análisis de datos</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>
@@ -83,5 +83,4 @@ const TableSection = () => {
         </TableContainer>
     )
 }
-
 export default TableSection

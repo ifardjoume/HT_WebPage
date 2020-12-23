@@ -29,13 +29,12 @@ export const AspectWrapper = styled.div`
 export const ListItem = styled.div`
   line-height: 1.1;
   font-weight: 300;
-  color: #1c2237;
+  color: #fff;
   display:flex;
   text-align:center;
   flex-direction:column;
   align-items: center;
   font-size:1rem;
-  color:black;
   margin-bottom:60px;
   padding:10px;
   margin:20px;

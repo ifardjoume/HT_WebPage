@@ -13,7 +13,8 @@ import {
   Subtitle,
   Img,
   ImgWrapper,
-  ImgCofounderContainer
+  ImgCofounderContainer,
+  ImgWrapperRow
 } from './aboutCofounders.elements';
 
 function AboutCofounders() {
@@ -35,11 +36,14 @@ function AboutCofounders() {
                         </InfoColumn>
                         <InfoColumn>
                             <ImgWrapper>
+                                <ImgWrapperRow>
                                 <ImgCofounderContainer>
                                 <Img src={Image1} alt="Emi" />
                                 <TopLine>Emiliano Buitrago</TopLine>
                                 <Subtitle>Management</Subtitle>
                                 </ImgCofounderContainer>
+                                </ImgWrapperRow>
+                                <ImgWrapperRow>
                                 <ImgCofounderContainer>
                                 <Img src={Image2} alt="Javi" />
                                 <TopLine>Javier Cuello</TopLine>
@@ -50,6 +54,7 @@ function AboutCofounders() {
                                 <TopLine>Iván Fardjoume</TopLine>
                                 <Subtitle>Tecnología</Subtitle>
                                 </ImgCofounderContainer>
+                                </ImgWrapperRow>
                             </ImgWrapper>
                         </InfoColumn>
                     </InfoRow>

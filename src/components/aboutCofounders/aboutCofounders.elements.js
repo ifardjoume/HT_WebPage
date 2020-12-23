@@ -46,8 +46,8 @@ export const TopLine = styled.div`
   line-height: 16px;
   font-weight: 700;
   letter-spacing: 1.4px;
-  margin-bottom: 16px;
-  margin-top: 16px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 `
 export const Heading = styled.h1`
   margin-bottom: 24px;
@@ -59,7 +59,6 @@ export const Heading = styled.h1`
 
 export const Subtitle = styled.p`
   max-width: 440px;
-  margin-bottom: 35px;
   font-size: 18px;
   line-height: 24px;
   color: #fff;
@@ -76,6 +75,7 @@ export const ImgWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items:center;
+  flex-direction:column;
   @media screen and (max-width: 768px) {
   flex-direction:column;
   }
@@ -84,4 +84,11 @@ export const ImgWrapper = styled.div`
 export const ImgCofounderContainer = styled.div`
 text-align:center;
 padding:5px;
+margin: 0px 50px 0px 50px;
+`
+export const ImgWrapperRow = styled.div`
+display:flex;
+justify-content:center;
+flex-direction:row;
+
 `

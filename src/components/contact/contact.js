@@ -23,7 +23,7 @@ import { FiMail } from 'react-icons/fi';
 import { AiOutlinePhone } from 'react-icons/ai';
 
 
-const sizeVariable = 40;
+const sizeVariable = 64;
 
 export default function ContactUs() {
   function sendEmail(e) {
