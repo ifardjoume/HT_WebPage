@@ -3,7 +3,7 @@ import { FaMagento } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 export const FooterContainer = styled.div`
-  background-color: #101522;
+  background-color: #000;
   padding: 1.5rem 0 1.5rem 0;
   display: flex;
   flex-direction: column;

@@ -6,7 +6,8 @@ import {
     Title,
     RowComponent1,
     RowComponent2,
-    GraphImage
+    GraphImage,
+    TableWrapper
 } from './tableSection.elements';
 
 import Image1 from '../../images/graphic.svg';
@@ -18,6 +19,7 @@ const TableSection = () => {
     return (
         // <TableH1>Eliminamos los puntos ciegos en el transporte</TableH1>
         <TableContainer>
+            <TableWrapper>
             <GraphImage src={Image1} />
             <Table responsive borderless>
                 <tbody>
@@ -77,6 +79,7 @@ const TableSection = () => {
                 </Row>
                 </tbody>
             </Table>
+            </TableWrapper>
         </TableContainer>
     )
 }

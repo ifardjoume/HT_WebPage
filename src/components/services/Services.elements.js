@@ -44,7 +44,7 @@ export const ServicesContainer = styled.div`
   flex-direction:column;
   justify-content:center;
   align-items: center;
-  background: #6155a6;
+  background: #dfdfdf;
   width:100%;
   @media screen and (max-width:990px) {
     height:1100px;

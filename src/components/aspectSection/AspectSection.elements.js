@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const AspectContainer = styled.div`
     color: black;
-    background:#949cdf;
+    background:#fff;
   align-items:center;
   display:flex;
   padding-top:40px;
