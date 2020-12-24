@@ -20,6 +20,9 @@ export const GraphTitle = styled.h1`
   font-size:2rem;
   color:#fff;
   margin-bottom:64px;
+  @media screen and (max-width: 768px) {
+    width:80%;
+  }
 `
 
 export const GraphImage = styled.img`
@@ -29,4 +32,7 @@ export const GraphImage = styled.img`
   vertical-align: middle;
   display: inline-block;
   max-height: 500px;
+  @media screen and (max-width: 768px) {
+    width:90%;
+  }
 `

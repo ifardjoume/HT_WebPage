@@ -25,6 +25,9 @@ export const TableWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction:column;
+  @media screen and (max-width: 768px) {
+    width:90%;
+  }
   `
 
 
@@ -84,8 +87,4 @@ display:flex;
 flex-direction:row;
 justify-content:center;
 align-items:center;
-`
-
-export const Separator = styled.div`
-  width:350px
 `

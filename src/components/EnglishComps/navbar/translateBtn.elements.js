@@ -8,7 +8,9 @@ export const NavBtn = styled.nav`
   margin-left:10px;
 
   @media screen and (max-width: 768px) {
-    display: none;
+    display:flex;
+    justify-content:center;
+    margin-bottom:10px;
   }
 `;
 

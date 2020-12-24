@@ -8,6 +8,8 @@ import { SideBarContainer,
     SideBtnWrap,
     SidebarRoute
 } from './sideBar.elements';
+import TranslateBtn from '../navbar/translateBtn';
+
 
 const SideBar = ({isOpen, toggle}) => {
     return (
@@ -26,6 +28,7 @@ const SideBar = ({isOpen, toggle}) => {
                 <SidebarLink to="contact">
                     Contacto
                 </SidebarLink>
+                <TranslateBtn />
             </SidebarMenu>
             <SideBtnWrap>
                 <SidebarRoute to='/sign-in'>User Area</SidebarRoute>

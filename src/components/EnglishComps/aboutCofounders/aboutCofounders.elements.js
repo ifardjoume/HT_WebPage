@@ -90,5 +90,7 @@ export const ImgWrapperRow = styled.div`
 display:flex;
 justify-content:center;
 flex-direction:row;
-
+@media screen and (max-width: 768px) {
+    flex-direction:column;
+  }
 `
