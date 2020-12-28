@@ -111,7 +111,7 @@ export const NavLinks = styled(LinkS)`
 export const NavBtnLink = styled(Link)`
   border-radius:50px;
   margin-top:10px;
-  background: #153e90;
+  background: transparent;
   white-space:nowrap;
   padding: 10px 22px;
   color: #fff;
@@ -121,9 +121,9 @@ export const NavBtnLink = styled(Link)`
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   &:hover {
-      color: #0a043c;
+      color: blue;
       transition: all 0.2s ease-in-out;
-      background:#98acf8;
+      background:transparent;
       text-decoration:none;
     }
 `;

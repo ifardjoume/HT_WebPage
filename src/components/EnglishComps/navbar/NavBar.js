@@ -14,7 +14,7 @@ import {
   NavBtnLink
 } from '../../navbar/Navbar.elements';
 import TranslateBtn from './translateBtn';
-import Logo from '../../../images/logo-navbar.png'
+import Logo from '../../../images/logo-navbar-blue.png'
 
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
