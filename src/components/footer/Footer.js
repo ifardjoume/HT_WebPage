@@ -8,6 +8,7 @@ import {
     SocialMedia,
     SocialMediaWrap,
     WebsiteRights,
+    LinkA
   } from './Footer.elements';
   
 
@@ -19,22 +20,22 @@ const Footer = () => {
                 <FooterLinksWrapper>
                     <FooterLinkItems>
                         {/* Falta agregar rutas de los diferentes links */}
-                        <FooterLink to='/sign-in'>Prensa</FooterLink>
+                        <FooterLink><LinkA>Prensa</LinkA></FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                        <FooterLink to='/sign-in'>Trabajos</FooterLink>
+                        <FooterLink><LinkA>Trabajos</LinkA></FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                        <FooterLink to='/sign-in'>Contacto</FooterLink>
+                        <FooterLink><LinkA>Contacto</LinkA></FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                        <FooterLink to='/sign-in'>Compania</FooterLink>
+                        <FooterLink><LinkA>Compania</LinkA></FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                        <FooterLink to='/sign-in'>Calidad</FooterLink>
+                        <FooterLink><LinkA>Calidad</LinkA></FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                        <FooterLink to='/sign-in'>Cookies</FooterLink>
+                        <FooterLink><LinkA>Cookies</LinkA></FooterLink>
                     </FooterLinkItems>
                 </FooterLinksWrapper>
             </FooterLinksContainer>

@@ -123,3 +123,28 @@ export const SocialIconLink = styled.a`
   }
 `;
 
+export const LinkA = styled.a`
+  text-decoration:none;
+  background:none;
+  color:white;
+  &:hover{
+    text-decoration:none;
+    background:none;
+    color:blue;
+  }
+  &:link {
+    text-decoration:none;
+    background:none;
+    color:white;
+  }
+  &:visited {
+    text-decoration:none;
+    background:none;
+    color:white;
+  }
+  &:active {
+    text-decoration:none;
+    background:none;
+    color:white;
+  }
+`

@@ -90,7 +90,7 @@ export default function ContactUs() {
                 <SocialLinkDescription>Argentina</SocialLinkDescription>
                 </SocialLink>
                 <SocialLink>
-                <FaLinkedin size={sizeVariable}/>
+                <LinkA href="https://www.linkedin.com/company/h-trace/" target="_blank"><FaLinkedin size={sizeVariable}/></LinkA>
                 <SocialLinkDescription>H+Trace</SocialLinkDescription>
                 </SocialLink>
                 <SocialLink>
