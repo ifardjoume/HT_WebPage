@@ -1,5 +1,6 @@
 import React from 'react';
 import Image1 from '../../images/GraphOK.jpg';
+import Graph from './Graph';
 import {
     GraphContainer,
     GraphTitle,
@@ -12,6 +13,7 @@ const graphSection = () => {
         <GraphContainer>
         <GraphTitle>Performance Térmica THIS vs. Tradicional</GraphTitle>
         <GraphImage src={Image1} />
+        {/* <Graph /> */}
         </GraphContainer>
     )
 }

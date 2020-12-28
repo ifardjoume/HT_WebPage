@@ -7,7 +7,6 @@ import {
     IntroContent,
     IntroH1
 } from './introSection.elements';
-import {FormattedMessage, FormattedDate} from 'react-intl';
 
 
 const IntroSection = () => {
