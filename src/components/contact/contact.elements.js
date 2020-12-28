@@ -179,8 +179,25 @@ export const SocialLinkDescription = styled.p`
 export const LinkA = styled.a`
   text-decoration:none;
   background:none;
+  color:black;
   &:hover{
     text-decoration:none;
-  background:none;
+    background:none;
+    color:black;
+  }
+  &:link {
+    text-decoration:none;
+    background:none;
+    color:black;
+  }
+  &:visited {
+    text-decoration:none;
+    background:none;
+    color:black;
+  }
+  &:active {
+    text-decoration:none;
+    background:none;
+    color:black;
   }
 `

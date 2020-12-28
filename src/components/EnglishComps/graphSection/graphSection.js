@@ -4,14 +4,16 @@ import {
     GraphContainer,
     GraphTitle,
     GraphImage
-} from './graphSection.elements'
+} from '../../graphSection/graphSection.elements'
+import Graph from '../../graphSection/Graph';
 
 
 const graphSection = () => {
     return (
         <GraphContainer>
         <GraphTitle>Thermal Performance THIS vs. Traditional</GraphTitle>
-        <GraphImage src={Image1} />
+        {/* <GraphImage src={Image1} /> */}
+        <Graph />
         </GraphContainer>
     )
 }

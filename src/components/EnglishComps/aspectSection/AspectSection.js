@@ -6,7 +6,7 @@ import {
     ListItem,
     IconImage,
     ListIcon
-} from './AspectSection.elements'
+} from '../../aspectSection/AspectSection.elements'
 import geolocalizacion from '../../../images/icons/geolocalizacion.png';
 import vibraciones from '../../../images/icons/vibraciones.png';
 import aceleracion from '../../../images/icons/aceleracion.png';

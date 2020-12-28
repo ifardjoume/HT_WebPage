@@ -11,7 +11,8 @@ import {
     SocialLink,
     SocialLinkDescription,
     StyledColumnForm,
-    ButtonContainer
+    ButtonContainer,
+    LinkA
 } from './contact.elements';
 import {
   FaLinkedin
@@ -81,7 +82,7 @@ export default function ContactUs() {
             <ContactContainer id="contact">
                <SocialLinksWrapper>
                 <SocialLink>
-                  <FiMail size={sizeVariable}/>
+                  <LinkA href="mailto:hello@h-trace.com"><FiMail size={sizeVariable}/></LinkA>
                   <SocialLinkDescription>hello@h-trace.com</SocialLinkDescription>
                 </SocialLink>
                 <SocialLink>

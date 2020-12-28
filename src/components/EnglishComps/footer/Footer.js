@@ -8,7 +8,7 @@ import {
     SocialMedia,
     SocialMediaWrap,
     WebsiteRights,
-  } from './Footer.elements';
+  } from '../../footer/Footer.elements';
   
 
 

@@ -8,7 +8,7 @@ import {
     ServicesH2,
     ServicesContainer,
     ServicesCard
-} from './Services.elements';
+} from '../../services/Services.elements';
 
 function Services() {
   return (

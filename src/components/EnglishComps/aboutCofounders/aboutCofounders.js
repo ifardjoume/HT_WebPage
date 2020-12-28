@@ -15,7 +15,7 @@ import {
   ImgWrapper,
   ImgCofounderContainer,
   ImgWrapperRow
-} from './aboutCofounders.elements';
+} from '../../aboutCofounders/aboutCofounders.elements';
 
 function AboutCofounders() {
   return (

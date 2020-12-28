@@ -5,6 +5,11 @@ import styled from 'styled-components';
 
 const GraphDiv = styled.div`
 background-color:#fafafa;
+@media screen and (max-width: 768px) {
+    width:350px;
+    height:350px
+  }
+
 `;
 
 
