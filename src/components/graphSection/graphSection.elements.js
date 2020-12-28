@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 export const GraphContainer = styled.div`
-    color: #fff;
-    background:#10223e;
+    color: #333;
+    background:#fafafa;
     margin: 0 auto;
   align-items:center;
+  padding-top:70px;
   padding-bottom:90px;
   display:flex;
   align-items: center;
@@ -15,10 +16,9 @@ export const GraphContainer = styled.div`
 export const GraphTitle = styled.h1`
   line-height: 1.1;
   font-weight: 600;
-  color: #1c2237;
+  color: #333;
   align-items: center;
   font-size:2rem;
-  color:#fff;
   margin-bottom:64px;
   @media screen and (max-width: 768px) {
     width:80%;

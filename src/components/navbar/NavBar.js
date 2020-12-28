@@ -14,7 +14,7 @@ import {
   NavBtnLink
 } from './Navbar.elements';
 import TranslateBtn from './translateBtn';
-
+import Logo from '../../images/logo-navbar.png';
 
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
@@ -39,8 +39,7 @@ const Navbar = ({ toggle }) => {
         <Nav scrollNav={scrollNav}>
           <NavbarContainer>
             <NavLogo to='/' onClick={toggleHome}>
-              <NavIcon  />
-              H+Trace
+              <NavIcon src={Logo}  />
             </NavLogo>
             <MobileIcon onClick={toggle}>
               <FaBars />
@@ -54,7 +53,6 @@ const Navbar = ({ toggle }) => {
                 spy={true}
                 exact='true'
                 offset={-80}
-                activeClass="active"
                 >
                   Home
                 </NavLinks>
@@ -68,7 +66,6 @@ const Navbar = ({ toggle }) => {
                 spy={true}
                 exact='true'
                 offset={-80}
-                activeClass="active"
                 >
                   Servicios
                 </NavLinks>
@@ -80,7 +77,6 @@ const Navbar = ({ toggle }) => {
                 spy={true}
                 exact='true'
                 offset={-80}
-                activeClass="active"
                 >
                   Empresa
                 </NavLinks>
@@ -92,7 +88,6 @@ const Navbar = ({ toggle }) => {
                 spy={true}
                 exact='true'
                 offset={-80}
-                activeClass="active"
                 >
                   Contacto
                 </NavLinks>

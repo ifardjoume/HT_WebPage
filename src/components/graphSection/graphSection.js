@@ -12,8 +12,8 @@ const graphSection = () => {
     return (
         <GraphContainer>
         <GraphTitle>Performance Térmica THIS vs. Tradicional</GraphTitle>
-        <GraphImage src={Image1} />
-        {/* <Graph /> */}
+        {/* <GraphImage src={Image1} /> */}
+        <Graph />
         </GraphContainer>
     )
 }

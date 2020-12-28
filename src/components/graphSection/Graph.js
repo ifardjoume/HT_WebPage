@@ -1,10 +1,17 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2';
+import styled from 'styled-components';
+
+
+const GraphDiv = styled.div`
+background-color:#fafafa;
+`;
+
 
 
 const Graph = () => {
     return (
-        <div>
+        <GraphDiv>
             <Line 
             data={{
                 labels: ['0', '5', '10', '15', '20'],
@@ -29,6 +36,7 @@ const Graph = () => {
             width={600}
             height={500}
             options={{
+                backgroundColor:'white',
                 mantainAspectRatio:false,
                 scales: {
                     yAxes: [{
@@ -42,7 +50,7 @@ const Graph = () => {
             
             
             />
-        </div>
+        </GraphDiv>
     )
 }
 

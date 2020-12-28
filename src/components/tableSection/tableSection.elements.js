@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const TableContainer = styled.div`
 color: black;
-    background:#10223e;
+    background:#dfdfdf;
     margin: 0 auto;
   align-items:center;
   display:flex;
@@ -34,7 +34,7 @@ export const TableWrapper = styled.div`
 export const TableH1 = styled.h1`
   font-weight: 600;
   line-height: 2;
-  color: #fff;
+  color: #333;
   text-align:left;
   font-size:2rem;
   padding:10px;
