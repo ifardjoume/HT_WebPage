@@ -4,11 +4,10 @@ import {
     FooterLinksContainer,
     FooterLinksWrapper,
     FooterLinkItems,
-    FooterLink,
     SocialMedia,
     SocialMediaWrap,
     WebsiteRights,
-    LinkA
+    FooterLink
   } from '../../footer/Footer.elements';
   
 
@@ -20,22 +19,22 @@ const Footer = () => {
                 <FooterLinksWrapper>
                     <FooterLinkItems>
                         {/* Falta agregar rutas de los diferentes links */}
-                        <FooterLink><LinkA>Press</LinkA></FooterLink>
+                        <FooterLink to='sign-in'>Press</FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                        <FooterLink><LinkA>Work</LinkA></FooterLink>
+                        <FooterLink to='sign-in'>Work</FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                        <FooterLink><LinkA>Contact</LinkA></FooterLink>
+                        <FooterLink to='sign-in'>Contact</FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                    <FooterLink><LinkA>Company</LinkA></FooterLink>
+                        <FooterLink to='sign-in'>Company</FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                        <FooterLink><LinkA>Quality</LinkA></FooterLink>
+                        <FooterLink to='sign-in'>Quality</FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                        <FooterLink><LinkA>Cookies</LinkA></FooterLink>
+                        <FooterLink to='sign-in'>Quality</FooterLink>
                     </FooterLinkItems>
                 </FooterLinksWrapper>
             </FooterLinksContainer>

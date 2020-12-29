@@ -42,25 +42,20 @@ export const StyledFormWrapper = styled.div`
 `;
 
 export const StyledForm = styled.form`
-  padding: 10px;
+  padding: 30px;
   background-color: #fff;
   border-radius: 10px;
   margin:10px;
+  width:600px;
   box-sizing: border-box;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    ". .";
     @media screen and (max-width:998px) {
     width:100%;
     display:flex;
   align-items: stretch;
   justify-content: left;
   flex-direction:column;
-  padding: 0px;
+  padding: 20px;
   }
 `;
 
@@ -72,7 +67,7 @@ export const StyledColumnForm = styled.div`
 
 export const StyledInput = styled.input`
   display: block;
-  width: 80%;
+  width: 100%;
   background-color: #eee;
   height: 40px;
   border-radius: 5px;
@@ -99,14 +94,14 @@ export const StyledTextArea = styled.textarea`
 `;
 export const ButtonContainer = styled.div`
  display:flex;
- justify-content:flex-end;
+ justify-content:flex-start;
 `
 
 
 
 export const StyledButton = styled.button`
   display: block;
-  background-color: blue;
+  background-color: black;
   color: #fff;
   font-size: 0.9rem;
   border: 0;
@@ -117,28 +112,16 @@ export const StyledButton = styled.button`
   box-sizing: border-box;
 `;
 
-export const StyledError = styled.div`
-  color: blue;
-  font-weight: 800;
-  margin: 0 0 40px 0;
-`;
-
 
 export const SocialLinksWrapper = styled.div`
-  width:30%;
-  padding: 40px;
+  padding: 35px;
   background-color: #fff;
   border-radius: 10px;
   box-sizing: border-box;
-  min-height:380px;
+  height:620px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    ". ."
-    ". .";
+  display:flex;
+  flex-direction:column;
   @media screen and (max-width: 768px) {
     display: grid;
   grid-template-columns: 1fr 1fr;
@@ -158,6 +141,7 @@ export const SocialLink = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction:column;
+  margin:21.5px;
   @media screen and (max-width: 768px) {
     margin:10px;
   }
@@ -211,3 +195,7 @@ color:#0f0f0f;
 opacity:1;
 margin-top:5px;
 `
+export const Icon = styled.img`
+width:48px;
+height:51.2px;
+`;

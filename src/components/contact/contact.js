@@ -11,20 +11,15 @@ import {
     SocialLinksWrapper,
     SocialLink,
     SocialLinkDescription,
-    StyledColumnForm,
     ButtonContainer,
     LinkA,
-    Label
+    Label,
+    Icon
 } from './contact.elements';
-import {
-  FaLinkedin
-} from 'react-icons/fa';
-import { ImLocation2 } from 'react-icons/im';
-import { FiMail } from 'react-icons/fi';
-import { AiOutlinePhone } from 'react-icons/ai';
-
-
-const sizeVariable = 64;
+import Email from '../../images/icons/email.png';
+import Location from '../../images/icons/pin.png';
+import Linkedin from '../../images/icons/linkedin.png';
+import Phone from '../../images/icons/phone.png';
 
 const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
 
@@ -60,7 +55,7 @@ class ContactUs extends Component {
   };
 
   toastifySuccess() {
-    toast.success('Form sent!', {
+    toast.success('Enviado!', {
       position: 'bottom-right',
       autoClose: 5000,
       hideProgressBar: true,
@@ -72,7 +67,7 @@ class ContactUs extends Component {
   };
 
   toastifyFail() {
-    toast.error('Form failed to send!', {
+    toast.error('Error!', {
       position: 'bottom-right',
       autoClose: 5000,
       hideProgressBar: true,
@@ -99,19 +94,19 @@ class ContactUs extends Component {
       };
       emailjs.send('service_o720iww', 'template_vkm8bqn', templateParams, 'user_0hKMQsg4LGkPg3FEhMdGs');
 
-      console.log(`
+     /*  console.log(`
         --SUBMITTING--
         Name: ${name}
         Email: ${email}
         Phone: ${phone}
         Message: ${message}
-      `);
+      `); */
       
       this.toastifySuccess();
       this.resetForm();
     } else {
       // Handle form validation failure
-      console.error('FORM INVALID - DISPLAY ERROR MESSAGE');
+      // console.error('FORM INVALID - DISPLAY ERROR MESSAGE');
       this.toastifyFail();
     }
   };
@@ -131,16 +126,16 @@ class ContactUs extends Component {
 
     switch (name) {
       case 'name':
-        formErrors.name = value.length < 1 ? 'Please enter your name.' : '';
+        formErrors.name = value.length < 1 ? 'Por favor, escriba un nombre valido.' : '';
         break;
       case 'email':
-        formErrors.email = emailRegex.test(value) ? '' : 'Please enter a valid email address.';
+        formErrors.email = emailRegex.test(value) ? '' : 'Por favor, escriba un email valido.';
         break;
       case 'phone':
-        formErrors.phone = value.length < 1 ? 'Please enter a phone number.' : '';
+        formErrors.phone = value.length < 1 ? 'Por favor, escriba un telefono valido.' : '';
         break;
       case 'message':
-        formErrors.message = value.length < 1 ? 'Please enter a message' : '';
+        formErrors.message = value.length < 1 ? 'Por favor, escriba un mensaje' : '';
         break;
       default:
         break;
@@ -154,24 +149,23 @@ class ContactUs extends Component {
             <ContactContainer id="contact">
                <SocialLinksWrapper>
                 <SocialLink>
-                  <LinkA href="http://mail.google.com/mail/?view=cm&fs=1&tf=1&to=hello@h-trace.com" target="_blank"><FiMail size={sizeVariable}/></LinkA>
+                  <LinkA href="http://mail.google.com/mail/?view=cm&fs=1&tf=1&to=hello@h-trace.com" target="_blank"><Icon src={Email} /></LinkA>
                   <SocialLinkDescription>hello@h-trace.com</SocialLinkDescription>
                 </SocialLink>
                 <SocialLink>
-                <ImLocation2 size={sizeVariable} />
+                <Icon src={Location} />
                 <SocialLinkDescription>Argentina</SocialLinkDescription>
                 </SocialLink>
                 <SocialLink>
-                <LinkA href="https://www.linkedin.com/company/h-trace/" target="_blank"><FaLinkedin size={sizeVariable}/></LinkA>
+                <LinkA href="https://www.linkedin.com/company/h-trace/" target="_blank"><Icon src={Linkedin} /></LinkA>
                 <SocialLinkDescription>H+Trace</SocialLinkDescription>
                 </SocialLink>
                 <SocialLink>
-                <AiOutlinePhone size={sizeVariable}/>
-                <SocialLinkDescription>011+51512</SocialLinkDescription>
+                <Icon src={Phone} />
+                <SocialLinkDescription>+54 9 11 60923071</SocialLinkDescription>
                 </SocialLink>
               </SocialLinksWrapper>
         <StyledForm  className="contact-form"  onSubmit={this.handleSubmit} noValidate>
-          <StyledColumnForm>
         <Label htmlFor="name">Nombre *</Label>
             <StyledInput
              type='text'
@@ -197,8 +191,6 @@ class ContactUs extends Component {
              {formErrors.email.length > 0 && (
                 <span className='errorMessage'>{formErrors.email}</span>
               )}
-            </StyledColumnForm>
-            <StyledColumnForm>
             <Label htmlFor="tel">Telefono</Label>
             <StyledInput
             type='tel'
@@ -230,7 +222,6 @@ class ContactUs extends Component {
             <ButtonContainer>
               <StyledButton type="submit" value="Send">Enviar</StyledButton>
             </ButtonContainer>
-        </StyledColumnForm>
         </StyledForm>
         <ToastContainer />
         </ContactContainer>

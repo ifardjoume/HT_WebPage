@@ -64,7 +64,7 @@ const Graph = () => {
                     xAxes: [{
                         type: 'time',
                         time: {
-                            format: timeFormat,
+                            parser: timeFormat,
                             tooltipFormat:'HH:mm',
                             unit: 'minute',
                             unitStepSize: 300,
