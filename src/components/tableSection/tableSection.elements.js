@@ -11,7 +11,7 @@ color: black;
   flex-direction:column;
   height:700px;
   padding-top: 70px;
-  padding-bottom:50px;
+  padding-bottom:70px;
   @media screen and (max-width: 768px) {
     flex-direction: column;
   }

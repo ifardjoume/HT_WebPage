@@ -12,7 +12,7 @@ background-color:#fafafa;
   }
 
 `;
-
+var timeFormat = 'HH:mm';
 
 
 const Graph = () => {
@@ -39,7 +39,7 @@ const Graph = () => {
             ]
 
             }}
-            width={600}
+            width={750}
             height={500}
             options={{
                 elements: {
@@ -62,20 +62,24 @@ const Graph = () => {
                         }
                     }],
                     xAxes: [{
-/*                         type: 'time',
+                        type: 'time',
                         time: {
+                            format: timeFormat,
+                            tooltipFormat:'HH:mm',
                             unit: 'minute',
+                            unitStepSize: 300,
                             displayFormats: {
                                 'minute': 'HH:mm'
                             }
                         },
                         ticks: {
-                            source: 'auto'
+                            source: 'auto',
+                            beginAtZero:true
                         },
- */                        display: true,
+                        display: true,
                         scaleLabel: {
                           display: true,
-                          labelString: 'Time (Minutes)'
+                          labelString: 'Time (Hours)'
                         }
                       }],
                 }

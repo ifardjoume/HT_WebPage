@@ -5,7 +5,7 @@ import { Container } from '../../globalStyles';
 
 export const Nav = styled.nav`
   background: #fafafa;/* ${({scrollNav}) => (scrollNav ? '#fafafa' : 'transparent')}; */
-  height: 60px;
+  height: 70px;
   /* margin-top:-80px; */
   display: flex;
   justify-content: center;
@@ -48,8 +48,8 @@ export const NavLogo = styled(Link)`
 
 export const NavIcon = styled.img`
   margin-right: 0.5rem;
-  width:175px;
-  height:40px;
+  width:201.25px;
+  height:46px;
 `;
 
 export const MobileIcon = styled.div`

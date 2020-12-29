@@ -82,7 +82,7 @@ export default function ContactUs() {
             <ContactContainer id="contact">
                <SocialLinksWrapper>
                 <SocialLink>
-                  <LinkA href="mailto:hello@h-trace.com"><FiMail size={sizeVariable}/></LinkA>
+                  <LinkA href="http://mail.google.com/mail/?view=cm&fs=1&tf=1&to=hello@h-trace.com" target="_blank"><FiMail size={sizeVariable}/></LinkA>
                   <SocialLinkDescription>hello@h-trace.com</SocialLinkDescription>
                 </SocialLink>
                 <SocialLink>
