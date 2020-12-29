@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const InfoSec = styled.div`
     color: #fff;
     padding: 70px 0;
-    background: #dfdfdf;
+    background: #e4f4fd;
 `;
 
 export const InfoRow = styled.div`

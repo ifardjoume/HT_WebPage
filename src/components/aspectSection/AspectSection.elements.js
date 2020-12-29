@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const AspectContainer = styled.div`
     color: black;
-    background:#dfdfdf;
+    background:#e4f4fd;
   align-items:center;
   display:flex;
   padding:70px 0;
@@ -28,7 +28,7 @@ export const AspectWrapper = styled.div`
 
 export const ListItem = styled.div`
   line-height: 1.1;
-  font-weight: 300;
+  font-weight: 600;
   color: #333;
   display:flex;
   text-align:center;

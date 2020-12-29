@@ -30,7 +30,7 @@ const SideBar = ({isOpen, toggle}) => {
                 <TranslateBtn />
             </SidebarMenu>
             <SideBtnWrap>
-                <SidebarRoute to='/sign-in'>User Area</SidebarRoute>
+                <SidebarRoute to='/sign-in'>LOGIN</SidebarRoute>
             </SideBtnWrap>
             </SidebarWrapper>
 

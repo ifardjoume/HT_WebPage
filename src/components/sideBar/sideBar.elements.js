@@ -50,7 +50,7 @@ export const SidebarLink = styled(LinkS)`
         color: #4b59f7;
         transition: 0.2 ease-in-out;
         text-decoration:none;
-        color:#fff;
+        color:#333;
     }
 `
 export const SideBtnWrap = styled.div`

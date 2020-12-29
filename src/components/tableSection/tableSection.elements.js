@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const TableContainer = styled.div`
 color: black;
-    background:#dfdfdf;
+    background:#e4f4fd;
     margin: 0 auto;
   align-items:center;
   display:flex;

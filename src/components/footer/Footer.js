@@ -22,13 +22,10 @@ const Footer = () => {
                         <FooterLink to='sign-in'>Prensa</FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                        <FooterLink to='sign-in'>Trabajos</FooterLink>
+                        <FooterLink to='sign-in'>Sumate</FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                        <FooterLink to='sign-in'>Contacto</FooterLink>
-                    </FooterLinkItems>
-                    <FooterLinkItems>
-                        <FooterLink to='sign-in'>Compania</FooterLink>
+                        <FooterLink to='sign-in'>Empresa</FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
                         <FooterLink to='sign-in'>Calidad</FooterLink>

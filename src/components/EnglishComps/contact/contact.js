@@ -14,7 +14,8 @@ import {
     ButtonContainer,
     LinkA,
     Label,
-    Icon
+    Icon,
+    IconLoc
 
 } from '../../contact/contact.elements';
 import Email from '../../../images/icons/email.png';
@@ -154,7 +155,7 @@ class ContactUs extends Component {
                   <SocialLinkDescription>hello@h-trace.com</SocialLinkDescription>
                 </SocialLink>
                 <SocialLink>
-                <Icon src={Location} />
+                <IconLoc src={Location} />
                 <SocialLinkDescription>Argentina</SocialLinkDescription>
                 </SocialLink>
                 <SocialLink>

@@ -156,7 +156,7 @@ export const SocialLinkTitle = styled.h2`
 export const SocialLinkDescription = styled.p`
   margin: 5px;
   font-size:1rem;
-  margin-top:20px;
+  margin-top:10px;
   text-align:center;
   align-items:auto;
   align-self:auto;
@@ -199,3 +199,8 @@ export const Icon = styled.img`
 width:48px;
 height:51.2px;
 `;
+
+export const IconLoc = styled.img`
+width:45px;
+height:50px;
+`
