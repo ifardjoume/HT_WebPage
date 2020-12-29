@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-import { FaMagento } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { Link as LinkS } from 'react-scroll';
 import { Container } from '../../globalStyles';
 
 export const Nav = styled.nav`
-  background: ${({scrollNav}) => (scrollNav ? '#000' : 'transparent')};
-  height: 60px;
-  margin-top:-80px;
+  background: #fafafa;/* ${({scrollNav}) => (scrollNav ? '#fafafa' : 'transparent')}; */
+  height: 70px;
+  /* margin-top:-80px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,8 +46,10 @@ export const NavLogo = styled(Link)`
   }
 `;
 
-export const NavIcon = styled(FaMagento)`
+export const NavIcon = styled.img`
   margin-right: 0.5rem;
+  width:201.25px;
+  height:46px;
 `;
 
 export const MobileIcon = styled.div`
@@ -89,13 +90,14 @@ export const NavBtn = styled.nav`
 `;
 
 export const NavLinks = styled(LinkS)`
-  color: #fff;
+  color: #333;
   display: flex;
   align-items: center;
   text-decoration: none;
   padding: 0rem 1rem;
   height: 90%;
   cursor: pointer;
+  font-weight:600;
   margin-top:10px;
   &.active{
     border-bottom: 4px solid #21209c;
@@ -110,19 +112,19 @@ export const NavLinks = styled(LinkS)`
 export const NavBtnLink = styled(Link)`
   border-radius:50px;
   margin-top:10px;
-  background: #153e90;
+  background: transparent;
   white-space:nowrap;
   padding: 10px 22px;
-  color: #fff;
+  color: #333;
   outline: none;
   border: none;
   cursor:pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   &:hover {
-      color: #0a043c;
+      color: blue;
       transition: all 0.2s ease-in-out;
-      background:#98acf8;
+      background:transparent;
       text-decoration:none;
     }
 `;

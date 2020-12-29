@@ -9,7 +9,7 @@ import {
     Subtitle,
     Img,
     ImgWrapper
-  } from './InfoSection.elements';
+  } from '../../InfoSection/InfoSection.elements';
 import img1 from '../../../images/Conjunto.png';
 const InfoSection = () => {
     return (

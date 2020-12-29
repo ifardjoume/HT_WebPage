@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const InfoSec = styled.div`
     color: #fff;
     padding: 70px 0;
-    background: #00a8c4;
+    background: #dfdfdf;
 `;
 
 export const InfoRow = styled.div`
@@ -41,7 +41,7 @@ export const TextWrapper = styled.div`
 `
 
 export const TopLine = styled.div`
-    color: #fff;
+    color: #333;
   font-size: 18px;
   line-height: 16px;
   font-weight: 700;
@@ -54,14 +54,14 @@ export const Heading = styled.h1`
   font-size: 48px;
   line-height: 1.1;
   font-weight: 600;
-  color: #fff;
+  color: #333;
 `;
 
 export const Subtitle = styled.p`
   max-width: 440px;
   font-size: 18px;
   line-height: 24px;
-  color: #fff;
+  color: #333;
 `;
 
 export const Img = styled.img`

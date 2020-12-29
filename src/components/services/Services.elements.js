@@ -22,7 +22,7 @@ export const ServicesWrapper = styled.div`
 
 export const ServicesH1 = styled.h1`
   font-size:2.5rem;
-  color:#fff;
+  color:#333;
   margin-bottom:64px;
 
   @media screen and (max-width:480px) {
@@ -44,7 +44,7 @@ export const ServicesContainer = styled.div`
   flex-direction:column;
   justify-content:center;
   align-items: center;
-  background: #10223e;
+  background: #fafafa;
   width:100%;
   @media screen and (max-width:990px) {
     height:1100px;
@@ -56,7 +56,7 @@ export const ServicesContainer = styled.div`
 `;
 
 export const ServicesCard = styled.div`
-  background:#fff;
+  background:#fafafa;
   display:flex;
   flex-direction: column;
   justify-content:flex-start;
@@ -64,7 +64,7 @@ export const ServicesCard = styled.div`
   border-radius:10px;
   max-height:340px;
   padding:30px;
-  box-shadow:0 1px 3px rgba(0,0,0,0.2);
+  box-shadow:3px 3px 3px 3px rgba(0,0,0,0.2);
   transition:all 0.2s ease-in-out;
   &:hover{
     transform: scale(1.02);

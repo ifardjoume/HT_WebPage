@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ContactContainer = styled.div`
     color: black;
-    background:#10223e;
+    background:#fafafa;
   padding: 30px 30px;
   display:flex;
   justify-content: center;
@@ -179,8 +179,26 @@ export const SocialLinkDescription = styled.p`
 export const LinkA = styled.a`
   text-decoration:none;
   background:none;
+  color:black;
   &:hover{
     text-decoration:none;
-  background:none;
+    background:none;
+    color:black;
+  }
+  &:link {
+    text-decoration:none;
+    background:none;
+    color:black;
+  }
+  &:visited {
+    text-decoration:none;
+    background:none;
+    color:black;
+  }
+  &:active {
+    text-decoration:none;
+    background:none;
+    color:black;
   }
 `
+

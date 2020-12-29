@@ -6,7 +6,7 @@ import {
     VideoBg,
     IntroContent,
     IntroH1
-} from './introSection.elements';
+} from '../../introSection/introSection.elements';
 
 
 const IntroSection = () => {
