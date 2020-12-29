@@ -80,6 +80,7 @@ export const StyledInput = styled.input`
   margin: 10px 0 20px 0;
   padding: 20px;
   box-sizing: border-box;
+  border-bottom: solid 2px #10223e;
 `;
 
 export const StyledTextArea = styled.textarea`
@@ -94,6 +95,7 @@ export const StyledTextArea = styled.textarea`
   margin: 10px 0 20px 0;
   padding: 20px;
   box-sizing: border-box;
+  border-bottom: solid 2px #10223e;
 `;
 export const ButtonContainer = styled.div`
  display:flex;
@@ -127,8 +129,8 @@ export const SocialLinksWrapper = styled.div`
   padding: 40px;
   background-color: #fff;
   border-radius: 10px;
-  height:363px;
   box-sizing: border-box;
+  min-height:380px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -201,4 +203,11 @@ export const LinkA = styled.a`
     color:black;
   }
 `
-
+export const Label = styled.label`
+font-size:12px;
+font-weight:600;
+text-transform:uppercase;
+color:#0f0f0f;
+opacity:1;
+margin-top:5px;
+`

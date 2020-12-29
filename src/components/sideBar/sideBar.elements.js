@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FaTimes,FaBars } from 'react-icons/fa';
+import { FaTimes} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { Link as LinkS } from 'react-scroll';
 

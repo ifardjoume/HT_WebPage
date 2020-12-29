@@ -1,18 +1,20 @@
-import React, {useState} from 'react';
+import React, { Component } from 'react';
 import emailjs from 'emailjs-com';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 import { 
     ContactContainer,
     StyledButton,
     StyledForm,
     StyledInput,
-    StyledError,
     StyledTextArea,
     SocialLinksWrapper,
     SocialLink,
     SocialLinkDescription,
     StyledColumnForm,
     ButtonContainer,
-    LinkA
+    LinkA,
+    Label
 } from './contact.elements';
 import {
   FaLinkedin
@@ -24,61 +26,131 @@ import { AiOutlinePhone } from 'react-icons/ai';
 
 const sizeVariable = 64;
 
-export default function ContactUs() {
-  function sendEmail(e) {
+const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
+
+const formValid = ({ formErrors, ...rest }) => {
+  let valid = true;
+
+  Object.values(formErrors).forEach((val) => {
+    val.length > 0 && (valid = false);
+  });
+
+  Object.values(rest).forEach((val) => {
+    val === '' && (valid = false);
+  });
+
+  return valid;
+};
+
+class ContactUs extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+      formErrors: {
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+      },
+    };
+  };
+
+  toastifySuccess() {
+    toast.success('Form sent!', {
+      position: 'bottom-right',
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: false,
+      className: 'submit-feedback success',
+    });
+  };
+
+  toastifyFail() {
+    toast.error('Form failed to send!', {
+      position: 'bottom-right',
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: false,
+      className: 'submit-feedback fail',
+    });
+  }
+
+  handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_a21n0xw', 'template_plt2hke', e.target, 'user_0hKMQsg4LGkPg3FEhMdGs')
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
+    if (formValid(this.state)) {
+      // Handle form validation success
+      const { name, email, phone, message } = this.state;
+
+      // Set template params
+      let templateParams = {
+        name: name,
+        email: email,
+        phone: phone,
+        message: message,
+      };
+      emailjs.send('service_fa9zrwp', 'template_vkm8bqn', templateParams, 'user_0hKMQsg4LGkPg3FEhMdGs');
+
+      console.log(`
+        --SUBMITTING--
+        Name: ${name}
+        Email: ${email}
+        Phone: ${phone}
+        Message: ${message}
+      `);
+      
+      this.toastifySuccess();
+      this.resetForm();
+    } else {
+      // Handle form validation failure
+      console.error('FORM INVALID - DISPLAY ERROR MESSAGE');
+      this.toastifyFail();
+    }
+  };
+  resetForm() {
+    this.setState({
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+    });
   }
 
-  var initialState = {
-    user_name:'',
-    user_email:'',
-    message:'',
-    phone:''
-  }
-  const [state, setState] = useState(initialState);
-    const [error, setError] = useState('');
-    const handleSubmit = e => {
-      e.preventDefault();
-  
-      for (let key in state) {
-        if (state[key] === '') {
-          setError(`Todos los campos son obligatorios`)
-          return
-        }
-      }
-      setError('');
-      // const regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-      // const test = regex.test(state.email);
-      // console.log(test);
-  
-      console.log("Succeeded!!!")
-    };
-  
-    const handleInput = e => {
-      const inputName = e.currentTarget.name;
-      const value = e.currentTarget.value;
-  
-      setState(prev => ({ ...prev, [inputName]: value }));
-    };
+  handleChange = (e) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    let formErrors = { ...this.state.formErrors };
 
+    switch (name) {
+      case 'name':
+        formErrors.name = value.length < 1 ? 'Please enter your name.' : '';
+        break;
+      case 'email':
+        formErrors.email = emailRegex.test(value) ? '' : 'Please enter a valid email address.';
+        break;
+      case 'phone':
+        formErrors.phone = value.length < 1 ? 'Please enter a phone number.' : '';
+        break;
+      case 'message':
+        formErrors.message = value.length < 1 ? 'Please enter a message' : '';
+        break;
+      default:
+        break;
+    }
+    this.setState({ formErrors, [name]: value });
+  };
 
-    const onSubmit = e => {
-      e.preventDefault();
-      handleSubmit(e);
-        if (state.user_email !== '' && state.message !== '' ) {
-          sendEmail(e)
-        } else {
-            alert("Debes completar por lo menos el mail y mensaje")
-      }
-    };
-    return (
+  render(){
+    const { formErrors } = this.state;
+  return (
             <ContactContainer id="contact">
                <SocialLinksWrapper>
                 <SocialLink>
@@ -98,138 +170,71 @@ export default function ContactUs() {
                 <SocialLinkDescription>011+51512</SocialLinkDescription>
                 </SocialLink>
               </SocialLinksWrapper>
-        <StyledForm  className="contact-form"  onSubmit={onSubmit}>
+        <StyledForm  className="contact-form"  onSubmit={this.handleSubmit} noValidate>
           <StyledColumnForm>
-        <label htmlFor="name">Nombre</label>
+        <Label htmlFor="name">Nombre *</Label>
             <StyledInput
-            type="text"
-            name="user_name"
-            value={state.user_name}
-            onChange={handleInput}
+             type='text'
+             name='name'
+             value={this.state.name}
+             className={`form-control formInput ${formErrors.name.length > 0 ? 'error' : null}`}
+             onChange={this.handleChange}
+             noValidate
             />
-        <label htmlFor="email">Email</label>
+            {formErrors.name.length > 0 && (
+                <span className='errorMessage'>{formErrors.name}</span>
+              )}
+              <br/>
+        <Label htmlFor="email">Email *</Label>
             <StyledInput
-            type="email"
-            name="user_email"
-            value={state.user_email}
-            onChange={handleInput}
+            type='email'
+            name='email'
+            value={this.state.email}
+            className={`form-control formInput ${formErrors.email.length > 0 ? 'error' : null}`}
+            onChange={this.handleChange}
+            noValidate
             />
+             {formErrors.email.length > 0 && (
+                <span className='errorMessage'>{formErrors.email}</span>
+              )}
             </StyledColumnForm>
             <StyledColumnForm>
-            <label htmlFor="tel">Telefono</label>
+            <Label htmlFor="tel">Telefono</Label>
             <StyledInput
-            type="tel"
-            name="phone"
-            value={state.phone}
-            onChange={handleInput}
+            type='tel'
+            name='phone'
+            value={this.state.phone}
+            className={`form-control formInput ${
+              formErrors.phone.length > 0 ? 'error' : null
+            }`}
+            onChange={this.handleChange}
+            noValidate
             />
-        <label htmlFor="message">Mensaje</label>
+            {formErrors.phone.length > 0 && (
+                <span className='errorMessage'>{formErrors.phone}</span>
+              )}
+              <br/>
+        <Label htmlFor="message">Mensaje *</Label>
         <StyledTextArea
-            name="message"
-            value={state.message}
-            onChange={handleInput}
+            name='message'
+            value={this.state.message}
+            className={`form-control formInput ${
+              formErrors.message.length > 0 ? 'error' : null
+            }`}
+            onChange={this.handleChange}
+            noValidate
             />
-           {error && (
-            <StyledError>
-              <p>{error}</p>
-            </StyledError>
-          )}
+           {formErrors.message.length > 0 && (
+                <span className='errorMessage'>{formErrors.message}</span>
+              )}
             <ButtonContainer>
               <StyledButton type="submit" value="Send">Enviar</StyledButton>
             </ButtonContainer>
         </StyledColumnForm>
         </StyledForm>
+        <ToastContainer />
         </ContactContainer>
-  );
+  )}
 };
 
-
-
-/* import React, {useState} from 'react';
-import { 
-    ContactContainer,
-    ContactWrapper,
-    ContactH1,
-    StyledButton,
-    StyledError,
-    StyledForm,
-    StyledFormWrapper,
-    StyledInput,
-    StyledTextArea
-
-} from './contact.elements';
-const initialState = {
-    name: '',
-    email: '',
-    message: ''
-  };
-
-const Contact = () => {
-    const [state, setState] = useState(initialState);
-    const [error, setError] = useState('');
-  
-    const handleSubmit = e => {
-      e.preventDefault();
-      console.log('submitted!');
-      console.log(state);
-  
-      for (let key in state) {
-        if (state[key] === '') {
-          setError(`You must provide the ${key}`)
-          return
-        }
-      }
-      setError('');
-      // const regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-      // const test = regex.test(state.email);
-      // console.log(test);
-  
-      console.log("Succeeded!!!")
-    };
-  
-    const handleInput = e => {
-      const inputName = e.currentTarget.name;
-      const value = e.currentTarget.value;
-  
-      setState(prev => ({ ...prev, [inputName]: value }));
-    };
-    return (
-        <ContactContainer id="contact">
-            <ContactWrapper>
-                <ContactH1>Contact Us</ContactH1>
-                <StyledFormWrapper>
-        <StyledForm onSubmit={handleSubmit}>
-          <label htmlFor="name">Name</label>
-          <StyledInput
-            type="text"
-            name="name"
-            value={state.name}
-            onChange={handleInput}
-          />
-          <label htmlFor="email">Email</label>
-          <StyledInput
-            type="email"
-            name="email"
-            value={state.email}
-            onChange={handleInput}
-          />
-          <label htmlFor="message">Message</label>
-          <StyledTextArea
-            name="message"
-            value={state.message}
-            onChange={handleInput}
-          />
-          {error && (
-            <StyledError>
-              <p>{error}</p>
-            </StyledError>
-          )}
-          <StyledButton type="submit">Send Message</StyledButton>
-        </StyledForm>
-      </StyledFormWrapper>
-            </ContactWrapper>
-        </ContactContainer>
-    )
-}
-
-export default Contact */
+export default ContactUs;
