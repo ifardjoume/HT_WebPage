@@ -97,7 +97,7 @@ class ContactUs extends Component {
         phone: phone,
         message: message,
       };
-      emailjs.send('service_fa9zrwp', 'template_vkm8bqn', templateParams, 'user_0hKMQsg4LGkPg3FEhMdGs');
+      emailjs.send('service_o720iww', 'template_vkm8bqn', templateParams, 'user_0hKMQsg4LGkPg3FEhMdGs');
 
       console.log(`
         --SUBMITTING--
