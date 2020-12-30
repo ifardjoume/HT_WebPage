@@ -25,8 +25,8 @@ function AboutCofounders() {
                     <InfoRow>
                         <InfoColumn>
                             <TextWrapper>
-                                <Heading>Nuestra Empresa</Heading>
-                                <Subtitle>H+Trace fue fundada en 2019 por tres profesionales de ámbitos diversos con el objetivo de incorporar innovación y tecnología a la salud.<br></br> <br></br> 
+                                <Heading>Nosotros</Heading>
+                                <Subtitle>H+Trace fue fundada en 2019 con el objetivo de incorporar innovación y tecnología a la salud.<br></br> <br></br> 
                                           Esta industria funciona en base a datos, sea para diagnóstico, tratamiento, cuidado o investigación clínica.
                                           Sin embargo, la logística y el transporte son un punto ciego sin información.
 
@@ -40,7 +40,7 @@ function AboutCofounders() {
                                 <ImgCofounderContainer>
                                 <Img src={Image1} alt="EmilianoBuitrago" />
                                 <TopLine>Emiliano Buitrago</TopLine>
-                                <Subtitle>Director (general)</Subtitle>
+                                <Subtitle>Dirección General</Subtitle>
                                 </ImgCofounderContainer>
                                 </ImgWrapperRow>
                                 <ImgWrapperRow>

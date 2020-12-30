@@ -15,9 +15,9 @@ const Organs = () => {
     return (
         <> 
         <Navbar toggle= {toggle}/>
+        <RenderOrgans/>
         <InfoOrgans/>
         <IconOrgans/>
-        <RenderOrgans/>
         <Footer/>
         </>
     )

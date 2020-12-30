@@ -7,7 +7,8 @@ import {
     ServicesWrapper,
     ServicesH2,
     ServicesContainer,
-    ServicesCard
+    ServicesCard,
+    LinkTo
 } from './Services.elements';
 
 function Services() {

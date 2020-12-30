@@ -16,10 +16,10 @@ const Samples = () => {
     return (
         <> 
         <Navbar toggle= {toggle}/>
+        <RenderSample />
         <InfoSamples />
         <TableSamples />
         <IconSamples />
-        <RenderSample />
         <Footer/>
         </>
     )

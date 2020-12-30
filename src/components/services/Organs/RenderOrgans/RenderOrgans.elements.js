@@ -27,5 +27,10 @@ export const RenderH1 = styled.div`
 `
 
 export const RenderImg = styled.img`
-
+padding-right: 0;
+  border: 0;
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+  max-height: 500px;
 `

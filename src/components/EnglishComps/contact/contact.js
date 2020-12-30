@@ -150,21 +150,21 @@ class ContactUs extends Component {
   return (
             <ContactContainer id="contact">
                <SocialLinksWrapper>
+               <SocialLink>
+                <Icon src={Phone} />
+                <SocialLinkDescription>+54 9 11 60923071</SocialLinkDescription>
+                </SocialLink>
                 <SocialLink>
                   <LinkA href="http://mail.google.com/mail/?view=cm&fs=1&tf=1&to=hello@h-trace.com" target="_blank"><Icon src={Email} /></LinkA>
                   <SocialLinkDescription>hello@h-trace.com</SocialLinkDescription>
-                </SocialLink>
-                <SocialLink>
-                <IconLoc src={Location} />
-                <SocialLinkDescription>Argentina</SocialLinkDescription>
                 </SocialLink>
                 <SocialLink>
                 <LinkA href="https://www.linkedin.com/company/h-trace/" target="_blank"><Icon src={Linkedin} /></LinkA>
                 <SocialLinkDescription>H+Trace</SocialLinkDescription>
                 </SocialLink>
                 <SocialLink>
-                <Icon src={Phone} />
-                <SocialLinkDescription>+54 9 11 60923071</SocialLinkDescription>
+                <IconLoc src={Location} />
+                <SocialLinkDescription>Argentina</SocialLinkDescription>
                 </SocialLink>
               </SocialLinksWrapper>
         <StyledForm  className="contact-form"  onSubmit={this.handleSubmit} noValidate>

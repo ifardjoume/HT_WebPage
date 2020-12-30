@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const RenderContainer = styled.div`
 color: black;
-    background:#fafafa;
+    background:#e4f4fd;
     margin: 0 auto;
   align-items:center;
   display:flex;
@@ -27,5 +27,10 @@ export const RenderH1 = styled.div`
 `
 
 export const RenderImg = styled.img`
-
+padding-right: 0;
+  border: 0;
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+  max-height: 500px;
 `

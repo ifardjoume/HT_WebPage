@@ -10,7 +10,7 @@ import {
     Img,
     ImgWrapper
   } from '../../InfoSection/InfoSection.elements';
-import img1 from '../../../images/Conjunto.png';
+import img1 from '../../../images/Conjunto-2.jpeg';
 const InfoSection = () => {
     return (
         <>

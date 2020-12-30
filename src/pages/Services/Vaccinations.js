@@ -10,9 +10,9 @@ const Vaccinations = () => {
     return (
         <> 
         <Navbar/>
+        <RenderVaccines />
         <InfoVaccines />
         <VaccinesIcons />
-        <RenderVaccines />
         <Footer/>
         </>
     )
