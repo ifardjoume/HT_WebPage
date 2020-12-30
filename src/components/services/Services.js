@@ -14,13 +14,13 @@ function Services() {
   return (
     <ServicesContainer id="services">
       <ServicesWrapper>
-        <ServicesCard>
-          <ServicesIcon src={Icon1}/>
-          <ServicesH2>Muestras biológicas</ServicesH2>
-        </ServicesCard>
+          <ServicesCard>
+            <ServicesIcon src={Icon1}/>
+            <ServicesH2>Muestras biológicas</ServicesH2>
+          </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon2}/>
-          <ServicesH2>COVID-19</ServicesH2>
+          <ServicesH2>Vacunas COVID-19</ServicesH2>
         </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon3}/>

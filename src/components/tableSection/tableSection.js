@@ -44,7 +44,7 @@ const TableSection = () => {
                      ubicación</RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1><b>Evita daños por
+                    <RowComponent1><b>Prevención de daños por
                      sobreenfriamiento</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>

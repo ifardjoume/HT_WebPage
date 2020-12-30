@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 
 export const ServicesWrapper = styled.div`
   max-width:1000px;
@@ -84,3 +86,13 @@ export const ServicesP = styled.p`
    font-size:1rem;
    text-align:center;
 `;
+
+export const LinkTo = styled(Link)`
+text-decoration:none;
+color:#333;
+&:hover{
+  text-decoration:none;
+color:#333;
+}
+
+`

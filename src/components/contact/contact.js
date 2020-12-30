@@ -179,8 +179,8 @@ class ContactUs extends Component {
             {formErrors.name.length > 0 && (
                 <span className='errorMessage'>{formErrors.name}</span>
               )}
-              <br/>
-        <Label htmlFor="email">Email *</Label>
+              <br/><br/>
+        <Label htmlFor="email">Correo Electrónico *</Label>
             <StyledInput
             type='email'
             name='email'
@@ -192,7 +192,8 @@ class ContactUs extends Component {
              {formErrors.email.length > 0 && (
                 <span className='errorMessage'>{formErrors.email}</span>
               )}
-            <Label htmlFor="tel">Telefono</Label>
+              <br/><br/>
+            <Label htmlFor="tel">Teléfono</Label>
             <StyledInput
             type='tel'
             name='phone'
@@ -206,7 +207,7 @@ class ContactUs extends Component {
             {formErrors.phone.length > 0 && (
                 <span className='errorMessage'>{formErrors.phone}</span>
               )}
-              <br/>
+              <br/><br/>
         <Label htmlFor="message">Mensaje *</Label>
         <StyledTextArea
             name='message'

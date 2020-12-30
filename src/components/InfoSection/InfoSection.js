@@ -20,8 +20,8 @@ const InfoSection = () => {
                         <InfoColumn>
                             <TextWrapper>
                                 <Heading>Llegó el momento de sumarse al futuro</Heading>
-                                <Subtitle> Han pasado muchas décadas sin innovar en la logística al servicio de la salud. Y sabemos que lo que no se mide, no se puede mejorar. <br/><br/>
-                                    Para eso desarrollamos THIS (Total Healthcare Insight Solution), una solución integral de bajo costo que combina ciencia de datos, IoT (Internet de las cosas) y un sistema de sensorización con control térmico que permite la personalización del objeto transportado.</Subtitle>
+                                <Subtitle> En la industria de la salud, desde hace muchas décadas no se ve un avance tecnológico en la lógistica del transporte. Y sabemos que lo que no se mide, no se puede mejorar. <br/><br/>
+                                    Por eso desarrollamos THIS (Total Healthcare Insight Solution), una solución integral de bajo costo que combina ciencia de datos, IoT (Internet de las cosas) y un sistema de sensores con control térmico que permite la personalización del transporte de cada objeto/envío.</Subtitle>
                             </TextWrapper>
                         </InfoColumn>
                         <InfoColumn>

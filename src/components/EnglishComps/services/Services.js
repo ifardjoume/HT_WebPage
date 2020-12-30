@@ -20,7 +20,7 @@ function Services() {
         </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon2}/>
-          <ServicesH2>COVID-19</ServicesH2>
+          <ServicesH2>COVID-19 Vaccines</ServicesH2>
         </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon3}/>

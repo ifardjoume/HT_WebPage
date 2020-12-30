@@ -16,7 +16,7 @@ const IntroSection = () => {
                 <VideoBg autoPlay loop muted src={Video} type= 'video/mp4' />
             </IntroBg>
             <IntroContent>
-                <IntroH1 classname="App-header"> <b>EL NUEVO ESTANDAR GLOBAL<br></br><br></br> EN CALIDAD Y SEGURIDAD <br></br><br></br> PARA LA SALUD</b></IntroH1>               
+                <IntroH1 classname="App-header"> <b>EL NUEVO ESTÁNDAR GLOBAL<br></br><br></br> EN CALIDAD Y SEGURIDAD <br></br><br></br> PARA LA SALUD</b></IntroH1>               
             </IntroContent>
         </IntroContainer>
         
