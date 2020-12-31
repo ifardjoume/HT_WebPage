@@ -19,7 +19,7 @@ export const AspectWrapper = styled.div`
   flex-direction:column;
   width:100%;
 
-  @media screen and (max-width:620px) {
+  @media screen and (max-width:900px) {
     flex-direction:column;
     text-align:center;
   }
@@ -51,7 +51,7 @@ export const AspectList = styled.div`
     justify-content:center;
     flex-direction:row;
 
-    @media screen and (max-width:620px) {
+    @media screen and (max-width:900px) {
     flex-direction:column;
   }
 `

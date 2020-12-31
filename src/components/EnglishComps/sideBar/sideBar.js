@@ -28,10 +28,10 @@ const SideBar = ({isOpen, toggle}) => {
                     Contact
                 </SidebarLink>
                 <TranslateBtn />
+                <SideBtnWrap>
+                    <SidebarRoute to='/sign-in'>LOGIN</SidebarRoute>
+                </SideBtnWrap>
             </SidebarMenu>
-            <SideBtnWrap>
-                <SidebarRoute to='/sign-in'>LOGIN</SidebarRoute>
-            </SideBtnWrap>
             </SidebarWrapper>
 
         </SideBarContainer>

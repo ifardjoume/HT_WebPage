@@ -22,6 +22,7 @@ export const IntroContainer = styled.div`
     }
     @media screen and (max-width: 768px) {
     padding-top:60px;
+    width:100%;
   }
 
 `

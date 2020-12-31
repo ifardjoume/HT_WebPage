@@ -15,6 +15,7 @@ import {
 } from './Navbar.elements';
 import TranslateBtn from './translateBtn';
 import Logo from '../../images/logo-navbar-blue.png';
+import { IconContext } from 'react-icons';
 
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
@@ -36,6 +37,7 @@ const Navbar = ({ toggle }) => {
   }
   return (
     <>
+     <IconContext.Provider value={{ color: '#333' }}>
         <Nav scrollNav={scrollNav}>
           <NavbarContainer>
             <NavLogo to='/' onClick={toggleHome}>
@@ -97,6 +99,7 @@ const Navbar = ({ toggle }) => {
             </NavMenu>
           </NavbarContainer>
         </Nav>
+        </IconContext.Provider>
     </>
   );
 }

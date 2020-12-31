@@ -123,13 +123,9 @@ export const SocialLinksWrapper = styled.div`
   display:flex;
   flex-direction:column;
   @media screen and (max-width: 768px) {
-    display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    ". ."
-    ". .";
+    display: flex;
+    flex-direction:column;
+    height:450px;
     width:100%;
     padding: 10px;
   }
