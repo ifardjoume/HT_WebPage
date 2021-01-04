@@ -7,6 +7,7 @@ import AppEng from './pages/Eng/Eng';
 import Samples from './pages/Services/Samples';
 import Vaccinations from './pages/Services/Vaccinations';
 import Organs from './pages/Services/Organs';
+import NoMatchPage from './pages/NoMatchPage/NoMatchPage';
 
 function App() {
   return (
@@ -14,11 +15,12 @@ function App() {
       <GlobalStyle />
       <Switch>
         <Route path='/' exact component={Home} />
-        <Route path='/sign-in' component={SignIn} />
-        <Route path='/en' component={AppEng} />
-        <Route path='/samples' component={Samples} />
-        <Route path='/vaccinations' component={Vaccinations} />
-        <Route path='/organs' component={Organs} />
+        <Route exact path='/sign-in' component={SignIn} />
+        <Route exact path='/en' component={AppEng} />
+        <Route exact path='/samples' component={Samples} />
+        <Route exact path='/vaccinations' component={Vaccinations} />
+        <Route exact path='/organs' component={Organs} />
+        <Route component={NoMatchPage} />
       </Switch>
     </Router>
   )

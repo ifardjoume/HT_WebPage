@@ -29,7 +29,7 @@ const Graph = () => {
                     borderWidth: 1
                 },
                 {
-                    label: 'Tradicional',
+                    label: 'Traditional',
                     data: [23.5,23.4,23.1,23.2,23,22.1,19.9,15.2,9.9,8.5,7.9,7.5,6.4,7.1,6.8,6.6,7,6.9,7.2,7.5,7.9,8.5,8.7,9.2,8.9,8.8,9.3,10.2,10.8,11.1,11.4,11.1,11.5,15,18],
                     backgroundColor: 'transparent',
                     borderColor: 'red',

@@ -150,7 +150,7 @@ class ContactUs extends Component {
             <ContactContainer id="contact">
                <SocialLinksWrapper>
                <SocialLink>
-                <Icon src={Phone} />
+               <LinkA href="tel:+54-9-11-6092-3071"><Icon src={Phone} /></LinkA>
                 <SocialLinkDescription>+54 9 11 60923071</SocialLinkDescription>
                 </SocialLink>
                <SocialLink>

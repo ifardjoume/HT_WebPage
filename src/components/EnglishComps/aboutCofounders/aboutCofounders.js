@@ -26,8 +26,8 @@ function AboutCofounders() {
                         <InfoColumn>
                             <TextWrapper>
                                 <Heading>About Us</Heading>
-                                <Subtitle>H + Trace was founded in 2019 with the aim of incorporating innovation and technology into healthcare.<br></br> <br></br> 
-                                          The medical industry works based on data, be it for diagnosis, treatment, care or clinical research. However, logistics is a blind spot without information.<br/> H + Trace was created to provide those essential data to improve this process.<br></br><br></br> 
+                                <Subtitle>H+Trace was founded in 2019 with the aim of incorporating innovation and technology into healthcare.<br></br> <br></br> 
+                                          The medical industry works based on data, be it for diagnosis, treatment, care or clinical research. However, logistics is a blind spot without information.<br/> H+Trace was created to provide those essential data to improve this process.<br></br><br></br> 
                                           We seek to establish a new standard of good practices in healthcare transport.</Subtitle>
                             </TextWrapper>
                         </InfoColumn>

@@ -56,7 +56,7 @@ const TableSection = () => {
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1><b>Leak-proof Packaging</b></RowComponent1>
+                    <RowComponent1><b>Leak-Proof Packaging</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>
