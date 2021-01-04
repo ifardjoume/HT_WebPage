@@ -8,6 +8,11 @@ import Samples from './pages/Services/Samples';
 import Vaccinations from './pages/Services/Vaccinations';
 import Organs from './pages/Services/Organs';
 import NoMatchPage from './pages/NoMatchPage/NoMatchPage';
+import EngSamples from './pages/Eng/services/Samples';
+import EngVaccinations from './pages/Eng/services/Vaccinations';
+import EngOrgans from './pages/Eng/services/Organs';
+
+
 
 function App() {
   return (
@@ -17,9 +22,12 @@ function App() {
         <Route path='/' exact component={Home} />
         <Route exact path='/sign-in' component={SignIn} />
         <Route exact path='/en' component={AppEng} />
-        <Route exact path='/samples' component={Samples} />
-        <Route exact path='/vaccinations' component={Vaccinations} />
-        <Route exact path='/organs' component={Organs} />
+        <Route exact path='/muestras' component={Samples} />
+        <Route exact path='/vacunas' component={Vaccinations} />
+        <Route exact path='/organos' component={Organs} />
+        <Route exact path='/samples' component={EngSamples} />
+        <Route exact path='/vaccinations' component={EngVaccinations} />
+        <Route exact path='/organs' component={EngOrgans} />        
         <Route component={NoMatchPage} />
       </Switch>
     </Router>

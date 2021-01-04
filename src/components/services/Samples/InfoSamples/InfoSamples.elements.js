@@ -80,7 +80,6 @@ export const ImgWrapper = styled.div`
 
 export const List = styled.ul`
     padding:20px;
-    list-style-type: circle;
     @media screen and (max-width:620px) {
     flex-direction:column;
   }
@@ -90,7 +89,7 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   line-height: 1.1;
   color: #333;
-  display:flex;
+  display: list-item;
   text-align:left;
   flex-direction:column;
   align-items: left;
