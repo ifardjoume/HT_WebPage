@@ -16,11 +16,9 @@ export const FooterLinksContainer = styled.div`
   max-width: 1000px;
   display: flex;
   justify-content: center;
-  margin-left:20px;
   @media screen and (max-width: 768px) {
     padding-top: 32px;
     flex-direction: column;
-    margin-left:30px;
   }
 `;
 
@@ -40,7 +38,7 @@ export const FooterLinkItems = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 160px;
+  width: 150px;
   box-sizing: border-box;
   color: #333;
   @media screen and (max-width: 820px) {
@@ -48,7 +46,7 @@ export const FooterLinkItems = styled.div`
   }
   @media screen and (max-width: 420px) {
     margin: 0;
-    padding: 10px;
+    padding: 8px;
     width: 100%;
   }
 `;

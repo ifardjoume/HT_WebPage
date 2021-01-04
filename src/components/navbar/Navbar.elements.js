@@ -16,7 +16,8 @@ export const Nav = styled.nav`
   z-index: 999;
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
-    height: 70px;
+    height: 75px;
+    padding-top:10px;
   }
 
 `;
@@ -50,6 +51,9 @@ export const NavIcon = styled.img`
   margin-right: 0.5rem;
   width:201.25px;
   height:46px;
+  @media screen and (max-width: 768px) {
+    margin-right: 0rem;
+  }
 `;
 
 export const MobileIcon = styled.div`

@@ -22,7 +22,6 @@ export const IntroContainer = styled.div`
     }
     @media screen and (max-width: 768px) {
     padding-top:60px;
-    width:100%;
   }
 
 `
@@ -54,6 +53,10 @@ export const IntroContent = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
+    @media screen and (max-width: 768px) {
+    padding: 0px;
+  }
+
 `
 
 export const IntroH1 = styled.h1`
@@ -64,6 +67,7 @@ export const IntroH1 = styled.h1`
     
     @media screen and (max-width: 768px) {
         font-size:48px;
+        letter-spacing:7px;
   }
 
   @media screen and (max-width: 480px) {
