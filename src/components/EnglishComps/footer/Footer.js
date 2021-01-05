@@ -25,12 +25,6 @@ const Footer = () => {
                         <FooterLink to='sign-in'>Join us</FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                        <FooterLink to='sign-in'>Company</FooterLink>
-                    </FooterLinkItems>
-                    <FooterLinkItems>
-                        <FooterLink to='sign-in'>Quality</FooterLink>
-                    </FooterLinkItems>
-                    <FooterLinkItems>
                         <FooterLink to='sign-in'>Cookies</FooterLink>
                     </FooterLinkItems>
                 </FooterLinksWrapper>

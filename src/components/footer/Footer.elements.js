@@ -6,9 +6,12 @@ export const FooterContainer = styled.div`
   background-color: #bbbbbb;
   padding: 1.5rem 0 1.5rem 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const FooterLinksContainer = styled.div`
@@ -77,7 +80,6 @@ export const SocialMediaWrap = styled.div`
   align-items: center;
   width: 90%;
   max-width: 1000px;
-  margin: 40px auto 0 auto;
   @media screen and (max-width: 820px) {
     flex-direction: column;
   }
