@@ -7,7 +7,7 @@ import { SideBarContainer,
     SidebarLinkHome,
     SideBtnWrap,
     SidebarRoute
-} from '../../../sideBar/sideBar.elements';
+} from '../../../../sideBar/sideBar.elements';
 import TranslateBtn from '../navBar/translateBtn';
 
 
@@ -19,7 +19,7 @@ const SideBar = ({isOpen, toggle}) => {
             </Icon>
             <SidebarWrapper>
             <SidebarMenu>
-                <SidebarLinkHome to='/' onClick={toggle}>
+                <SidebarLinkHome to='/en' onClick={toggle}>
                     Home
                 </SidebarLinkHome>
                 <TranslateBtn />

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Navbar from '../../../components/EnglishComps/services/Samples/navBar/NavBar';
+import SideBar from '../../../components/EnglishComps/services/Samples/Sidebar/sideBar';
 import Footer from '../../../components/EnglishComps/footer/Footer';
 import InfoSamples from '../../../components/EnglishComps/services/Samples/InfoSamples/InfoSamples';
 import TableSamples from '../../../components/EnglishComps/services/Samples/TableSamples/TableSamples';
@@ -14,7 +15,8 @@ const Samples = () => {
     }
 
     return (
-        <> 
+        <>
+        <SideBar isOpen={isOpen} toggle={toggle} />
         <Navbar toggle= {toggle}/>
         <RenderSample />
         <InfoSamples />
