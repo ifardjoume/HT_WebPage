@@ -1,6 +1,8 @@
 import React from 'react';
 import GlobalStyle from './globalStyles';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { ApolloProvider } from "@apollo/react-hooks";
+import { client } from "./apollo-client";
 import Home from './pages/HomePage/Home';
 import SignIn from './pages/Sign-in/Sign-in';
 import AppEng from './pages/Eng/Eng';
@@ -16,21 +18,23 @@ import EngOrgans from './pages/Eng/services/Organs';
 
 function App() {
   return (
-    <Router>
-      <GlobalStyle />
-      <Switch>
-        <Route path='/' exact component={Home} />
-        <Route exact path='/sign-in' component={SignIn} />
-        <Route exact path='/en' component={AppEng} />
-        <Route exact path='/muestras' component={Samples} />
-        <Route exact path='/vacunas' component={Vaccinations} />
-        <Route exact path='/organos' component={Organs} />
-        <Route exact path='/samples' component={EngSamples} />
-        <Route exact path='/vaccinations' component={EngVaccinations} />
-        <Route exact path='/organs' component={EngOrgans} />        
-        <Route component={NoMatchPage} />
-      </Switch>
-    </Router>
+    <ApolloProvider client={client}>
+      <Router>
+        <GlobalStyle />
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route exact path='/sign-in' component={SignIn} />
+          <Route exact path='/en' component={AppEng} />
+          <Route exact path='/muestras' component={Samples} />
+          <Route exact path='/vacunas' component={Vaccinations} />
+          <Route exact path='/organos' component={Organs} />
+          <Route exact path='/samples' component={EngSamples} />
+          <Route exact path='/vaccinations' component={EngVaccinations} />
+          <Route exact path='/organs' component={EngOrgans} />        
+          <Route component={NoMatchPage} />
+        </Switch>
+      </Router>
+    </ApolloProvider>
   )
 }
 
