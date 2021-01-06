@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Navbar from '../../../components/navbar/NavBarDefault';
+import Navbar from '../../../components/EnglishComps/services/Samples/navBar/NavBar';
 import Footer from '../../../components/EnglishComps/footer/Footer';
 import InfoSamples from '../../../components/EnglishComps/services/Samples/InfoSamples/InfoSamples';
 import TableSamples from '../../../components/EnglishComps/services/Samples/TableSamples/TableSamples';

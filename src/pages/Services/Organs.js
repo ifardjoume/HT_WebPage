@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Navbar from '../../components/navbar/NavBarDefault';
+import Navbar from '../../components/services/Organs/navBar/NavBar';
 import Footer from '../../components/footer/Footer';
 import InfoOrgans from '../../components/services/Organs/InfoOrgans/InfoOrgans';
 import IconOrgans from '../../components/services/Organs/IconOrgans/IconOrgans';

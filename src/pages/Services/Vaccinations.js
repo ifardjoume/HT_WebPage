@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../../components/navbar/NavBarDefault';
+import Navbar from '../../components/services/Vaccinations/navBar/NavBar';
 import Footer from '../../components/footer/Footer';
 import InfoVaccines from '../../components/services/Vaccinations/InfoVaccines/InfoVaccines';
 import VaccinesIcons from '../../components/services/Vaccinations/VaccinesIcons/IconVaccines';

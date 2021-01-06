@@ -113,6 +113,28 @@ export const NavLinks = styled(LinkS)`
     }
 `
 
+export const NavLinksHome = styled(Link)`
+  color: #333;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0rem 1rem;
+  height: 90%;
+  cursor: pointer;
+  font-weight:600;
+  margin-top:10px;
+  &.active{
+    border-bottom: 4px solid #21209c;
+  }
+    &:hover {
+      color: #4b59f7;
+      transition: all 0.3s ease;
+      text-decoration:none;
+    }
+`
+
+
+
 export const NavBtnLink = styled(Link)`
   border-radius:50px;
   margin-top:10px;
