@@ -4,11 +4,11 @@ import SignInForm from '../../components/signIn/SignInForm';
 import NavBar from '../../components/navbar/NavBarDefault';
 
 
-const SignIn = () => {
+const SignIn = (props) => {
     return (
         <div>
             <NavBar />
-            <SignInForm />
+            <SignInForm/>
             <Task />
         </div>
     )

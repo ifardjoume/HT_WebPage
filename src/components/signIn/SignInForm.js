@@ -16,7 +16,6 @@ import { useHistory } from "react-router-dom";
 
 function SignInForm(){
     const [errors, setErrors] = useState({});
-
     const { onChange, onSubmit, values } = useForm(loginUserCallback, {
         username: '',
         password: ''
@@ -25,9 +24,11 @@ function SignInForm(){
     const [loginUser, { loading }] = useMutation(LOGIN_USER, {
         update(_, result) {
             console.log(result)
-          history.push('/');
+          history.push('/user-area');
+          window.localStorage.setItem('token', loginUser.login.token);
+          console.log(localStorage);
         },
-        onError(err) {
+        onError() {
           setErrors({message: "Wrong username or password"});
         },
         variables: values
