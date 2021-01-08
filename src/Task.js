@@ -8,12 +8,8 @@ const Task = () => {
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
   return (
-    <ul>
-      {data.map(user => (
-        <li>{user.user_id}</li>
-      ))}
-    </ul>
-  );
+    <h2>{data.user.username}</h2>
+  )
 };
 
 export { Task };
