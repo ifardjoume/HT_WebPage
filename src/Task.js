@@ -1,15 +1,13 @@
-import React from "react";
-import { GET_USERS } from "./Query";
+import { GET_COMPANY } from "./Query";
 import { useQuery } from "@apollo/react-hooks";
 
 const Task = () => {
-  const { loading, error, data } = useQuery(GET_USERS);
+  const { loading, error, data } = useQuery(GET_COMPANY);
 
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
-  return (
-    <h2>{data.user.username}</h2>
-  )
+  console.log(data.company.name);
+  return(null)
 };
 
 export { Task };

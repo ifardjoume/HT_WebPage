@@ -7,7 +7,7 @@ export const LogInContainer = styled.div`
   display:flex;
   justify-content: center;
   align-items: center;
-  flex-direction:row;
+  flex-direction:column;
   @media screen and (max-width: 768px) {
     flex-direction:column;
   }
@@ -81,4 +81,8 @@ export const LogInTitle = styled.img`
   @media screen and (max-width: 768px) {
     width:80%;
   }
+`
+export const ErrorMessage = styled.p`
+color:red;
+padding:10px;
 `

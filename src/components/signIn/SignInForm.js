@@ -5,55 +5,64 @@ import { LogInContainer,
     StyledButton,
     ButtonContainer,
     Label,
-    LogInTitle
+    LogInTitle,
+    ErrorMessage
 } from './SigInForm.elements';
-import Logo from '../../images/main-logo.png'
+import Logo from '../../images/main-logo.png';
+import { useMutation } from '@apollo/react-hooks';
+import { useForm } from '../../hooks';
+import { LOGIN_USER } from '../../Query';
+import { useHistory } from "react-router-dom";
 
+function SignInForm(){
+    const [errors, setErrors] = useState({});
 
-function SignInForm(props){
-    const [state , setState] = useState({
-        email : "",
-        password : ""
+    const { onChange, onSubmit, values } = useForm(loginUserCallback, {
+        username: '',
+        password: ''
     });
-    const handleChange = (e) => {
-        const {id , value} = e.target   
-        setState(prevState => ({
-            ...prevState,
-            [id] : value
-        }))
-    }
-
-    const handleSubmitClick = (e) => {
-        e.preventDefault();
-        if(state.password === state.confirmPassword) {
-            console.log("Match!",state);   
-        } else {
-            console.log('Not match',state);
-        }
-    }
+    const history = useHistory();
+    const [loginUser, { loading }] = useMutation(LOGIN_USER, {
+        update(_, result) {
+            console.log(result)
+          history.push('/');
+        },
+        onError(err) {
+          setErrors({message: "Wrong username or password"});
+        },
+        variables: values
+      });
+    
+      function loginUserCallback() {
+        loginUser();
+      }
 
     return (
             <LogInContainer>
-                <StyledForm>
+                <StyledForm onSubmit={onSubmit} noValidate>
                     <LogInTitle src={Logo}/>
                     <Label htmlFor="email">User</Label>
-                    <StyledInput type='email' 
-                    name='email'
-                    id='email'
-                    value={state.email}
-                    onChange={handleChange}
+                    <StyledInput type='text' 
+                    name='username'
+                    value={values.username}
+                    onChange={onChange}
                     />
                     <Label htmlFor="password">Password</Label>
                     <StyledInput type='password'
                     name='password'
-                    id='password'
-                    value={state.password}
-                    onChange={handleChange}
+                    value={values.password}
+                    onChange={onChange}
                     />
+                    {Object.keys(errors).length > 0 && (
+                <div className="ui error message">
+                    {Object.values(errors).map((value) => (
+                    <ErrorMessage key={value}>{value}</ErrorMessage>
+                    ))}
+                </div>
+                 )}
                     <ButtonContainer>
                         <StyledButton type="submit"
-                            value="LOGIN"
-                            onClick={handleSubmitClick}>
+                            value="LOGIN">
                             Login
                         </StyledButton>
                     </ButtonContainer>
