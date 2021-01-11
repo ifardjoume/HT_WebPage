@@ -24,9 +24,8 @@ function SignInForm(){
     const history = useHistory();
     const [loginUser, { loading }] = useMutation(LOGIN_USER, {
         update(_, result) {
-            console.log(result)
-          history.push('/user-area');
           Cookies.set('token', result.data.login.token);
+          history.push('/user-area');
         },
         onError() {
           setErrors({message: "Wrong username or password"});

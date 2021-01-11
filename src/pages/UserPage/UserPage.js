@@ -1,9 +1,11 @@
-import React from 'react'
-import UserArea from '../../components/userPage/UserArea'
+import React from 'react';
+import SidebarMenu from '../../components/userPage/sidebarMenu/SidebarMenu';
 
 const UserPage = () => {
     return (
-        <UserArea />
+        <>
+            <SidebarMenu />
+        </>
     )
 }
 

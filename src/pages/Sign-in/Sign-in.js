@@ -1,16 +1,11 @@
 import React from 'react'
 import { Task } from '../../Task';
 import SignInForm from '../../components/signIn/SignInForm';
-import NavBar from '../../components/navbar/NavBarDefault';
 
 
-const SignIn = (props) => {
+const SignIn = () => {
     return (
-        <div>
-            <NavBar />
             <SignInForm/>
-            <Task />
-        </div>
     )
 }
 
