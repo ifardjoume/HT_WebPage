@@ -13,6 +13,7 @@ import { useMutation } from '@apollo/react-hooks';
 import { useForm } from '../../hooks';
 import { LOGIN_USER } from '../../Query';
 import { useHistory } from "react-router-dom";
+import Cookies from 'js-cookie';
 
 function SignInForm(){
     const [errors, setErrors] = useState({});
@@ -25,8 +26,7 @@ function SignInForm(){
         update(_, result) {
             console.log(result)
           history.push('/user-area');
-          window.localStorage.setItem('token', loginUser.login.token);
-          console.log(localStorage);
+          Cookies.set('token', result.data.login.token);
         },
         onError() {
           setErrors({message: "Wrong username or password"});

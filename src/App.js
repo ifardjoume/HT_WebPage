@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import GlobalStyle from './globalStyles';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './pages/HomePage/Home';
 import SignIn from './pages/Sign-in/Sign-in';
 import AppEng from './pages/Eng/Eng';
@@ -16,9 +16,7 @@ import GuardedRoute from './components/GuardedRoute';
 
 
 function App() {
-  const[isAutheticated, setisAutheticated] = useState({
-    loggedInStatus:true
-  });
+
   return (
       <Router>
         <GlobalStyle />
@@ -32,7 +30,7 @@ function App() {
           <Route exact path='/samples' component={EngSamples} />
           <Route exact path='/vaccinations' component={EngVaccinations} />
           <Route exact path='/organs' component={EngOrgans} />
-          <GuardedRoute path='/user-area' component={UserPage} auth={isAutheticated.loggedInStatus} />       
+          <GuardedRoute path='/user-area' component={UserPage}/>       
           <Route component={NoMatchPage} />
         </Switch>
       </Router>

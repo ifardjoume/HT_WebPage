@@ -2,6 +2,7 @@ import { ApolloClient } from "apollo-client";
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { createHttpLink } from 'apollo-link-http';
 import {setContext } from '@apollo/client/link/context';
+import Cookies from 'js-cookie';
 
 const httpLink = createHttpLink({
   uri: "http://ec2-3-15-39-161.us-east-2.compute.amazonaws.com:3000/graphql",
@@ -9,10 +10,11 @@ const httpLink = createHttpLink({
 })
 
 const authLink = setContext((_, { headers }) => {
+  const token = Cookies.get('token')
   return {
     headers: {
       ...headers,
-      authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVzIjoiMjAyMS0wMS0wOVQxODozMDozMS41MzVaIiwicmVmcmVzaFRva2VuIjpmYWxzZSwiYWRtaW4iOnRydWUsImlhdCI6MTYxMDEzMTgzMX0.pu5ckbWHMRqMHJ50v2fPlcjwj1y2qH1pwabWNwn_7DE"
+      authorization: `Bearer ${token}`
     }
   }
 
