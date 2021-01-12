@@ -13,7 +13,8 @@ import EngVaccinations from './pages/Eng/services/Vaccinations';
 import EngOrgans from './pages/Eng/services/Organs';
 import UserPage from './pages/UserPage/UserPage';
 import GuardedRoute from './components/GuardedRoute';
-
+import Reports from './pages/Reports/Reports';
+import Settings from './pages/Settings/Settings';
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
         <GlobalStyle />
         <Switch>
           <Route path='/' exact component={Home} />
-          <Route exact path='/sign-in' render={(props) => (<SignIn />)} />
+          <Route exact path='/sign-in' component={SignIn}/>
           <Route exact path='/en' component={AppEng} />
           <Route exact path='/muestras' component={Samples} />
           <Route exact path='/vacunas' component={Vaccinations} />
@@ -30,7 +31,9 @@ function App() {
           <Route exact path='/samples' component={EngSamples} />
           <Route exact path='/vaccinations' component={EngVaccinations} />
           <Route exact path='/organs' component={EngOrgans} />
-          <GuardedRoute path='/user-area' component={UserPage}/>       
+          <GuardedRoute path='/user-area' component={UserPage}/>
+          <GuardedRoute path='/reports' component={Reports}/>  
+          <GuardedRoute path='/settings' component={Settings}/>         
           <Route component={NoMatchPage} />
         </Switch>
       </Router>
