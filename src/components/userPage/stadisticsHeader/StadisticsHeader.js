@@ -11,29 +11,28 @@ import {
 
 const StadisticsHeader = () => {
     return (
+        <>
         <StadisticsDiv>
             <StadisticWrapper>
             <Card>
                 <NumberHeader>80</NumberHeader>
                 <Description>Viajes<br/> Mensuales</Description>
             </Card>
-            <Separator />
             <Card>
                 <NumberHeader>8</NumberHeader>
                 <Description>Viajes Mensuales<br/> con Alertas</Description>
             </Card>
-            <Separator />
             <Card>
                 <NumberHeader>50%</NumberHeader>
                 <Description>Total <br/>en Uso</Description>
             </Card>
-            <Separator />
             <Card>
                 <NumberHeader>30 hs</NumberHeader>
                 <Description>Tiempo viaje <br/> Mensual Acumulado</Description>
             </Card>
             </StadisticWrapper>
         </StadisticsDiv>
+        </>
     )
 }
 

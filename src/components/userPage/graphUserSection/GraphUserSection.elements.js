@@ -5,7 +5,7 @@ export const GraphsDiv = styled.div`
   display:flex;
   align-items: center;
   justify-content: center;
-  flex-direction:column;
+  flex-direction:row;
 `
 
 export const GraphDiv = styled.div`
@@ -13,9 +13,8 @@ export const GraphDiv = styled.div`
   align-items:center;
   display:flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction:row;
-  padding:30px;
 `
 
 export const GraphWrapper = styled.div`

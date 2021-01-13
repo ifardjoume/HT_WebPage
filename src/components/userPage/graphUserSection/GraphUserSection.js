@@ -11,13 +11,9 @@ import StackedBarsChart from './StackedBarsChart';
 const GraphUserSection = () => {
     return (
         <GraphsDiv>
-            <GraphDiv>
                 <PieChart />
                 <GaugeChart />
-            </GraphDiv>
-            <GraphDiv>
                 <StackedBarsChart />
-            </GraphDiv>
         </GraphsDiv>
     )
 }

@@ -5,9 +5,10 @@ import 'chartjs-adapter-moment';
 
 
 const GraphDiv = styled.div`
-width:400px;
-height:200px;
-margin:50px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  border-radius:20px;
+  padding:20px;
+  margin:20px;
 @media screen and (max-width: 768px) {
     width:350px;
     height:350px;
@@ -36,14 +37,18 @@ const PieChart = () => {
               }
             ]
           }}
+          width={"300px"}
+          height={"300px"}
         options={{
+          responsive:true,
+          maintainAspectRatio: false,
           title:{
             display:true,
             fontSize:20
           },
           legend:{
             display:true,
-            position:'right'
+            position:'bottom'
           }
         }} 
         />

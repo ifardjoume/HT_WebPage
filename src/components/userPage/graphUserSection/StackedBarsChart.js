@@ -4,8 +4,10 @@ import styled from 'styled-components';
 import 'chartjs-adapter-moment';
 
 const GraphDiv = styled.div`
-width:400px;
-height:200px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  border-radius:20px;
+  padding:20px;
+  margin:20px;
 @media screen and (max-width: 768px) {
     width:350px;
     height:350px
@@ -26,7 +28,7 @@ const StackedBarsChart = () => {
                     backgroundColor: '#adeecf',
                     borderWidth: 1,
                     stack: 1,
-                    hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+                    hoverBackgroundColor: '#00917c',
                     data: [65, 59, 80, 81, 56, 55, 40]
                   },
                   {
@@ -34,12 +36,20 @@ const StackedBarsChart = () => {
                     backgroundColor: '#ee9595',
                     borderWidth: 1,
                     stack: 1,
-                    hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+                    hoverBackgroundColor: '#a9294f',
                     data: [45, 79, 10, 41, 16, 85, 20]
                   }
                 ]
             }}
+            width={"300px"}
+            height={"300px"}
             options= {{
+              responsive:true,
+              maintainAspectRatio: false,
+              legend:{
+                display:true,
+                position:'bottom'
+              }
                 }
             }
             />

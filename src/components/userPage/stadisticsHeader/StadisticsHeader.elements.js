@@ -9,8 +9,20 @@ export const StadisticsDiv = styled.div`
     margin:20px 100px 20px 100px;
     border-radius:20px;
 `
-
-
+export const StadisticWrapper = styled.div`
+     display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . . .";
+    align-items:center;
+  grid-gap:16px;
+  padding: 0 50px;
+  @media screen and (max-width: 768px) {
+    width:90%;
+  }
+`
 export const Card = styled.div`
     padding:20px 50px;
     display:flex;
@@ -28,8 +40,8 @@ export const NumberHeader = styled.h2`
 
 export const Description = styled.p`
     max-width: 440px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 15px;
+  line-height: 20px;
   color:#333;
 `
 
@@ -39,15 +51,5 @@ export const Separator = styled.div`
     height:150px;
     display:flex;
     align-items:center;
-`
-
-export const StadisticWrapper = styled.div`
-     display:flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction:row;
-  @media screen and (max-width: 768px) {
-    width:90%;
-  }
 `
 
