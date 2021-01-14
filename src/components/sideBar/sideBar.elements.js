@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { Link as LinkS } from 'react-scroll';
 
 export const SideBarContainer = styled.aside`
+    display:none;
+    @media screen and (max-width: 990px) {
     position: fixed;
     z-index: 9000;
     width :100%;
@@ -16,6 +18,7 @@ export const SideBarContainer = styled.aside`
     transition: 0.3s ease-in-out;
     opacity: ${({ isOpen }) => (isOpen ? '100%' : 0)};
     top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+    }
 `
 
 export const CloseIcon = styled(FaTimes)`

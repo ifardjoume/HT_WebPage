@@ -10,6 +10,7 @@ import PieChart from '../graphUserSection/PieChart';
 import { Modal,Button } from 'react-bootstrap';
 import { FaCheck } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
+import { IconContext } from 'react-icons';
 
 
 const DataPackagesTable = () => {
@@ -81,8 +82,9 @@ const DataPackagesTable = () => {
             name: 'Alertas',
             selector: 'alerta',
             sortable:true,
-            cell: row => row.alerta ? <p>Si</p> : <p>No</p> 
-            // cell: row => row.alerta ?  <StyledButton onClick={handleShow}><ImCross/></StyledButton> : <StyledButton onClick={handleShow}><FaCheck/></StyledButton>
+            cell: row => row.alerta ?  <IconContext.Provider value={{ color: '#00917c' }}><StyledButton onClick={handleShow}><FaCheck/></StyledButton></IconContext.Provider>
+             : 
+             <IconContext.Provider value={{ color: '#a9294f' }}><StyledButton onClick={handleShow}><ImCross/></StyledButton></IconContext.Provider>
         }
     ];
 

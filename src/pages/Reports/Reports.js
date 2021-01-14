@@ -1,16 +1,16 @@
 import React from 'react';
-import DataTable from '../../components/userPage/dataTable/DataTablev2';
-import GraphUserSection from '../../components/userPage/graphUserSection/GraphUserSection';
+import ReportsTable from '../../components/ReportsUserPage/ReportsTable/ReportsTable';
+import SearchHeader from '../../components/ReportsUserPage/SearchHeader/SearchHeader';
 import SidebarMenu from '../../components/userPage/sidebarMenu/SidebarMenu';
-import StadisticsHeader from '../../components/userPage/stadisticsHeader/StadisticsHeader';
+import { Task } from '../../Task';
 
 const Reports = () => {
     return (
         <>
-          <SidebarMenu /> 
-          <StadisticsHeader />
-            <GraphUserSection />
-            <DataTable />
+          <SidebarMenu />
+          <SearchHeader />
+          <ReportsTable />
+          <Task/>
         </>
     )
 }

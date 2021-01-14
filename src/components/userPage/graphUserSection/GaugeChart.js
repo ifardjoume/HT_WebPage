@@ -18,7 +18,7 @@ const GaugeChart = () => {
         <GraphDiv>
         <Doughnut 
         data={{
-            labels: ['Viajes realizados', 'Viajes con alertas'],
+            labels: ['Ratio Actual', 'Ratio Mes Anterior'],
             datasets: [
               {
                 label: 'Rainfall',
@@ -34,8 +34,8 @@ const GaugeChart = () => {
               }
             ]
           }}
-          width={"300px"}
-          height={"300px"}
+          width={300}
+          height={300}
         options={{
             responsive:true,
             maintainAspectRatio: false,

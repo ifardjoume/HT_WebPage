@@ -1,5 +1,7 @@
 import React,{ useState } from 'react';
-import Cookies from 'js-cookie'; 
+import Cookies from 'js-cookie';
+import { GET_USERNAME } from "../../../Query";
+import { useQuery } from "@apollo/react-hooks"; 
 import { IconContext } from 'react-icons/lib';
 import { 
     Nav,
@@ -23,12 +25,19 @@ import {
 
 import Logo from '../../../images/logo-navbar-blue.png'
 
+/* function getUsername() {
+  const { loading, error, data } =  useQuery(GET_USERNAME);
+
+    if (loading) return "Loading...";
+    if (error) return `Error! ${error.message}`;
+    return   (data.user.username)
+} */
 
 const SidebarMenu = () => {
     const [sidebar, setSidebar] = useState(false);
-    const timestamp = Date.now(); // This would be the timestamp you want to format
+    const timestamp = Date.now();
     let date = new Intl.DateTimeFormat('es-AR', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit'}).format(timestamp)
-  const showSidebar = () => setSidebar(!sidebar);
+    const showSidebar = () => setSidebar(!sidebar);
     const toggleLogOut = () => Cookies.remove('token');
     return (
         <>
@@ -43,7 +52,7 @@ const SidebarMenu = () => {
             <UserDiv>
               <UserInfoDiv>
                 <DateP>{date}</DateP>
-                <Username>ttests</Username>
+                <Username>Hello</Username>
               </UserInfoDiv>
               <NavBtn>
                   <NavBtnLink to='/' onClick={toggleLogOut}>

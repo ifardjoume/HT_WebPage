@@ -21,7 +21,7 @@ const PieChart = () => {
         <GraphDiv>
         <Pie 
         data={{
-            labels: ['Viajes correctos', 'Viajes con alertas'],
+            labels: ['Sin alerta', 'Con alerta'],
             datasets: [
               {
                 label: 'Rainfall',
@@ -37,8 +37,8 @@ const PieChart = () => {
               }
             ]
           }}
-          width={"300px"}
-          height={"300px"}
+          width={300}
+          height={300}
         options={{
           responsive:true,
           maintainAspectRatio: false,

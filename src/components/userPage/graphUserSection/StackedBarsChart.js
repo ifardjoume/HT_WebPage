@@ -32,6 +32,14 @@ const StackedBarsChart = () => {
                     data: [65, 59, 80, 81, 56, 55, 40]
                   },
                   {
+                    label: 'Viajes dudosos',
+                    backgroundColor: '#ffc764',
+                    borderWidth: 1,
+                    stack: 1,
+                    hoverBackgroundColor: '#a9294f',
+                    data: [4, 7, 15, 14, 8, 5, 20]
+                  },
+                  {
                     label: 'Viajes con alertas',
                     backgroundColor: '#ee9595',
                     borderWidth: 1,
@@ -41,8 +49,8 @@ const StackedBarsChart = () => {
                   }
                 ]
             }}
-            width={"300px"}
-            height={"300px"}
+            width={300}
+            height={300}
             options= {{
               responsive:true,
               maintainAspectRatio: false,

@@ -14,10 +14,11 @@ export const TableDiv = styled.div`
 `
 
 export const StyledButton = styled.button`
+    border-radius:50px;
   background: #fff;
   color:#fff;
+  padding:5px 15px;
   white-space:nowrap;
-  padding: 10px;
   color: #333;
   border: 1px solid black;
   outline: none;
