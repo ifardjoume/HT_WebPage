@@ -1,7 +1,6 @@
 import React from 'react'
 import { 
-    GraphsDiv,
-    GraphDiv
+    GraphsDiv
  } from './GraphUserSection.elements';
 import PieChart from './PieChart';
 import GaugeChart from './GaugeChart';

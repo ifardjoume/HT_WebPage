@@ -4,7 +4,6 @@ import {
     Card,
     Description,
     NumberHeader,
-    Separator,
     StadisticWrapper
  } from './StadisticsHeader.elements';
 

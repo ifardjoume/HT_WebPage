@@ -1,7 +1,5 @@
 import React,{ useState } from 'react';
 import Cookies from 'js-cookie';
-import { GET_USERNAME } from "../../../Query";
-import { useQuery } from "@apollo/react-hooks"; 
 import { IconContext } from 'react-icons/lib';
 import { 
     Nav,
@@ -14,9 +12,9 @@ import {
     NavBtnLink,
     UserDiv,
     DateP,
-    Username,
     UserInfoDiv
  } from './SidebarMenu.elements';
+ import Username from './Username';
  import SubMenu from './SubMenu';
  import { SidebarData } from './SideBarData';
  import * as FaIcons from 'react-icons/fa';
@@ -24,14 +22,6 @@ import {
  import { BiLogOut } from 'react-icons/bi';
 
 import Logo from '../../../images/logo-navbar-blue.png'
-
-/* function getUsername() {
-  const { loading, error, data } =  useQuery(GET_USERNAME);
-
-    if (loading) return "Loading...";
-    if (error) return `Error! ${error.message}`;
-    return   (data.user.username)
-} */
 
 const SidebarMenu = () => {
     const [sidebar, setSidebar] = useState(false);
@@ -52,7 +42,7 @@ const SidebarMenu = () => {
             <UserDiv>
               <UserInfoDiv>
                 <DateP>{date}</DateP>
-                <Username>Hello</Username>
+                <Username />
               </UserInfoDiv>
               <NavBtn>
                   <NavBtnLink to='/' onClick={toggleLogOut}>

@@ -104,7 +104,7 @@ export const DateP = styled.p`
 `
 
 
-export const Username = styled.h4`
+export const UsernameHeader = styled.h4`
  margin:0
 `
 

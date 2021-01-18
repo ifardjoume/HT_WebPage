@@ -1,27 +1,52 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DataTable from 'react-data-table-component';
+import { GET_SHIPMENTS } from '../../../Query';
+import { useQuery } from "@apollo/react-hooks";
+/* import jwt_decode from "jwt-decode";
+import Cookies from 'js-cookie'; */
 import { 
     TableContainer,
     TableDiv
- } from './ReportsTable.elements';
+} from './ReportsTable.elements';
+import { Row } from 'react-bootstrap';
 
 
-const ReportsTable = () => {
-    const reports = [
-        {id:1, salida:"Laboratorios M", entrada:"Sky Net Labs", status:true,report:'pdf'},
-        {id:2, salida:"H+Trace Labs", entrada:"Sky Net Labs", status:false,report:'pdf'},
-        {id:3, salida:"Laboratorios M", entrada:"H+Trace Labs", status:true,report:'pdf'},
-        {id:4, salida:"H+Trace Labs", entrada:"Sky Net Labs", status:false,report:'pdf'}
-    ];
-    
+/* 
+traigo la lista de branches
+{
+company {
+name
+branches {
+branch_id
+  name
+}
+}
+}
+
+*/
+
+
+
+
+
+
+
+
+
+function ReportsTable(){
+    const { loading, error, data } = useQuery(GET_SHIPMENTS);
+    if (loading) return 'Loading...';
+    if (error) return `Error! ${error.message}`;
+    console.log(data.shipments);
+    var myData = data.shipments;
     
     const columnsReports = [
         {
             name: 'ID',
-            selector: 'id',
+            selector: "shipment_id",
             sortable:true
-        },
+        } ,
         {
             name: 'Envió',
             selector: 'salida',
@@ -34,8 +59,8 @@ const ReportsTable = () => {
         },
         {
             name: 'Status',
-            selector: 'status',
-            sortable:true
+            selector: 'alerts',
+            cell: row => row.alerts != null && row.alerts.length > 0 ? <p>Con alertas</p> : <p>OK</p> 
         },
         {
             name: 'Reporte',
@@ -50,7 +75,8 @@ const ReportsTable = () => {
                 <DataTable
                 responsive
                 columns={columnsReports}
-                data={reports}
+                keyField="shipment_id"
+                data={myData}
                 title='Reportes'
                 />
             </TableDiv>
