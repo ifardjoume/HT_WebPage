@@ -1,9 +1,4 @@
 import { gql } from "apollo-boost";
-/* import jwt_decode from "jwt-decode";
-import Cookies from 'js-cookie';
-
-var userToken = Cookies.get('token');
-var decoded = jwt_decode(userToken); */
 
 export const LOGIN_USER = gql`
   mutation login(
@@ -40,7 +35,11 @@ export const GET_SHIPMENTS= gql`
     shipments {
       shipment_id
       origin_id
+      origin_user_id
+      destination_user_id
       destination_id
+      departure
+      arrival
       alerts {
         type
         value
@@ -50,4 +49,23 @@ export const GET_SHIPMENTS= gql`
       }
     }
   }
+`;
+
+export const GET_BRANCHES= gql`
+query{
+  company {
+      branches {
+      branch_id
+        name
+      }
+    }
+  }
+`;
+
+export const GET_USERNAMES= gql`
+query{
+    users{
+    username
+  }
+}
 `;

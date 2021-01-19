@@ -11,3 +11,10 @@ export const TableDiv = styled.div`
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
     border-radius:20px;
 `
+export const StyledP = styled.p`
+text-align:center;
+display:flex;
+justify-content:center;
+align-items:center;
+
+`

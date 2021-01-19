@@ -3,36 +3,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import DataTable from 'react-data-table-component';
 import { GET_SHIPMENTS } from '../../../Query';
 import { useQuery } from "@apollo/react-hooks";
-/* import jwt_decode from "jwt-decode";
-import Cookies from 'js-cookie'; */
 import { 
     TableContainer,
-    TableDiv
+    TableDiv,
+    StyledP
 } from './ReportsTable.elements';
-import { Row } from 'react-bootstrap';
-
-
-/* 
-traigo la lista de branches
-{
-company {
-name
-branches {
-branch_id
-  name
-}
-}
-}
-
-*/
-
-
-
-
-
-
-
-
+import GetBranchName from './GetBranchName';
+import getReport from './getReport';
+import GetUsernames from './GetUsernames';
 
 function ReportsTable(){
     const { loading, error, data } = useQuery(GET_SHIPMENTS);
@@ -43,19 +21,33 @@ function ReportsTable(){
     
     const columnsReports = [
         {
-            name: 'ID',
+            name: 'Número de envio',
             selector: "shipment_id",
-            sortable:true
-        } ,
-        {
-            name: 'Envió',
-            selector: 'salida',
             sortable:true
         },
         {
-            name: 'Recibió',
-            selector: 'entrada',
-            sortable:true
+            name: 'Origen',
+            selector: 'origin_id',
+            sortable:true,
+            cell: row => GetBranchName(row.origin_id)
+        },
+        {
+            name: 'Remitente',
+            selector: 'origin_user_id',
+            sortable:true,
+            cell: row => row.origin_user_id //GetUsernames(row.origin_user_id)
+        },
+        {
+            name: 'Destino',
+            selector: 'destination_id',
+            sortable:true,
+            cell: row => row.destination_id != null ? GetBranchName(row.destination_id) : <StyledP>En tránsito</StyledP>
+        },
+        {
+            name: 'Destinatario',
+            selector: 'destination_user_id',
+            sortable:true,
+            cell: row => row.destination_user_id != null ? row.destination_user_id /* GetUsernames(row.destination_user_id) */ : <StyledP>-</StyledP>
         },
         {
             name: 'Status',
@@ -64,8 +56,9 @@ function ReportsTable(){
         },
         {
             name: 'Reporte',
-            selector: 'report',
-            sortable:true
+            selector: 'shipment_id',
+            sortable:true,
+            cell: row => row.destination_user_id != null && row.destination_id != null ? getReport(row.shipment_id) : <p>-</p>
         }
     ];
 
@@ -78,6 +71,8 @@ function ReportsTable(){
                 keyField="shipment_id"
                 data={myData}
                 title='Reportes'
+                pagination={true}
+                paginationPerPage={5}
                 />
             </TableDiv>
         </TableContainer>

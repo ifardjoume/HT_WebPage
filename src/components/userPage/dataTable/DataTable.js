@@ -6,77 +6,67 @@ import {
     TableDiv,
     StyledButton
  } from './DataTable.elements';
-import PieChart from '../graphUserSection/PieChart';
+ import { GET_SHIPMENTS } from '../../../Query';
+import { useQuery } from "@apollo/react-hooks";
+import GetBranchName from '../../ReportsUserPage/ReportsTable/GetBranchName';
 import { Modal,Button } from 'react-bootstrap';
 import { FaCheck } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
 import { IconContext } from 'react-icons';
 
 
-const DataPackagesTable = () => {
+function DataPackagesTable(){
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
-    const PackageTableInTransit = [
-        {id:1, salida:"14:00", sucursal:"Laboratorios M", remitente:"Sky Net Labs"},
-        {id:2, salida:"18:00", sucursal:"Laboratorios M", remitente:"Sky Net Labs"},
-        {id:3, salida:"19:00", sucursal:"Laboratorios M", remitente:"Sky Net Labs"},
-        {id:4, salida:"20:00", sucursal:"Laboratorios M", remitente:"Sky Net Labs"}
-    ];
-    
-    const PackageTableReceived = [
-        {id:1, llegada:"11:00", sucursal:"Sky Net Labs", alerta:true},
-        {id:2, llegada:"15:00", sucursal:"Sky Net Labs", alerta:false},
-        {id:3, llegada:"19:00", sucursal:"Sky Net Labs", alerta:true},
-        {id:4, llegada:"22:00", sucursal:"Sky Net Labs", alerta:false}
-    ];
+    const { loading, error, data } = useQuery(GET_SHIPMENTS);
+    if (loading) return 'Loading...';
+    if (error) return `Error! ${error.message}`;
+    console.log(data.shipments);
+    var myData = data.shipments;
 
     const columnsInTransit = [
         {
-            name: 'ID',
-            selector: 'id',
+            name: 'Numero de Envio',
+            selector: 'shipment_id',
             sortable:true,
-            grow:1
         },
         {
-            name: 'Salida',
-            selector: 'salida',
-            sortable:true,
-            grow:1
+            name: 'Hora de Salida',
+            selector: 'departure',
+            sortable:true
         },
         {
-            name: 'Sucursal',
-            selector: 'sucursal',
+            name: 'Origen',
+            selector: 'origin_id',
             sortable:true,
-            width:'150px'
+            cell: row => GetBranchName(row.origin_id)
         },
         {
-            name: 'Remitente',
-            selector: 'remitente',
+            name: 'Destino',
+            selector: 'destination_id',
             sortable:true,
-            grow:4
+            cell: row => row.destination_id != null ? GetBranchName(row.destination_id) : <p>En tránsito</p>
         }
     ];
     
     
     const columnsReceived = [
         {
-            name: 'ID',
-            selector: 'id',
+            name: 'Numero de Envio',
+            selector: 'shipment_id',
             sortable:true
         },
         {
-            name: 'Llegada',
-            selector: 'llegada',
+            name: 'Hora de Llegada',
+            selector: 'arrival',
             sortable:true
         },
         {
-            name: 'Sucursal de Salida',
-            selector: 'sucursal',
+            name: 'Arribo',
+            selector: 'destination_id',
             sortable:true,
-            grow:2
+            cell: row => row.destination_id != null ? GetBranchName(row.destination_id) : <p>En tránsito</p>
         },
         {
             name: 'Alertas',
@@ -96,7 +86,8 @@ const DataPackagesTable = () => {
                 <DataTable
                 responsive
                 columns={columnsInTransit}
-                data={PackageTableInTransit}
+                keyField="shipment_id"
+                data={myData}
                 title='En transito'
                 />
             </TableDiv>
@@ -104,18 +95,17 @@ const DataPackagesTable = () => {
                 <DataTable
                 responsive
                 columns={columnsReceived}
-                data={PackageTableReceived}
+                keyField="shipment_id"
+                data={myData}
                 title='Recibidos'
                 onRowClicked={handleShow}
-                /* expandableRows
-                expandableRowsComponent={<PieChart />} */
                 />
 
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
                     <Modal.Title>Grafico de Alertas</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body><PieChart /></Modal.Body>
+                    <Modal.Body>Hola</Modal.Body>
                     <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
