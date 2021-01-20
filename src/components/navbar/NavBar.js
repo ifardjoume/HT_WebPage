@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React from 'react';
 import { FaBars } from 'react-icons/fa';
 import {animateScroll as scroll} from 'react-scroll';
 import {
@@ -18,19 +18,6 @@ import Logo from '../../images/logo-navbar-blue.png';
 import { IconContext } from 'react-icons';
 
 const Navbar = ({ toggle }) => {
-  const [scrollNav, setScrollNav] = useState(false);
-
-  const changeNav = () => {
-    if(window.scrollY >= 80){
-      setScrollNav(true)
-    } else{
-      setScrollNav(false)
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener('scroll',changeNav)
-  })
 
   const toggleHome = () => {
     scroll.scrollToTop();
@@ -38,7 +25,7 @@ const Navbar = ({ toggle }) => {
   return (
     <>
      <IconContext.Provider value={{ color: '#333' }}>
-        <Nav scrollNav={scrollNav}>
+        <Nav>
           <NavbarContainer>
             <NavLogo to='/' onClick={toggleHome}>
               <NavIcon src={Logo}  />
@@ -91,7 +78,7 @@ const Navbar = ({ toggle }) => {
                 </NavLinks>
               </NavItem>
               <NavBtn>
-                  <NavBtnLink to='/sign-in'>
+                  <NavBtnLink to='/user-area'>
                     LOGIN
                   </NavBtnLink>
               </NavBtn>

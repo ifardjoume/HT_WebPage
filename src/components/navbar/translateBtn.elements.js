@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 export const NavBtn = styled.nav`
   display: flex;
   align-items:center;
+  justify-content:center;
   margin-left:10px;
 
   @media screen and (max-width: 768px) {
