@@ -56,6 +56,28 @@ export const SidebarLink = styled(LinkS)`
         color:#333;
     }
 `
+export const SidebarLinkHome = styled(Link)`
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.5rem;
+    text-decoration: none;
+    list-style:none;
+    transition: 0.2s ease-in-out;
+    text-decoration:none;
+    color:#333;
+    cursor: pointer;
+
+    &:hover{
+        color: #4b59f7;
+        transition: 0.2 ease-in-out;
+        text-decoration:none;
+        color:#333;
+    }
+`
+
+
+
 export const SideBtnWrap = styled.div`
     display:flex;
     justify-content: center;
