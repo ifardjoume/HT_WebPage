@@ -74,6 +74,6 @@ export const Img = styled.img`
 export const ImgWrapper = styled.div`
   max-width: 555px;
   display: flex;
-  justify-content:flex-end;
-  flex-direction:column;
+ justify-content: flex-end;
+ flex-direction:column;
 `;
