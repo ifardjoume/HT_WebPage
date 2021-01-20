@@ -21,7 +21,7 @@ function ReportsTable(){
     
     const columnsReports = [
         {
-            name: 'Número de envio',
+            name: 'ID',
             selector: "shipment_id",
             sortable:true
         },

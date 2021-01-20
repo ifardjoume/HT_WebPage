@@ -24,7 +24,6 @@ const PieChart = () => {
             labels: ['Sin alerta', 'Con alerta'],
             datasets: [
               {
-                label: 'Rainfall',
                 backgroundColor: [
                   '#adeecf',
                   '#ee9595'

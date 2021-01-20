@@ -51,7 +51,7 @@ export const NavLogo = styled(Link)`
   }
 
   @media screen and (max-width: 768px) {
-   margin-top:20px;
+   display:none;
   }
 `;
 

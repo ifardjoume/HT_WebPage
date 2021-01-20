@@ -9,8 +9,9 @@ function BranchSelect(){
     if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
     return (
+        <>
         <StyledSelect>
-            <option value="">Sucursal</option>
+            <option value="">Origen</option>
             {data.company.branches.map(function(branch){
                return <option 
                key={branch.name}
@@ -20,6 +21,19 @@ function BranchSelect(){
             </option>
             })}
         </StyledSelect>
+        <StyledSelect>
+            <option value="">Destino</option>
+            {data.company.branches.map(function(branch){
+               return <option 
+               key={branch.name}
+               value={branch.name}
+               >
+                {branch.name}
+            </option>
+            })}
+        </StyledSelect>
+        
+        </>
     )
 }
 

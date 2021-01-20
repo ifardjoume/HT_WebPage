@@ -8,8 +8,9 @@ const UserSelect = () => {
     if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
     return (
+        <>
         <StyledSelect>
-            <option value="">Usuario</option>
+            <option value="">Remitente</option>
             {data.users.map(function(userTag){
                return <option 
                key={userTag.username}
@@ -19,6 +20,18 @@ const UserSelect = () => {
                 </option>
             })}
         </StyledSelect>
+        <StyledSelect>
+            <option value="">Destinatario</option>
+            {data.users.map(function(userTag){
+               return <option 
+               key={userTag.username}
+               value={userTag.username}
+               >
+                   {userTag.username}
+                </option>
+            })}
+        </StyledSelect>
+        </>
     )
 }
 

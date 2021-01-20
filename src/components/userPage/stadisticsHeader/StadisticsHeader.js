@@ -21,12 +21,11 @@ function StadisticsHeader(){
         return obj.arrival != null
       });
       var doubtTravels = myData.filter(obj => {
-        return obj.alerts !== null && obj.alerts.length > 0 && obj.alerts.type !== "temperature"
+        return obj.alerts !== null && obj.alerts.length > 0 && obj.alerts.every(currentValue => currentValue !== "temperature")
       });
     var ratio = alertTravels.length / totalTravels.length;
     
     return (
-        <>
         <StadisticsDiv>
             <StadisticWrapper>
             <Card>
@@ -47,7 +46,6 @@ function StadisticsHeader(){
             </Card>
             </StadisticWrapper>
         </StadisticsDiv>
-        </>
     )
 }
 

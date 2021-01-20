@@ -6,6 +6,9 @@ export const GraphsDiv = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction:row;
+  @media screen and (max-width: 768px){
+    flex-direction:column;
+    }
 `
 
 export const GraphDiv = styled.div`
@@ -15,6 +18,11 @@ export const GraphDiv = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-direction:row;
+  @media screen and (max-width: 768px){
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    }
 `
 
 export const GraphWrapper = styled.div`

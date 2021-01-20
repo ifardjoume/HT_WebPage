@@ -33,7 +33,7 @@ function DataPackagesTable(){
 
     const columnsInTransit = [
         {
-            name: 'Numero de Envio',
+            name: 'ID',
             selector: 'shipment_id',
             sortable:true,
         },
@@ -48,21 +48,21 @@ function DataPackagesTable(){
             selector: 'origin_id',
             sortable:true,
             cell: row => GetBranchName(row.origin_id)
-        },
-        {
-            name: 'Destino',
-            selector: 'destination_id',
-            sortable:true,
-            cell: row => row.destination_id != null ? GetBranchName(row.destination_id) : <p>En tránsito</p>
         }
     ];
     
     
     const columnsReceived = [
         {
-            name: 'Numero de Envio',
+            name: 'ID',
             selector: 'shipment_id',
             sortable:true
+        },
+        {
+            name: 'Origen',
+            selector: 'origin_id',
+            sortable:true,
+            cell: row => GetBranchName(row.origin_id)
         },
         {
             name: 'Hora de Llegada',
