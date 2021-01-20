@@ -35,7 +35,7 @@ function ReportsTable(){
             name: 'Remitente',
             selector: 'origin_user_id',
             sortable:true,
-            cell: row => row.origin_user_id //GetUsernames(row.origin_user_id)
+            cell: row => GetUsernames(row.origin_user_id)
         },
         {
             name: 'Destino',
@@ -47,7 +47,7 @@ function ReportsTable(){
             name: 'Destinatario',
             selector: 'destination_user_id',
             sortable:true,
-            cell: row => row.destination_user_id != null ? row.destination_user_id /* GetUsernames(row.destination_user_id) */ : <StyledP>-</StyledP>
+            cell: row => row.destination_user_id != null ? GetUsernames(row.destination_user_id) : <StyledP>-</StyledP>
         },
         {
             name: 'Status',

@@ -36,7 +36,7 @@ const StackedBarsChart = () => {
                     backgroundColor: '#ffc764',
                     borderWidth: 1,
                     stack: 1,
-                    hoverBackgroundColor: '#a9294f',
+                    hoverBackgroundColor: '#ffe227',
                     data: [4, 7, 15, 14, 8, 5, 20]
                   },
                   {

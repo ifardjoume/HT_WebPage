@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StyledInput = styled.input`
     width:50%;
     border-radius:20px;
+    padding:5px;
 `
 
 export const SearchContainer = styled.div`
@@ -25,4 +26,7 @@ export const StyledSelect = styled.select`
     padding:2px;
     margin:10px;
     border-radius:20px;
+    overflow:hidden;
+    padding:5px;
+    background:#fafafa;
 `

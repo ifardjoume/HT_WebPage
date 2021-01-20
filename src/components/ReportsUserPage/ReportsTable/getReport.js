@@ -6,8 +6,9 @@ function getReport(shipmentID){
             href={'http://ec2-3-15-39-161.us-east-2.compute.amazonaws.com:3000/reports/'+ shipmentID}
             download={"report_id" + shipmentID}  
             target="_blank"
-            rel="report"
-        ><HiDownload  size={20}/></a>
+            rel="noreferrer"
+        ><HiDownload  size={20}/>
+        </a>
     )
 }
 

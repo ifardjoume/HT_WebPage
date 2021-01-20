@@ -1,11 +1,13 @@
 import React from 'react'
+import BranchSelect from './BranchSelect';
 import { 
     SearchContainer,
     StyledInput,
     SearchDiv,
     StyledSelect
 } from './SearchHeader.elements';
-//import { DateRangePicker } from 'react-dates';
+import UserSelect from './UserSelect';
+import { DateRangePicker } from 'react-dates';
 
 
 const SearchHeader = () => {
@@ -21,56 +23,25 @@ const SearchHeader = () => {
             />
             </SearchDiv>
             <SearchDiv>
-             <StyledSelect
-                className="select"
-                /* value={this.props.filters.sortBy}
-                onChange={this.onSortChange}   */>
-                    <option value="date">Remitente</option>
-                    <option value="date">Laboratorios M</option>
-                    <option value="amount">H-Trace Labs</option>
-            </StyledSelect>
+             <BranchSelect />
+            <UserSelect />
             <StyledSelect
                 className="select"
                 /* value={this.props.filters.sortBy}
                 onChange={this.onSortChange}   */      >
-                    <option value="date">Receptor</option>
-                    <option value="date">Laboratorios M</option>
-                    <option value="amount">H-Trace Labs</option>
+                    <option value="">Alertas</option>
+                    <option value="alerta">Con Alertas</option>
+                    <option value="dudoso">Dudoso</option>
+                    <option value="no-alerta">Sin alerta</option>
             </StyledSelect>
-            <StyledSelect
-                className="select"
-                /* value={this.props.filters.sortBy}
-                onChange={this.onSortChange}   */      >
-                    <option value="date">Alertas</option>
-                    <option value="amount">Dudoso</option>
-                    <option value="amount">Sin alerta</option>
-            </StyledSelect>
-             <StyledSelect
-                className="select"
-                /* value={this.props.filters.sortBy}
-                onChange={this.onSortChange}   */      >
-                    <option value="date">Laboratorios M</option>
-                    <option value="amount">H-Trace Labs</option>
-            </StyledSelect>
-            <StyledSelect
-                className="select"
-                /* value={this.props.filters.sortBy}
-                onChange={this.onSortChange}   */      >
-                    <option value="date">Laboratorios M</option>
-                    <option value="amount">H-Trace Labs</option>
-            </StyledSelect>
-            <StyledSelect
-                className="select"
-                /* value={this.props.filters.sortBy}
-                onChange={this.onSortChange}   */      >
-                    <option value="date">Alerta</option>
-                    <option value="amount">Dudoso</option>
-                    <option value="amount">Sin alerta</option>
-            </StyledSelect>
-
+            {/* <DateRangePicker
+                startDate={this.props.filters.startDate}
+                endDate={this.props.filters.endDate}
+                showClearDates={true}
+                numberOfMonths={1}
+                isOutsideRange={() => false}
+            /> */}
             </SearchDiv>
-
-
         </SearchContainer>
     )
 }

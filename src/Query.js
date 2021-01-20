@@ -65,6 +65,7 @@ query{
 export const GET_USERNAMES= gql`
 query{
     users{
+    user_id
     username
   }
 }

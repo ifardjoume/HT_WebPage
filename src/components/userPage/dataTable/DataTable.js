@@ -6,13 +6,14 @@ import {
     TableDiv,
     StyledButton
  } from './DataTable.elements';
- import { GET_SHIPMENTS } from '../../../Query';
+import { GET_SHIPMENTS } from '../../../Query';
 import { useQuery } from "@apollo/react-hooks";
 import GetBranchName from '../../ReportsUserPage/ReportsTable/GetBranchName';
 import { Modal,Button } from 'react-bootstrap';
 import { FaCheck } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
 import { IconContext } from 'react-icons';
+import getDate from './getDate';
 
 
 function DataPackagesTable(){
@@ -22,8 +23,13 @@ function DataPackagesTable(){
     const { loading, error, data } = useQuery(GET_SHIPMENTS);
     if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
-    console.log(data.shipments);
     var myData = data.shipments;
+    var inTransit = myData.filter(obj => {
+        return obj.arrival == null
+      });
+    var received = myData.filter(obj => {
+        return obj.arrival != null
+      });
 
     const columnsInTransit = [
         {
@@ -34,7 +40,8 @@ function DataPackagesTable(){
         {
             name: 'Hora de Salida',
             selector: 'departure',
-            sortable:true
+            sortable:true,
+            cell: row => getDate(row.departure)
         },
         {
             name: 'Origen',
@@ -60,7 +67,8 @@ function DataPackagesTable(){
         {
             name: 'Hora de Llegada',
             selector: 'arrival',
-            sortable:true
+            sortable:true,
+            cell: row => row.arrival != null ? getDate(row.arrival) : <p>En transito</p>
         },
         {
             name: 'Arribo',
@@ -70,9 +78,9 @@ function DataPackagesTable(){
         },
         {
             name: 'Alertas',
-            selector: 'alerta',
+            selector: 'alerts',
             sortable:true,
-            cell: row => row.alerta ?  <IconContext.Provider value={{ color: '#00917c' }}><StyledButton onClick={handleShow}><FaCheck/></StyledButton></IconContext.Provider>
+            cell: row => row.alerts.length <= 0 ?  <IconContext.Provider value={{ color: '#00917c' }}><StyledButton onClick={handleShow}><FaCheck/></StyledButton></IconContext.Provider>
              : 
              <IconContext.Provider value={{ color: '#a9294f' }}><StyledButton onClick={handleShow}><ImCross/></StyledButton></IconContext.Provider>
         }
@@ -87,8 +95,10 @@ function DataPackagesTable(){
                 responsive
                 columns={columnsInTransit}
                 keyField="shipment_id"
-                data={myData}
+                data={inTransit}
                 title='En transito'
+                pagination={true}
+                paginationPerPage={5}
                 />
             </TableDiv>
             <TableDiv>
@@ -96,8 +106,10 @@ function DataPackagesTable(){
                 responsive
                 columns={columnsReceived}
                 keyField="shipment_id"
-                data={myData}
+                data={received}
                 title='Recibidos'
+                pagination={true}
+                paginationPerPage={5}
                 onRowClicked={handleShow}
                 />
 

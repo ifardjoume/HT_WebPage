@@ -22,7 +22,7 @@ function SignInForm(){
         password: ''
     });
     const history = useHistory();
-    const [loginUser, { loading }] = useMutation(LOGIN_USER, {
+    const [loginUser] = useMutation(LOGIN_USER, {
         update(_, result) {
           Cookies.set('token', result.data.login.token);
           history.push('/user-area');
