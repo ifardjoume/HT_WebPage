@@ -9,6 +9,9 @@ export const Nav = styled.div`
   flex-direction: row;
   flex-wrap: nowrap;              
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index:999;
 `;
 
 export const NavIcon = styled(Link)`

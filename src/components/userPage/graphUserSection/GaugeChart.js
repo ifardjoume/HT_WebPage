@@ -42,8 +42,9 @@ const GaugeChart = () => {
             rotation: 1 * Math.PI,
             circumference: 1 * Math.PI,
           title:{
+            text:"Comparación de Ratios",
             display:true,
-            fontSize:20
+            fontSize:18
           },
           tooltip: {
             enabled: false

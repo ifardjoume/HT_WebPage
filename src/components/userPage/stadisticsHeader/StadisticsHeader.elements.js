@@ -63,3 +63,18 @@ export const Separator = styled.div`
     align-items:center;
 `
 
+export const StyledSpan = styled.span`
+  width: 120px;
+  background-color: #555;
+  color: black;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+`;
