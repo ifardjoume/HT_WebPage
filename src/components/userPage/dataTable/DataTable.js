@@ -16,23 +16,23 @@ import { IconContext } from 'react-icons';
 import getDate from './getDate';
 import TempGraph from './TempGraph';
 
-var TemperatureGraphID
+var TemperatureGraph;
 function DataPackagesTable() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false)
     const handleShow = (shipmentID) => {
         setShow(true);
-        TemperatureGraphID= shipmentID;
+        TemperatureGraph = <TempGraph shipment={shipmentID}/>;
     };
     const { loading, error, data } = useQuery(GET_SHIPMENTS);
     if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
     var myData = data.shipments;
     var inTransit = myData.filter(obj => {
-        return obj.arrival == null
+        return obj.status === "in transit"
     });
     var received = myData.filter(obj => {
-        return obj.arrival != null
+        return obj.status === "failed" || obj.status === "uncertain" || obj.status === "successful"
     });
 
     const columnsInTransit = [
@@ -117,17 +117,16 @@ function DataPackagesTable() {
                     paginationPerPage={10}
                     paginationRowsPerPageOptions={[10, 25, 50]}
                     onRowClicked={handleShow}
-                    expandableRowsComponent={<TempGraph shipment={TemperatureGraphID}/>}
                 />
 
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Grafico de Alertas</Modal.Title>
+                        <Modal.Title>Grafico de Temperatura</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body id="MyModalBody" ></Modal.Body>
+                    <Modal.Body id="MyModalBody" >{TemperatureGraph}</Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>
-                            Close
+                            Cerrar
                     </Button>
                     </Modal.Footer>
                 </Modal>

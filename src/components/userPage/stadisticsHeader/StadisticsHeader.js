@@ -1,22 +1,17 @@
-import React,{useState} from 'react';
+import React from 'react';
 import { 
     StadisticsDiv,
-    Card,
-    Description,
-    NumberHeader,
-    StadisticWrapper,
-    StyledSpan
+    StadisticWrapper
  } from './StadisticsHeader.elements';
 import { GET_SHIPMENTS } from '../../../Query';
 import { useQuery } from "@apollo/react-hooks";
-
+import CardOnHover from './CardOnHover';
 
 function StadisticsHeader(){
     const { loading, error, data } = useQuery(GET_SHIPMENTS);
     if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
     const myData = data.shipments;
-    console.log(data.shipments);
     var alertTravels = myData.filter(obj => {
         return obj.status === "failed" || obj.status === "uncertain"
       });
@@ -27,27 +22,30 @@ function StadisticsHeader(){
         return obj.status === "uncertain"
       });
     var ratio = alertTravels.length / totalTravels.length;
+
     return (
         <StadisticsDiv>
             <StadisticWrapper>
-            <Card
-            >
-                <NumberHeader>{totalTravels.length}</NumberHeader>
-                <Description>Viajes<br/> Trazados
-                </Description>
-            </Card>
-            <Card>
-                <NumberHeader>{alertTravels.length}</NumberHeader>
-                <Description>Viajes<br/> con Alertas</Description>
-            </Card>
-            <Card>
-                <NumberHeader>{ratio * 100}%</NumberHeader>
-                <Description>Ratio</Description>
-            </Card>
-            <Card>
-                <NumberHeader>{doubtTravels.length}</NumberHeader>
-                <Description>Oportunidad de mejoras</Description>
-            </Card>
+            <CardOnHover
+                number={totalTravels.length}
+                description="Viajes Trazados"
+                hoverDescription="Viajes trazados mes corriente"
+            />
+            <CardOnHover
+                number={alertTravels.length}
+                description="Viajes con Alertas"
+                hoverDescription="Viajes con alertas mes corriente"
+            />
+            <CardOnHover
+                number={ratio * 100 + " %"}
+                description="Ratio"
+                hoverDescription="Alertas / Totales"
+            />
+            <CardOnHover
+                number={doubtTravels.length}
+                description="Oportunidad de mejoras"
+                hoverDescription="Envios observados mes corriente"
+            />
             </StadisticWrapper>
         </StadisticsDiv>
     )

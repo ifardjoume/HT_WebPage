@@ -78,3 +78,10 @@ export const StyledSpan = styled.span`
   left: 50%;
   margin-left: -60px;
 `;
+
+export const HoverTag = styled.p`
+ background:#333;
+ color: #fff;
+ padding:5px;
+ border-radius:20px;
+`

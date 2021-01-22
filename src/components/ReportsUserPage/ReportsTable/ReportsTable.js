@@ -73,6 +73,7 @@ function ReportsTable(){
                 title='Reportes'
                 pagination={true}
                 paginationPerPage={5}
+                paginationRowsPerPageOptions={[10, 25, 50]}
                 />
             </TableDiv>
         </TableContainer>

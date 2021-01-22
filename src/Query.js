@@ -72,11 +72,12 @@ query{
 }
 `;
 
-export const GET_SHIPMENT_TEMP=gql`
+export const GET_SHIPMENT_TEMP = gql`
 query($shipment_id:Int!){
-    shipments(shipment_id:$shipment_id) {
+    shipment(shipment_id:$shipment_id) {
     temperature_readings{
       value
+      timestamp
     }
     }
   }
