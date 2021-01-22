@@ -116,7 +116,6 @@ function DataPackagesTable() {
                     pagination={true}
                     paginationPerPage={10}
                     paginationRowsPerPageOptions={[10, 25, 50]}
-                    onRowClicked={handleShow}
                 />
 
                 <Modal show={show} onHide={handleClose}>
