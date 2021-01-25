@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DataTable from 'react-data-table-component';
 import {
-    TableContainer,
-    TableDiv,
     StyledButton
 } from './DataTable.elements';
 import { GET_SHIPMENTS } from '../../../Query';
@@ -15,23 +13,23 @@ import { ImCross } from 'react-icons/im';
 import { IconContext } from 'react-icons';
 import getDate from './getDate';
 import TempGraph from './TempGraph';
-import DataTableInTransit from './DataTableInTransit';
 
-var TemperatureGraph
-function DataPackagesTable() {
+var TemperatureGraph;
+function DataTableReceived(){
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false)
     const handleShow = (shipmentID) => {
         setShow(true);
-        TemperatureGraph= <TempGraph shipment={shipmentID}/>;
+        TemperatureGraph = <TempGraph shipment={shipmentID}/>;
     };
     const { loading, error, data } = useQuery(GET_SHIPMENTS);
     if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
     var myData = data.shipments;
     var received = myData.filter(obj => {
-        return obj.arrival != null
+        return obj.status === "failed" || obj.status === "uncertain" || obj.status === "successful"
     });
+
     const columnsReceived = [
         {
             name: 'ID',
@@ -65,16 +63,9 @@ function DataPackagesTable() {
                 <IconContext.Provider value={{ color: '#a9294f' }}><StyledButton onClick={(e) => handleShow(row.shipment_id)}><ImCross /></StyledButton></IconContext.Provider>
         }
     ];
-
-
-
     return (
-        <TableContainer>
-            <TableDiv>
-                <DataTableInTransit />
-            </TableDiv>
-            <TableDiv>
-                <DataTable
+        <>
+           <DataTable
                     responsive
                     columns={columnsReceived}
                     keyField="shipment_id"
@@ -87,18 +78,17 @@ function DataPackagesTable() {
 
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Grafico de Alertas</Modal.Title>
+                        <Modal.Title>Grafico de Temperatura</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>{TemperatureGraph}</Modal.Body>
+                    <Modal.Body id="MyModalBody" >{TemperatureGraph}</Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>
-                            Close
+                            Cerrar
                     </Button>
                     </Modal.Footer>
-                </Modal>
-            </TableDiv>
-        </TableContainer>
+                </Modal>  
+        </>
     )
 }
 
-export default DataPackagesTable
+export default DataTableReceived

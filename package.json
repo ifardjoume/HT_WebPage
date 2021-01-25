@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.3.7",
     "@apollo/react-hooks": "^4.0.0",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
@@ -39,6 +40,7 @@
     "react-toastify": "^6.2.0",
     "reactstrap": "^8.7.1",
     "styled-components": "^5.2.1",
+    "subscriptions-transport-ws": "^0.9.18",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

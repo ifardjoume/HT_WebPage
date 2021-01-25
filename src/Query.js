@@ -82,3 +82,12 @@ query($shipment_id:Int!){
     }
   }
 `
+export const SHIPMENTS_IN_TRANSIT_SUBSCRIPTION = gql`
+subscription {
+shipmentAdded {
+  shipment_id
+  departure
+  origin_id
+}
+}
+`

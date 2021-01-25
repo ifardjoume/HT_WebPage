@@ -7,7 +7,6 @@ import {
     StyledSelect
 } from './SearchHeader.elements';
 import UserSelect from './UserSelect';
-import { DateRangePicker } from 'react-dates';
 
 
 const SearchHeader = () => {
