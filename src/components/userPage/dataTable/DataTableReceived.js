@@ -4,8 +4,6 @@ import DataTable from 'react-data-table-component';
 import {
     StyledButton
 } from './DataTable.elements';
-import { GET_SHIPMENTS } from '../../../Query';
-import { useQuery } from "@apollo/react-hooks";
 import GetBranchName from '../../ReportsUserPage/ReportsTable/GetBranchName';
 import { Modal, Button } from 'react-bootstrap';
 import { FaCheck } from 'react-icons/fa';
@@ -15,20 +13,13 @@ import getDate from './getDate';
 import TempGraph from './TempGraph';
 
 var TemperatureGraph;
-function DataTableReceived(){
+function DataTableReceived(props){
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false)
     const handleShow = (shipmentID) => {
         setShow(true);
         TemperatureGraph = <TempGraph shipment={shipmentID}/>;
     };
-    const { loading, error, data } = useQuery(GET_SHIPMENTS);
-    if (loading) return 'Loading...';
-    if (error) return `Error! ${error.message}`;
-    var myData = data.shipments;
-    var received = myData.filter(obj => {
-        return obj.status === "failed" || obj.status === "uncertain" || obj.status === "successful"
-    });
 
     const columnsReceived = [
         {
@@ -69,7 +60,7 @@ function DataTableReceived(){
                     responsive
                     columns={columnsReceived}
                     keyField="shipment_id"
-                    data={received}
+                    data={props.shipmentsReceived}
                     title='Recibidos'
                     pagination={true}
                     paginationPerPage={10}

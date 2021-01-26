@@ -1,19 +1,15 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DataTable from 'react-data-table-component';
-import { GET_SHIPMENTS, SHIPMENTS_IN_TRANSIT_SUBSCRIPTION } from '../../../Query';
-import { useQuery } from "@apollo/react-hooks";
 import GetBranchName from '../../ReportsUserPage/ReportsTable/GetBranchName';
 import getDate from './getDate';
 
 
 
-function DataTableInTransit(){
-    const { subscribeToMore, data } = useQuery(GET_SHIPMENTS);
-    var myData = data.shipments;
-    var inTransit = myData.filter(obj => {
-        return obj.status === "in transit"
-    });
+function DataTableInTransit(props){
+    useEffect(() => {
+        props.subscribeToNewShipments()
+    })
     const columnsInTransit = [
         {
             name: 'ID',
@@ -34,32 +30,19 @@ function DataTableInTransit(){
         }
     ];
 
-    
-
     return (
         <DataTable
                     responsive
                     columns={columnsInTransit}
                     keyField="shipment_id"
-                    data={inTransit}
+                    data={props.shipmentsInTransit}
                     title='En transito'
                     pagination={true}
                     paginationPerPage={10}
                     paginationRowsPerPageOptions={[10, 25, 50]}
-                    subscribeToNewShipments={() =>
-                        subscribeToMore({
-                          document: SHIPMENTS_IN_TRANSIT_SUBSCRIPTION,
-                          updateQuery: (prev, { subscriptionData }) => {
-                            if (!subscriptionData.data) return prev;
-                            const newShipments = subscriptionData.data.shipments;
-                            inTransit = Object.assign(newShipments, prev);
-                          }
-                        })
-                      }
         />
     )
 }
-
 
 
 export default DataTableInTransit

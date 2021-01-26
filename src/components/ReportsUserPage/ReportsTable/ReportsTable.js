@@ -12,13 +12,16 @@ import GetBranchName from './GetBranchName';
 import getReport from './getReport';
 import GetUsernames from './GetUsernames';
 
+
 function ReportsTable(){
     const { loading, error, data } = useQuery(GET_SHIPMENTS);
     if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
     console.log(data.shipments);
     var myData = data.shipments;
-    
+    var received = myData.filter(obj => {
+        return obj.status === "failed" || obj.status === "uncertain" || obj.status === "successful"
+    });
     const columnsReports = [
         {
             name: 'ID',
@@ -69,12 +72,13 @@ function ReportsTable(){
                 responsive
                 columns={columnsReports}
                 keyField="shipment_id"
-                data={myData}
+                data={received}
                 title='Reportes'
                 pagination={true}
                 paginationPerPage={5}
                 paginationRowsPerPageOptions={[10, 25, 50]}
                 />
+
             </TableDiv>
         </TableContainer>
     )
