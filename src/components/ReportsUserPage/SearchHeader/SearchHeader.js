@@ -1,19 +1,23 @@
 import React from 'react'
-import BranchSelect from './BranchSelect';
+import BranchSelectDestination from './BranchSelectDestination';
+import BranchSelectOrigin from './BranchSelectOrigin';
 import { 
     SearchContainer,
     SearchDiv,
     StyledSelect
 } from './SearchHeader.elements';
-import UserSelect from './UserSelect';
+import UserSelectReceiver from './UserSelectReceiver';
+import UserSelectSender from './UserSelectSender';
 
 
 const SearchHeader = () => {
     return (
         <SearchContainer>
             <SearchDiv>
-             <BranchSelect />
-            <UserSelect />
+             <BranchSelectOrigin />
+             <BranchSelectDestination />
+            <UserSelectSender />
+            <UserSelectReceiver />
             <StyledSelect
                 className="select"
                 /* value={this.props.filters.sortBy}

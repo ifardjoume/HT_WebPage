@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
     TableContainer,
@@ -25,22 +25,24 @@ function DataPackagesTable() {
     return (
         <TableContainer>
             <TableDiv>
-                <DataTableInTransit shipmentsInTransit={inTransit}
-                subscribeToNewShipments={() =>
-                    subscribeToMore({
-                      document: SHIPMENTS_IN_TRANSIT_SUBSCRIPTION,
-                      updateQuery: (prev, { subscriptionData }) => {
-                        if (!subscriptionData.data) return prev;
-                        const newShipment = subscriptionData.data.shipmentAdded;
-                        console.log(newShipment);
-                        return Object.assign({}, prev, {
-                            shipments: {
-                              newShipment, ...inTransit
-                            }
-                          });
-                      }
-                    })
-                  }
+                <DataTableInTransit
+                    subscribeToNewShipments={() =>
+                        subscribeToMore({
+                        document: SHIPMENTS_IN_TRANSIT_SUBSCRIPTION,
+                        updateQuery: (prev, { subscriptionData }) => {
+                            if (!subscriptionData.data) return prev;
+                            const newShipment = subscriptionData.data.shipmentAdded;
+                            console.log(newShipment);
+                            console.log(prev);
+                            return Object.assign({}, prev, {
+                                shipments: {
+                                    newShipment, ...prev.shipments
+                                }
+                              });
+                        }
+                        })
+                    }
+                  shipmentsInTransit={inTransit}
                 />
             </TableDiv>
             <TableDiv>

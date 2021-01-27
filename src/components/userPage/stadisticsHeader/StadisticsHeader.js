@@ -21,7 +21,7 @@ function StadisticsHeader(){
       var doubtTravels = myData.filter(obj => {
         return obj.status === "uncertain"
       });
-    var ratio = alertTravels.length / totalTravels.length;
+    var ratio = (alertTravels.length / totalTravels.length)*100
 
     return (
         <StadisticsDiv>
@@ -37,7 +37,7 @@ function StadisticsHeader(){
                 hoverDescription="Viajes con alertas mes corriente"
             />
             <CardOnHover
-                number={ratio * 100 + " %"}
+                number={ratio.toFixed(2) + " %"}
                 description="Ratio"
                 hoverDescription="Alertas / Totales"
             />
