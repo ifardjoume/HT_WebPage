@@ -20,7 +20,10 @@ function DataTableReceived(props){
         setShow(true);
         TemperatureGraph = <TempGraph shipment={shipmentID}/>;
     };
-
+    var dataShipmentsReceived = props.shipmentsReceived.shipments
+    var received = dataShipmentsReceived.filter(obj => {
+        return obj.status === "failed" || obj.status === "uncertain" || obj.status === "successful"
+    });
     const columnsReceived = [
         {
             name: 'ID',
@@ -60,7 +63,7 @@ function DataTableReceived(props){
                     responsive
                     columns={columnsReceived}
                     keyField="shipment_id"
-                    data={props.shipmentsReceived}
+                    data={received}
                     title='Recibidos'
                     pagination={true}
                     paginationPerPage={10}

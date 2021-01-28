@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect,useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
     TableContainer,
@@ -9,19 +9,16 @@ import DataTableReceived from './DataTableReceived';
 import { GET_SHIPMENTS,SHIPMENTS_IN_TRANSIT_SUBSCRIPTION } from '../../../Query';
 import { useQuery } from "@apollo/react-hooks";
 
+
 function DataPackagesTable() {
+    /* const [Data, setState] = useState();
+    useEffect(() => {
+        setState(myData)
+    },[myData]); */
     const { error , loading , data, subscribeToMore } = useQuery(GET_SHIPMENTS);
     if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
-    var myData = data.shipments;
-    var inTransit = myData.filter(obj => {
-        return obj.status === "in transit"
-    });
-    var received = myData.filter(obj => {
-        return obj.status === "failed" || obj.status === "uncertain" || obj.status === "successful"
-    });
-    
-    
+    var myData = data;
     return (
         <TableContainer>
             <TableDiv>
@@ -33,20 +30,21 @@ function DataPackagesTable() {
                             if (!subscriptionData.data) return prev;
                             const newShipment = subscriptionData.data.shipmentAdded;
                             console.log(newShipment);
-                            console.log(prev);
-                            return Object.assign({}, prev, {
-                                shipments: {
-                                    newShipment, ...prev.shipments
-                                }
-                              });
+                            console.log(prev.shipments);
+                            var shipmentsUpdated = Object.assign({},prev,{
+                                shipments:
+                                    [...prev.shipments, newShipment]
+                            });
+                            console.log(shipmentsUpdated);
+                            return shipmentsUpdated
                         }
                         })
                     }
-                  shipmentsInTransit={inTransit}
+                  shipmentsInTransit={myData}
                 />
             </TableDiv>
             <TableDiv>
-                <DataTableReceived shipmentsReceived={received} />
+                <DataTableReceived shipmentsReceived={myData} />
             </TableDiv>
         </TableContainer>
     )
