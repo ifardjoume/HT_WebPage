@@ -11,10 +11,6 @@ import { useQuery } from "@apollo/react-hooks";
 
 
 function DataPackagesTable() {
-    /* const [Data, setState] = useState();
-    useEffect(() => {
-        setState(myData)
-    },[myData]); */
     const { error , loading , data, subscribeToMore } = useQuery(GET_SHIPMENTS);
     if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
@@ -30,10 +26,10 @@ function DataPackagesTable() {
                             if (!subscriptionData.data) return prev;
                             const newShipment = subscriptionData.data.shipmentAdded;
                             console.log(newShipment);
-                            console.log(prev.shipments);
+                            const previousShipments = prev.shipments;
                             var shipmentsUpdated = Object.assign({},prev,{
                                 shipments:
-                                    [...prev.shipments, newShipment]
+                                    [...previousShipments, newShipment]
                             });
                             console.log(shipmentsUpdated);
                             return shipmentsUpdated

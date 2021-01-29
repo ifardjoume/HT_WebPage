@@ -9,25 +9,13 @@ function DataTableInTransit(props){
     var filteredList = props.shipmentsInTransit.shipments.filter(obj => {
         return obj.status === "in transit"
     });
-    //var newShipment = props.newShipmentProp
     const [newData, setNewData] = useState(filteredList);
+    useEffect(() => {
+        setNewData(filteredList)
+    },[props.shipmentsInTransit])
     useEffect(() => {
         props.subscribeToNewShipments();
     });
-    /* useEffect(() => {
-        const timer = setInterval(() => {
-            setNewData(prev => {
-            const updated = [...prev];
-    
-            updated[0] = {newShipment};
-    
-            return updated;
-          });
-        }, 1000);
-        return () => {
-          clearInterval(timer);
-        };
-      }, []); */
     const columnsInTransit = [
         {
             name: 'ID',
