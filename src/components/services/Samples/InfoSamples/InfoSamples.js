@@ -7,7 +7,6 @@ import {
     TextWrapper,
     Heading,
     Subtitle,
-    Img,
     ImgWrapper,
     List,
     ListItem

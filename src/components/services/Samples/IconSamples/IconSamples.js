@@ -18,7 +18,7 @@ import antiderrame from '../../../../images/icons/antiderrame.png';
 import aperturaTapa from '../../../../images/icons/aperturaTapa.png';
 import golpes from '../../../../images/icons/golpes.png';
 import isotermico from '../../../../images/icons/isotermico.png';
-import { FaRegFilePdf } from 'react-icons/fa'
+//import { FaRegFilePdf } from 'react-icons/fa'
 const IconSamples = () => {
     return (
         <>
