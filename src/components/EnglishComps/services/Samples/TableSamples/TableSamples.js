@@ -17,60 +17,56 @@ const TableSamples = () => {
     return (
         <TableContainer>
             <TableWrapper >
-            <TableH1>THIS es la solución a los puntos ciegos del transporte de muestras</TableH1>
+            <TableH1>THIS is the solution to blind spots in sample transports</TableH1>
             <Table responsive borderless>
                 <tbody>
                 <Row>
-                    <Title>Aspecto</Title>
+                    <Title>Features</Title>
                     <Title>THIS</Title>
-                    <Title>Conservadora con refrigerantes</Title>
+                    <Title>Traditional</Title>
                 </Row>
                 <Row>
-                    <RowComponent1><br/><br/><b>Trazabilidad</b></RowComponent1>
-                    <RowComponent2>Temperatura<br />
-                        Apertura de Tapa<br />
-                        Golpes<br />
-                        Vibración<br />
-                        Aceleración<br />
+                    <RowComponent1><br/><br/><b>Traceability</b></RowComponent1>
+                    <RowComponent2>Temperature<br />
+                        Lid Opening<br />
+                        Shaking<br />
+                        Shock Damage<br />
+                        Acceleration<br />
                     </RowComponent2>
-                    <RowComponent1><br/><br/>Ninguna</RowComponent1>
+                    <RowComponent1><br/><br/>None</RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1><b>Enfriamiento</b></RowComponent1>
-                    <RowComponent2>Completamente
-                     uniforme</RowComponent2>
-                    <RowComponent1>Desigual según
-                     ubicación</RowComponent1>
+                    <RowComponent1><b>Cooling</b></RowComponent1>
+                    <RowComponent2>Uniform</RowComponent2>
+                    <RowComponent1>Uneven depending on Location</RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1><b>Prevención de daños por
-                     sobreenfriamiento</b></RowComponent1>
+                    <RowComponent1><b>Overcooling Damage Prevention</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1><b>Rango térmico personalizado</b></RowComponent1>
+                    <RowComponent1><b>Custom Thermal Range</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1><b>Monitoreo en tiempo real
-                    con alertas configurables</b></RowComponent1>
+                    <RowComponent1><b>Real time Monitoring with Customizable Alerts</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1><b>Empaque anti-derrame</b></RowComponent1>
+                    <RowComponent1><b>Leak-Proof Packaging</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1><b>Geolocalización</b></RowComponent1>
+                    <RowComponent1><b>Geolocation</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>
                 <Row>
-                    <RowComponent1><b>Análisis de datos</b></RowComponent1>
+                    <RowComponent1><b>Data Analytics</b></RowComponent1>
                     <RowComponent2><FcCheckmark /></RowComponent2>
                     <RowComponent1><GoDash /></RowComponent1>
                 </Row>

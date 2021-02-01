@@ -15,6 +15,7 @@ import UserPage from './pages/UserPage/UserPage';
 import GuardedRoute from './components/GuardedRoute';
 import Reports from './pages/Reports/Reports';
 import Settings from './pages/Settings/Settings';
+import UnderConstructionPage from './pages/NoMatchPage/UnderConstructionPage';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
           <Route exact path='/samples' component={EngSamples} />
           <Route exact path='/vaccinations' component={EngVaccinations} />
           <Route exact path='/organs' component={EngOrgans} />
+          <Route exact path='/under-construction' component={UnderConstructionPage} />
           <GuardedRoute path='/user-area' component={UserPage}/>
           <GuardedRoute path='/reports' component={Reports}/>  
           <GuardedRoute path='/settings' component={Settings}/>         

@@ -12,8 +12,7 @@ import {
     List,
     ListItem
   } from './InfoSamples.elements';
-import img1 from '../../../../images/searching.svg';
-
+import PieChart from '../GraphSection/PieChart';
 
 const InfoSamples = () => {
     return (
@@ -25,22 +24,22 @@ const InfoSamples = () => {
                                 <TextWrapper>
                                     <Heading>Muestras Biológicas</Heading>
                                     <Subtitle> 
-                                        Sabemos que el 70% de los errores ocurren en la etapa preanalítica. 
-                                        Nuestro estudio muestra que al 90% de los encuestados les preocupa: 
+                                    Sabemos que el 70% de los errores ocurren en la etapa preanalítica.
+                                    Nuestro estudio muestra que casi el 90% de los encuestados saben que podrían mejorar aún más la calidad y
+                                    la forma de transporte de muestras en su laboratorio. Con una especial preocupación en:  
                                     </Subtitle>
                                     <List>
-                                        <ListItem>Temperatura (Sensor Térmico Calibrable con Inercia Simulada)</ListItem>
-                                        <ListItem>Tiempo (Registro Cierre de Tapa y Apertura)</ListItem>
-                                        <ListItem>Maltrato (Acelerómetro)</ListItem>
-                                        <ListItem>Pérdida de mtra (Apertura de Tapa)</ListItem>
-                                        <ListItem>Muestras Dañadas (Vibraciones)</ListItem>
+                                        <ListItem>Temperatura</ListItem>
+                                        <ListItem>Tiempo</ListItem>
+                                        <ListItem>Golpes / Maltrato</ListItem>
+                                        <ListItem>Muestras Dañadas</ListItem>
                                         <ListItem>Configuración de Alerta </ListItem>
                                     </List>
                                 </TextWrapper>
                             </InfoColumn>
                             <InfoColumn>
                                 <ImgWrapper>
-                                    <Img src={img1} alt="product" />
+                                    <PieChart />
                                 </ImgWrapper>
                             </InfoColumn>
                         </InfoRow>

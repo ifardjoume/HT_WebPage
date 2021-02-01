@@ -7,25 +7,32 @@ import {
     ServicesWrapper,
     ServicesH2,
     ServicesContainer,
-    ServicesCard
+    ServicesCard,
+    LinkTo
 } from '../../services/Services.elements';
 
 function Services() {
   return (
     <ServicesContainer id="services">
       <ServicesWrapper>
+        <LinkTo to="samples">
         <ServicesCard>
           <ServicesIcon src={Icon1}/>
           <ServicesH2>Biological Samples</ServicesH2>
         </ServicesCard>
+        </LinkTo>
+        <LinkTo to="under-construction">
         <ServicesCard>
           <ServicesIcon src={Icon2}/>
           <ServicesH2>COVID-19 Vaccines</ServicesH2>
         </ServicesCard>
+        </LinkTo>
+        <LinkTo to="under-construction">
         <ServicesCard>
           <ServicesIcon src={Icon3}/>
           <ServicesH2>Organs</ServicesH2>
         </ServicesCard>
+        </LinkTo>
       </ServicesWrapper>
     </ServicesContainer>
   )

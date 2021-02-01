@@ -7,13 +7,11 @@ import {
     TextWrapper,
     Heading,
     Subtitle,
-    Img,
     ImgWrapper,
     List,
     ListItem
   } from '../../../../services/Samples/InfoSamples/InfoSamples.elements';
-import img1 from '../../../../../images/searching.svg';
-
+import PieChart from '../GraphSection/PieChart'
 
 const InfoSamples = () => {
     return (
@@ -29,18 +27,17 @@ const InfoSamples = () => {
                                         Our study shows that 90% of respondents are concerned about:
                                     </Subtitle>
                                     <List>
-                                        <ListItem>Temperature (Calibrable Thermal Sensor with Simulated Inertia)</ListItem>
-                                        <ListItem>Time (Lid Closing and Opening Record)</ListItem>
-                                        <ListItem>DAmage (Accelerometer)</ListItem>
-                                        <ListItem>Loss of Mtra (Lid Opening)</ListItem>
-                                        <ListItem>Damaged Samples (Vibrations)</ListItem>
+                                        <ListItem>Temperature</ListItem>
+                                        <ListItem>Time</ListItem>
+                                        <ListItem>Shaking / Mistreatment</ListItem>
+                                        <ListItem>Damaged Samples</ListItem>
                                         <ListItem>Alert Settings</ListItem>
                                     </List>
                                 </TextWrapper>
                             </InfoColumn>
                             <InfoColumn>
                                 <ImgWrapper>
-                                    <Img src={img1} alt="product" />
+                                    <PieChart />
                                 </ImgWrapper>
                             </InfoColumn>
                         </InfoRow>

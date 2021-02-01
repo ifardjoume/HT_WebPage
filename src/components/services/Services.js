@@ -15,18 +15,24 @@ function Services() {
   return (
     <ServicesContainer id="services">
       <ServicesWrapper>
+      <LinkTo to="muestras">
           <ServicesCard>
             <ServicesIcon src={Icon1}/>
             <ServicesH2>Muestras biológicas</ServicesH2>
           </ServicesCard>
+      </LinkTo>
+      <LinkTo to="under-construction">
         <ServicesCard>
           <ServicesIcon src={Icon2}/>
           <ServicesH2>Vacunas COVID-19</ServicesH2>
         </ServicesCard>
+      </LinkTo>
+      <LinkTo to="under-construction">
         <ServicesCard>
           <ServicesIcon src={Icon3}/>
           <ServicesH2>Órganos</ServicesH2>
         </ServicesCard>
+      </LinkTo>
       </ServicesWrapper>
     </ServicesContainer>
   )

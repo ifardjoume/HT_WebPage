@@ -31,7 +31,7 @@ const Footer = () => {
             </FooterLinksContainer>
           <SocialMedia>
        <SocialMediaWrap>
-          <WebsiteRights>H+Trace © 2020</WebsiteRights>
+          <WebsiteRights>H+Trace © 2021</WebsiteRights>
         </SocialMediaWrap>
       </SocialMedia>
         </FooterContainer>
