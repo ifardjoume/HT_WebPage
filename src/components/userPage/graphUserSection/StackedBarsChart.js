@@ -24,7 +24,7 @@ const StackedBarsChart = () => {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                 datasets: [
                   {
-                    label: 'Viajes correctos',
+                    label: 'Correcto',
                     backgroundColor: '#adeecf',
                     borderWidth: 1,
                     stack: 1,
@@ -32,7 +32,7 @@ const StackedBarsChart = () => {
                     data: [65, 59, 80, 81, 56, 55, 40]
                   },
                   {
-                    label: 'Viajes dudosos',
+                    label: 'Observado',
                     backgroundColor: '#ffc764',
                     borderWidth: 1,
                     stack: 1,
@@ -40,7 +40,7 @@ const StackedBarsChart = () => {
                     data: [4, 7, 15, 14, 8, 5, 20]
                   },
                   {
-                    label: 'Viajes con alertas',
+                    label: 'Con alerta',
                     backgroundColor: '#ee9595',
                     borderWidth: 1,
                     stack: 1,

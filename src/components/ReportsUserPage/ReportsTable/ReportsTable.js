@@ -11,6 +11,16 @@ import {
 import GetBranchName from './GetBranchName';
 import getReport from './getReport';
 import GetUsernames from './GetUsernames';
+import BranchSelectDestination from '../SearchHeader/BranchSelectDestination';
+import BranchSelectOrigin from '../SearchHeader/BranchSelectOrigin';
+import { 
+    SearchContainer,
+    SearchDiv,
+    StyledSelect
+} from '../SearchHeader/SearchHeader.elements';
+import UserSelectReceiver from '../SearchHeader/UserSelectReceiver';
+import UserSelectSender from '../SearchHeader/UserSelectSender';
+
 
 function ReportsTable(){
     const { loading, error, data } = useQuery(GET_SHIPMENTS);
@@ -18,10 +28,24 @@ function ReportsTable(){
     if (error) return `Error! ${error.message}`;
     console.log(data.shipments);
     var myData = data.shipments;
-    
+    var received = myData.filter(obj => {
+        return obj.status === "failed" || obj.status === "uncertain" || obj.status === "successful"
+    });
+    var filteredData = received;
+    function filterTable(value){
+        filteredData = received.filter(obj => {
+            return obj.origin_user_id === {value}
+        });
+    }
+    const onChangeFilter = (e) => {
+        filterTable(e.value)
+    }
+
+
+
     const columnsReports = [
         {
-            name: 'Número de envio',
+            name: 'ID',
             selector: "shipment_id",
             sortable:true
         },
@@ -63,19 +87,39 @@ function ReportsTable(){
     ];
 
     return (
-        <TableContainer>
-            <TableDiv>
-                <DataTable
-                responsive
-                columns={columnsReports}
-                keyField="shipment_id"
-                data={myData}
-                title='Reportes'
-                pagination={true}
-                paginationPerPage={5}
-                />
-            </TableDiv>
-        </TableContainer>
+        <>
+            <SearchContainer>
+                <SearchDiv>
+                    <BranchSelectOrigin onChange={(e) => onChangeFilter(e.target.value)}/>
+                    <BranchSelectDestination />
+                    <UserSelectSender />
+                    <UserSelectReceiver />
+                    <StyledSelect
+                        className="select"
+                        >
+                            <option value="">Alertas</option>
+                            <option value="alerta">Con Alertas</option>
+                            <option value="dudoso">Dudoso</option>
+                            <option value="no-alerta">Sin alerta</option>
+                    </StyledSelect>
+                </SearchDiv>
+            </SearchContainer>
+            <TableContainer>
+                    <TableDiv>
+                        <DataTable
+                        responsive
+                        columns={columnsReports}
+                        keyField="shipment_id"
+                        data={filteredData}
+                        title='Reportes'
+                        pagination={true}
+                        paginationPerPage={10}
+                        paginationRowsPerPageOptions={[10, 25, 50]}
+                        />
+
+                    </TableDiv>
+            </TableContainer>
+    </>
     )
 }
 

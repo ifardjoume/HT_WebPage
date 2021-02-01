@@ -9,6 +9,9 @@ export const Nav = styled.div`
   flex-direction: row;
   flex-wrap: nowrap;              
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index:999;
 `;
 
 export const NavIcon = styled(Link)`
@@ -51,7 +54,7 @@ export const NavLogo = styled(Link)`
   }
 
   @media screen and (max-width: 768px) {
-   margin-top:20px;
+   display:none;
   }
 `;
 

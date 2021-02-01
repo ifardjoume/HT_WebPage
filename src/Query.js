@@ -40,6 +40,7 @@ export const GET_SHIPMENTS= gql`
       destination_id
       departure
       arrival
+      status
       alerts {
         type
         value
@@ -70,3 +71,35 @@ query{
   }
 }
 `;
+
+export const GET_SHIPMENT_TEMP = gql`
+query($shipment_id:Int!){
+    shipment(shipment_id:$shipment_id) {
+    temperature_readings{
+      value
+      timestamp
+    }
+    }
+  }
+`
+export const SHIPMENTS_IN_TRANSIT_SUBSCRIPTION = gql`
+subscription {
+shipmentAdded {
+   shipment_id
+      origin_id
+      origin_user_id
+      destination_user_id
+      destination_id
+      departure
+      arrival
+      status
+      alerts {
+        type
+        value
+        x
+        y
+        z
+      }
+    }
+}
+`

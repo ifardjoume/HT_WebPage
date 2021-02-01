@@ -24,7 +24,6 @@ const PieChart = () => {
             labels: ['Sin alerta', 'Con alerta'],
             datasets: [
               {
-                label: 'Rainfall',
                 backgroundColor: [
                   '#adeecf',
                   '#ee9595'
@@ -43,8 +42,9 @@ const PieChart = () => {
           responsive:true,
           maintainAspectRatio: false,
           title:{
+            text:"Mes Actual",
             display:true,
-            fontSize:20
+            fontSize:18
           },
           legend:{
             display:true,
