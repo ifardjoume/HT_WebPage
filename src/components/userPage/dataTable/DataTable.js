@@ -10,7 +10,11 @@ import { GET_SHIPMENTS,SHIPMENTS_IN_TRANSIT_SUBSCRIPTION } from '../../../Query'
 import { useQuery } from "@apollo/react-hooks";
 
 
+
 function DataPackagesTable() {
+    const [state,setState] = useState({
+        subscribeToNewShipments: false
+    });
     const { error , loading , data, subscribeToMore } = useQuery(GET_SHIPMENTS);
     if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
@@ -19,11 +23,15 @@ function DataPackagesTable() {
         <TableContainer>
             <TableDiv>
                 <DataTableInTransit
-                    subscribeToNewShipments={() =>
+                    subscribeToNewShipments={() =>{
+                        if(state.subscribeToNewShipments) return null
                         subscribeToMore({
                         document: SHIPMENTS_IN_TRANSIT_SUBSCRIPTION,
                         updateQuery: (prev, { subscriptionData }) => {
-                            if (!subscriptionData.data) return prev;
+                            console.log(subscriptionData.data);
+                            if(!subscriptionData.data){
+                                return prev
+                            }else{
                             const newShipment = subscriptionData.data.shipmentAdded;
                             console.log(newShipment);
                             const previousShipments = prev.shipments;
@@ -33,9 +41,14 @@ function DataPackagesTable() {
                             });
                             console.log(shipmentsUpdated);
                             return shipmentsUpdated
+                            }
                         }
                         })
+                        setState({
+                            subscribeToNewShipments:true
+                        })
                     }
+                }
                   shipmentsInTransit={myData}
                 />
             </TableDiv>

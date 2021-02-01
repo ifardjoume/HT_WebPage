@@ -11,7 +11,7 @@ function DataTableInTransit(props){
     });
     const [newData, setNewData] = useState(filteredList);
     useEffect(() => {
-        setNewData(filteredList)
+        setNewData(filteredList);
     },[props.shipmentsInTransit])
     useEffect(() => {
         props.subscribeToNewShipments();
