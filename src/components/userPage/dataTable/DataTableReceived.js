@@ -11,7 +11,9 @@ import { ImCross } from 'react-icons/im';
 import { IconContext } from 'react-icons';
 import getDate from './getDate';
 import TempGraph from './TempGraph';
+import Cookies from 'js-cookie';
 
+var MainTitle = Cookies.get('locale') === 'en' ? 'Received' : 'Recibidos';
 var TemperatureGraph;
 function DataTableReceived(props){
     const [show, setShow] = useState(false);
@@ -31,25 +33,25 @@ function DataTableReceived(props){
             sortable: true
         },
         {
-            name: 'Origen',
+            name: Cookies.get('locale') === 'en' ? 'Departure' : 'Origen',
             selector: 'origin_id',
             sortable: true,
             cell: row => GetBranchName(row.origin_id)
         },
         {
-            name: 'Hora de Llegada',
+            name: Cookies.get('locale') === 'en' ? 'Departure' : 'Hora de Llegada',
             selector: 'arrival',
             sortable: true,
             cell: row => row.arrival != null ? getDate(row.arrival) : <p>En transito</p>
         },
         {
-            name: 'Arribo',
+            name: Cookies.get('locale') === 'en' ? 'Arrival' : 'Arribo',
             selector: 'destination_id',
             sortable: true,
             cell: row => row.destination_id != null ? GetBranchName(row.destination_id) : <p>En tránsito</p>
         },
         {
-            name: 'Alertas',
+            name: Cookies.get('locale') === 'en' ? 'Alerts' : 'Alertas',
             selector: 'alerts',
             sortable: true,
             cell: row => row.alerts.length <= 0 ? <IconContext.Provider value={{ color: '#00917c' }}><StyledButton onClick={(e) => handleShow(row.shipment_id)}><FaCheck /></StyledButton></IconContext.Provider>
@@ -64,7 +66,7 @@ function DataTableReceived(props){
                     columns={columnsReceived}
                     keyField="shipment_id"
                     data={received}
-                    title='Recibidos'
+                    title={MainTitle}
                     pagination={true}
                     paginationPerPage={10}
                     paginationRowsPerPageOptions={[10, 25, 50]}

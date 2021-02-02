@@ -118,7 +118,7 @@ export const SocialLinksWrapper = styled.div`
   background-color: #fff;
   border-radius: 10px;
   box-sizing: border-box;
-  height:715px;
+  height:765px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
   display:flex;
   flex-direction:column;

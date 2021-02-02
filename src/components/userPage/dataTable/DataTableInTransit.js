@@ -3,6 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import DataTable from 'react-data-table-component';
 import GetBranchName from '../../ReportsUserPage/ReportsTable/GetBranchName';
 import getDate from './getDate';
+import Cookies from 'js-cookie';
+
+
+var MainTitle = Cookies.get('locale') === 'en' ? 'In transit' : 'En transito';
 
 
 function DataTableInTransit(props){
@@ -23,13 +27,13 @@ function DataTableInTransit(props){
             sortable: true,
         },
         {
-            name: 'Hora de Salida',
+            name: Cookies.get('locale') === 'en' ? 'Departure' : 'Hora de Salida',
             selector: 'departure',
             sortable: true,
             cell: row => getDate(row.departure)
         },
         {
-            name: 'Origen',
+            name: Cookies.get('locale') === 'en' ? 'Origin' : 'Origen',
             selector: 'origin_id',
             sortable: true,
             cell: row => GetBranchName(row.origin_id)
@@ -42,7 +46,7 @@ function DataTableInTransit(props){
                     columns={columnsInTransit}
                     keyField="shipment_id"
                     data={newData}
-                    title='En transito'
+                    title={MainTitle}
                     pagination={true}
                     paginationPerPage={10}
                     paginationRowsPerPageOptions={[10, 25, 50]}

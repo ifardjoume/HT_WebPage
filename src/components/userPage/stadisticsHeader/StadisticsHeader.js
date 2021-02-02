@@ -6,6 +6,16 @@ import {
 import { GET_SHIPMENTS } from '../../../Query';
 import { useQuery } from "@apollo/react-hooks";
 import CardOnHover from './CardOnHover';
+import Cookies from 'js-cookie';
+
+var CardDescription1 = Cookies.get('locale') === 'en' ? 'Trazed Trips' : 'Viajes Trazados';
+var CardDescription2 = Cookies.get('locale') === 'en' ? 'Alerted Trips' : 'Viajes con Alertas';
+var CardDescription3 = Cookies.get('locale') === 'en' ? 'Improvement Chances' : 'Oportunidad de mejoras';
+var CardHoverDescription1 = Cookies.get('locale') === 'en' ? 'Trazed Trips Current Month' : 'Viajes trazados mes corriente';
+var CardHoverDescription2 = Cookies.get('locale') === 'en' ? 'Alerted Trips Current Month' : 'Viajes con alertas mes corriente';
+var CardHoverDescription3 = Cookies.get('locale') === 'en' ? 'Alerts / Total Trips' : 'Alertas / Totales';
+var CardHoverDescription4 = Cookies.get('locale') === 'en' ? 'Observed Shipments Current Month' : 'Envios observados mes corriente';
+
 
 function StadisticsHeader(){
     const { loading, error, data } = useQuery(GET_SHIPMENTS);
@@ -28,23 +38,23 @@ function StadisticsHeader(){
             <StadisticWrapper>
             <CardOnHover
                 number={totalTravels.length}
-                description="Viajes Trazados"
-                hoverDescription="Viajes trazados mes corriente"
+                description= {CardDescription1}
+                hoverDescription= {CardHoverDescription1}
             />
             <CardOnHover
                 number={alertTravels.length}
-                description="Viajes con Alertas"
-                hoverDescription="Viajes con alertas mes corriente"
+                description={CardDescription2}
+                hoverDescription= {CardHoverDescription2}
             />
             <CardOnHover
                 number={ratio.toFixed(2) + " %"}
                 description="Ratio"
-                hoverDescription="Alertas / Totales"
+                hoverDescription= {CardHoverDescription3}
             />
             <CardOnHover
                 number={doubtTravels.length}
-                description="Oportunidad de mejoras"
-                hoverDescription="Envios observados mes corriente"
+                description={CardDescription3}
+                hoverDescription= {CardHoverDescription4}
             />
             </StadisticWrapper>
         </StadisticsDiv>

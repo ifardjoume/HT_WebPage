@@ -2,6 +2,10 @@ import React from 'react'
 import { StyledSelect } from './SearchHeader.elements';
 import { GET_USERNAMES } from '../../../Query';
 import { useQuery } from "@apollo/react-hooks";
+import Cookies from 'js-cookie';
+
+var SelectAlertOption = Cookies.get('locale') === 'en' ? 'Sender' : 'Remitente';
+
 
 const UserSelectSender = () => {
     const { loading, error, data } = useQuery(GET_USERNAMES);
@@ -9,7 +13,7 @@ const UserSelectSender = () => {
     if (error) return `Error! ${error.message}`;
     return (
         <StyledSelect>
-            <option value="">Remitente</option>
+            <option value="">{SelectAlertOption}</option>
             {data.users.map(function(userTag){
                return <option 
                key={userTag.username}

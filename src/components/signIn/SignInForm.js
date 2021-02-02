@@ -14,6 +14,10 @@ import { useForm } from '../../hooks';
 import { LOGIN_USER } from '../../Query';
 import { useHistory } from "react-router-dom";
 import Cookies from 'js-cookie';
+import { FormattedMessage } from "react-intl";
+
+
+const errorMessage = Cookies.get('locale') === "en" ? "Wrong username or password" : "Usuario o contraseña incorrectos"
 
 function SignInForm(){
     const [errors, setErrors] = useState({});
@@ -28,7 +32,7 @@ function SignInForm(){
           history.push('/user-area');
         },
         onError() {
-          setErrors({message: "Wrong username or password"});
+          setErrors({message: errorMessage});
         },
         variables: values
       });
@@ -41,13 +45,13 @@ function SignInForm(){
             <LogInContainer>
                 <StyledForm onSubmit={onSubmit} noValidate>
                     <LogInTitle src={Logo}/>
-                    <Label htmlFor="email">User</Label>
+                    <Label htmlFor="email"><FormattedMessage id="UserSignInForm" defaultMessage="User" /></Label>
                     <StyledInput type='text' 
                     name='username'
                     value={values.username}
                     onChange={onChange}
                     />
-                    <Label htmlFor="password">Password</Label>
+                    <Label htmlFor="password"><FormattedMessage id="PasswordSignInForm" defaultMessage="Password" /></Label>
                     <StyledInput type='password'
                     name='password'
                     value={values.password}
@@ -63,7 +67,7 @@ function SignInForm(){
                     <ButtonContainer>
                         <StyledButton type="submit"
                             value="LOGIN">
-                            Login
+                            <FormattedMessage id="ButtonSignInForm" defaultMessage="LOGIN" />
                         </StyledButton>
                     </ButtonContainer>
                 </StyledForm>

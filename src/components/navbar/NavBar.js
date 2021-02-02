@@ -16,6 +16,7 @@ import {
 import TranslateBtn from './translateBtn';
 import Logo from '../../images/logo-navbar-blue.png';
 import { IconContext } from 'react-icons';
+import { FormattedMessage } from "react-intl";
 
 const Navbar = ({ toggle }) => {
 
@@ -54,7 +55,7 @@ const Navbar = ({ toggle }) => {
                 exact='true'
                 offset={-80}
                 >
-                  Servicios
+                  <FormattedMessage id="NavbarServices" defaultMessage="Services" />
                 </NavLinks>
               </NavItem>
               <NavItem>
@@ -64,7 +65,7 @@ const Navbar = ({ toggle }) => {
                 exact='true'
                 offset={-80}
                 >
-                  Empresa
+                  <FormattedMessage id="NavbarCompany" defaultMessage="Company" />
                 </NavLinks>
               </NavItem>
               <NavItem>
@@ -74,7 +75,7 @@ const Navbar = ({ toggle }) => {
                 exact='true'
                 offset={-80}
                 >
-                  Contacto
+                  <FormattedMessage id="NavbarContact" defaultMessage="Contact" />
                 </NavLinks>
               </NavItem>
               <NavBtn>

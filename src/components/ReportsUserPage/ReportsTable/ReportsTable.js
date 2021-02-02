@@ -9,6 +9,9 @@ import {
     StyledP
 } from './ReportsTable.elements';
 import GetBranchName from './GetBranchName';
+import { FaCheck } from 'react-icons/fa';
+import { ImCross } from 'react-icons/im';
+import { IconContext } from 'react-icons';
 import getReport from './getReport';
 import GetUsernames from './GetUsernames';
 import BranchSelectDestination from '../SearchHeader/BranchSelectDestination';
@@ -20,6 +23,13 @@ import {
 } from '../SearchHeader/SearchHeader.elements';
 import UserSelectReceiver from '../SearchHeader/UserSelectReceiver';
 import UserSelectSender from '../SearchHeader/UserSelectSender';
+import Cookies from 'js-cookie';
+
+var MainTitle = Cookies.get('locale') === 'en' ? 'Reports' : 'Reportes';
+var SelectAlertOption1 = Cookies.get('locale') === 'en' ? 'All' : 'Todo';
+var SelectAlertOption2 = Cookies.get('locale') === 'en' ? 'Alerts' : 'Con alertas';
+var SelectAlertOption3 = Cookies.get('locale') === 'en' ? 'Doubt' : 'Dudoso';
+var SelectAlertOption4 = Cookies.get('locale') === 'en' ? 'No alerts' : 'Sin alertas';
 
 
 function ReportsTable(){
@@ -41,8 +51,6 @@ function ReportsTable(){
         filterTable(e.value)
     }
 
-
-
     const columnsReports = [
         {
             name: 'ID',
@@ -50,25 +58,25 @@ function ReportsTable(){
             sortable:true
         },
         {
-            name: 'Origen',
+            name: Cookies.get('locale') === 'en' ? 'Departure' : 'Origen',
             selector: 'origin_id',
             sortable:true,
             cell: row => GetBranchName(row.origin_id)
         },
         {
-            name: 'Remitente',
+            name: Cookies.get('locale') === 'en' ? 'Sender' : 'Remitente',
             selector: 'origin_user_id',
             sortable:true,
             cell: row => GetUsernames(row.origin_user_id)
         },
         {
-            name: 'Destino',
+            name: Cookies.get('locale') === 'en' ? 'Arrival' : 'Destino',
             selector: 'destination_id',
             sortable:true,
             cell: row => row.destination_id != null ? GetBranchName(row.destination_id) : <StyledP>En tránsito</StyledP>
         },
         {
-            name: 'Destinatario',
+            name: Cookies.get('locale') === 'en' ? 'Receiver' : 'Destinatario',
             selector: 'destination_user_id',
             sortable:true,
             cell: row => row.destination_user_id != null ? GetUsernames(row.destination_user_id) : <StyledP>-</StyledP>
@@ -76,10 +84,12 @@ function ReportsTable(){
         {
             name: 'Status',
             selector: 'alerts',
-            cell: row => row.alerts != null && row.alerts.length > 0 ? <p>Con alertas</p> : <p>OK</p> 
+            cell: row => row.alerts != null && row.alerts.length > 0 ? <IconContext.Provider value={{ color: '#00917c' }}><FaCheck /></IconContext.Provider>
+            :
+            <IconContext.Provider value={{ color: '#a9294f' }}><ImCross /></IconContext.Provider>
         },
         {
-            name: 'Reporte',
+            name: Cookies.get('locale') === 'en' ? 'Report' : 'Reporte',
             selector: 'shipment_id',
             sortable:true,
             cell: row => row.destination_user_id != null && row.destination_id != null ? getReport(row.shipment_id) : <p>-</p>
@@ -97,10 +107,10 @@ function ReportsTable(){
                     <StyledSelect
                         className="select"
                         >
-                            <option value="">Alertas</option>
-                            <option value="alerta">Con Alertas</option>
-                            <option value="dudoso">Dudoso</option>
-                            <option value="no-alerta">Sin alerta</option>
+                            <option value="">{SelectAlertOption1}</option>
+                            <option value="alerta">{SelectAlertOption2}</option>
+                            <option value="dudoso">{SelectAlertOption3}</option>
+                            <option value="no-alerta">{SelectAlertOption4}</option>
                     </StyledSelect>
                 </SearchDiv>
             </SearchContainer>
@@ -111,7 +121,7 @@ function ReportsTable(){
                         columns={columnsReports}
                         keyField="shipment_id"
                         data={filteredData}
-                        title='Reportes'
+                        title={MainTitle}
                         pagination={true}
                         paginationPerPage={10}
                         paginationRowsPerPageOptions={[10, 25, 50]}

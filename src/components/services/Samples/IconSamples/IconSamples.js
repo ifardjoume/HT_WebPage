@@ -8,7 +8,8 @@ import {
     ListIcon,
     //PdfDiv,
     //PdfH1
-} from './IconSamples.elements'
+} from './IconSamples.elements';
+import { FormattedMessage } from "react-intl";
 import temperatura from '../../../../images/icons/temperatura.png';
 import geolocalizacion from '../../../../images/icons/geolocalizacion.png';
 import vibraciones from '../../../../images/icons/vibraciones.png';
@@ -24,18 +25,18 @@ const IconSamples = () => {
         <>
         <AspectContainer>
             <AspectWrapper>
-                <AspectList>
-                <ListItem><ListIcon><IconImage src={geolocalizacion}/></ListIcon>Geolocalización</ListItem>
-                <ListItem><ListIcon><IconImage src={isotermico}/></ListIcon>Mantenimiento<br/> Isotérmico Personalizado</ListItem>
-                <ListItem><ListIcon><IconImage src={antiderrame}/></ListIcon>Empaque Inteligente<br/> Anti-derrame</ListItem>
-                <ListItem><ListIcon><IconImage src={temperatura}/></ListIcon>Registro de<br/> Temperatura</ListItem>
-                <ListItem><ListIcon><IconImage src={aperturaTapa}/></ListIcon>Registro de<br/> Apertura de Tapa</ListItem>
+            <AspectList>
+                <ListItem><ListIcon><IconImage src={geolocalizacion}/></ListIcon><FormattedMessage id="AspectTitle1" defaultMessage="Geolocation" /></ListItem>
+                <ListItem><ListIcon><IconImage src={isotermico}/></ListIcon><FormattedMessage id="AspectTitle2Pt1" defaultMessage="Custom Isothermal" /><br/><FormattedMessage id="AspectTitle2Pt2" defaultMessage="Maintenance" /></ListItem>
+                <ListItem><ListIcon><IconImage src={antiderrame}/></ListIcon><FormattedMessage id="AspectTitle3Pt1" defaultMessage="Smart Leak Proof" /><br/><FormattedMessage id="AspectTitle3Pt2" defaultMessage="Packing" /></ListItem>
+                <ListItem><ListIcon><IconImage src={temperatura}/></ListIcon><FormattedMessage id="AspectTitle4Pt1" defaultMessage="Temperature" /><br/><FormattedMessage id="AspectTitle4Pt2" defaultMessage="Log" /></ListItem>
+                <ListItem><ListIcon><IconImage src={aperturaTapa}/></ListIcon><FormattedMessage id="AspectTitle5Pt1" defaultMessage="Lid Opening" /><br/><FormattedMessage id="AspectTitle5Pt2" defaultMessage="Log" /></ListItem>
                 </AspectList>
                 <AspectList>
-                <ListItem><ListIcon><IconImage src={alertaTiempoReal}/></ListIcon>Alertas en<br/> Tiempo Real</ListItem>
-                <ListItem><ListIcon><IconImage src={golpes}/></ListIcon>Registro de<br/> Golpes y Caída Libre</ListItem>
-                <ListItem><ListIcon><IconImage src={vibraciones}/></ListIcon>Registro de<br/> Vibración</ListItem>
-                <ListItem><ListIcon><IconImage src={aceleracion}/></ListIcon>Registro de<br/> Aceleración</ListItem>
+                <ListItem><ListIcon><IconImage src={alertaTiempoReal}/></ListIcon><FormattedMessage id="AspectTitle6Pt1" defaultMessage="Real Time" /><br/><FormattedMessage id="AspectTitle6Pt2" defaultMessage="Alerts" /></ListItem>
+                <ListItem><ListIcon><IconImage src={golpes}/></ListIcon><FormattedMessage id="AspectTitle7Pt1" defaultMessage="Free Fall" /><br/><FormattedMessage id="AspectTitle7Pt2" defaultMessage="Log" /></ListItem>
+                <ListItem><ListIcon><IconImage src={vibraciones}/></ListIcon><FormattedMessage id="AspectTitle8Pt1" defaultMessage="Vibration" /><br/><FormattedMessage id="AspectTitle8Pt2" defaultMessage="Log" /></ListItem>
+                <ListItem><ListIcon><IconImage src={aceleracion}/></ListIcon><FormattedMessage id="AspectTitle9Pt1" defaultMessage="Acceleration" /><br/><FormattedMessage id="AspectTitle9Pt2" defaultMessage="Log" /></ListItem>
                 </AspectList>
             </AspectWrapper>
         </AspectContainer>

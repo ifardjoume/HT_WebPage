@@ -2,6 +2,7 @@ import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import styled from 'styled-components';
 import 'chartjs-adapter-moment';
+import Cookies from 'js-cookie';
 
 const GraphDiv = styled.div`
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
@@ -13,12 +14,17 @@ const GraphDiv = styled.div`
   }
 `;
 
+var MainTitle = Cookies.get('locale') === 'en' ? 'Ratio Comparison' : 'Comparación de Ratios';
+var LabelTag1 = Cookies.get('locale') === 'en' ? 'Actual Ratio' : 'Ratio Actual';
+var LabelTag2 = Cookies.get('locale') === 'en' ? 'Previous Month Ratio' : 'Ratio Mes Anterior';
+
+
 const GaugeChart = () => {
     return (
         <GraphDiv>
         <Doughnut 
         data={{
-            labels: ['Ratio Actual', 'Ratio Mes Anterior'],
+            labels: [LabelTag1, LabelTag2],
             datasets: [
               {
                 label: 'Rainfall',
@@ -42,7 +48,7 @@ const GaugeChart = () => {
             rotation: 1 * Math.PI,
             circumference: 1 * Math.PI,
           title:{
-            text:"Comparación de Ratios",
+            text: MainTitle,
             display:true,
             fontSize:18
           },

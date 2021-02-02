@@ -16,6 +16,8 @@ import {
   ImgCofounderContainer,
   ImgWrapperRow
 } from './aboutCofounders.elements';
+import { FormattedMessage } from "react-intl";
+
 
 function AboutCofounders() {
   return (
@@ -25,13 +27,11 @@ function AboutCofounders() {
                     <InfoRow>
                         <InfoColumn>
                             <TextWrapper>
-                                <Heading>Nosotros</Heading>
-                                <Subtitle>H+Trace fue fundada en 2019 con el objetivo de incorporar innovación y tecnología a la salud.<br></br> <br></br> 
-                                          Esta industria funciona en base a datos, sea para diagnóstico, tratamiento, cuidado o investigación clínica.
-                                          Sin embargo, la logística y el transporte son un punto ciego sin información.
-
-                                          H+Trace nació para aportar esos datos indispensables en busca de perfeccionar el proceso.<br></br><br></br> 
-                                          Buscamos consolidar un nuevo estándar de buenas prácticas de transporte en el ámbito de la salud.</Subtitle>
+                                <Heading><FormattedMessage id="AboutTitle" defaultMessage="About Us"/></Heading>
+                                <Subtitle><FormattedMessage id="AboutDescriptionPart1" defaultMessage="H+Trace was founded in 2019 with the aim of incorporating innovation and technology into healthcare."/><br></br> <br></br> 
+                                <FormattedMessage id="AboutDescriptionPart2" defaultMessage="The medical industry works based on data, be it for diagnosis, treatment, care or clinical research. However, logistics is a blind spot without information.
+H+Trace was created to provide those essential data to improve this process."/><br></br><br></br> 
+                                          <FormattedMessage id="AboutDescriptionPart3" defaultMessage="We seek to establish a new standard of good practices in healthcare transport."/></Subtitle>
                             </TextWrapper>
                         </InfoColumn>
                         <InfoColumn>
@@ -40,19 +40,19 @@ function AboutCofounders() {
                                 <ImgCofounderContainer>
                                 <Img src={Image1} alt="EmilianoBuitrago" />
                                 <TopLine>Emiliano Buitrago</TopLine>
-                                <Subtitle>Dirección General</Subtitle>
+                                <Subtitle><FormattedMessage id="AboutCofoundersTitle1" defaultMessage="Management"/></Subtitle>
                                 </ImgCofounderContainer>
                                 </ImgWrapperRow>
                                 <ImgWrapperRow>
                                 <ImgCofounderContainer>
                                 <Img src={Image2} alt="JavierCuello" />
                                 <TopLine>Javier Cuello</TopLine>
-                                <Subtitle>Desarrollo de Negocios</Subtitle>
+                                <Subtitle><FormattedMessage id="AboutCofoundersTitle2" defaultMessage="Bussiness Development"/></Subtitle>
                                 </ImgCofounderContainer>
                                 <ImgCofounderContainer>
                                 <Img src={Image3} alt="IvanFarjoume" />
                                 <TopLine>Iván Fardjoume</TopLine>
-                                <Subtitle>Tecnología</Subtitle>
+                                <Subtitle><FormattedMessage id="AboutCofoundersTitle3" defaultMessage="IT"/></Subtitle>
                                 </ImgCofounderContainer>
                                 </ImgWrapperRow>
                             </ImgWrapper>

@@ -7,7 +7,7 @@ import {
     IntroContent,
     IntroH1
 } from './introSection.elements';
-
+import { FormattedMessage } from "react-intl";
 
 const IntroSection = () => {
     return (
@@ -16,7 +16,7 @@ const IntroSection = () => {
                 <VideoBg autoPlay loop muted src={Video} type= 'video/mp4' />
             </IntroBg>
             <IntroContent>
-                <IntroH1 classname="App-header"> <b>EL NUEVO ESTÁNDAR GLOBAL<br></br><br></br> EN CALIDAD Y SEGURIDAD <br></br><br></br> PARA LA SALUD</b></IntroH1>               
+                <IntroH1 classname="App-header"> <b><FormattedMessage id="VideoTitlePart1" defaultMessage="THE NEW GLOBAL STANDARD" /><br></br><br></br> <FormattedMessage id="VideoTitlePart2" defaultMessage="OF QUALITY ASSURANCE" /><br></br><br></br> <FormattedMessage id="VideoTitlePart3" defaultMessage="IN HEALTHCARE" /></b></IntroH1>               
             </IntroContent>
         </IntroContainer>
         

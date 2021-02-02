@@ -1,12 +1,23 @@
 import React from 'react';
 import { NavBtn, NavBtnLink, Flag } from './translateBtn.elements';
-import IconFlag from '../../images/eng-icon.png';
+import IconFlagEnglish from '../../images/eng-icon.png';
+import IconFlagSpanish from '../../images/es-icon.png';
+import Cookies from 'js-cookie';
 
 const TranslateBtn = () => {
-    return (
+  var locale = Cookies.get('locale');
+  const toggleTanslation = () => {
+    locale === "en" ?
+     Cookies.set('locale', 'es')
+      : 
+    Cookies.set('locale', 'en')
+    window.location.reload(false);
+  }
+  const iconFlag = locale === "en" ? IconFlagSpanish : IconFlagEnglish;
+  return (
         <NavBtn>
-                  <NavBtnLink to='/en'>
-                    <Flag src={IconFlag}/>
+                  <NavBtnLink onClick={toggleTanslation}>
+                    <Flag src={iconFlag}/>
                   </NavBtnLink>
         </NavBtn>
     )

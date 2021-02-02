@@ -21,6 +21,15 @@ import Email from '../../images/icons/email.png';
 import Location from '../../images/icons/pin.png';
 import Linkedin from '../../images/icons/linkedin.png';
 import Phone from '../../images/icons/phone.png';
+import { FormattedMessage } from "react-intl";
+import Cookies from 'js-cookie';
+
+const errorMessageName = Cookies.get('locale') === "en" ? 'Please enter your name.' : 'Por favor, escriba un nombre valido.'
+const errorMessageEmail = Cookies.get('locale') === "en" ? 'Please enter a valid email address.' : 'Por favor, escriba un email valido.'
+const errorMessagePhone = Cookies.get('locale') === "en" ? 'Please enter a phone number.' : 'Por favor, escriba un telefono valido.'
+const errorMessage = Cookies.get('locale') === "en" ? 'Please enter a message' : 'Por favor, escriba un mensaje'
+const MessageSent = Cookies.get('locale') === "en" ? 'Sent!' : 'Enviado!'
+
 
 const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
 
@@ -56,7 +65,7 @@ class ContactUs extends Component {
   };
 
   toastifySuccess() {
-    toast.success('Enviado!', {
+    toast.success( MessageSent , {
       position: 'bottom-right',
       autoClose: 5000,
       hideProgressBar: true,
@@ -127,16 +136,16 @@ class ContactUs extends Component {
 
     switch (name) {
       case 'name':
-        formErrors.name = value.length < 1 ? 'Por favor, escriba un nombre valido.' : '';
+        formErrors.name = value.length < 1 ? errorMessageName : '';
         break;
       case 'email':
-        formErrors.email = emailRegex.test(value) ? '' : 'Por favor, escriba un email valido.';
+        formErrors.email = emailRegex.test(value) ? '' : errorMessageEmail;
         break;
       case 'phone':
-        formErrors.phone = value.length < 1 ? 'Por favor, escriba un telefono valido.' : '';
+        formErrors.phone = value.length < 1 ? errorMessagePhone : '';
         break;
       case 'message':
-        formErrors.message = value.length < 1 ? 'Por favor, escriba un mensaje' : '';
+        formErrors.message = value.length < 1 ? errorMessage : '';
         break;
       default:
         break;
@@ -167,7 +176,7 @@ class ContactUs extends Component {
                 </SocialLink>
               </SocialLinksWrapper>
         <StyledForm  className="contact-form"  onSubmit={this.handleSubmit} noValidate>
-        <Label htmlFor="name">Nombre *</Label>
+        <Label htmlFor="name"><FormattedMessage id="ContactFormName" defaultMessage="Name *" /></Label>
             <StyledInput
              type='text'
              name='name'
@@ -180,7 +189,7 @@ class ContactUs extends Component {
                 <span className='errorMessage'>{formErrors.name}</span>
               )}
               <br/><br/>
-        <Label htmlFor="email">Correo Electrónico *</Label>
+        <Label htmlFor="email"><FormattedMessage id="ContactFormMail" defaultMessage="Email *" /></Label>
             <StyledInput
             type='email'
             name='email'
@@ -193,7 +202,7 @@ class ContactUs extends Component {
                 <span className='errorMessage'>{formErrors.email}</span>
               )}
               <br/><br/>
-            <Label htmlFor="tel">Teléfono</Label>
+            <Label htmlFor="tel"><FormattedMessage id="ContactFormPhone" defaultMessage="Phone Number" /></Label>
             <StyledInput
             type='tel'
             name='phone'
@@ -208,7 +217,7 @@ class ContactUs extends Component {
                 <span className='errorMessage'>{formErrors.phone}</span>
               )}
               <br/><br/>
-        <Label htmlFor="message">Mensaje *</Label>
+        <Label htmlFor="message"><FormattedMessage id="ContactFormMessage" defaultMessage="Message *" /></Label>
         <StyledTextArea
             name='message'
             value={this.state.message}
@@ -221,8 +230,9 @@ class ContactUs extends Component {
            {formErrors.message.length > 0 && (
                 <span className='errorMessage'>{formErrors.message}</span>
               )}
+              <br/><br/>
             <ButtonContainer>
-              <StyledButton type="submit" value="Send">Enviar</StyledButton>
+              <StyledButton type="submit" value="Send"><FormattedMessage id="ContactFormButton" defaultMessage="Submit" /></StyledButton>
             </ButtonContainer>
         </StyledForm>
         <ToastContainer />

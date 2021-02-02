@@ -13,7 +13,7 @@ import {
   NavLinksHome,
   NavBtnLink
 } from '../../../navbar/Navbar.elements';
-import TranslateBtn from './translateBtn';
+import TranslateBtn from '../../../navbar/translateBtn';
 import Logo from '../../../../images/logo-navbar-blue.png';
 import { IconContext } from 'react-icons';
 

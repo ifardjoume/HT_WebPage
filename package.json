@@ -17,6 +17,7 @@
     "chart.js": "^2.9.4",
     "chartjs-adapter-moment": "^0.1.2",
     "emailjs-com": "^2.6.4",
+    "extract-react-intl-messages": "^4.1.1",
     "graphql": "^15.4.0",
     "graphql-tag": "^2.11.0",
     "js-cookie": "^2.2.1",

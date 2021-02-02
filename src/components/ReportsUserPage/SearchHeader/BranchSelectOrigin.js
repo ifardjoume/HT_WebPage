@@ -2,7 +2,9 @@ import React from 'react'
 import { StyledSelect } from './SearchHeader.elements';
 import { GET_BRANCHES} from '../../../Query';
 import { useQuery } from "@apollo/react-hooks";
+import Cookies from 'js-cookie';
 
+var SelectAlertOption = Cookies.get('locale') === 'en' ? 'Departure' : 'Origen';
 
 function BranchSelectOrigin(){
     const { loading, error, data } = useQuery(GET_BRANCHES);
@@ -10,7 +12,7 @@ function BranchSelectOrigin(){
     if (error) return `Error! ${error.message}`;
     return (
         <StyledSelect>
-            <option value="">Origen</option>
+            <option value="">{SelectAlertOption}</option>
             {data.company.branches.map(function(branch){
                return <option 
                key={branch.name}

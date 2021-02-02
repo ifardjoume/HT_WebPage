@@ -2,6 +2,8 @@ import React from 'react'
 import { Bar } from 'react-chartjs-2';
 import styled from 'styled-components';
 import 'chartjs-adapter-moment';
+import Cookies from 'js-cookie';
+
 
 const GraphDiv = styled.div`
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
@@ -14,6 +16,9 @@ const GraphDiv = styled.div`
   }
 `;
 
+var LabelTag1 = Cookies.get('locale') === 'en' ? 'Correct' : 'Correcto';
+var LabelTag2 = Cookies.get('locale') === 'en' ? 'Observed' : 'Observados';
+var LabelTag3 = Cookies.get('locale') === 'en' ? 'Alerts' : 'Con alertas';
 
 
 const StackedBarsChart = () => {
@@ -24,7 +29,7 @@ const StackedBarsChart = () => {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                 datasets: [
                   {
-                    label: 'Correcto',
+                    label: LabelTag1,
                     backgroundColor: '#adeecf',
                     borderWidth: 1,
                     stack: 1,
@@ -32,7 +37,7 @@ const StackedBarsChart = () => {
                     data: [65, 59, 80, 81, 56, 55, 40]
                   },
                   {
-                    label: 'Observado',
+                    label: LabelTag2,
                     backgroundColor: '#ffc764',
                     borderWidth: 1,
                     stack: 1,
@@ -40,7 +45,7 @@ const StackedBarsChart = () => {
                     data: [4, 7, 15, 14, 8, 5, 20]
                   },
                   {
-                    label: 'Con alerta',
+                    label: LabelTag3,
                     backgroundColor: '#ee9595',
                     borderWidth: 1,
                     stack: 1,

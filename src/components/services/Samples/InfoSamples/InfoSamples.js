@@ -12,6 +12,8 @@ import {
     ListItem
   } from './InfoSamples.elements';
 import PieChart from '../GraphSection/PieChart';
+import { FormattedMessage } from "react-intl";
+
 
 const InfoSamples = () => {
     return (
@@ -21,18 +23,17 @@ const InfoSamples = () => {
                         <InfoRow>
                             <InfoColumn>
                                 <TextWrapper>
-                                    <Heading>Muestras Biológicas</Heading>
+                                    <Heading><FormattedMessage id="InfoSecTitleSamples" defaultMessage="Biological Samples" /></Heading>
                                     <Subtitle> 
-                                    Sabemos que el 70% de los errores ocurren en la etapa preanalítica.
-                                    Nuestro estudio muestra que casi el 90% de los encuestados saben que podrían mejorar aún más la calidad y
-                                    la forma de transporte de muestras en su laboratorio. Con una especial preocupación en:  
+                                    <FormattedMessage id="InfoSecDescriptionSamples" defaultMessage="We know that 70% of errors occur in the preanalytical stage.
+                                        Our study shows that 90% of respondents are concerned about:" />
                                     </Subtitle>
                                     <List>
-                                        <ListItem>Temperatura</ListItem>
-                                        <ListItem>Tiempo</ListItem>
-                                        <ListItem>Golpes / Maltrato</ListItem>
-                                        <ListItem>Muestras Dañadas</ListItem>
-                                        <ListItem>Configuración de Alerta </ListItem>
+                                        <ListItem><FormattedMessage id="InfoSecBulletSamples1" defaultMessage="Temperature" /></ListItem>
+                                        <ListItem><FormattedMessage id="InfoSecBulletSamples2" defaultMessage="Time" /></ListItem>
+                                        <ListItem><FormattedMessage id="InfoSecBulletSamples3" defaultMessage="Shaking / Mistreatment" /></ListItem>
+                                        <ListItem><FormattedMessage id="InfoSecBulletSamples4" defaultMessage="Damaged Samples" /></ListItem>
+                                        <ListItem><FormattedMessage id="InfoSecBulletSamples5" defaultMessage="Alert Settings" /></ListItem>
                                     </List>
                                 </TextWrapper>
                             </InfoColumn>

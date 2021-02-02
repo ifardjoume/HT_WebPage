@@ -3,9 +3,12 @@ import { Line } from 'react-chartjs-2';
 import 'chartjs-adapter-moment';
 import { GET_SHIPMENT_TEMP } from '../../../Query';
 import { useQuery } from "@apollo/react-hooks";
+import Cookies from 'js-cookie';
 
-//var timeFormat = 'HH:mm';
 
+var MainTag = Cookies.get('locale') === 'en' ? 'Shipment Temperature' : 'Temperatura del Envio';
+var LabelTag1 = Cookies.get('locale') === 'en' ? "Temperature (°C)" : 'Temperatura (°C)';
+var LabelTag2 = Cookies.get('locale') === 'en' ? 'Time (Hours)' : 'Tiempo (Horas)';
 
 function TempGraph(props){
     const { loading, error, data } = useQuery(GET_SHIPMENT_TEMP,{
@@ -28,7 +31,7 @@ function TempGraph(props){
             data={{
                 labels: dataLabels,
                 datasets: [{
-                    label: 'Shipment Temperature',
+                    label: MainTag,
                     data: tempReadings,
                     backgroundColor: 'transparent',
                     borderColor: 'blue',
@@ -60,7 +63,7 @@ function TempGraph(props){
                         scaleLabel: {
                             display: true,
                             fontSize: 14,
-                            labelString: "Temperature (°C)",
+                            labelString: LabelTag1,
                         }
                     }],
                     xAxes: [{
@@ -81,7 +84,7 @@ function TempGraph(props){
                         display: true,
                         scaleLabel: {
                           display: true,
-                          labelString: 'Time (Hours)'
+                          labelString: LabelTag2
                         }
                       }],
                 }

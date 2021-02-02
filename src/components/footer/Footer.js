@@ -9,7 +9,7 @@ import {
     SocialMediaWrap,
     WebsiteRights
   } from './Footer.elements';
-  
+import { FormattedMessage } from "react-intl";
 
 
 const Footer = () => {
@@ -19,13 +19,13 @@ const Footer = () => {
                 <FooterLinksWrapper>
                     <FooterLinkItems>
                         {/* Falta agregar rutas de los diferentes links */}
-                        <FooterLink to='sign-in'>Prensa</FooterLink>
+                        <FooterLink to='under-construction'><FormattedMessage id="FooterPressTitle" defaultMessage="Press" /></FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                        <FooterLink to='sign-in'>Sumate</FooterLink>
+                        <FooterLink to='under-construction'><FormattedMessage id="FooterJoinTitle" defaultMessage="Join Us" /></FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
-                        <FooterLink to='sign-in'>Cookies</FooterLink>
+                        <FooterLink to='under-construction'><FormattedMessage id="FooterCookiesTitle" defaultMessage="Cookies" /></FooterLink>
                     </FooterLinkItems>
                 </FooterLinksWrapper>
             </FooterLinksContainer>

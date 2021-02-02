@@ -1,0 +1,100 @@
+{
+    "InfoSecTitle": "It's time to join the future" ,
+    "NavbarServices" : "Services" ,
+    "NavbarCompany": "Company",
+    "NavbarContact":"Contact",
+    "SidebarServices":"Services",
+    "SidebarAbout":"About Us",
+    "SidebarContact":"Contact",
+    "VideoTitlePart1":"THE NEW GLOBAL STANDARD",
+    "VideoTitlePart2": "OF QUALITY ASSURANCE",
+    "VideoTitlePart3":"IN HEALTHCARE",
+    "InfoSecSubtitlePart1":"Many decades have passed without any innovation in healthcare logistics. And we know that what is not measured cannot be improved.",
+    "InfoSecSubtitlePart2":"That is why we developed THIS (Total Healthcare Insight Solution), a comprehensive low-cost solution that combines data science, IoT (Internet of Things) and a sensorization system with thermal control that allows the customization of the transported object.",
+    "TableTitle": "No more blind spots in logistics",
+    "TableTitleColumn1":"Features",
+    "TableTitleColumn2":"Traditional",
+    "AspectTitleColumn1": "Traceability",
+    "AspectTitleColumn2": "Cooling",
+    "AspectTitleColumn3": "Overcooling Damage Prevention",
+    "AspectTitleColumn4": "Custom Thermal Range",
+    "AspectTitleColumn5": "Real time Monitoring with Customizable Alerts",
+    "AspectTitleColumn6": "Leak-Proof Packaging",
+    "AspectTitleColumn7": "Geolocation",
+    "AspectTitleColumn8": "Data Analytics",
+    "AspectTHISColumn1":"Temperature",
+    "AspectTHISColumn2":"Lid Opening",
+    "AspectTHISColumn3":"Shaking",
+    "AspectTHISColumn4":"Shock Damage",
+    "AspectTHISColumn5":"Acceleration",
+    "AspectTHISColumn6":"Uniform",
+    "AspectTraditionalColumn1": "None",
+    "AspectTraditionalColumn2": "Uneven depending on Location",
+    "GraphSectionTitle":"Thermal Performance THIS vs. Traditional",
+    "AspectTitle1":"Geolocation",
+    "AspectTitle2Pt1":"Custom Isothermal",
+    "AspectTitle2Pt2":"Maintenance",
+    "AspectTitle3Pt1":"Smart Leak Proof",
+    "AspectTitle3Pt2":"Packing",
+    "AspectTitle4Pt1":"Temperature",
+    "AspectTitle4Pt2":"Log",
+    "AspectTitle5Pt1":"Lid Opening",
+    "AspectTitle5Pt2":"Log",
+    "AspectTitle6Pt1":"Real Time",
+    "AspectTitle6Pt2":"Alerts",
+    "AspectTitle7Pt1":"Free Fall",
+    "AspectTitle7Pt2":"Log",
+    "AspectTitle8Pt1":"Vibration",
+    "AspectTitle8Pt2":"Log",
+    "AspectTitle9Pt1":"Acceleration",
+    "AspectTitle9Pt2":"Log",
+    "ServicesCardTitle1":"Biological Samples",
+    "ServicesCardTitle2":"COVID-19 Vaccines",
+    "ServicesCardTitle3":"Organs",
+    "AboutTitle":"About Us",
+    "AboutDescriptionPart1":"H+Trace was founded in 2019 with the aim of incorporating innovation and technology into healthcare.",
+    "AboutDescriptionPart2":"The medical industry works based on data, be it for diagnosis, treatment, care or clinical research. However, logistics is a blind spot without information. H+Trace was created to provide those essential data to improve this process.",
+    "AboutDescriptionPart3":"We seek to establish a new standard of good practices in healthcare transport.",
+    "AboutCofoundersTitle1":"Management",
+    "AboutCofoundersTitle2":"Bussiness Development",
+    "AboutCofoundersTitle3":"IT",
+    "ContactFormName":"Name *",
+    "ContactFormMail":"Email *",
+    "ContactFormPhone":"Phone Number",
+    "ContactFormMessage":"Message *",
+    "ContactFormButton":"Submit",
+    "FooterPressTitle":"Press",
+    "FooterJoinTitle":"Join Us",
+    "FooterCookiesTitle":"Cookies",
+    "NoMatchPageTitle":"The page you requested could not be found",
+    "NoMatchPageButton":"Return",
+    "UserSignInForm":"User *",
+    "PasswordSignInForm":"Password *",
+    "ButtonSignInForm":"LOGIN",
+    "TableTitleSamples":"THIS is the solution to blind spots in sample transports",
+    "InfoSecTitleSamples":"Biological Samples",
+    "InfoSecDescriptionSamples":"We know that 70% of errors occur in the preanalytical stage. Our study shows that 90% of respondents are concerned about:",
+    "InfoSecBulletSamples1":"Temperature",
+    "InfoSecBulletSamples2":"Time",
+    "InfoSecBulletSamples3":"Shaking / Mistreatment",
+    "InfoSecBulletSamples4":"Damaged Samples",
+    "InfoSecBulletSamples5":"Alert Settings",
+    "UnderConstructionTitle": "Under Construction",
+    "UnderConstructionDescription":"We are working hard to bring you a new experience"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

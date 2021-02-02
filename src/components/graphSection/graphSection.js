@@ -4,12 +4,12 @@ import {
     GraphContainer,
     GraphTitle,
 } from './graphSection.elements'
-
+import { FormattedMessage } from "react-intl";
 
 const graphSection = () => {
     return (
         <GraphContainer>
-        <GraphTitle>Performance Térmica THIS vs. Tradicional</GraphTitle>
+        <GraphTitle><FormattedMessage id="GraphSectionTitle" defaultMessage="Thermal Performance THIS vs. Traditional" /></GraphTitle>
         <Graph />
         </GraphContainer>
     )

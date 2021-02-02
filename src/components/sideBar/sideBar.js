@@ -9,7 +9,7 @@ import { SideBarContainer,
     SidebarRoute
 } from './sideBar.elements';
 import TranslateBtn from '../navbar/translateBtn';
-
+import { FormattedMessage } from "react-intl";
 
 const SideBar = ({isOpen, toggle}) => {
     return (
@@ -20,13 +20,13 @@ const SideBar = ({isOpen, toggle}) => {
             <SidebarWrapper>
             <SidebarMenu>
                 <SidebarLink to="services" onClick={toggle}>
-                    Servicios
+                <FormattedMessage id="SidebarServices" defaultMessage="Services" />
                 </SidebarLink>
                 <SidebarLink to="about" onClick={toggle}>
-                    Nosotros
+                <FormattedMessage id="SidebarAbout" defaultMessage="About Us" />
                 </SidebarLink>
                 <SidebarLink to="contact" onClick={toggle}>
-                    Contacto
+                <FormattedMessage id="SidebarContact" defaultMessage="Contact" />
                 </SidebarLink>
                 <TranslateBtn />
                 <SideBtnWrap>

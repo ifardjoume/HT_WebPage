@@ -2,8 +2,7 @@ import React from 'react'
 import { Line } from 'react-chartjs-2';
 import styled from 'styled-components';
 import 'chartjs-adapter-moment';
-
-
+import Cookies from 'js-cookie';
 const GraphDiv = styled.div`
 background-color:#fafafa;
 @media screen and (max-width: 768px) {
@@ -14,6 +13,9 @@ background-color:#fafafa;
 `;
 var timeFormat = 'HH:mm';
 
+var traditionalTag = Cookies.get('locale') === 'en' ? 'Traditional' : 'Tradicional';
+var TemperatureTag = Cookies.get('locale') === 'en' ? 'Temperature (°C)' : 'Temperatura (°C)';
+var TimeTag = Cookies.get('locale') === 'en' ? 'Time (Hours)' : 'Tiempo (Horas)';
 
 const Graph = () => {
     return (
@@ -29,7 +31,7 @@ const Graph = () => {
                     borderWidth: 1
                 },
                 {
-                    label: 'Traditional',
+                    label: traditionalTag,
                     data: [23.5,23.4,23.1,23.2,23,22.1,19.9,15.2,9.9,8.5,7.9,7.5,6.4,7.1,6.8,6.6,7,6.9,7.2,7.5,7.9,8.5,8.7,9.2,8.9,8.8,9.3,10.2,10.8,11.1,11.4,11.1,11.5,15,18],
                     backgroundColor: 'transparent',
                     borderColor: 'red',
@@ -58,7 +60,7 @@ const Graph = () => {
                         scaleLabel: {
                             display: true,
                             fontSize: 14,
-                            labelString: "Temperature (°C)",
+                            labelString: TemperatureTag,
                         }
                     }],
                     xAxes: [{
@@ -79,7 +81,7 @@ const Graph = () => {
                         display: true,
                         scaleLabel: {
                           display: true,
-                          labelString: 'Time (Hours)'
+                          labelString: TimeTag
                         }
                       }],
                 }

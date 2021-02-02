@@ -2,7 +2,7 @@ import React from 'react'
 import { Pie } from 'react-chartjs-2';
 import styled from 'styled-components';
 import 'chartjs-adapter-moment';
-
+import Cookies from 'js-cookie';
 
 const GraphDiv = styled.div`
   //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
@@ -16,6 +16,9 @@ const GraphDiv = styled.div`
   }
 
 `;
+const GraphTag1 = Cookies.get('locale') === 'en' ? 'We are working on it': 'Lo estamos planificando'
+const GraphTag2 = Cookies.get('locale') === 'en' ? 'We still haven´t figured it out': 'Aún no lo tenemos resuelto'
+const GraphTag3 = Cookies.get('locale') === 'en' ? 'We don´t need to improve on it': 'Mi forma de transporte es inmejorable'
 
 
 const PieChart = () => {
@@ -23,9 +26,9 @@ const PieChart = () => {
         <GraphDiv>
         <Pie 
         data={{
-            labels: ['Lo estamos planificando',
-            'Aún no lo tenemos resuelto',
-            'Mi forma de transporte es inmejorable'],
+            labels: [GraphTag1,
+            GraphTag2,
+            GraphTag3],
             datasets: [
               {
                 backgroundColor: [

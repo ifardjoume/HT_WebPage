@@ -11,6 +11,9 @@ import {
     ImgWrapper
   } from './InfoSection.elements';
 import img1 from '../../images/Conjunto-2.jpeg';
+import { FormattedMessage } from "react-intl";
+
+
 const InfoSection = () => {
     return (
         <>
@@ -19,9 +22,9 @@ const InfoSection = () => {
                     <InfoRow>
                         <InfoColumn>
                             <TextWrapper>
-                                <Heading>Llegó el momento de sumarse al futuro</Heading>
-                                <Subtitle> En la industria de la salud, desde hace muchas décadas no se ve un avance tecnológico en la lógistica del transporte. Y sabemos que lo que no se mide, no se puede mejorar. <br/><br/>
-                                    Por eso desarrollamos THIS (Total Healthcare Insight Solution), una solución integral de bajo costo que combina ciencia de datos, IoT (Internet de las cosas) y un sistema de sensores con control térmico que permite la personalización del transporte de cada objeto/envío.</Subtitle>
+                                <Heading><FormattedMessage id="InfoSecTitle" defaultMessage="It's time to join the future" /></Heading>
+                                <Subtitle><FormattedMessage id="InfoSecSubtitlePart1" defaultMessage="Many decades have passed without any innovation in healthcare logistics. And we know that what is not measured cannot be improved." /><br/><br/>
+                                <FormattedMessage id="InfoSecSubtitlePart2" defaultMessage="That is why we developed THIS (Total Healthcare Insight Solution), a comprehensive low-cost solution that combines data science, IoT (Internet of Things) and a sensorization system with thermal control that allows the customization of the transported object."/></Subtitle>
                             </TextWrapper>
                         </InfoColumn>
                         <InfoColumn>

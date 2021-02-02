@@ -8,7 +8,7 @@ import {
  } from './NoMatchPage.elements';
 
 import Warning from '../../images/warning.svg';
-
+import { FormattedMessage } from "react-intl";
 
 
 const NoMatchPage = () => {
@@ -16,8 +16,12 @@ const NoMatchPage = () => {
         <NoMatchDiv>
             <NoMatchTitle>404 - Not Found</NoMatchTitle>
             <NoMatchImage src={Warning}/>
-            <NoMatchDescription>The page you requested could not be found</NoMatchDescription>
-            <NoMatchButton to='/'>Return</NoMatchButton>
+            <NoMatchDescription>
+                <FormattedMessage id="NoMatchPageTitle"
+                 defaultMessage="The page you requested could not be found" />
+            </NoMatchDescription>
+            <NoMatchButton to='/'><FormattedMessage id="NoMatchPageButton"
+                 defaultMessage="Return" /></NoMatchButton>
         </NoMatchDiv>
     )
 }

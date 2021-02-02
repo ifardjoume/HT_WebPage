@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 
 export const NavBtn = styled.nav`
@@ -15,7 +15,7 @@ export const NavBtn = styled.nav`
   }
 `;
 
-export const NavBtnLink = styled(Link)`
+export const NavBtnLink = styled.button`
   border-radius:50px;
   margin-top:10px;
   background: transparent;

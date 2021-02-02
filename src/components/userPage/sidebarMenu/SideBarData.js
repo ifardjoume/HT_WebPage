@@ -1,6 +1,10 @@
 import React from 'react';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
+import Cookies from 'js-cookie';
+
+var ReportsVariable = Cookies.get('locale') === 'en' ? 'Reports' : 'Reportes';
+var SettingsVariable = Cookies.get('locale') === 'en' ? 'Settings' : 'Configuración';
 
 export const SidebarData = [
   {
@@ -9,12 +13,12 @@ export const SidebarData = [
     icon: <AiIcons.AiFillHome />
   },
   {
-    title: 'Reportes',
+    title: ReportsVariable,
     path: '/reports',
     icon: <IoIcons.IoIosPaper />
   },
   {
-    title: 'Configuración',
+    title: SettingsVariable,
     path: '/settings',
     icon: <AiIcons.AiTwotoneSetting />
   }
