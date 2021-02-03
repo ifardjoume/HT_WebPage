@@ -6,39 +6,31 @@ import {
     ServicesIcon,
     ServicesWrapper,
     ServicesH2,
+    ServicesH1,
     ServicesContainer,
     ServicesCard,
-    LinkTo
+    //LinkTo
 } from './Services.elements';
 import { FormattedMessage } from "react-intl";
-import {animateScroll as scroll} from 'react-scroll';
 
 
 function Services() {
-  const toggleHome = () => {
-    scroll.scrollToTop();
-  }
   return (
     <ServicesContainer id="services">
+      <ServicesH1><FormattedMessage id="ServicesTitle" defaultMessage="Implementation Areas" /></ServicesH1>
       <ServicesWrapper>
-      <LinkTo to="samples" onClick={toggleHome}>
           <ServicesCard>
             <ServicesIcon src={Icon1}/>
             <ServicesH2><FormattedMessage id="ServicesCardTitle1" defaultMessage="Biological Samples" /></ServicesH2>
           </ServicesCard>
-      </LinkTo>
-      <LinkTo to="under-construction">
         <ServicesCard>
           <ServicesIcon src={Icon2}/>
           <ServicesH2><FormattedMessage id="ServicesCardTitle2" defaultMessage="COVID-19 Vaccines" /></ServicesH2>
         </ServicesCard>
-      </LinkTo>
-      <LinkTo to="under-construction">
         <ServicesCard>
           <ServicesIcon src={Icon3}/>
           <ServicesH2><FormattedMessage id="ServicesCardTitle3" defaultMessage="Organs" /></ServicesH2>
         </ServicesCard>
-      </LinkTo>
       </ServicesWrapper>
     </ServicesContainer>
   )

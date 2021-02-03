@@ -7,8 +7,8 @@ import AboutCofounders from '../../components/aboutCofounders/aboutCofounders'
 import TableSection from '../../components/tableSection/tableSection';
 import AspectSection from '../../components/aspectSection/AspectSection';
 import Contact from '../../components/contact/contact';
-import GraphSection from '../../components/graphSection/graphSection';
 import Footer from '../../components/footer/Footer';
+import ThisSection from '../../components/thisSection/ThisSection';
 
 const Home = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -23,8 +23,8 @@ const Home = () => {
         <Navbar toggle= {toggle}/>
         <IntroSection />
         <InfoSection />
+        <ThisSection />
         <TableSection />
-        <GraphSection />
         <AspectSection />
         <Services />
         <AboutCofounders/>

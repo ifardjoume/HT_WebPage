@@ -1,9 +1,9 @@
 {
     "InfoSecTitle": "Llegó el momento de sumarse al futuro",
-    "NavbarServices" : "Servicios" ,
-    "NavbarCompany": "Compania",
+    "NavbarServices" : "Solución" ,
+    "NavbarCompany": "Compañia",
     "NavbarContact": "Contacto",
-    "SidebarServices":"Servicios",
+    "SidebarServices":"Solución",
     "SidebarAbout":"Nosotros",
     "SidebarContact":"Contacto",
     "VideoTitlePart1":"EL NUEVO ESTÁNDAR GLOBAL",
@@ -50,7 +50,7 @@
     "AspectTitle9Pt2":"Aceleración",
     "ServicesCardTitle1":"Muestras biológicas",
     "ServicesCardTitle2":"Vacunas COVID-19",
-    "ServicesCardTitle3":"Órganos",
+    "ServicesCardTitle3":"Transplante de Órganos",
     "AboutTitle":"Nosotros",
     "AboutDescriptionPart1":"H+Trace fue fundada en 2019 con el objetivo de incorporar innovación y tecnología a la salud.",
     "AboutDescriptionPart2":"Esta industria funciona en base a datos, sea para diagnóstico, tratamiento, cuidado o investigación clínica. Sin embargo, la logística y el transporte son un punto ciego sin información. H+Trace nació para aportar esos datos indispensables en busca de perfeccionar el proceso.",
@@ -80,6 +80,10 @@
     "InfoSecBulletSamples4":"Muestras Dañadas",
     "InfoSecBulletSamples5":"Configuración de alertas",
     "UnderConstructionTitle": "Sitio en construcción",
-    "UnderConstructionDescription":"Estamos construyendo una nueva experiencia"
+    "UnderConstructionDescription":"Estamos construyendo una nueva experiencia",
+    "ServicesTitle":"Áreas de Implementación",
+    "THISSectionTitle":"Sistema T.H.I.S.",
+    "THISSectionDescription":"T.H.I.S. es el sistema inteligente para logística al servicio de la salud más avanzado del mundo. Esta solución de trazabilidad total incluye una combinación de PCMs (Materiales de Cambio de Fase) junto a una serie de sensores que reportan información que ningún otro sistema puede brindar. ",
+    "THISSectionButton":"Más Información"
 
 }

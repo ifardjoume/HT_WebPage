@@ -19,7 +19,7 @@ const SideBar = ({isOpen, toggle}) => {
             </Icon>
             <SidebarWrapper>
             <SidebarMenu>
-                <SidebarLink to="services" onClick={toggle}>
+                <SidebarLink to="solution" onClick={toggle}>
                 <FormattedMessage id="SidebarServices" defaultMessage="Services" />
                 </SidebarLink>
                 <SidebarLink to="about" onClick={toggle}>

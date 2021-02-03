@@ -18,6 +18,7 @@ import UnderConstructionPage from './pages/NoMatchPage/UnderConstructionPage';
 import JavierC from './pages/Cofounders/JavierC';
 import IvanF from './pages/Cofounders/IvanF';
 import EmilianoB from './pages/Cofounders/EmilianoB';
+import ThisSystemPage from './pages/ThisSystemPage/ThisSystemPage';
 
 
 
@@ -39,6 +40,7 @@ const App = () => {
           <Route exact path='/vaccinations' component={Vaccinations} />
           <Route exact path='/organs' component={Organs} />
           <Route exact path='/under-construction' component={UnderConstructionPage} />
+          <Route exact path='/this' component={ThisSystemPage} />
           <Route exact path='/IvanFardjoume' component={IvanF} />
           <Route exact path='/JavierCuello' component={JavierC} />
           <Route exact path='/EmilianoBuitrago' component={EmilianoB} />

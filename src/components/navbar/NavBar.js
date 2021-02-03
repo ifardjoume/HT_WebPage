@@ -49,13 +49,13 @@ const Navbar = ({ toggle }) => {
               <NavItem>
               </NavItem>
               <NavItem>
-                <NavLinks to="services"
+                <NavLinks to="solution"
                 smooth={true}
                 duration={600}
                 exact='true'
                 offset={-80}
                 >
-                  <FormattedMessage id="NavbarServices" defaultMessage="Services" />
+                  <FormattedMessage id="NavbarServices" defaultMessage="Solution" />
                 </NavLinks>
               </NavItem>
               <NavItem>

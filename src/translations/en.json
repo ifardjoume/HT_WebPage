@@ -1,9 +1,9 @@
 {
     "InfoSecTitle": "It's time to join the future" ,
-    "NavbarServices" : "Services" ,
+    "NavbarServices" : "Solution" ,
     "NavbarCompany": "Company",
     "NavbarContact":"Contact",
-    "SidebarServices":"Services",
+    "SidebarServices":"Solution",
     "SidebarAbout":"About Us",
     "SidebarContact":"Contact",
     "VideoTitlePart1":"THE NEW GLOBAL STANDARD",
@@ -50,7 +50,7 @@
     "AspectTitle9Pt2":"Log",
     "ServicesCardTitle1":"Biological Samples",
     "ServicesCardTitle2":"COVID-19 Vaccines",
-    "ServicesCardTitle3":"Organs",
+    "ServicesCardTitle3":"Organ Transplants",
     "AboutTitle":"About Us",
     "AboutDescriptionPart1":"H+Trace was founded in 2019 with the aim of incorporating innovation and technology into healthcare.",
     "AboutDescriptionPart2":"The medical industry works based on data, be it for diagnosis, treatment, care or clinical research. However, logistics is a blind spot without information. H+Trace was created to provide those essential data to improve this process.",
@@ -80,8 +80,11 @@
     "InfoSecBulletSamples4":"Damaged Samples",
     "InfoSecBulletSamples5":"Alert Settings",
     "UnderConstructionTitle": "Under Construction",
-    "UnderConstructionDescription":"We are working hard to bring you a new experience"
-
+    "UnderConstructionDescription":"We are working hard to bring you a new experience",
+    "ServicesTitle":"Implementation Areas",
+    "THISSectionTitle":"T.H.I.S. System",
+    "THISSectionDescription":"T.H.I.S. is the world's most advanced smart logistics system for healthcare. This total traceability solution includes a combination of PCMs (Phase Change Materials) along with a series of sensors that report information that no other system can provide.",
+    "THISSectionButton":"More Information"
 
 
 
