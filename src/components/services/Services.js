@@ -11,13 +11,17 @@ import {
     LinkTo
 } from './Services.elements';
 import { FormattedMessage } from "react-intl";
+import {animateScroll as scroll} from 'react-scroll';
 
 
 function Services() {
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  }
   return (
     <ServicesContainer id="services">
       <ServicesWrapper>
-      <LinkTo to="samples">
+      <LinkTo to="samples" onClick={toggleHome}>
           <ServicesCard>
             <ServicesIcon src={Icon1}/>
             <ServicesH2><FormattedMessage id="ServicesCardTitle1" defaultMessage="Biological Samples" /></ServicesH2>

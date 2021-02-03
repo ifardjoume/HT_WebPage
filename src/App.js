@@ -15,9 +15,18 @@ import GuardedRoute from './components/GuardedRoute';
 import Reports from './pages/Reports/Reports';
 import Settings from './pages/Settings/Settings';
 import UnderConstructionPage from './pages/NoMatchPage/UnderConstructionPage';
+import JavierC from './pages/Cofounders/JavierC';
+import IvanF from './pages/Cofounders/IvanF';
+import EmilianoB from './pages/Cofounders/EmilianoB';
 
 
-const locale = Cookies.get('locale') ? Cookies.get('locale') : 'en';
+const locale = Cookies.get('locale') ?
+ Cookies.get('locale') 
+ : 
+ function setCookies(){
+  'es'
+  Cookies.set('locale','en')
+};
 
 
 
@@ -33,6 +42,9 @@ function App() {
           <Route exact path='/vaccinations' component={Vaccinations} />
           <Route exact path='/organs' component={Organs} />
           <Route exact path='/under-construction' component={UnderConstructionPage} />
+          <Route exact path='/IvanFardjoume' component={IvanF} />
+          <Route exact path='/JavierCuello' component={JavierC} />
+          <Route exact path='/EmilianoBuitrago' component={EmilianoB} />
           <GuardedRoute path='/user-area' component={UserPage}/>
           <GuardedRoute path='/reports' component={Reports}/>  
           <GuardedRoute path='/settings' component={Settings}/>         

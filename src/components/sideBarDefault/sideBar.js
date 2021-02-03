@@ -7,8 +7,8 @@ import { SideBarContainer,
     SidebarLinkHome,
     SideBtnWrap,
     SidebarRoute
-} from '../../../sideBar/sideBar.elements';
-import TranslateBtn from '../navBar/translateBtn';
+} from '../sideBar/sideBar.elements';
+import TranslateBtn from '../navbar/translateBtn';
 
 
 const SideBar = ({isOpen, toggle}) => {

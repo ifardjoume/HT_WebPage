@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react';
+import React from 'react';
 import { FaBars } from 'react-icons/fa';
 import {animateScroll as scroll} from 'react-scroll';
 import {
@@ -12,25 +12,13 @@ import {
   NavBtn,
   NavLinksHome,
   NavBtnLink
-} from '../../../navbar/Navbar.elements';
-import TranslateBtn from './translateBtn';
-import Logo from '../../../../images/logo-navbar-blue.png';
+} from '../navbar/Navbar.elements';
+import TranslateBtn from '../navbar/translateBtn';
+import Logo from '../../images/logo-navbar-blue.png';
 import { IconContext } from 'react-icons';
 
 const Navbar = ({ toggle }) => {
-  const [scrollNav, setScrollNav] = useState(false);
 
-  const changeNav = () => {
-    if(window.scrollY >= 80){
-      setScrollNav(true)
-    } else{
-      setScrollNav(false)
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener('scroll',changeNav)
-  })
 
   const toggleHome = () => {
     scroll.scrollToTop();
@@ -38,7 +26,7 @@ const Navbar = ({ toggle }) => {
   return (
     <>
      <IconContext.Provider value={{ color: '#333' }}>
-        <Nav scrollNav={scrollNav}>
+        <Nav>
           <NavbarContainer>
             <NavLogo to='/' onClick={toggleHome}>
               <NavIcon src={Logo}  />

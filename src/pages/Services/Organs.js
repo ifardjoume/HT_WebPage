@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import Navbar from '../../components/services/Organs/navBar/NavBar';
-import SideBar from '../../components/services/Organs/Sidebar/sideBar'
+import Navbar from '../../components/navBarDefault/NavBar';
+import SideBar from '../../components/sideBarDefault/sideBar';
 import Footer from '../../components/footer/Footer';
 import InfoOrgans from '../../components/services/Organs/InfoOrgans/InfoOrgans';
 import IconOrgans from '../../components/services/Organs/IconOrgans/IconOrgans';
