@@ -20,17 +20,14 @@ import IvanF from './pages/Cofounders/IvanF';
 import EmilianoB from './pages/Cofounders/EmilianoB';
 
 
-const locale = Cookies.get('locale') ?
- Cookies.get('locale') 
- : 
- function setCookies(){
-  'es'
-  Cookies.set('locale','en')
-};
 
+function setCookies(){
+  Cookies.set('locale', "es");
+  return "es"
+}
 
-
-function App() {
+const App = () => {
+  const locale = Cookies.get('locale') ? Cookies.get('locale') : setCookies();
   return (
     <IntlProvider locale={locale} messages={translations[locale]}>
       <Router>

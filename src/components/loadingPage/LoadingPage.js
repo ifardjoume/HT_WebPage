@@ -6,12 +6,22 @@ const LoadingDiv = styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
+    width:100%;
+    height:100%;
 `
+const ImgLoading = styled.img`
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:50%;
+    height:50%;
+`
+
 
 const LoadingPage = () => {
     return (
         <LoadingDiv>
-            <img className="loader__image" src={HTgif} />
+            <ImgLoading className="loader__image" alt="loading-gif" src={HTgif} />
         </LoadingDiv>
     )
 }
