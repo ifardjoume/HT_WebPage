@@ -48,9 +48,12 @@
     "AspectTitle8Pt2":"Log",
     "AspectTitle9Pt1":"Acceleration",
     "AspectTitle9Pt2":"Log",
-    "ServicesCardTitle1":"Biological Samples",
-    "ServicesCardTitle2":"COVID-19 Vaccines",
-    "ServicesCardTitle3":"Organ Transplants",
+    "ServicesCardTitle1Pt1":"Biological",
+    "ServicesCardTitle1Pt2":"Samples",
+    "ServicesCardTitle2Pt1":"COVID-19",
+    "ServicesCardTitle2Pt2":"Vaccines",
+    "ServicesCardTitle3Pt1":"Organ",
+    "ServicesCardTitle3Pt2":"Transplants",
     "AboutTitle":"About Us",
     "AboutDescriptionPart1":"H+Trace was founded in 2019 with the aim of incorporating innovation and technology into healthcare.",
     "AboutDescriptionPart2":"The medical industry works based on data, be it for diagnosis, treatment, care or clinical research. However, logistics is a blind spot without information. H+Trace was created to provide those essential data to improve this process.",
@@ -84,9 +87,16 @@
     "ServicesTitle":"Implementation Areas",
     "THISSectionTitle":"T.H.I.S. System",
     "THISSectionDescription":"T.H.I.S. is the world's most advanced smart logistics system for healthcare. This total traceability solution includes a combination of PCMs (Phase Change Materials) along with a series of sensors that report information that no other system can provide.",
-    "THISSectionButton":"More Information"
-
-
+    "THISSectionButton":"More Information",
+    "THISInfoSectionDescription":"With T.H.I.S. You will not only be able to receive unique information that allows the analysis and improvements of the transport process, but also to follow the integrity of the cold chain in real time, receive reports of incidents, know where you are on the route, if the packaging was opened , if he was beaten or mistreated, how each object was received and how it is delivered at destination. Patented and entirely developed by the H + Trace team, both in hardware and software, which allows a flexible configuration on all parameters tailored to the client.",
+    "THISProcessSectionOriginSubtitle":"Origin",
+    "THISProcessSectionOriginDescription":"Using our app, smart packaging is turned on for data logging to begin.",
+    "THISProcessSectionDuringSubtitle":"During Transport",
+    "THISProcessSectionDuringDescription":"The packaging records all variables in a dual way: local (in internal memory) and sending to the cloud. This allows an extra level of reinsurance in the event of any eventuality and real-time monitoring from the online control dashboard. In situations such as organ donation, having a constant record of geolocation allows the correct preparation of the medical team in charge of the transplant with the necessary prior time, and cold chain traceability informs if the organ suffered tissue degradation due to bad temperatures.",
+    "THISProcessSectionDestinationSubtitle":"Destination",
+    "THISProcessSectionDestinationDescription":"The user, through our app, finish the transport process, instantly receiving the report with its information. Such report includes visualization of the different data collected by the sensors, a detailed list of the transported objects, and other information that is relevant to the user.",
+    "THISProcessSectionAfterSubtitle":"After Transport",
+    "THISProcessSectionAfterDescription":"The entire set of trips made can be analyzed in detail through a control panel that can be accessed from any computer or mobile device. At the same time, this information feeds a machine learning model that allows predicting future errors and proposing improvements to the logistics process."
 
 
 

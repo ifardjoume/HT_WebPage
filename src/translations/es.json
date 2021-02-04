@@ -48,9 +48,12 @@
     "AspectTitle8Pt2":"Vibración",
     "AspectTitle9Pt1":"Registro de",
     "AspectTitle9Pt2":"Aceleración",
-    "ServicesCardTitle1":"Muestras biológicas",
-    "ServicesCardTitle2":"Vacunas COVID-19",
-    "ServicesCardTitle3":"Transplante de Órganos",
+    "ServicesCardTitle1Pt1":"Muestras",
+    "ServicesCardTitle1Pt2":"Biológicas",
+    "ServicesCardTitle2Pt1":"Vacunas",
+    "ServicesCardTitle2Pt2":"COVID-19",
+    "ServicesCardTitle3Pt1":"Transplante",
+    "ServicesCardTitle3Pt2":"de Órganos",
     "AboutTitle":"Nosotros",
     "AboutDescriptionPart1":"H+Trace fue fundada en 2019 con el objetivo de incorporar innovación y tecnología a la salud.",
     "AboutDescriptionPart2":"Esta industria funciona en base a datos, sea para diagnóstico, tratamiento, cuidado o investigación clínica. Sin embargo, la logística y el transporte son un punto ciego sin información. H+Trace nació para aportar esos datos indispensables en busca de perfeccionar el proceso.",
@@ -84,6 +87,15 @@
     "ServicesTitle":"Áreas de Implementación",
     "THISSectionTitle":"Sistema T.H.I.S.",
     "THISSectionDescription":"T.H.I.S. es el sistema inteligente para logística al servicio de la salud más avanzado del mundo. Esta solución de trazabilidad total incluye una combinación de PCMs (Materiales de Cambio de Fase) junto a una serie de sensores que reportan información que ningún otro sistema puede brindar. ",
-    "THISSectionButton":"Más Información"
-
+    "THISSectionButton":"Más Información",
+    "THISInfoSectionDescription":"Con T.H.I.S. podrá no sólo recibir información única que permita el análisis y mejoras del proceso de transporte, sino además seguir en tiempo real la integridad de la cadena de frío, recibir reportes de incidencias, saber en qué parte del recorrido se encuentra, si se abrió el empaque, si fue golpeado o maltratado, cómo se recibió cada objeto y cómo se entrega en destino. Patentado e íntegramente desarrollado por el equipo de H+Trace, tanto en hardware como en software, lo que permite una configuración flexible sobre todos los parámetros a medida del cliente.",
+    "THISProcessSectionOriginSubtitle":"En origen",
+    "THISProcessSectionOriginDescription":"Usando nuestra app, se enciende el empaque inteligente para que comience el registro de datos.",
+    "THISProcessSectionDuringSubtitle":"Durante el Tranporte",
+    "THISProcessSectionDuringDescription":"El empaque registra todas las variables de forma dual: local (en memoria interna) y enviando a la nube. Esto permite un nivel extra de reaseguro ante cualquier eventualidad y el seguimiento en tiempo real desde el dashboard de control online. En situaciones como la donación de órganos, tener un registro constante de geolocalización permite la preparación correcta del equipo médico a cargo del trasplante con el tiempo previo necesario, y la trazabilidad de cadena de frío informa si el órgano sufrió degradación de tejido a causa de temperaturas no deseadas.",
+    "THISProcessSectionDestinationSubtitle":"En destino",
+    "THISProcessSectionDestinationDescription":"El usuario, utilizando nuestra app, da por finalizado el transporte, recibiendo al instante el reporte con la información del mismo. Dicho reporte incluye visualización de los distintos datos recogidos por los sensores, una lista detallada de los objetos transportados, y demás información que sea relevante para el usuario.",
+    "THISProcessSectionAfterSubtitle":"Luego del Transporte",
+    "THISProcessSectionAfterDescription":"Todo el conjunto de viajes realizados pueden ser analizados en detalle mediante un panel de control al que se accede desde cualquier computadora o dispositivo móvil. A su vez, esta información alimenta un modelo de aprendizaje automático que permite predecir futuros errores y proponer mejoras al proceso logístico.",
+    "THISProcessSectionTitle":"¿Cómo funciona T.H.I.S?"   
 }

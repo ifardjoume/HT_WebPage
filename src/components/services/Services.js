@@ -21,15 +21,15 @@ function Services() {
       <ServicesWrapper>
           <ServicesCard>
             <ServicesIcon src={Icon1}/>
-            <ServicesH2><FormattedMessage id="ServicesCardTitle1" defaultMessage="Biological Samples" /></ServicesH2>
+            <ServicesH2><FormattedMessage id="ServicesCardTitle1Pt1" defaultMessage="Biological" /><br/><FormattedMessage id="ServicesCardTitle1Pt2" defaultMessage="Samples" /></ServicesH2>
           </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon2}/>
-          <ServicesH2><FormattedMessage id="ServicesCardTitle2" defaultMessage="COVID-19 Vaccines" /></ServicesH2>
+          <ServicesH2><FormattedMessage id="ServicesCardTitle2Pt1" defaultMessage="COVID-19" /><br/><FormattedMessage id="ServicesCardTitle2Pt2" defaultMessage="Vaccines" /></ServicesH2>
         </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon3}/>
-          <ServicesH2><FormattedMessage id="ServicesCardTitle3" defaultMessage="Organs" /></ServicesH2>
+          <ServicesH2><FormattedMessage id="ServicesCardTitle3Pt1" defaultMessage="Organ" /><br/><FormattedMessage id="ServicesCardTitle3Pt2" defaultMessage="Transplants" /></ServicesH2>
         </ServicesCard>
       </ServicesWrapper>
     </ServicesContainer>

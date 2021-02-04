@@ -16,12 +16,18 @@ import {
 import TranslateBtn from '../navbar/translateBtn';
 import Logo from '../../images/logo-navbar-blue.png';
 import { IconContext } from 'react-icons';
+import { FormattedMessage } from "react-intl";
+
 
 const Navbar = ({ toggle }) => {
 
 
   const toggleHome = () => {
     scroll.scrollToTop();
+  }
+  
+  const toggleBottom = () => {
+    scroll.scrollTo(4360);
   }
   return (
     <>
@@ -40,6 +46,13 @@ const Navbar = ({ toggle }) => {
                 onClick={toggleHome}
                 >
                   Home
+                </NavLinksHome>
+              </NavItem>
+              <NavItem>
+                <NavLinksHome to='/'
+                onClick={toggleBottom}
+                >
+                  <FormattedMessage id="NavbarContact" defaultMessage="Contact" />
                 </NavLinksHome>
               </NavItem>
               <NavBtn>

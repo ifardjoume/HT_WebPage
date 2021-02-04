@@ -31,6 +31,7 @@ export const ServicesH1 = styled.h1`
 
   @media screen and (max-width:480px) {
     font-size:2rem;
+    text-align:center;
   }
 
 `;
@@ -70,6 +71,7 @@ export const ServicesCard = styled.div`
   max-height:340px;
   height:296px;
   padding:30px;
+  min-width:250px;
   box-shadow:3px 3px 3px 3px rgba(0,0,0,0.2);
   transition:all 0.2s ease-in-out;
   /* &:hover{

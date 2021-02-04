@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const InfoSec = styled.div`
     color: #333;
@@ -12,7 +11,7 @@ export const InfoRow = styled.div`
     margin: 0 -15px -15px -15px;
     flex-wrap: wrap;
     align-items: center;
-    flex-direction:row-reverse;
+    flex-direction:row;
 `;
 
 export const InfoColumn = styled.div`
@@ -77,36 +76,4 @@ export const ImgWrapper = styled.div`
   display: flex;
  justify-content: flex-end;
  flex-direction:column;
-`;
-
-export const NavBtn = styled.nav`
-  display: flex;
-  align-items:center;
-  justify-content:flex-start;
-  margin-left:10px;
-
-  @media screen and (max-width: 768px) {
-    display:flex;
-    justify-content:center;
-    margin-bottom:10px;
-  }
-`;
-
-export const NavBtnLink = styled(Link)`
-  border-radius:50px;
-  margin-top:10px;
-  white-space:nowrap;
-  color: #fafafa;
-  border: none;
-  background:#161d6f;
-  cursor:pointer;
-  padding:10px;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-  &:hover {
-      transition: all 0.2s ease-in-out;
-      background:#1a508b;
-      text-decoration:none;
-      color:#fafafa;
-    }
 `;

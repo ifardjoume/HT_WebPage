@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const InfoSec = styled.div`
     color: #333;
@@ -11,8 +10,8 @@ export const InfoRow = styled.div`
     display: flex;
     margin: 0 -15px -15px -15px;
     flex-wrap: wrap;
-    align-items: center;
-    flex-direction:row-reverse;
+    justify-content:flex-start;
+    flex-direction:column;
 `;
 
 export const InfoColumn = styled.div`
@@ -20,7 +19,6 @@ export const InfoColumn = styled.div`
     padding-right: 15px;
     padding-left: 15px;
     flex: 1;
-    max-width: 50%;
     flex-basis: 50%;
 
     @media screen and (max-width: 768px){
@@ -31,9 +29,8 @@ export const InfoColumn = styled.div`
     }
 `
 export const TextWrapper = styled.div`
-    max-width:540px;
     padding-top:0;
-    padding-bottom:60px;
+    padding-bottom:15px;
 
     @media screen and (max-width: 768px){
         padding-bottom:65px;
@@ -54,10 +51,12 @@ export const Heading = styled.h1`
   line-height: 1.1;
   font-weight: 600;
   color: #333;
+  display:flex;
+  justify-content:center;
+  text-align:center;
 `;
 
 export const Subtitle = styled.p`
-  max-width: 440px;
   margin-bottom: 35px;
   font-size: 18px;
   line-height: 24px;
@@ -77,36 +76,4 @@ export const ImgWrapper = styled.div`
   display: flex;
  justify-content: flex-end;
  flex-direction:column;
-`;
-
-export const NavBtn = styled.nav`
-  display: flex;
-  align-items:center;
-  justify-content:flex-start;
-  margin-left:10px;
-
-  @media screen and (max-width: 768px) {
-    display:flex;
-    justify-content:center;
-    margin-bottom:10px;
-  }
-`;
-
-export const NavBtnLink = styled(Link)`
-  border-radius:50px;
-  margin-top:10px;
-  white-space:nowrap;
-  color: #fafafa;
-  border: none;
-  background:#161d6f;
-  cursor:pointer;
-  padding:10px;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-  &:hover {
-      transition: all 0.2s ease-in-out;
-      background:#1a508b;
-      text-decoration:none;
-      color:#fafafa;
-    }
 `;

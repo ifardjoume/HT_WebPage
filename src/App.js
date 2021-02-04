@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import GlobalStyle from './globalStyles';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
@@ -19,7 +19,6 @@ import JavierC from './pages/Cofounders/JavierC';
 import IvanF from './pages/Cofounders/IvanF';
 import EmilianoB from './pages/Cofounders/EmilianoB';
 import ThisSystemPage from './pages/ThisSystemPage/ThisSystemPage';
-
 
 
 function setCookies(){
