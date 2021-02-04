@@ -98,14 +98,14 @@ export const NavBtnLink = styled(Link)`
   white-space:nowrap;
   color: #fafafa;
   border: none;
-  background:#161d6f;
+  background:#0e49b5;
   cursor:pointer;
   padding:10px;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   &:hover {
       transition: all 0.2s ease-in-out;
-      background:#1a508b;
+      background:#161d6f;
       text-decoration:none;
       color:#fafafa;
     }

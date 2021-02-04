@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import GlobalStyle from './globalStyles';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
