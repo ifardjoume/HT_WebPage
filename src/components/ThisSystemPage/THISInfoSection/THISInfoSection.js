@@ -11,7 +11,7 @@ import {
 } from './THISInfoSection.elements';
 import { Container} from '../../../globalStyles';
 import { FormattedMessage } from "react-intl";
-//import RenderImage from '../../../images/';
+import RenderImage from '../../../images/EscenaConjunto2.png';
 
 const THISInfoSection = () => {
     return (
@@ -29,7 +29,7 @@ const THISInfoSection = () => {
                         </InfoColumn>
                         <InfoColumn>
                             <ImgWrapper>
-                            {/* <Img src={RenderImage}/> */}
+                            <Img src={RenderImage}/>
                             </ImgWrapper>
                         </InfoColumn>
                     </InfoRow>
