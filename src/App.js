@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import GlobalStyle from './globalStyles';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
@@ -19,16 +19,23 @@ import JavierC from './pages/Cofounders/JavierC';
 import IvanF from './pages/Cofounders/IvanF';
 import EmilianoB from './pages/Cofounders/EmilianoB';
 import ThisSystemPage from './pages/ThisSystemPage/ThisSystemPage';
-
+import LoadingScreen from './components/loadingPage/LoadingPage';
 
 function setCookies(){
   Cookies.set('locale', "es");
   return "es"
 }
 
+
 const App = () => {
+  const [loading, setLoading] = useState(true)
   const locale = Cookies.get('locale') ? Cookies.get('locale') : setCookies();
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 2500)
+  }, [])
   return (
+    <>
+    {loading === false ? (
     <IntlProvider locale={locale} messages={translations[locale]}>
       <Router>
         <GlobalStyle />
@@ -50,6 +57,9 @@ const App = () => {
         </Switch>
       </Router>
     </IntlProvider>
+     ) : (<LoadingScreen />
+     )}
+    </>
   )
 }
 

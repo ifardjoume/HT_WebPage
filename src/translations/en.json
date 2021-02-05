@@ -86,28 +86,16 @@
     "UnderConstructionDescription":"We are working hard to bring you a new experience",
     "ServicesTitle":"Implementation Areas",
     "THISSectionTitle":"T.H.I.S. System",
-    "THISSectionDescription":"T.H.I.S. is the world's most advanced smart logistics system for healthcare. This total traceability solution includes a combination of PCMs (Phase Change Materials) along with a series of sensors that report information that no other system can provide.",
+    "THISSectionDescription":"THIS is the world's most advanced smart logistics system for healthcare. This total traceability solution includes a combination of PCMs (Phase Change Materials) along with a series of sensors that report information that no other system can provide.",
     "THISSectionButton":"More Information",
-    "THISInfoSectionDescription":"With T.H.I.S. You will not only be able to receive unique information that allows the analysis and improvements of the transport process, but also to follow the integrity of the cold chain in real time, receive reports of incidents, know where you are on the route, if the packaging was opened , if he was beaten or mistreated, how each object was received and how it is delivered at destination. Patented and entirely developed by the H + Trace team, both in hardware and software, which allows a flexible configuration on all parameters tailored to the client.",
-    "THISProcessSectionOriginSubtitle":"Origin",
-    "THISProcessSectionOriginDescription":"Using our app, smart packaging is turned on for data logging to begin.",
-    "THISProcessSectionDuringSubtitle":"During Transport",
-    "THISProcessSectionDuringDescription":"The packaging records all variables in a dual way: local (in internal memory) and sending to the cloud. This allows an extra level of reinsurance in the event of any eventuality and real-time monitoring from the online control dashboard. In situations such as organ donation, having a constant record of geolocation allows the correct preparation of the medical team in charge of the transplant with the necessary prior time, and cold chain traceability informs if the organ suffered tissue degradation due to bad temperatures.",
-    "THISProcessSectionDestinationSubtitle":"Destination",
-    "THISProcessSectionDestinationDescription":"The user, through our app, finish the transport process, instantly receiving the report with its information. Such report includes visualization of the different data collected by the sensors, a detailed list of the transported objects, and other information that is relevant to the user.",
-    "THISProcessSectionAfterSubtitle":"After Transport",
-    "THISProcessSectionAfterDescription":"The entire set of trips made can be analyzed in detail through a control panel that can be accessed from any computer or mobile device. At the same time, this information feeds a machine learning model that allows predicting future errors and proposing improvements to the logistics process."
-
-
-
-
-
-
-
-
-
-
-
-
-
+    "THISInfoSectionDescription":"With THIS you will not only receive unique information for logistics analysis and improvement, but also monitor cold-chain integrity and package geolocation in real time, get incident alerts if the package is open, hit or mishandled, and get a report of how each item is shipped and how it is delivered at the destination. Our patented system is entirely developed −both hardware and software− by the H+Trace team, which provides flexible customization of settings and parameters tailored to the client’s needs. ",
+    "THISProcessSectionOriginSubtitle":"Before Departure",
+    "THISProcessSectionOriginDescription":"With our app, the smart packaging is activated and starts recording data.",
+    "THISProcessSectionDuringSubtitle":"During Transportation",
+    "THISProcessSectionDuringDescription":"The packaging records all data in two ways: locally (in the internal memory of the device) and in the cloud. This provides an extra level of reassurance in the event of any unforeseen contingencies and real-time monitoring from the online dashboard. In the case of organ donations, real-time geolocation allows the medical team in charge of the transplant to prepare correctly and with the appropriate time, while cold-chain traceability registers any unexpected changes in temperature that may cause tissue damage.",
+    "THISProcessSectionDestinationSubtitle":"On Arrival",
+    "THISProcessSectionDestinationDescription":"Using our app, the user registers the arrival of the package and, instantly, receives a report with its information. The report includes data visualization recorded by the sensors, a detailed list of the transported items and other relevant information.",
+    "THISProcessSectionAfterSubtitle":"After Transportation",
+    "THISProcessSectionAfterDescription":"All shipments can be analyzed in detail with our dashboard, which can be accessed from any computer or mobile device. This information, in turn, feeds a machine-learning model that predicts future errors and suggests improvements to the logistics process.",
+    "THISProcessSectionTitle": "How It Works"
 }

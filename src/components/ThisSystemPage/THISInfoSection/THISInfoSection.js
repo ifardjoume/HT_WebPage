@@ -23,7 +23,7 @@ const THISInfoSection = () => {
                             <TextWrapper>
                                 <Heading><FormattedMessage id="THISSectionTitle" defaultMessage="T.H.I.S. System" /></Heading>
                                 <Subtitle>
-                                    <FormattedMessage id="THISInfoSectionDescription" defaultMessage="T.H.I.S. is the world's most advanced smart logistics system for healthcare. This total traceability solution includes a combination of PCMs (Phase Change Materials) along with a series of sensors that report information that no other system can provide." />
+                                    <FormattedMessage id="THISInfoSectionDescription" defaultMessage="With THIS you will not only receive unique information for logistics analysis and improvement, but also follow/monitor cold-chain integrity and package geolocation in real time, get incident alerts if the package is open, hit or mishandled, and get a report of how each item is shipped and how it is delivered at the destination." />
                                 </Subtitle>
                             </TextWrapper>
                         </InfoColumn>

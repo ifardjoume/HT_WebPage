@@ -1,27 +1,32 @@
 import React from 'react'
-import HTgif from '../../images/HT-gif.gif';
 import styled from 'styled-components';
+import { css } from "@emotion/core";
+import CircleLoader
+from "react-spinners/CircleLoader";
 
 const LoadingDiv = styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
+    align-content:center;
     width:100%;
     height:100%;
 `
-const ImgLoading = styled.img`
-    display:flex;
+
+const override = css`
+  display:block;
     justify-content:center;
     align-items:center;
-    width:50%;
-    height:50%;
-`
-
+  margin:100px;
+  border-color: #1b1464;
+  border:0.5px;
+`;
+const color = '#1b1464';
 
 const LoadingPage = () => {
     return (
         <LoadingDiv>
-            <ImgLoading className="loader__image" alt="loading-gif" src={HTgif} />
+             <CircleLoader color={color} loading={true} css={override} size={50} />
         </LoadingDiv>
     )
 }

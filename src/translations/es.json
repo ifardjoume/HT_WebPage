@@ -86,9 +86,9 @@
     "UnderConstructionDescription":"Estamos construyendo una nueva experiencia",
     "ServicesTitle":"Áreas de Implementación",
     "THISSectionTitle":"Sistema T.H.I.S.",
-    "THISSectionDescription":"T.H.I.S. es el sistema inteligente para logística al servicio de la salud más avanzado del mundo. Esta solución de trazabilidad total incluye una combinación de PCMs (Materiales de Cambio de Fase) junto a una serie de sensores que reportan información que ningún otro sistema puede brindar. ",
+    "THISSectionDescription":"THIS es el sistema inteligente para logística al servicio de la salud más avanzado del mundo. Esta solución de trazabilidad total incluye una combinación de PCMs (Materiales de Cambio de Fase) junto a una serie de sensores que reportan información que ningún otro sistema puede brindar. ",
     "THISSectionButton":"Más Información",
-    "THISInfoSectionDescription":"Con T.H.I.S. podrá no sólo recibir información única que permita el análisis y mejoras del proceso de transporte, sino además seguir en tiempo real la integridad de la cadena de frío, recibir reportes de incidencias, saber en qué parte del recorrido se encuentra, si se abrió el empaque, si fue golpeado o maltratado, cómo se recibió cada objeto y cómo se entrega en destino. Patentado e íntegramente desarrollado por el equipo de H+Trace, tanto en hardware como en software, lo que permite una configuración flexible sobre todos los parámetros a medida del cliente.",
+    "THISInfoSectionDescription":"Con THIS podrá no sólo recibir información única que permita el análisis y mejoras del proceso de transporte, sino además seguir en tiempo real la integridad de la cadena de frío, recibir reportes de incidencias, saber en qué parte del recorrido se encuentra el empaque, si se abrió, si fue golpeado o maltratado, y saber cómo se despacha cada objeto y cómo se entrega en destino. Patentado e íntegramente desarrollado por el equipo de H+Trace, tanto en hardware como en software, nuestro sistema permite una configuración flexible sobre todos los parámetros a medida del cliente.",
     "THISProcessSectionOriginSubtitle":"En origen",
     "THISProcessSectionOriginDescription":"Usando nuestra app, se enciende el empaque inteligente para que comience el registro de datos.",
     "THISProcessSectionDuringSubtitle":"Durante el Tranporte",
@@ -97,5 +97,5 @@
     "THISProcessSectionDestinationDescription":"El usuario, utilizando nuestra app, da por finalizado el transporte, recibiendo al instante el reporte con la información del mismo. Dicho reporte incluye visualización de los distintos datos recogidos por los sensores, una lista detallada de los objetos transportados, y demás información que sea relevante para el usuario.",
     "THISProcessSectionAfterSubtitle":"Luego del Transporte",
     "THISProcessSectionAfterDescription":"Todo el conjunto de viajes realizados pueden ser analizados en detalle mediante un panel de control al que se accede desde cualquier computadora o dispositivo móvil. A su vez, esta información alimenta un modelo de aprendizaje automático que permite predecir futuros errores y proponer mejoras al proceso logístico.",
-    "THISProcessSectionTitle":"¿Cómo funciona T.H.I.S?"   
+    "THISProcessSectionTitle":"¿Cómo funciona?"   
 }
