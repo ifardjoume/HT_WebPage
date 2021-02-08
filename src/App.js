@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import GlobalStyle from './globalStyles';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { HashRouter as Router, Switch, Route} from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
 import Cookies from 'js-cookie';
 import translations from './translations/index';
