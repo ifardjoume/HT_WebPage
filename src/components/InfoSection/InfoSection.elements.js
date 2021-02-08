@@ -14,12 +14,12 @@ export const InfoRow = styled.div`
     flex-direction:row;
 `;
 
-export const InfoColumn = styled.div`
+export const InfoColumnText = styled.div`
     margin-bottom: 15px;
-    padding-right: 15px;
+    padding-right: 5px;
     padding-left: 15px;
     flex: 1;
-    max-width: 50%;
+    max-width: 35%;
     flex-basis: 50%;
 
     @media screen and (max-width: 768px){
@@ -29,6 +29,24 @@ export const InfoColumn = styled.div`
         justify-content:center;
     }
 `
+export const InfoColumnImage = styled.div`
+    margin-bottom: 15px;
+    padding-right: 5px;
+    padding-left: 15px;
+    flex: 1;
+    max-width: 65%;
+    flex-basis: 50%;
+
+    @media screen and (max-width: 768px){
+        max-width: 100%;
+        flex-basis:100%;
+        display: flex;
+        justify-content:center;
+    }
+`
+
+
+
 export const TextWrapper = styled.div`
     max-width:540px;
     padding-top:0;
@@ -72,7 +90,7 @@ export const Img = styled.img`
 `;
 
 export const ImgWrapper = styled.div`
-  max-width: 555px;
+  max-width: 100%;
   display: flex;
  justify-content: flex-end;
  flex-direction:column;

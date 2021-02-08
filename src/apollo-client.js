@@ -8,12 +8,12 @@ import { getMainDefinition } from '@apollo/client/utilities';
 import { split } from 'apollo-link';
 
 const httpLink = createHttpLink({
-  uri: "http://ec2-3-15-39-161.us-east-2.compute.amazonaws.com:3000/graphql",
+  uri: "https://ec2-3-15-39-161.us-east-2.compute.amazonaws.com:3000/graphql",
    credentials: 'include'
 });
 const token = Cookies.get('token')
 const wsLink = new WebSocketLink({
-  uri: "ws://ec2-3-15-39-161.us-east-2.compute.amazonaws.com:3000/subscriptions",
+  uri: "wss://ec2-3-15-39-161.us-east-2.compute.amazonaws.com:3000/subscriptions",
   options: {
     reconnect: true,
     lazy:true,

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const InfoSec = styled.div`
     color: #333;
-    padding: 70px 0;
+    padding: 10px 0;
     background:#e4f4fd;
 `;
 
@@ -69,6 +69,7 @@ export const Img = styled.img`
   max-width: 100%;
   vertical-align: middle;
   display: inline-block;
+  height:980px;
 `;
 
 export const ImgWrapper = styled.div`

@@ -5,13 +5,12 @@ import CircleLoader
 from "react-spinners/CircleLoader";
 
 const LoadingDiv = styled.div`
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    align-content:center;
-    width:100%;
-    height:100%;
+      position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `
+
 
 const override = css`
   display:block;

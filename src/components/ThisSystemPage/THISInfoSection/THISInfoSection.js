@@ -11,7 +11,7 @@ import {
 } from './THISInfoSection.elements';
 import { Container} from '../../../globalStyles';
 import { FormattedMessage } from "react-intl";
-import RenderImage from '../../../images/EscenaConjunto2.png';
+import RenderImage from '../../../images/Conjunto232.png';
 
 const THISInfoSection = () => {
     return (
