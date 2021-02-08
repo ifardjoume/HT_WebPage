@@ -70,6 +70,9 @@ export const Img = styled.img`
   vertical-align: middle;
   display: inline-block;
   height:980px;
+  @media screen and (max-width: 768px){
+      height:100%;
+    }
 `;
 
 export const ImgWrapper = styled.div`
