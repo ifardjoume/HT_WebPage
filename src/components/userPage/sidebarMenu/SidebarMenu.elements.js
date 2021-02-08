@@ -117,3 +117,6 @@ padding-top:20px;
 display:flex;
 flex-direction: column;
 `
+export const TranslateDiv = styled.div`
+margin: 18px 0px 0px 15px;
+`

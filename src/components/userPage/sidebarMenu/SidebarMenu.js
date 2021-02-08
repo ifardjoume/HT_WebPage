@@ -12,7 +12,8 @@ import {
     NavBtnLink,
     UserDiv,
     DateP,
-    UserInfoDiv
+    UserInfoDiv,
+    TranslateDiv
  } from './SidebarMenu.elements';
  import Username from './Username';
  import SubMenu from './SubMenu';
@@ -22,6 +23,7 @@ import {
  import { BiLogOut } from 'react-icons/bi';
 
 import Logo from '../../../images/logo-navbar-blue.png'
+import TranslateBtn from '../../navbar/translateBtn';
 
 const SidebarMenu = () => {
     const [sidebar, setSidebar] = useState(false);
@@ -44,6 +46,9 @@ const SidebarMenu = () => {
                 <DateP>{date}</DateP>
                 <Username />
               </UserInfoDiv>
+              <TranslateDiv>
+              <TranslateBtn />
+              </TranslateDiv>
               <NavBtn>
                   <NavBtnLink to='/' onClick={toggleLogOut}>
                     <BiLogOut size={32} />
