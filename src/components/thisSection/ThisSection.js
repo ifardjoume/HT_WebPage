@@ -17,6 +17,7 @@ import { FormattedMessage } from "react-intl";
 import Cookies from 'js-cookie';
 import ThisEspanol from '../../images/THISespanol.png';
 import ThisIngles from '../../images/THISingles.png';
+import {IoIosArrowForward} from 'react-icons/io'
 
 var THISimage = Cookies.get('locale') === 'en' ? ThisIngles : ThisEspanol
 
@@ -37,7 +38,7 @@ const ThisSection = () => {
                                 </Subtitle>
                                 <NavBtn>
                                 <NavBtnLink to="/this" onClick={toggleHome}>
-                                <FormattedMessage id="THISSectionButton" defaultMessage="More Information" />
+                                <FormattedMessage id="THISSectionButton" defaultMessage="More Information" />  <IoIosArrowForward size={25}/>
                                 </NavBtnLink>
                                 </NavBtn>
                             </TextWrapper>

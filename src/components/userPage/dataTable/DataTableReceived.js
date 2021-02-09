@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DataTable from 'react-data-table-component';
 import {
@@ -16,16 +16,23 @@ import Cookies from 'js-cookie';
 var MainTitle = Cookies.get('locale') === 'en' ? 'Received' : 'Recibidos';
 var TemperatureGraph;
 function DataTableReceived(props){
+    var dataShipmentsReceived = props.shipmentsReceived.shipments
+    var received = dataShipmentsReceived.filter(obj => {
+        return obj.status === "failed" || obj.status === "uncertain" || obj.status === "successful"
+    });
+    const [newData, setNewData] = useState(received);
+    /* useEffect(() => {
+        setNewData(received);
+    },[props.shipmentsReceived])
+    useEffect(() => {
+        props.subscribeToUpdatedShipments();
+    }); */
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false)
     const handleShow = (shipmentID) => {
         setShow(true);
         TemperatureGraph = <TempGraph shipment={shipmentID}/>;
     };
-    var dataShipmentsReceived = props.shipmentsReceived.shipments
-    var received = dataShipmentsReceived.filter(obj => {
-        return obj.status === "failed" || obj.status === "uncertain" || obj.status === "successful"
-    });
     const columnsReceived = [
         {
             name: 'ID',
@@ -65,7 +72,7 @@ function DataTableReceived(props){
                     responsive
                     columns={columnsReceived}
                     keyField="shipment_id"
-                    data={received}
+                    data={newData}
                     title={MainTitle}
                     pagination={true}
                     paginationPerPage={10}

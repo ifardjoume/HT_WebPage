@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const InfoSec = styled.div`
     color: #fff;
-    padding: 70px 0;
+    padding: 30px 0;
     background: #e4f4fd;
 `;
 

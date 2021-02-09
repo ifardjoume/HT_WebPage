@@ -103,3 +103,25 @@ shipmentAdded {
     }
 }
 `
+
+export const SHIPMENTS_UPDATED_SUBSCRIPTION = gql`
+subscription {
+  shipmentUpdated {
+    shipment_id
+      origin_id
+      origin_user_id
+      destination_user_id
+      destination_id
+      departure
+      arrival
+      status
+      alerts {
+        type
+        value
+        x
+        y
+        z
+      }
+  }
+}
+`
