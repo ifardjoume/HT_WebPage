@@ -21,8 +21,10 @@ var LabelTag2 = Cookies.get('locale') === 'en' ? 'Observed' : 'Observados';
 var LabelTag3 = Cookies.get('locale') === 'en' ? 'Alerts' : 'Con alertas';
 
 
-const StackedBarsChart = () => {
-    return (
+const StackedBarsChart = (props) => {
+  var shipments = props.monthlyShipments.shipments;
+  
+  return (
         <GraphDiv>
             <Bar 
             data= {{

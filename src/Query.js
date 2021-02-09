@@ -82,6 +82,30 @@ query($shipment_id:Int!){
     }
   }
 `
+export const GET_MONTHLY_SHIPMENTS = gql`
+query($from_date:Date!,$to_date:Date!){
+  shipments(from_date: $from_date, to_date: $to_date) {
+    shipment_id
+      origin_id
+      origin_user_id
+      destination_user_id
+      destination_id
+      departure
+      arrival
+      status
+      alerts {
+        type
+        value
+        x
+        y
+        z
+      }
+    }
+  }
+
+`;
+
+
 export const SHIPMENTS_IN_TRANSIT_SUBSCRIPTION = gql`
 subscription {
 shipmentAdded {

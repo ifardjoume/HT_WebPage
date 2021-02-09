@@ -23,8 +23,16 @@ var LabelTag2 = Cookies.get('locale') === 'en' ? 'Alerts' : 'Con alertas';
 
 
 
-const PieChart = () => {
-    return (
+const PieChart = (props) => {
+  var failedShipments = props.monthlyShipments.shipments.filter(obj => {
+    return obj.status === "failed" || obj.status === "uncertain"
+  });
+  var successfulShipments = props.monthlyShipments.shipments.filter(obj => {
+    return obj.status === "successful"
+  });
+  var badShipments =  failedShipments.length
+  var goodShipments = successfulShipments.length
+  return (
         <GraphDiv>
         <Pie 
         data={{
@@ -39,7 +47,7 @@ const PieChart = () => {
                 '#00917c',
                 '#a9294f',
                 ],
-                data: [80, 20]
+                data: [goodShipments, badShipments]
               }
             ]
           }}
