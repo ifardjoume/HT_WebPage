@@ -3,10 +3,11 @@ import {
     StadisticsDiv,
     StadisticWrapper
  } from './StadisticsHeader.elements';
-import { GET_SHIPMENTS } from '../../../Query';
+import { GET_MONTHLY_SHIPMENTS } from '../../../Query';
 import { useQuery } from "@apollo/react-hooks";
 import CardOnHover from './CardOnHover';
 import Cookies from 'js-cookie';
+import moment from 'moment';
 
 var CardDescription1 = Cookies.get('locale') === 'en' ? 'Trazed Trips' : 'Viajes Trazados';
 var CardDescription2 = Cookies.get('locale') === 'en' ? 'Alerted Trips' : 'Viajes con Alertas';
@@ -18,7 +19,12 @@ var CardHoverDescription4 = Cookies.get('locale') === 'en' ? 'Observed Shipments
 
 
 function StadisticsHeader(){
-    const { loading, error, data } = useQuery(GET_SHIPMENTS);
+    const { loading, error, data } = useQuery(GET_MONTHLY_SHIPMENTS,{
+        variables:{
+            from_date: moment().subtract(1, 'M').format('YYYY-MM-DD'),
+            to_date: moment().format('YYYY-MM-DD'),
+        }
+    })
     if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
     const myData = data.shipments;

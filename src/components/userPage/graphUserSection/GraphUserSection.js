@@ -12,8 +12,8 @@ import moment from 'moment';
 function GraphUserSection(){
     const { error , loading , data} = useQuery(GET_MONTHLY_SHIPMENTS,{
         variables:{
-            from_date: moment().format('YYYY-MM-DD'),
-            to_date: moment().subtract(1, 'M').format('DD-MM-YYYY')
+            from_date: moment().subtract(1, 'M').format('YYYY-MM-DD'),
+            to_date: moment().format('YYYY-MM-DD'),
         }
     })
     if (loading) return 'Loading...';

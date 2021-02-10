@@ -20,15 +20,76 @@ var LabelTag1 = Cookies.get('locale') === 'en' ? 'Correct' : 'Correcto';
 var LabelTag2 = Cookies.get('locale') === 'en' ? 'Observed' : 'Observados';
 var LabelTag3 = Cookies.get('locale') === 'en' ? 'Alerts' : 'Con alertas';
 
+function getDate(dateTag){
+
+  var dataStamp = new Date(dateTag)
+  let dataFormat = new Intl.DateTimeFormat('es-AR', {
+      month: '2-digit',
+      day: '2-digit'
+  }).format(dataStamp)
+  return (
+     dataFormat
+  )
+}
+
 
 const StackedBarsChart = (props) => {
-  var shipments = props.monthlyShipments.shipments;
-  
+      var shipments = props.monthlyShipments.shipments.filter(obj => {
+        return obj.status !== "in transit"
+      });
+      var dateLabels = [];
+      for(let i = 0; i < shipments.length; i++){
+        dateLabels.push(getDate(shipments[i].arrival))
+    }
+    const uniqueSet = new Set(dateLabels)
+    const backToArray = [...uniqueSet]
+    var badShipments =  []
+    var goodShipments = []
+    var doubtfulShipments = []
+    for(let i = 0; i < shipments.length; i++){
+      var DateArray = []
+      if(getDate(shipments[i].arrival) === getDate(shipments[i++].arrival) ){
+        switch(shipments[i].status){
+          case "successful":
+            DateArray.push(shipments[i])
+            DateArray.push(shipments[i++])
+            goodShipments.push(DateArray.length)
+            break
+          case "failed":
+            DateArray.push(shipments[i])
+            DateArray.push(shipments[i++])
+            badShipments.push(DateArray.length)
+            break
+          case "uncertain":
+            DateArray.push(shipments[i])
+            DateArray.push(shipments[i++])
+            doubtfulShipments.push(DateArray.length)
+            break
+        }
+      }else{
+        switch(shipments[i].status){
+          case "successful":
+            DateArray.push(shipments[i])
+            goodShipments.push(DateArray.length)
+            break
+          case "failed":
+            DateArray.push(shipments[i])
+            badShipments.push(DateArray.length)
+            break
+          case "uncertain":
+            DateArray.push(shipments[i])
+            doubtfulShipments.push(DateArray.length)
+            break
+        }
+        console.log(DateArray)
+      }
+      
+  }
   return (
         <GraphDiv>
             <Bar 
             data= {{
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                labels: backToArray.sort((a, b) => b.joinDate > a.joinDate ? 1: -1),
                 datasets: [
                   {
                     label: LabelTag1,
@@ -36,7 +97,7 @@ const StackedBarsChart = (props) => {
                     borderWidth: 1,
                     stack: 1,
                     hoverBackgroundColor: '#00917c',
-                    data: [65, 59, 80, 81, 56, 55, 40]
+                    data: goodShipments
                   },
                   {
                     label: LabelTag2,
@@ -44,7 +105,7 @@ const StackedBarsChart = (props) => {
                     borderWidth: 1,
                     stack: 1,
                     hoverBackgroundColor: '#ffe227',
-                    data: [4, 7, 15, 14, 8, 5, 20]
+                    data: doubtfulShipments
                   },
                   {
                     label: LabelTag3,
@@ -52,7 +113,7 @@ const StackedBarsChart = (props) => {
                     borderWidth: 1,
                     stack: 1,
                     hoverBackgroundColor: '#a9294f',
-                    data: [45, 79, 10, 41, 16, 85, 20]
+                    data: badShipments
                   }
                 ]
             }}

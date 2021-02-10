@@ -23,7 +23,7 @@ var LabelTag1 = Cookies.get('locale') === 'en' ? 'Actual Ratio' : 'Ratio Actual'
 var LabelTag2 = Cookies.get('locale') === 'en' ? 'Previous Month Ratio' : 'Ratio Mes Anterior';
 
 
-const GaugeChart = (props) => {
+function GaugeChart(props){
   var shipmentsCurrentMonth = props.monthlyShipments.shipments;
   var totalTravels = shipmentsCurrentMonth.filter(obj => {
     return obj.status !== "in transit"
@@ -34,8 +34,8 @@ const GaugeChart = (props) => {
   var ratioCurrentMonth = (alertTravels.length / totalTravels.length)*100
   const { error , loading , data} = useQuery(GET_MONTHLY_SHIPMENTS,{
     variables:{
-        from_date: moment().subtract(1, 'M').format('DD-MM-YYYY'),
-        to_date: moment().subtract(2, 'M').format('DD-MM-YYYY')
+        from_date: moment().subtract(2, 'M').format('DD-MM-YYYY'),
+        to_date: moment().subtract(1, 'M').format('DD-MM-YYYY')
     }
   })
   if (loading) return 'Loading...';
@@ -48,7 +48,6 @@ const GaugeChart = (props) => {
     return obj.status === "failed" || obj.status === "uncertain";
   });
   var ratioPrevMonth = (alertTravelsPrev.length / totalTravelsPrev.length)*100
-  console.log(ratioPrevMonth);
   return (
         <GraphDiv>
         <Doughnut 
@@ -58,13 +57,13 @@ const GaugeChart = (props) => {
               {
                 backgroundColor: [
                   '#adeecf',
-                  '#ee9595'
+                  '#9dad7f'
                 ],
                 hoverBackgroundColor: [
                 '#00917c',
-                '#a9294f',
+                '#184d47',
                 ],
-                data: [ratioCurrentMonth, ratioPrevMonth]
+                data: [ratioCurrentMonth.toFixed(2), ratioPrevMonth.toFixed(2)]
               }
             ]
           }}
