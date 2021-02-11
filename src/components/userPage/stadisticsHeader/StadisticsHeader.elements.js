@@ -6,7 +6,7 @@ export const StadisticsDiv = styled.div`
     flex-direction:row;
     padding:20px 0;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-    margin:20px 100px 20px 100px;
+    margin:20px 130px 20px 130px;
     border-radius:20px;
     @media screen and (max-width: 768px){
       margin:10px;
@@ -40,6 +40,9 @@ export const Card = styled.div`
     justify-content:center;
     align-items:center;
     text-align:center;
+    font-weight:bold;
+    font-size:20px;
+    color:#00abc8;
 `
 
 
@@ -50,9 +53,8 @@ export const NumberHeader = styled.h2`
 
 export const Description = styled.p`
     max-width: 440px;
-  font-size: 15px;
   line-height: 20px;
-  color:#333;
+  margin:auto;
 `
 
 export const Separator = styled.div`

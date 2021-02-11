@@ -10,7 +10,7 @@ import {
     //PdfH1
 } from './IconSamples.elements';
 import { FormattedMessage } from "react-intl";
-import temperatura from '../../../../images/icons/temperatura.png';
+/* import temperatura from '../../../../images/icons/temperatura.png';
 import geolocalizacion from '../../../../images/icons/geolocalizacion.png';
 import vibraciones from '../../../../images/icons/vibraciones.png';
 import aceleracion from '../../../../images/icons/aceleracion.png';
@@ -18,11 +18,11 @@ import alertaTiempoReal from '../../../../images/icons/alertaTiempoReal.png';
 import antiderrame from '../../../../images/icons/antiderrame.png';
 import aperturaTapa from '../../../../images/icons/aperturaTapa.png';
 import golpes from '../../../../images/icons/golpes.png';
-import isotermico from '../../../../images/icons/isotermico.png';
+import isotermico from '../../../../images/icons/isotermico.png'; */
 //import { FaRegFilePdf } from 'react-icons/fa'
 const IconSamples = () => {
     return (
-        <>
+        {/* <>
         <AspectContainer>
             <AspectWrapper>
             <AspectList>
@@ -40,11 +40,7 @@ const IconSamples = () => {
                 </AspectList>
             </AspectWrapper>
         </AspectContainer>
-         {/* <PdfDiv>
-            <FaRegFilePdf size={64}/>
-            <PdfH1>Pdf con Performance Técnica de THIS</PdfH1>
-        </PdfDiv> */}
-     </>
+     </> */}
     )
 }
 

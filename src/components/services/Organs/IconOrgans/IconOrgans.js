@@ -9,12 +9,12 @@ import {
     PdfDiv,
     PdfH1
 } from './IconOrgans.elements'
-import temperatura from '../../../../images/icons/temperatura.png';
+//import temperatura from '../../../../images/icons/temperatura.png';
 import { FaRegFilePdf } from 'react-icons/fa'
 const IconOrgans = () => {
     return (
         <>
-        <AspectContainer>
+        {/* <AspectContainer>
             <AspectWrapper>
                 <AspectList>
                 <ListItem><ListIcon><IconImage src={temperatura}/></ListIcon>Geolocalización</ListItem>
@@ -34,7 +34,7 @@ const IconOrgans = () => {
          <PdfDiv>
             <FaRegFilePdf size={64}/>
             <PdfH1>Pdf con Performance Técnica de THIS</PdfH1>
-        </PdfDiv>
+        </PdfDiv> */}
      </>
     )
 }

@@ -44,13 +44,30 @@ export const ListItem = styled.div`
     flex-direction:column;
   }
 `
+export const ListItemBottom = styled.div`
+  line-height: 1.1;
+  font-weight: 600;
+  color: #333;
+  display:flex;
+  text-align:center;
+  flex-direction:column;
+  align-items: center;
+  font-size:1rem;
+  margin-bottom:60px;
+  padding:10px 20px;
+  margin:20px;
+  justify-content:center;
+
+  @media screen and (max-width:768px) {
+    flex-direction:column;
+  }
+`
 
 export const AspectList = styled.div`
     padding:20px;
     display:flex;
     justify-content:center;
     flex-direction:row;
-
     @media screen and (max-width:900px) {
     flex-direction:column;
   }
@@ -69,6 +86,10 @@ padding:15px;
 `
 
 export const IconImage = styled.img`
-  width:100px;
+  width:85px;
+  height:85px;
+`
+export const IconImageGeo = styled.img`
+  width:80px;
   height:100px;
 `

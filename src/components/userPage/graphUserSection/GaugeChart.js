@@ -57,11 +57,11 @@ function GaugeChart(props){
               {
                 backgroundColor: [
                   '#adeecf',
-                  '#9dad7f'
+                  '#16c79a'
                 ],
                 hoverBackgroundColor: [
                 '#00917c',
-                '#184d47',
+                '#007965',
                 ],
                 data: [ratioCurrentMonth.toFixed(2), ratioPrevMonth.toFixed(2)]
               }

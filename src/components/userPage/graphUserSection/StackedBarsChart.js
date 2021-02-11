@@ -41,6 +41,7 @@ const StackedBarsChart = (props) => {
       for(let i = 0; i < shipments.length; i++){
         dateLabels.push(getDate(shipments[i].arrival))
     }
+    dateLabels.sort((a, b) => b.joinDate > a.joinDate ? 1: -1);
     const uniqueSet = new Set(dateLabels)
     const backToArray = [...uniqueSet]
     var badShipments =  []
@@ -81,7 +82,6 @@ const StackedBarsChart = (props) => {
             doubtfulShipments.push(DateArray.length)
             break
         }
-        console.log(DateArray)
       }
       
   }
@@ -89,7 +89,7 @@ const StackedBarsChart = (props) => {
         <GraphDiv>
             <Bar 
             data= {{
-                labels: backToArray.sort((a, b) => b.joinDate > a.joinDate ? 1: -1),
+                labels: backToArray,
                 datasets: [
                   {
                     label: LabelTag1,
