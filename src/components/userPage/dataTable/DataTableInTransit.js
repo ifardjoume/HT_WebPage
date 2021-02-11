@@ -18,7 +18,8 @@ function DataTableInTransit(props){
         setNewData(filteredList);
     },[props.shipmentsInTransit])
     useEffect(() => {
-        props.subscribeToNewShipments();
+        props.subscribeToUpdatedShipments();
+        props.subscribeToUpdatedShipments();
     });
     const columnsInTransit = [
         {

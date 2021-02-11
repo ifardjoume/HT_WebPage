@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { Bar } from 'react-chartjs-2';
 import styled from 'styled-components';
 import 'chartjs-adapter-moment';
@@ -34,12 +34,15 @@ function getDate(dateTag){
 
 
 const StackedBarsChart = (props) => {
-      var shipments = props.monthlyShipments.shipments.filter(obj => {
-        return obj.status !== "in transit"
+      var shipmentsCurrentMonth = props.monthlyShipments.shipments.filter(obj => {
+        return obj.status === "failed" || obj.status === "uncertain" || obj.status === "successful"
       });
+      useEffect(() => {
+        props.subscribeToUpdatedShipments();
+      },[props.monthlyShipments])
       var dateLabels = [];
-      for(let i = 0; i < shipments.length; i++){
-        dateLabels.push(getDate(shipments[i].arrival))
+      for(let i = 0; i < shipmentsCurrentMonth.length; i++){
+        dateLabels.push(getDate(shipmentsCurrentMonth[i].arrival))
     }
     dateLabels.sort((a, b) => b.joinDate > a.joinDate ? 1: -1);
     const uniqueSet = new Set(dateLabels)
@@ -47,40 +50,44 @@ const StackedBarsChart = (props) => {
     var badShipments =  []
     var goodShipments = []
     var doubtfulShipments = []
-    for(let i = 0; i < shipments.length; i++){
+    for(let i = 0; i < shipmentsCurrentMonth.length; i++){
       var DateArray = []
-      if(getDate(shipments[i].arrival) === getDate(shipments[i++].arrival) ){
-        switch(shipments[i].status){
+      if(getDate(shipmentsCurrentMonth[i].arrival) === getDate(shipmentsCurrentMonth[i++].arrival) ){
+        switch(shipmentsCurrentMonth[i].status){
           case "successful":
-            DateArray.push(shipments[i])
-            DateArray.push(shipments[i++])
+            DateArray.push(shipmentsCurrentMonth[i])
+            DateArray.push(shipmentsCurrentMonth[i++])
             goodShipments.push(DateArray.length)
             break
           case "failed":
-            DateArray.push(shipments[i])
-            DateArray.push(shipments[i++])
+            DateArray.push(shipmentsCurrentMonth[i])
+            DateArray.push(shipmentsCurrentMonth[i++])
             badShipments.push(DateArray.length)
             break
           case "uncertain":
-            DateArray.push(shipments[i])
-            DateArray.push(shipments[i++])
+            DateArray.push(shipmentsCurrentMonth[i])
+            DateArray.push(shipmentsCurrentMonth[i++])
             doubtfulShipments.push(DateArray.length)
             break
+          default:
+          break
         }
       }else{
-        switch(shipments[i].status){
+        switch(shipmentsCurrentMonth[i].status){
           case "successful":
-            DateArray.push(shipments[i])
+            DateArray.push(shipmentsCurrentMonth[i])
             goodShipments.push(DateArray.length)
             break
           case "failed":
-            DateArray.push(shipments[i])
+            DateArray.push(shipmentsCurrentMonth[i])
             badShipments.push(DateArray.length)
             break
           case "uncertain":
-            DateArray.push(shipments[i])
+            DateArray.push(shipmentsCurrentMonth[i])
             doubtfulShipments.push(DateArray.length)
             break
+          default:
+          break
         }
       }
       

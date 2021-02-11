@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import styled from 'styled-components';
 import 'chartjs-adapter-moment';
@@ -32,6 +32,9 @@ function GaugeChart(props){
     return obj.status === "failed" || obj.status === "uncertain"
   });
   var ratioCurrentMonth = (alertTravels.length / totalTravels.length)*100
+  useEffect(() => {
+    props.subscribeToUpdatedShipments();
+  },[props.monthlyShipments])
   const { error , loading , data} = useQuery(GET_MONTHLY_SHIPMENTS,{
     variables:{
         from_date: moment().subtract(2, 'M').format('DD-MM-YYYY'),

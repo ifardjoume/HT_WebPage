@@ -47,6 +47,33 @@ function DataPackagesTable() {
                         })
                     }
                 }
+                subscribeToUpdatedShipments={() =>{
+                    if(state.subscribeToUpdatedShipments) return null
+                    subscribeToMore({
+                    document: SHIPMENTS_UPDATED_SUBSCRIPTION,
+                    updateQuery: (prev, { subscriptionData }) => {
+                        if(!subscriptionData.data){
+                            return prev
+                        }else{
+                        const updatedShipmentID = subscriptionData.data.shipmentUpdated.shipment_id;
+                        const previousShipments = prev.shipments;
+                        const prevShipmentsFiltered = previousShipments.filter(obj => {
+                            return obj.shipment_id !== updatedShipmentID
+                        })
+                        var shipmentsUpdated = Object.assign({},prev,{
+                            shipments:
+                                [...prevShipmentsFiltered]
+                            }
+                        )
+                        return shipmentsUpdated
+                        }
+                    }
+                    })
+                    setState({
+                        subscribeToUpdatedShipments:true
+                    })
+                }
+            }
                   shipmentsInTransit={myData}
                 />
             </TableDiv>

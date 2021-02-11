@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { Pie } from 'react-chartjs-2';
 import styled from 'styled-components';
 import 'chartjs-adapter-moment';
@@ -32,6 +32,9 @@ const PieChart = (props) => {
   });
   var badShipments =  failedShipments.length
   var goodShipments = successfulShipments.length
+  useEffect(() => {
+    props.subscribeToUpdatedShipments();
+  },[props.monthlyShipments])
   return (
         <GraphDiv>
         <Pie 
