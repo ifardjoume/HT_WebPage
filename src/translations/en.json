@@ -97,5 +97,7 @@
     "THISProcessSectionDestinationDescription":"Using our app, the user registers the arrival of the package and, instantly, receives a report with its information. The report includes data visualization recorded by the sensors, a detailed list of the transported items and other relevant information.",
     "THISProcessSectionAfterSubtitle":"After Transportation",
     "THISProcessSectionAfterDescription":"All shipments can be analyzed in detail with our dashboard, which can be accessed from any computer or mobile device. This information, in turn, feeds a machine-learning model that predicts future errors and suggests improvements to the logistics process.",
-    "THISProcessSectionTitle": "How It Works"
+    "THISProcessSectionTitle": "How It Works",
+    "AspectTitle10Pt1":"Dron",
+    "AspectTitle10Pt2":"Ready"
 }

@@ -6,7 +6,7 @@ export const StadisticsDiv = styled.div`
     flex-direction:row;
     padding:20px 0;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-    margin:20px 130px 20px 130px;
+    margin:20px 100px 20px 100px;
     border-radius:20px;
     @media screen and (max-width: 768px){
       margin:10px;

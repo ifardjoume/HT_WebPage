@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import { Bar } from 'react-chartjs-2';
 import styled from 'styled-components';
 import 'chartjs-adapter-moment';
@@ -34,56 +34,63 @@ function getDate(dateTag){
 
 
 const StackedBarsChart = (props) => {
-      var shipmentsCurrentMonth = props.monthlyShipments.shipments.filter(obj => {
+  var shipmentsCurrentMonth = props.monthlyShipments.shipments
+  const { subscribeToUpdatedShipments } = props
+  const { monthlyShipments } = props
+  const [newData, setNewData] = useState(shipmentsCurrentMonth);
+  useEffect(() => {
+      setNewData(shipmentsCurrentMonth);
+    },[ monthlyShipments ])
+  useEffect(() => {
+        subscribeToUpdatedShipments();
+    },[])
+  var shipmentsCurrentMonthReceived = newData.filter(obj => {
         return obj.status === "failed" || obj.status === "uncertain" || obj.status === "successful"
       });
-      useEffect(() => {
-        props.subscribeToUpdatedShipments();
-      },[props.monthlyShipments])
-      var dateLabels = [];
-      for(let i = 0; i < shipmentsCurrentMonth.length; i++){
-        dateLabels.push(getDate(shipmentsCurrentMonth[i].arrival))
+  var dateLabels = [];
+    for(let i = 0; i < shipmentsCurrentMonthReceived.length; i++){
+        dateLabels.push(getDate(shipmentsCurrentMonthReceived[i].arrival))
     }
     dateLabels.sort((a, b) => b.joinDate > a.joinDate ? 1: -1);
-    const uniqueSet = new Set(dateLabels)
-    const backToArray = [...uniqueSet]
-    var badShipments =  []
-    var goodShipments = []
-    var doubtfulShipments = []
-    for(let i = 0; i < shipmentsCurrentMonth.length; i++){
+  const uniqueSet = new Set(dateLabels)
+  const backToArray = [...uniqueSet]
+  var badShipments =  []
+  var goodShipments = []
+  var doubtfulShipments = []
+    for(let i = 0; i < shipmentsCurrentMonthReceived.length; i++){
       var DateArray = []
-      if(getDate(shipmentsCurrentMonth[i].arrival) === getDate(shipmentsCurrentMonth[i++].arrival) ){
-        switch(shipmentsCurrentMonth[i].status){
+      if(getDate(shipmentsCurrentMonthReceived[i].arrival) === getDate(shipmentsCurrentMonthReceived[i++].arrival) ){
+        switch(shipmentsCurrentMonthReceived[i].status){
           case "successful":
-            DateArray.push(shipmentsCurrentMonth[i])
-            DateArray.push(shipmentsCurrentMonth[i++])
+            DateArray.push(shipmentsCurrentMonthReceived[i])
+            DateArray.push(shipmentsCurrentMonthReceived[i++])
             goodShipments.push(DateArray.length)
             break
           case "failed":
-            DateArray.push(shipmentsCurrentMonth[i])
-            DateArray.push(shipmentsCurrentMonth[i++])
+            DateArray.push(shipmentsCurrentMonthReceived[i])
+            DateArray.push(shipmentsCurrentMonthReceived[i++])
             badShipments.push(DateArray.length)
             break
           case "uncertain":
-            DateArray.push(shipmentsCurrentMonth[i])
-            DateArray.push(shipmentsCurrentMonth[i++])
+            DateArray.push(shipmentsCurrentMonthReceived[i])
+            DateArray.push(shipmentsCurrentMonthReceived[i++])
             doubtfulShipments.push(DateArray.length)
             break
           default:
           break
         }
       }else{
-        switch(shipmentsCurrentMonth[i].status){
+        switch(shipmentsCurrentMonthReceived[i].status){
           case "successful":
-            DateArray.push(shipmentsCurrentMonth[i])
+            DateArray.push(shipmentsCurrentMonthReceived[i])
             goodShipments.push(DateArray.length)
             break
           case "failed":
-            DateArray.push(shipmentsCurrentMonth[i])
+            DateArray.push(shipmentsCurrentMonthReceived[i])
             badShipments.push(DateArray.length)
             break
           case "uncertain":
-            DateArray.push(shipmentsCurrentMonth[i])
+            DateArray.push(shipmentsCurrentMonthReceived[i])
             doubtfulShipments.push(DateArray.length)
             break
           default:

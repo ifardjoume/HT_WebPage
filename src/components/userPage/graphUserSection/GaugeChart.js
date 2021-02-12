@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React,{useEffect, useState} from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import styled from 'styled-components';
 import 'chartjs-adapter-moment';
@@ -25,16 +25,23 @@ var LabelTag2 = Cookies.get('locale') === 'en' ? 'Previous Month Ratio' : 'Ratio
 
 function GaugeChart(props){
   var shipmentsCurrentMonth = props.monthlyShipments.shipments;
-  var totalTravels = shipmentsCurrentMonth.filter(obj => {
+  const { subscribeToUpdatedShipments } = props
+  const { monthlyShipments } = props
+  const [newData, setNewData] = useState(shipmentsCurrentMonth);
+  useEffect(() => {
+    setNewData(shipmentsCurrentMonth);
+},[ monthlyShipments ])
+useEffect(() => {
+    subscribeToUpdatedShipments();
+},[])
+  var totalTravels = newData.filter(obj => {
     return obj.status !== "in transit"
   });
-  var alertTravels = shipmentsCurrentMonth.filter(obj => {
+  var alertTravels = newData.filter(obj => {
     return obj.status === "failed" || obj.status === "uncertain"
   });
   var ratioCurrentMonth = (alertTravels.length / totalTravels.length)*100
-  useEffect(() => {
-    props.subscribeToUpdatedShipments();
-  },[props.monthlyShipments])
+
   const { error , loading , data} = useQuery(GET_MONTHLY_SHIPMENTS,{
     variables:{
         from_date: moment().subtract(2, 'M').format('DD-MM-YYYY'),

@@ -97,5 +97,7 @@
     "THISProcessSectionDestinationDescription":"El usuario, utilizando nuestra app, da por finalizado el transporte, recibiendo al instante el reporte con la información del mismo. Dicho reporte incluye visualización de los distintos datos recogidos por los sensores, una lista detallada de los objetos transportados, y demás información que sea relevante para el usuario.",
     "THISProcessSectionAfterSubtitle":"Luego del Transporte",
     "THISProcessSectionAfterDescription":"Todo el conjunto de viajes realizados pueden ser analizados en detalle mediante un panel de control al que se accede desde cualquier computadora o dispositivo móvil. A su vez, esta información alimenta un modelo de aprendizaje automático que permite predecir futuros errores y proponer mejoras al proceso logístico.",
-    "THISProcessSectionTitle":"¿Cómo funciona?"   
+    "THISProcessSectionTitle":"¿Cómo funciona?",
+    "AspectTitle10Pt1":"Apto",
+    "AspectTitle10Pt2":"Dron"   
 }

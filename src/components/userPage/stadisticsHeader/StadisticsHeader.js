@@ -18,8 +18,9 @@ var CardHoverDescription3 = Cookies.get('locale') === 'en' ? 'Alerts / Total Tri
 var CardHoverDescription4 = Cookies.get('locale') === 'en' ? 'Observed Shipments Current Month' : 'Envios observados mes corriente';
 
 
+
 function StadisticsHeader(){
-    const { loading, error, data } = useQuery(GET_MONTHLY_SHIPMENTS,{
+    const { loading, error, data, subscribeToMore } = useQuery(GET_MONTHLY_SHIPMENTS,{
         variables:{
             from_date: moment().subtract(1, 'M').format('YYYY-MM-DD'),
             to_date: moment().format('YYYY-MM-DD'),
@@ -38,7 +39,9 @@ function StadisticsHeader(){
         return obj.status === "uncertain"
       });
     var ratio = (alertTravels.length / totalTravels.length)*100
-
+    function shipmentsSubcription() {
+    
+    }
     return (
         <StadisticsDiv>
             <StadisticWrapper>

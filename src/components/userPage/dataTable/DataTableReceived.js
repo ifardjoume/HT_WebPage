@@ -21,12 +21,14 @@ function DataTableReceived(props){
         return obj.status === "failed" || obj.status === "uncertain" || obj.status === "successful"
     });
     const [newData, setNewData] = useState(received);
+    const { subscribeToUpdatedShipments } = props
+    const { shipmentsReceived } = props
    useEffect(() => {
         setNewData(received);
-    },[props.shipmentsReceived])
+    },[ shipmentsReceived ])
     useEffect(() => {
-        props.subscribeToUpdatedShipments();
-    })
+        subscribeToUpdatedShipments();
+    },[])
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false)
     const handleShow = (shipmentID) => {

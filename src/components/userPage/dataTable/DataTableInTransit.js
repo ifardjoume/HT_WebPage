@@ -6,7 +6,7 @@ import getDate from './getDate';
 import Cookies from 'js-cookie';
 
 
-var MainTitle = Cookies.get('locale') === 'en' ? 'In transit' : 'En transito';
+var MainTitle = Cookies.get('locale') === 'en' ? 'In transit' : 'En tránsito';
 
 
 function DataTableInTransit(props){
@@ -14,13 +14,16 @@ function DataTableInTransit(props){
         return obj.status === "in transit"
     });
     const [newData, setNewData] = useState(filteredList);
+    const { subscribeToNewShipments } = props
+    const { subscribeToUpdatedShipments } = props
+    const { shipmentsInTransit } = props
     useEffect(() => {
         setNewData(filteredList);
-    },[props.shipmentsInTransit])
+    },[ shipmentsInTransit ])
     useEffect(() => {
-        props.subscribeToUpdatedShipments();
-        props.subscribeToUpdatedShipments();
-    });
+        subscribeToNewShipments();
+        subscribeToUpdatedShipments();
+    },[]);
     const columnsInTransit = [
         {
             name: 'ID',

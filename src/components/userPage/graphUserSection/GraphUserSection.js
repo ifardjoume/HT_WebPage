@@ -92,7 +92,8 @@ function GraphUserSection(){
                         subscribeToUpdatedShipments:true
                     })
                 }
-            }/>
+            }
+            />
         </GraphsDiv>
     )
 }

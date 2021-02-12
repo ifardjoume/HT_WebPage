@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import {
     AspectContainer,
     AspectWrapper,
@@ -6,10 +6,10 @@ import {
     ListItem,
     IconImage,
     ListIcon,
-    //PdfDiv,
-    //PdfH1
+    PdfDiv,
+    PdfH1
 } from './IconSamples.elements';
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage } from "react-intl"; */
 /* import temperatura from '../../../../images/icons/temperatura.png';
 import geolocalizacion from '../../../../images/icons/geolocalizacion.png';
 import vibraciones from '../../../../images/icons/vibraciones.png';

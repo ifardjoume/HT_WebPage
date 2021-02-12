@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import {
     AspectContainer,
     AspectWrapper,
@@ -8,9 +8,9 @@ import {
     ListIcon,
     PdfDiv,
     PdfH1
-} from './IconVaccines.elements'
+} from './IconVaccines.elements' */
 //import temperatura from '../../../../images/icons/temperatura.png';
-import { FaRegFilePdf } from 'react-icons/fa'
+/* import { FaRegFilePdf } from 'react-icons/fa' */
 const IconVaccines = () => {
     return (
         <>

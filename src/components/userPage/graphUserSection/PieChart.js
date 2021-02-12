@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import { Pie } from 'react-chartjs-2';
 import styled from 'styled-components';
 import 'chartjs-adapter-moment';
@@ -24,17 +24,24 @@ var LabelTag2 = Cookies.get('locale') === 'en' ? 'Alerts' : 'Con alertas';
 
 
 const PieChart = (props) => {
-  var failedShipments = props.monthlyShipments.shipments.filter(obj => {
+  var shipmentsPerMonth = props.monthlyShipments.shipments
+  const [newData, setNewData] = useState(shipmentsPerMonth);
+  var failedShipments = newData.filter(obj => {
     return obj.status === "failed" || obj.status === "uncertain"
   });
-  var successfulShipments = props.monthlyShipments.shipments.filter(obj => {
+  var successfulShipments = newData.filter(obj => {
     return obj.status === "successful"
   });
   var badShipments =  failedShipments.length
   var goodShipments = successfulShipments.length
+  const { subscribeToUpdatedShipments } = props
+  const { monthlyShipments } = props
   useEffect(() => {
-    props.subscribeToUpdatedShipments();
-  },[props.monthlyShipments])
+        setNewData(shipmentsPerMonth);
+    },[ monthlyShipments ])
+  useEffect(() => {
+        subscribeToUpdatedShipments();
+  },[])
   return (
         <GraphDiv>
         <Pie 
