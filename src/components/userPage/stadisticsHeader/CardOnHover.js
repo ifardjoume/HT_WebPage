@@ -15,7 +15,12 @@ import {
   }
 
 class CardOnHover extends React.Component{
-
+    /* constructor(props) {
+        super(props);
+    }
+    componentDidMount() {
+        this.props.subscriptionToUpdatedShipments()
+    } */
     render() {
         return(
     <ReactHover options={optionsCursorTrueWithMargin}>

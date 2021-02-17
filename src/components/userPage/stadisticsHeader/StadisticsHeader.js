@@ -1,9 +1,9 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { 
     StadisticsDiv,
     StadisticWrapper
  } from './StadisticsHeader.elements';
-import { GET_MONTHLY_SHIPMENTS } from '../../../Query';
+import { GET_MONTHLY_SHIPMENTS, SHIPMENTS_UPDATED_SUBSCRIPTION } from '../../../Query';
 import { useQuery } from "@apollo/react-hooks";
 import CardOnHover from './CardOnHover';
 import Cookies from 'js-cookie';
@@ -20,6 +20,9 @@ var CardHoverDescription4 = Cookies.get('locale') === 'en' ? 'Observed Shipments
 
 
 function StadisticsHeader(){
+    const [state,setState] = useState({
+        subscribeToUpdatedShipments: false
+      });
     const { loading, error, data, subscribeToMore } = useQuery(GET_MONTHLY_SHIPMENTS,{
         variables:{
             from_date: moment().subtract(1, 'M').format('YYYY-MM-DD'),
@@ -39,8 +42,28 @@ function StadisticsHeader(){
         return obj.status === "uncertain"
       });
     var ratio = (alertTravels.length / totalTravels.length)*100
+
     function shipmentsSubcription() {
-    
+        if(state.subscribeToUpdatedShipments) return null
+        subscribeToMore({
+        document: SHIPMENTS_UPDATED_SUBSCRIPTION,
+        updateQuery: (prev, { subscriptionData }) => {
+            if(!subscriptionData.data){
+                return prev
+            }else{
+            const updatedShipment = subscriptionData.data.shipmentUpdated;
+            const previousShipments = prev.shipments;
+            var shipmentsUpdated = Object.assign({},prev,{
+                shipments:
+                    [...previousShipments, updatedShipment]
+            });
+            return shipmentsUpdated
+            }
+        }
+        })
+        setState({
+            subscribeToUpdatedShipments:true
+        })
     }
     return (
         <StadisticsDiv>
@@ -49,6 +72,7 @@ function StadisticsHeader(){
                 number={totalTravels.length}
                 description= {CardDescription1}
                 hoverDescription= {CardHoverDescription1}
+                subscriptionToUpdatedShipments = {() => {shipmentsSubcription()}}
             />
             <CardOnHover
                 number={alertTravels.length}

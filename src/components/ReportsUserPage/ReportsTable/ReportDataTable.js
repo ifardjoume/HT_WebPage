@@ -2,8 +2,7 @@ import React,{useState,useEffect} from 'react'
 import Cookies from 'js-cookie';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DataTable from 'react-data-table-component';
-import { 
-    TableContainer,
+import {
     TableDiv,
     StyledP
 } from './ReportsTable.elements';
