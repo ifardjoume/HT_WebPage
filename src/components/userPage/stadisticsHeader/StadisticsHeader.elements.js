@@ -22,7 +22,7 @@ export const StadisticWrapper = styled.div`
     align-items:center;
   grid-gap:16px;
   padding: 0 50px;
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 1142px){
     display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;

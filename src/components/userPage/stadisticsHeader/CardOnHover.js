@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import { 
     Card,
     Description,
@@ -15,18 +15,26 @@ import {
   }
 
 class CardOnHover extends React.Component{
-    /* constructor(props) {
+   constructor(props) {
         super(props);
+        this.state = {
+            number : this.props.number
+        }
     }
     componentDidMount() {
         this.props.subscriptionToUpdatedShipments()
-    } */
+    }
+    componentWillUnmount(){
+        this.setState({
+            number : this.props.number
+        })
+    }
     render() {
         return(
     <ReactHover options={optionsCursorTrueWithMargin}>
         <Trigger type="trigger">
                 <Card>
-                    <NumberHeader>{this.props.number}</NumberHeader>
+                    <NumberHeader>{this.state.number}</NumberHeader>
                     <Description>{this.props.description}
                     </Description>
                 </Card>

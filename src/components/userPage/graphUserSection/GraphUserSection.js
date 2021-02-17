@@ -70,7 +70,7 @@ function GraphUserSection(){
                     })
                 }
             }/>
-                <StackedBarsChart monthlyShipments={myData} subscribeToUpdatedShipments={() =>{
+                {/* <StackedBarsChart monthlyShipments={myData} subscribeToUpdatedShipments={() =>{
                     if(state.subscribeToUpdatedShipments) return null
                     subscribeToMore({
                     document: SHIPMENTS_UPDATED_SUBSCRIPTION,
@@ -93,7 +93,7 @@ function GraphUserSection(){
                     })
                 }
             }
-            />
+            /> */}
         </GraphsDiv>
     )
 }

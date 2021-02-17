@@ -51,12 +51,15 @@ const StackedBarsChart = (props) => {
     for(let i = 0; i < shipmentsCurrentMonthReceived.length; i++){
         dateLabels.push(getDate(shipmentsCurrentMonthReceived[i].arrival))
     }
-    dateLabels.sort((a, b) => b.joinDate > a.joinDate ? 1: -1);
+    dateLabels.sort((a, b) => b.joinDate > a.joinDate ? 1 : -1);
   const uniqueSet = new Set(dateLabels)
   const backToArray = [...uniqueSet]
   var badShipments =  []
   var goodShipments = []
   var doubtfulShipments = []
+  console.log(badShipments);
+  console.log(goodShipments);
+  console.log(doubtfulShipments);
     for(let i = 0; i < shipmentsCurrentMonthReceived.length; i++){
       var DateArray = []
       if(getDate(shipmentsCurrentMonthReceived[i].arrival) === getDate(shipmentsCurrentMonthReceived[i++].arrival) ){

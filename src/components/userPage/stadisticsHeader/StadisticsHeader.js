@@ -78,16 +78,19 @@ function StadisticsHeader(){
                 number={alertTravels.length}
                 description={CardDescription2}
                 hoverDescription= {CardHoverDescription2}
+                subscriptionToUpdatedShipments = {() => {shipmentsSubcription()}}
             />
             <CardOnHover
                 number={ratio.toFixed(2) + " %"}
                 description="Ratio"
                 hoverDescription= {CardHoverDescription3}
+                subscriptionToUpdatedShipments = {() => {shipmentsSubcription()}}
             />
             <CardOnHover
                 number={doubtTravels.length}
                 description={CardDescription3}
                 hoverDescription= {CardHoverDescription4}
+                subscriptionToUpdatedShipments = {() => {shipmentsSubcription()}}
             />
             </StadisticWrapper>
         </StadisticsDiv>
