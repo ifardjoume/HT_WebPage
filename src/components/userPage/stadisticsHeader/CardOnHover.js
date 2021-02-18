@@ -23,8 +23,6 @@ class CardOnHover extends React.Component{
     }
     componentDidMount() {
         this.props.subscriptionToUpdatedShipments()
-    }
-    componentWillUnmount(){
         this.setState({
             number : this.props.number
         })

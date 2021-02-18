@@ -17,18 +17,22 @@ const GraphDiv = styled.div`
 `;
 
 var LabelTag1 = Cookies.get('locale') === 'en' ? 'Correct' : 'Correcto';
-var LabelTag2 = Cookies.get('locale') === 'en' ? 'Observed' : 'Observados';
+var LabelTag2 = Cookies.get('locale') === 'en' ? 'To be reviewed' : 'Observados';
 var LabelTag3 = Cookies.get('locale') === 'en' ? 'Alerts' : 'Con alertas';
 
 function getDate(dateTag){
-
+  var locale = Cookies.get('locale');
   var dataStamp = new Date(dateTag)
-  let dataFormat = new Intl.DateTimeFormat('es-AR', {
+  let dataFormatSpanish = new Intl.DateTimeFormat('es-AR', {
       month: '2-digit',
       day: '2-digit'
   }).format(dataStamp)
+  let dataFormatEnglish = new Intl.DateTimeFormat('en-US', {
+    month: '2-digit',
+    day: '2-digit'
+}).format(dataStamp)
   return (
-     dataFormat
+    Cookies.get('locale') === 'en' ? dataFormatEnglish : dataFormatSpanish
   )
 }
 
@@ -57,51 +61,6 @@ const StackedBarsChart = (props) => {
   var badShipments =  []
   var goodShipments = []
   var doubtfulShipments = []
-  console.log(badShipments);
-  console.log(goodShipments);
-  console.log(doubtfulShipments);
-    for(let i = 0; i < shipmentsCurrentMonthReceived.length; i++){
-      var DateArray = []
-      if(getDate(shipmentsCurrentMonthReceived[i].arrival) === getDate(shipmentsCurrentMonthReceived[i++].arrival) ){
-        switch(shipmentsCurrentMonthReceived[i].status){
-          case "successful":
-            DateArray.push(shipmentsCurrentMonthReceived[i])
-            DateArray.push(shipmentsCurrentMonthReceived[i++])
-            goodShipments.push(DateArray.length)
-            break
-          case "failed":
-            DateArray.push(shipmentsCurrentMonthReceived[i])
-            DateArray.push(shipmentsCurrentMonthReceived[i++])
-            badShipments.push(DateArray.length)
-            break
-          case "uncertain":
-            DateArray.push(shipmentsCurrentMonthReceived[i])
-            DateArray.push(shipmentsCurrentMonthReceived[i++])
-            doubtfulShipments.push(DateArray.length)
-            break
-          default:
-          break
-        }
-      }else{
-        switch(shipmentsCurrentMonthReceived[i].status){
-          case "successful":
-            DateArray.push(shipmentsCurrentMonthReceived[i])
-            goodShipments.push(DateArray.length)
-            break
-          case "failed":
-            DateArray.push(shipmentsCurrentMonthReceived[i])
-            badShipments.push(DateArray.length)
-            break
-          case "uncertain":
-            DateArray.push(shipmentsCurrentMonthReceived[i])
-            doubtfulShipments.push(DateArray.length)
-            break
-          default:
-          break
-        }
-      }
-      
-  }
   return (
         <GraphDiv>
             <Bar 

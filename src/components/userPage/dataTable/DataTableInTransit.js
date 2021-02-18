@@ -29,6 +29,7 @@ function DataTableInTransit(props){
             name: 'ID',
             selector: 'shipment_id',
             sortable: true,
+            width: '60px'
         },
         {
             name: Cookies.get('locale') === 'en' ? 'Departure' : 'Hora de Salida',
@@ -47,6 +48,7 @@ function DataTableInTransit(props){
     return (
         <DataTable
                     responsive
+                    borderless
                     columns={columnsInTransit}
                     keyField="shipment_id"
                     data={newData}

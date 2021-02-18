@@ -39,7 +39,8 @@ function DataTableReceived(props){
         {
             name: 'ID',
             selector: 'shipment_id',
-            sortable: true
+            sortable: true,
+            width: '60px'
         },
         {
             name: Cookies.get('locale') === 'en' ? 'Departure' : 'Origen',
@@ -72,6 +73,7 @@ function DataTableReceived(props){
         <>
            <DataTable
                     responsive
+                    borderless
                     columns={columnsReceived}
                     keyField="shipment_id"
                     data={newData}

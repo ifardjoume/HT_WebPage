@@ -43,3 +43,14 @@ export const StyledButton = styled.button`
       text-decoration:none;
     }
 `;
+
+export const TableWrapper = styled.div`
+ display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction:row;
+  @media screen and (max-width: 768px) {
+    width:90%;
+    flex-direction:column;
+  }
+  `
