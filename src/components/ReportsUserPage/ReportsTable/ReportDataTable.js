@@ -4,7 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import DataTable from 'react-data-table-component';
 import {
     TableDiv,
-    StyledP
+    StyledP,
+    StyledButton
 } from './ReportsTable.elements';
 import getReport from './getReport';
 import GetUsernames from './GetUsernames';
@@ -12,6 +13,7 @@ import GetBranchName from './GetBranchName';
 import { FaCheck } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
 import { IconContext } from 'react-icons';
+import { HiDownload } from 'react-icons/hi';
 
 var MainTitle = Cookies.get('locale') === 'en' ? 'Reports' : 'Reportes';
 
@@ -71,7 +73,7 @@ function ReportDataTable(props){
             name: Cookies.get('locale') === 'en' ? 'Report' : 'Reporte',
             selector: 'shipment_id',
             sortable:true,
-            cell: row => row.destination_user_id != null && row.destination_id != null ? getReport(row.shipment_id) : <p>-</p>
+            cell: row => row.destination_user_id != null && row.destination_id != null ? <StyledButton type="submit" onClick={(e) => getReport(row.shipment_id)}><HiDownload size={20} /></StyledButton> : <p>-</p>
         }
     ];
     

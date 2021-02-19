@@ -105,6 +105,16 @@ query($from_date:Date!,$to_date:Date!){
 
 `;
 
+export const GET_MONTHLY_PAST_SHIPMENTS = gql`
+query($from_date:Date!,$to_date:Date!){
+  shipments(from_date: $from_date, to_date: $to_date) {
+      status
+    }
+  }
+
+`;
+
+
 
 export const SHIPMENTS_IN_TRANSIT_SUBSCRIPTION = gql`
 subscription {

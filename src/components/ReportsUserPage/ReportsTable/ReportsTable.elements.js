@@ -18,3 +18,21 @@ justify-content:center;
 align-items:center;
 
 `
+export const StyledButton = styled.button`
+    border-radius:50px;
+  background: transparent;
+  color:#00abc8;
+  white-space:nowrap;
+  border: none;
+  outline: none;
+  cursor:pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  &:hover {
+      color: #00abc8;
+      transition: all 0.2s ease-in-out;
+      border: none;
+      background:transparent;
+      text-decoration:none;
+    }
+`;

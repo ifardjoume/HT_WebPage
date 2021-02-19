@@ -1,9 +1,10 @@
-import React,{useEffect, useState} from 'react'
+import React,{ useState } from 'react'
 import { Bar } from 'react-chartjs-2';
 import styled from 'styled-components';
 import 'chartjs-adapter-moment';
 import Cookies from 'js-cookie';
-
+import PastShipments, { getMonths } from './PastShipments';
+import moment from 'moment';
 
 const GraphDiv = styled.div`
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
@@ -20,52 +21,30 @@ var LabelTag1 = Cookies.get('locale') === 'en' ? 'Correct' : 'Correcto';
 var LabelTag2 = Cookies.get('locale') === 'en' ? 'To be reviewed' : 'Observados';
 var LabelTag3 = Cookies.get('locale') === 'en' ? 'Alerts' : 'Con alertas';
 
-function getDate(dateTag){
-  var locale = Cookies.get('locale');
-  var dataStamp = new Date(dateTag)
-  let dataFormatSpanish = new Intl.DateTimeFormat('es-AR', {
-      month: '2-digit',
-      day: '2-digit'
-  }).format(dataStamp)
-  let dataFormatEnglish = new Intl.DateTimeFormat('en-US', {
-    month: '2-digit',
-    day: '2-digit'
-}).format(dataStamp)
-  return (
-    Cookies.get('locale') === 'en' ? dataFormatEnglish : dataFormatSpanish
-  )
-}
-
-
 const StackedBarsChart = (props) => {
   var shipmentsCurrentMonth = props.monthlyShipments.shipments
-  const { subscribeToUpdatedShipments } = props
-  const { monthlyShipments } = props
   const [newData, setNewData] = useState(shipmentsCurrentMonth);
-  useEffect(() => {
-      setNewData(shipmentsCurrentMonth);
-    },[ monthlyShipments ])
-  useEffect(() => {
-        subscribeToUpdatedShipments();
-    },[])
-  var shipmentsCurrentMonthReceived = newData.filter(obj => {
-        return obj.status === "failed" || obj.status === "uncertain" || obj.status === "successful"
-      });
-  var dateLabels = [];
-    for(let i = 0; i < shipmentsCurrentMonthReceived.length; i++){
-        dateLabels.push(getDate(shipmentsCurrentMonthReceived[i].arrival))
-    }
-    dateLabels.sort((a, b) => b.joinDate > a.joinDate ? 1 : -1);
-  const uniqueSet = new Set(dateLabels)
-  const backToArray = [...uniqueSet]
-  var badShipments =  []
-  var goodShipments = []
-  var doubtfulShipments = []
+  var shipmentsCurrentMonthFailed = newData.filter(obj => {
+        return obj.status === "failed";
+    })
+  var shipmentsCurrentMonthUncertain = newData.filter(obj => {
+        return obj.status === "uncertain";
+    })
+  var shipmentsCurrentMonthSuccessful = newData.filter(obj => {
+        return obj.status === "successful";
+    })
+  var pastShipments = PastShipments();
+  var badShipments =  pastShipments.failed;
+  badShipments.unshift(shipmentsCurrentMonthFailed.length);
+  var goodShipments = pastShipments.success;
+  goodShipments.unshift(shipmentsCurrentMonthSuccessful.length);
+  var doubtfulShipments = pastShipments.uncertain;
+  doubtfulShipments.unshift(shipmentsCurrentMonthUncertain.length);
   return (
         <GraphDiv>
             <Bar 
             data= {{
-                labels: backToArray,
+                labels: getMonths(),
                 datasets: [
                   {
                     label: LabelTag1,

@@ -20,7 +20,7 @@ function getDate(dateTag){
     }).format(dataStamp)
 
     return (
-        Cookies.get('locale') === 'en' ? <p>{dataFormatEnglish}</p> : <p>{dataFormatSpanish}</p>
+        locale === 'en' ? <p>{dataFormatEnglish}</p> : <p>{dataFormatSpanish}</p>
     )
 }
 

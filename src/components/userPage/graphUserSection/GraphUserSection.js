@@ -13,11 +13,9 @@ function GraphUserSection(){
     const [state,setState] = useState({
         subscribeToUpdatedShipments: false
       });
-      var dateCurrentMonth = new Date(1985, 2, 0)
-      console.log(dateCurrentMonth)
     const { error , loading , data, subscribeToMore} = useQuery(GET_MONTHLY_SHIPMENTS,{
         variables:{
-            from_date: moment().subtract(1, 'M').format('YYYY-MM-DD'),
+            from_date: moment().startOf('month').format("YYYY-MM-DD"),
             to_date: moment().format('YYYY-MM-DD'),
         }
     })
@@ -54,9 +52,7 @@ function GraphUserSection(){
                 <GaugeChart monthlyShipments={myData} 
                 subscribeToUpdatedShipments={() =>{shipmentsSubscription()}    
             }/>
-            <StackedBarsChart monthlyShipments={myData} 
-            subscribeToUpdatedShipments={() =>{shipmentsSubscription()}
-            }/>
+            <StackedBarsChart monthlyShipments={myData} />
         </GraphsDiv>
     )
 }

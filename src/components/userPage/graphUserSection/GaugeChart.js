@@ -41,11 +41,10 @@ useEffect(() => {
     return obj.status === "failed" || obj.status === "uncertain"
   });
   var ratioCurrentMonth = (alertTravels.length / totalTravels.length)*100
-
   const { error , loading , data} = useQuery(GET_MONTHLY_SHIPMENTS,{
     variables:{
-        from_date: moment().subtract(2, 'M').format('YYYY-MM-DD'),
-        to_date: moment().subtract(1, 'M').format('YYYY-MM-DD')
+        from_date: moment().startOf('month').subtract(1, 'M').format('YYYY-MM-DD'),
+        to_date: moment().startOf('month').format("YYYY-MM-DD"),
     }
   })
   if (loading) return 'Loading...';

@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import { GET_SHIPMENTS,SHIPMENTS_UPDATED_SUBSCRIPTION } from '../../../Query';
 import { useQuery } from "@apollo/react-hooks";
 import { 
