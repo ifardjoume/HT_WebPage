@@ -3,8 +3,7 @@ import { Bar } from 'react-chartjs-2';
 import styled from 'styled-components';
 import 'chartjs-adapter-moment';
 import Cookies from 'js-cookie';
-import PastShipments, { getMonths } from './PastShipments';
-import moment from 'moment';
+import PastShipments, {getPastShipments, getMonths } from './PastShipments';
 
 const GraphDiv = styled.div`
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
@@ -18,7 +17,7 @@ const GraphDiv = styled.div`
 `;
 
 var LabelTag1 = Cookies.get('locale') === 'en' ? 'Correct' : 'Correcto';
-var LabelTag2 = Cookies.get('locale') === 'en' ? 'To be reviewed' : 'Observados';
+var LabelTag2 = Cookies.get('locale') === 'en' ? 'To Be Reviewed' : 'Observados';
 var LabelTag3 = Cookies.get('locale') === 'en' ? 'Alerts' : 'Con alertas';
 
 const StackedBarsChart = (props) => {
@@ -33,13 +32,20 @@ const StackedBarsChart = (props) => {
   var shipmentsCurrentMonthSuccessful = newData.filter(obj => {
         return obj.status === "successful";
     })
-  var pastShipments = PastShipments();
-  var badShipments =  pastShipments.failed;
-  badShipments.unshift(shipmentsCurrentMonthFailed.length);
-  var goodShipments = pastShipments.success;
-  goodShipments.unshift(shipmentsCurrentMonthSuccessful.length);
-  var doubtfulShipments = pastShipments.uncertain;
-  doubtfulShipments.unshift(shipmentsCurrentMonthUncertain.length);
+  var badShipments
+  var goodShipments
+  var doubtfulShipments
+  const pastShipments = getPastShipments()
+  /* var badShipments =  pastShipments.failed.unshift(shipmentsCurrentMonthFailed.length);
+  var goodShipments = pastShipments.success.unshift(shipmentsCurrentMonthSuccessful.length);
+  var doubtfulShipments = pastShipments.uncertain.unshift(shipmentsCurrentMonthUncertain.length); */
+  badShipments =  pastShipments.failed;
+  goodShipments = pastShipments.success;
+  doubtfulShipments = pastShipments.uncertain;
+  console.log(badShipments)
+  console.log(goodShipments)
+  console.log(doubtfulShipments)
+  console.log(pastShipments)
   return (
         <GraphDiv>
             <Bar 

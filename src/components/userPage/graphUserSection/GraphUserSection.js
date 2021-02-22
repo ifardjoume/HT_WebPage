@@ -52,7 +52,7 @@ function GraphUserSection(){
                 <GaugeChart monthlyShipments={myData} 
                 subscribeToUpdatedShipments={() =>{shipmentsSubscription()}    
             }/>
-            <StackedBarsChart monthlyShipments={myData} />
+           {/*  <StackedBarsChart monthlyShipments={myData} /> */}
         </GraphsDiv>
     )
 }

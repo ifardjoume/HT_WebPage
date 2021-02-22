@@ -24,20 +24,26 @@ export function getMonths() {
 }
 
 
-function getPastShipments(arrayMonth){
+export const getPastShipments = async ()  => {
     var shipmentsUncertain = [];
     var shipmentsFailed = [];
     var shipmentsSuccessful = [];
-    for(let i= 0; i < arrayMonth.length; i++){
-    var shipmentsCurrentMonthFailed = arrayMonth[i].shipments.filter(obj => {
+        const arrayMonth = PastShipments()
+        console.log("month",arrayMonth)
+    for(let q = 0; q < arrayMonth.length; q++){
+        console.log("month[i]",arrayMonth[q])
+        console.log("q",q)
+        console.log("1er mes", arrayMonth[0].shipments)
+    var shipmentsCurrentMonthFailed = await arrayMonth[q].shipments.filter(obj => {
         return obj.status === "failed";
+        
         })
         shipmentsFailed.push(shipmentsCurrentMonthFailed.length)
-    var shipmentsCurrentMonthUncertain = arrayMonth[i].shipments.filter(obj => {
+    var shipmentsCurrentMonthUncertain = await arrayMonth[q].shipments.filter(obj => {
         return obj.status === "uncertain";
         })
         shipmentsUncertain.push(shipmentsCurrentMonthUncertain.length)
-    var shipmentsCurrentMonthSuccessful = arrayMonth[i].shipments.filter(obj => {
+    var shipmentsCurrentMonthSuccessful = await arrayMonth[q].shipments.filter(obj => {
         return obj.status === "successful"
         })
         shipmentsSuccessful.push(shipmentsCurrentMonthSuccessful.length)
@@ -50,33 +56,34 @@ function getPastShipments(arrayMonth){
 }
 
 const PastShipments = () => {
-    const res1  = useQuery(GET_MONTHLY_PAST_SHIPMENTS,{
+    const { data:res1, error: prevMonthError, loading: prevMonthLoading }  = useQuery(GET_MONTHLY_PAST_SHIPMENTS,{
         variables:{
             from_date: previousMonth1,
             to_date: moment().startOf('month').format("YYYY-MM-DD"),
           }
       })
-      const res2 = useQuery(GET_MONTHLY_PAST_SHIPMENTS,{
+      const { data:res2, error: prevMonthError2, loading: prevMonthLoading2 }  = useQuery(GET_MONTHLY_PAST_SHIPMENTS,{
         variables:{
             from_date: previousMonth2,
             to_date: previousMonth1,
           }   
       })
-      const res3 = useQuery(GET_MONTHLY_PAST_SHIPMENTS,{
+      const { data:res3, error: prevMonthError3, loading: prevMonthLoading3 } = useQuery(GET_MONTHLY_PAST_SHIPMENTS,{
         variables:{
             from_date: previousMonth3,
             to_date: previousMonth2,
           }   
       })
-      const res4 = useQuery(GET_MONTHLY_PAST_SHIPMENTS,{
+      const { data:res4, error: prevMonthError4, loading: prevMonthLoading4 } = useQuery(GET_MONTHLY_PAST_SHIPMENTS,{
         variables:{
             from_date: previousMonth4,
             to_date: previousMonth3,
           }   
       })
-      var arrayQuery = [res1.data,res2.data,res3.data,res4.data]
+      var arrayQuery = [res1,res2,res3,res4]
+      console.log(arrayQuery)
     return (
-        getPastShipments(arrayQuery)
+       arrayQuery
     )
 }
 
