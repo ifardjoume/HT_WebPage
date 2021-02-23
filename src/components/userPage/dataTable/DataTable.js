@@ -6,8 +6,9 @@ import {
 } from './DataTable.elements';
 import DataTableInTransit from './DataTableInTransit';
 import DataTableReceived from './DataTableReceived';
-import { GET_SHIPMENTS,SHIPMENTS_IN_TRANSIT_SUBSCRIPTION, SHIPMENTS_UPDATED_SUBSCRIPTION } from '../../../Query';
+import { GET_MONTHLY_SHIPMENTS,SHIPMENTS_IN_TRANSIT_SUBSCRIPTION, SHIPMENTS_UPDATED_SUBSCRIPTION } from '../../../Query';
 import { useQuery } from "@apollo/react-hooks";
+import moment from 'moment';
 
 
 
@@ -16,7 +17,12 @@ function DataPackagesTable() {
         subscribeToNewShipments: false,
         subscribeToUpdatedShipments: false
     });
-    const { error , loading , data, subscribeToMore } = useQuery(GET_SHIPMENTS);
+    const { error , loading , data, subscribeToMore} = useQuery(GET_MONTHLY_SHIPMENTS,{
+        variables:{
+            from_date: moment().startOf('month').format("YYYY-MM-DD"),
+            to_date: moment().format('YYYY-MM-DD'),
+        }
+    })
     if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
     var myData = data;

@@ -15,24 +15,15 @@ import {
   }
 
 class CardOnHover extends React.Component{
-   constructor(props) {
-        super(props);
-        this.state = {
-            number : this.props.number
-        }
-    }
     componentDidMount() {
         this.props.subscriptionToUpdatedShipments()
-        this.setState({
-            number : this.props.number
-        })
     }
     render() {
         return(
     <ReactHover options={optionsCursorTrueWithMargin}>
         <Trigger type="trigger">
                 <Card>
-                    <NumberHeader>{this.state.number}</NumberHeader>
+                    <NumberHeader>{this.props.number}</NumberHeader>
                     <Description>{this.props.description}
                     </Description>
                 </Card>

@@ -47,12 +47,12 @@ function GraphUserSection(){
     return (
         <GraphsDiv>
                 <PieChart monthlyShipments={myData} 
-                subscribeToUpdatedShipments={() =>{shipmentsSubscription()}
+                subscribeToUpdatedShipments={() => shipmentsSubscription()
             } />
                 <GaugeChart monthlyShipments={myData} 
-                subscribeToUpdatedShipments={() =>{shipmentsSubscription()}    
+                subscribeToUpdatedShipments={() => shipmentsSubscription()
             }/>
-           {/*  <StackedBarsChart monthlyShipments={myData} /> */}
+           <StackedBarsChart monthlyShipments={myData} />
         </GraphsDiv>
     )
 }

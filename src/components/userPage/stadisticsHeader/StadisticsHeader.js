@@ -43,7 +43,7 @@ function StadisticsHeader(){
       });
     var ratio = (alertTravels.length / totalTravels.length)*100
 
-    function shipmentsSubcription() {
+    function shipmentsSubscription() {
         if(state.subscribeToUpdatedShipments) return null
         subscribeToMore({
         document: SHIPMENTS_UPDATED_SUBSCRIPTION,
@@ -57,6 +57,8 @@ function StadisticsHeader(){
                 shipments:
                     [...previousShipments, updatedShipment]
             });
+            console.log(updatedShipment)
+            console.log(previousShipments)
             return shipmentsUpdated
             }
         }
@@ -72,25 +74,25 @@ function StadisticsHeader(){
                 number={totalTravels.length}
                 description= {CardDescription1}
                 hoverDescription= {CardHoverDescription1}
-                subscriptionToUpdatedShipments = {() => {shipmentsSubcription()}}
+                subscriptionToUpdatedShipments = {() => shipmentsSubscription()}
             />
             <CardOnHover
                 number={alertTravels.length}
                 description={CardDescription2}
                 hoverDescription= {CardHoverDescription2}
-                subscriptionToUpdatedShipments = {() => {shipmentsSubcription()}}
+                subscriptionToUpdatedShipments = {() => shipmentsSubscription()}
             />
             <CardOnHover
                 number={ratio.toFixed(2) + " %"}
                 description="Ratio"
                 hoverDescription= {CardHoverDescription3}
-                subscriptionToUpdatedShipments = {() => {shipmentsSubcription()}}
+                subscriptionToUpdatedShipments = {() => shipmentsSubscription()}
             />
             <CardOnHover
                 number={doubtTravels.length}
                 description={CardDescription3}
                 hoverDescription= {CardHoverDescription4}
-                subscriptionToUpdatedShipments = {() => {shipmentsSubcription()}}
+                subscriptionToUpdatedShipments = {() => shipmentsSubscription()}
             />
             </StadisticWrapper>
         </StadisticsDiv>

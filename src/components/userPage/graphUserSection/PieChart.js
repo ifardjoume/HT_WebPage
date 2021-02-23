@@ -25,21 +25,19 @@ var LabelTag2 = Cookies.get('locale') === 'en' ? 'Alerts' : 'Con alertas';
 
 const PieChart = (props) => {
   var shipmentsPerMonth = props.monthlyShipments.shipments
-  var failedShipments = shipmentsPerMonth.filter(obj => {
+  const [shipmentData, setshipmentData] = useState(shipmentsPerMonth);
+  var failedShipments = shipmentData.filter(obj => {
     return obj.status === "failed" || obj.status === "uncertain"
   });
-  var successfulShipments = shipmentsPerMonth.filter(obj => {
+  var successfulShipments = shipmentData.filter(obj => {
     return obj.status === "successful"
   });
-  const [failedShipData, setFailedShipData] = useState(failedShipments);
-  const [successShipData, setSuccessShipData] = useState(successfulShipments);
-  var badShipments =  failedShipData.length
-  var goodShipments = successShipData.length
+  var badShipments =  failedShipments.length
+  var goodShipments = successfulShipments.length
   const { subscribeToUpdatedShipments } = props
   const { monthlyShipments } = props
   useEffect(() => {
-    setFailedShipData(failedShipments);
-    setSuccessShipData(successfulShipments)
+    setshipmentData(shipmentsPerMonth);
     },[ monthlyShipments ])
   useEffect(() => {
         subscribeToUpdatedShipments();

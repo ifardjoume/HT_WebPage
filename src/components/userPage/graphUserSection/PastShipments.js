@@ -80,11 +80,34 @@ const PastShipments = () => {
             to_date: previousMonth3,
           }   
       })
-      var arrayQuery = [res1,res2,res3,res4]
-      console.log(arrayQuery)
-    return (
-       arrayQuery
-    )
+      //var arrayQuery = [res1,res2,res3,res4]
+      var shipmentsUncertain = [];
+      var shipmentsFailed = [];
+      var shipmentsSuccessful = [];
+      var shipmentsCurrentMonthFailed
+      var shipmentsCurrentMonthUncertain
+      var shipmentsCurrentMonthSuccessful
+          const arrayMonth = [res1,res2,res3,res4]
+      for(let q = 0; q < arrayMonth.length; q++){
+      var shipmentsCurrentMonthFailed = arrayMonth[q].shipments.filter(obj => {
+          return obj.status === "failed";
+          
+          })
+          shipmentsFailed.push(shipmentsCurrentMonthFailed.length)
+      var shipmentsCurrentMonthUncertain = arrayMonth[q].shipments.filter(obj => {
+          return obj.status === "uncertain";
+          })
+          shipmentsUncertain.push(shipmentsCurrentMonthUncertain.length)
+      var shipmentsCurrentMonthSuccessful = arrayMonth[q].shipments.filter(obj => {
+          return obj.status === "successful"
+          })
+          shipmentsSuccessful.push(shipmentsCurrentMonthSuccessful.length)
+      }
+      return {
+          success : shipmentsSuccessful,
+          uncertain : shipmentsUncertain,
+          failed : shipmentsFailed
+      }
 }
 
 export default PastShipments

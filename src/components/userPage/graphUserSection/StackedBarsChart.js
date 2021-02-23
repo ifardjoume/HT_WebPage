@@ -35,7 +35,7 @@ const StackedBarsChart = (props) => {
   var badShipments
   var goodShipments
   var doubtfulShipments
-  const pastShipments = getPastShipments()
+  const pastShipments = PastShipments
   /* var badShipments =  pastShipments.failed.unshift(shipmentsCurrentMonthFailed.length);
   var goodShipments = pastShipments.success.unshift(shipmentsCurrentMonthSuccessful.length);
   var doubtfulShipments = pastShipments.uncertain.unshift(shipmentsCurrentMonthUncertain.length); */
