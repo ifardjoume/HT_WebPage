@@ -73,7 +73,7 @@ function DataTableReceived(props){
     ];
     return (
         <div>
-           <DataTable class="table-responsive"
+           <DataTable 
                     responsive
                     columns={columnsReceived}
                     keyField="shipment_id"

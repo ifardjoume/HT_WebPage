@@ -15,6 +15,7 @@ import UserSelectReceiver from '../SearchHeader/UserSelectReceiver';
 import UserSelectSender from '../SearchHeader/UserSelectSender';
 import Cookies from 'js-cookie';
 import ReportDataTable from './ReportDataTable';
+import Select from 'react-select';
 
 
 var SelectAlertOption1 = Cookies.get('locale') === 'en' ? 'All' : 'Todo';
@@ -22,25 +23,32 @@ var SelectAlertOption2 = Cookies.get('locale') === 'en' ? 'Alerts' : 'Con alerta
 var SelectAlertOption3 = Cookies.get('locale') === 'en' ? 'Doubt' : 'Dudoso';
 var SelectAlertOption4 = Cookies.get('locale') === 'en' ? 'No alerts' : 'Sin alertas';
 
+const options = [
+    { value: null, label: SelectAlertOption1 },
+    { value: 'failed', label: SelectAlertOption2 },
+    { value: 'uncertain', label: SelectAlertOption3 },
+    { value: 'successful', label: SelectAlertOption4 }
+  ];
+
 
 function ReportsTable(){
     const [state,setState] = useState({
         subscribeToUpdatedShipments: false
       });
+      
+    const [selectedOption,setSelectedOption] = useState({
+        selectedSearch: null
+    })
     const { loading, error, data, subscribeToMore } = useQuery(GET_SHIPMENTS);
     if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
     var myData = data
-    /* var filteredData = received;
-    function filterTable(value){
-        filteredData = received.filter(obj => {
-            return obj.origin_user_id === {value}
+    const handleChange = selectedOption => {
+        setSelectedOption({ selectedOption });
+        myData.filter(obj => {
+            return obj.status === selectedOption.selectedSearch
         });
-    }
-    const onChangeFilter = (e) => {
-        filterTable(e.value)
-    } */
-
+    };  
 
     return (
         <>
@@ -50,14 +58,16 @@ function ReportsTable(){
                     <BranchSelectDestination />
                     <UserSelectSender />
                     <UserSelectReceiver />
-                    <StyledSelect
-                        className="select"
-                        >
-                            <option value="">{SelectAlertOption1}</option>
-                            <option value="alerta">{SelectAlertOption2}</option>
-                            <option value="dudoso">{SelectAlertOption3}</option>
-                            <option value="no-alerta">{SelectAlertOption4}</option>
-                    </StyledSelect>
+                    <Select
+                        classNamePrefix="select"
+                        defaultValue={options[0]}
+                        isClearable={true}
+                        className="basic-single"
+                        value={selectedOption}
+                        onChange={handleChange}
+                        options={options}
+                        name="status"
+                    />
                 </SearchDiv>
             </SearchContainer>
             <TableContainer>
