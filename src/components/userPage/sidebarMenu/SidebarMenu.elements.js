@@ -12,6 +12,11 @@ export const Nav = styled.div`
   position: sticky;
   top: 0;
   z-index:999;
+  @media screen and (max-width: 768px){
+    position: sticky;
+  top: 0;
+  z-index:999;
+  }
 `;
 
 export const NavIcon = styled(Link)`

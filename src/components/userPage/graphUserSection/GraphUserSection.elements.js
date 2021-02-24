@@ -6,7 +6,7 @@ export const GraphsDiv = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction:row;
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 1140px){
     flex-direction:column;
     }
 `

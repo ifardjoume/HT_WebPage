@@ -32,6 +32,13 @@ export const StadisticWrapper = styled.div`
     ". .";
     padding: 0 20px;
   }
+  @media screen and (max-width: 768px){
+      padding:10px;
+      margin:0px 30px;
+      display:flex;
+    justify-content:center;
+    flex-direction:column;
+  }
 `
 export const Card = styled.div`
     padding:20px 50px;
@@ -43,6 +50,10 @@ export const Card = styled.div`
     font-weight:bold;
     font-size:20px;
     color:#00abc8;
+    @media screen and (max-width: 768px){
+      padding:0px;
+      margin:30px 10px;
+  }
 `
 
 

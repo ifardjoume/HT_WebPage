@@ -4,6 +4,7 @@ export const TableContainer = styled.div`
     padding:20px;
     display:flex;
     justify-content:center;
+    flex-direction:row;
     @media screen and (max-width: 768px){
     flex-direction:column;
     justify-content: center;

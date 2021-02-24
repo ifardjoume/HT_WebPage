@@ -70,10 +70,9 @@ function DataTableReceived(props){
         }
     ];
     return (
-        <>
-           <DataTable
+        <div>
+           <DataTable class="table-responsive"
                     responsive
-                    borderless
                     columns={columnsReceived}
                     keyField="shipment_id"
                     data={newData}
@@ -82,7 +81,6 @@ function DataTableReceived(props){
                     paginationPerPage={10}
                     paginationRowsPerPageOptions={[10, 25, 50]}
                 />
-
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Grafico de Temperatura</Modal.Title>
@@ -93,8 +91,8 @@ function DataTableReceived(props){
                             Cerrar
                     </Button>
                     </Modal.Footer>
-                </Modal>  
-        </>
+                </Modal>
+        </div>        
     )
 }
 

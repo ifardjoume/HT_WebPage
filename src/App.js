@@ -22,8 +22,8 @@ import ThisSystemPage from './pages/ThisSystemPage/ThisSystemPage';
 import LoadingScreen from './components/loadingPage/LoadingPage';
 
 function setCookies(){
-  Cookies.set('locale', "es");
-  return "es"
+  Cookies.set('locale', "en");
+  return "en"
 }
 
 
