@@ -14,6 +14,8 @@ import TempGraph from './TempGraph';
 import Cookies from 'js-cookie';
 
 var MainTitle = Cookies.get('locale') === 'en' ? 'Received' : 'Recibidos';
+var TempGraphTitle = Cookies.get('locale') === 'en' ? 'Temperature Chart' : 'Gráfico de Temperatura';
+var closeButton = Cookies.get('locale') === 'en' ? 'Close' : 'Cerrar';
 var TemperatureGraph;
 function DataTableReceived(props){
     var dataShipmentsReceived = props.shipmentsReceived.shipments
@@ -83,12 +85,12 @@ function DataTableReceived(props){
                 />
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Grafico de Temperatura</Modal.Title>
+                        <Modal.Title>{TempGraphTitle}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body id="MyModalBody" >{TemperatureGraph}</Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>
-                            Cerrar
+                            {closeButton}
                     </Button>
                     </Modal.Footer>
                 </Modal>
