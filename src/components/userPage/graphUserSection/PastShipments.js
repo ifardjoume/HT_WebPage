@@ -11,7 +11,7 @@ var localeLanguage = Cookies.get('locale') === 'en' ? 'en' : 'es';
 
 export function getMonths() {
     var monthNameArray = []
-    var monthArray = [previousMonth0,previousMonth1,previousMonth2,previousMonth3,previousMonth4];
+    var monthArray = [previousMonth4,previousMonth3,previousMonth2,previousMonth1,previousMonth0];
     const formatter = new Intl.DateTimeFormat(localeLanguage, { month: 'long' });
     monthArray.map((month) => {
         const monthName = formatter.format(new Date(month));

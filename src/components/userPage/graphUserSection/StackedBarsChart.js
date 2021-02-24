@@ -92,10 +92,13 @@ const StackedBarsChart = (props) => {
   }
   var badShipments =  shipmentsFailed
   badShipments.unshift(shipmentsCurrentMonthFailed.length)
+  badShipments.reverse()
   var goodShipments = shipmentsSuccessful
   goodShipments.unshift(shipmentsCurrentMonthSuccessful.length)
+  goodShipments.reverse()
   var doubtfulShipments = shipmentsUncertain
   doubtfulShipments.unshift(shipmentsCurrentMonthUncertain.length)
+  doubtfulShipments.reverse()
   return (
         <GraphDiv>
             <Bar 
