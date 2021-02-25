@@ -72,7 +72,7 @@ function DataTableReceived(props){
         }
     ];
     return (
-        <div>
+        <>
            <DataTable 
                     responsive
                     columns={columnsReceived}
@@ -94,7 +94,7 @@ function DataTableReceived(props){
                     </Button>
                     </Modal.Footer>
                 </Modal>
-        </div>        
+        </>        
     )
 }
 

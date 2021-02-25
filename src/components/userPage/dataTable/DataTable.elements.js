@@ -7,10 +7,9 @@ export const TableContainer = styled.div`
     flex-direction:row;
     @media screen and (max-width: 768px){
     flex-direction:column;
-    justify-content: center;
-    align-items:center;
     padding:1px;
-    margin:1px;
+    margin:10px;
+    margin-bottom:10px
     }
 `
 
