@@ -1,100 +1,136 @@
 import React,{useState} from 'react';
-import { GET_SHIPMENTS,SHIPMENTS_UPDATED_SUBSCRIPTION } from '../../../Query';
+import { GET_SHIPMENTS,
+    GET_MONTHLY_SHIPMENTS_FILTER,
+    GET_USERNAMES,
+    GET_BRANCHES
+} from '../../../Query';
 import { useQuery } from "@apollo/react-hooks";
 import { 
-    TableContainer
+    TableContainer,
+    StyledButtonSearch
 } from './ReportsTable.elements';
-import BranchSelectDestination from '../SearchHeader/BranchSelectDestination';
-import BranchSelectOrigin from '../SearchHeader/BranchSelectOrigin';
 import { 
     SearchContainer,
-    SearchDiv,
-    StyledSelect
+    SearchDiv
 } from '../SearchHeader/SearchHeader.elements';
-import UserSelectReceiver from '../SearchHeader/UserSelectReceiver';
-import UserSelectSender from '../SearchHeader/UserSelectSender';
 import Cookies from 'js-cookie';
 import ReportDataTable from './ReportDataTable';
-import Select from 'react-select';
+import {SelectBox, Option} from './SelectBox'
 
 
 var SelectAlertOption1 = Cookies.get('locale') === 'en' ? 'All' : 'Todo';
 var SelectAlertOption2 = Cookies.get('locale') === 'en' ? 'Alerts' : 'Con alertas';
 var SelectAlertOption3 = Cookies.get('locale') === 'en' ? 'Doubt' : 'Dudoso';
 var SelectAlertOption4 = Cookies.get('locale') === 'en' ? 'No alerts' : 'Sin alertas';
-
-const options = [
-    { value: null, label: SelectAlertOption1 },
-    { value: 'failed', label: SelectAlertOption2 },
-    { value: 'uncertain', label: SelectAlertOption3 },
-    { value: 'successful', label: SelectAlertOption4 }
-  ];
+var SelectAlertOptionDestination = Cookies.get('locale') === 'en' ? 'Arrival' : 'Destino';
+var SelectAlertOptionOrigin = Cookies.get('locale') === 'en' ? 'Departure' : 'Origen';
+var SelectAlertOptionSender = Cookies.get('locale') === 'en' ? 'Sender' : 'Remitente';
+var SelectAlertOptionReceiver = Cookies.get('locale') === 'en' ? 'Receiver' : 'Destinatario';
 
 
 function ReportsTable(){
     const [state,setState] = useState({
-        subscribeToUpdatedShipments: false
+        statusValue:null,
+        originValue:null,
+        destinationValue:null,
+        receiverValue:null,
+        senderValue:null
       });
-      
-    const [selectedOption,setSelectedOption] = useState({
-        selectedSearch: null
-    })
-    const { loading, error, data, subscribeToMore } = useQuery(GET_SHIPMENTS);
+    const { loading:loadingBranches, error:errorBranches, data:resBranches } = useQuery(GET_BRANCHES);
+    const { loading:loadingUsernames, error:errorUsernames, data:resUsernames } = useQuery(GET_USERNAMES);
+    const { loading:loadingShipments, error:errorShipments, data:resShipments} = useQuery(GET_SHIPMENTS);
+    if (loadingShipments) return 'Loading...';
+    if (errorShipments) return `Error! ${errorShipments.message}`;
+    var myData = resShipments;
+    const handleChangeStatus = e => {
+        setState({ statusValue: e.target.value });
+        console.log(state.statusValue);
+      };
+      const handleChangeOrigin = e => {
+        setState({ originValue: e.target.value });
+        console.log(state.originValue);
+      };
+      const handleChangeDestination = e => {
+        setState({ destinationValue: e.target.value });
+        console.log(state.destinationValue);
+      };
+      const handleChangeSender = e => {
+        setState({ senderValue: e.target.value });
+        console.log(state.senderValue);
+      };
+      const handleChangeReceiver = e => {
+        setState({ receiverValue: e.target.value });
+        console.log(state.receiverValue);
+      };
+    const handleSubmit = () => {
+        /* const { loading, error, data} = useQuery(GET_MONTHLY_SHIPMENTS_FILTER,{
+        origin_user_id: null,
+        origin_id: null,
+        destination_user_id: null,
+        destination_id: null,
+        status: selectedOption.target.value
+    });
     if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
-    var myData = data
-    const handleChange = selectedOption => {
-        setSelectedOption({ selectedOption });
-        myData.filter(obj => {
-            return obj.status === selectedOption.selectedSearch
-        });
-    };  
+    var dataFilter = data
+    console.log(data) */
+    }
 
     return (
         <>
             <SearchContainer>
                 <SearchDiv>
-                    <BranchSelectOrigin />
-                    <BranchSelectDestination />
-                    <UserSelectSender />
-                    <UserSelectReceiver />
-                    <Select
-                        classNamePrefix="select"
-                        defaultValue={options[0]}
-                        isClearable={true}
-                        className="basic-single"
-                        value={selectedOption}
-                        onChange={handleChange}
-                        options={options}
-                        name="status"
+                <SelectBox onChange={handleChangeOrigin}>
+                <option value="">{SelectAlertOptionOrigin}</option>
+                        {resBranches.company.branches.map(function(branch){
+                    return <Option
+                    key={branch.branch_id}
+                    value={branch.branch_id}
+                    description={branch.name}
                     />
+                    })}
+                </SelectBox>
+                <SelectBox onChange={handleChangeDestination}>
+                <option value="">{SelectAlertOptionDestination}</option>
+                        {resBranches.company.branches.map(function(branch){
+                    return <Option
+                    key={branch.branch_id}
+                    value={branch.branch_id}
+                    description={branch.name}
+                    />
+                    })}
+                </SelectBox>
+                <SelectBox onChange={handleChangeSender}>
+                        <option value="">{SelectAlertOptionSender}</option>
+                    {resUsernames.users.map(function(userTag){
+                    return <Option 
+                    key={userTag.username}
+                    value={userTag.user_id}
+                    description={userTag.username}
+                    />
+                    })}
+                </SelectBox>
+                <SelectBox onChange={handleChangeReceiver}>
+                        <option value="">{SelectAlertOptionReceiver}</option>
+                    {resUsernames.users.map(function(userTag){
+                    return <Option 
+                    key={userTag.username}
+                    value={userTag.user_id}
+                    description={userTag.username}
+                    />
+                    })}
+                </SelectBox>
+                    <SelectBox onChange={handleChangeStatus}>
+                        <Option value="" description={SelectAlertOption1} />
+                        <Option value="failed" description={SelectAlertOption2} />
+                        <Option value="uncertain" description={SelectAlertOption3} />
+                        <Option value="successful" description={SelectAlertOption4} />
+                    </SelectBox>
+                    <StyledButtonSearch onClick={handleSubmit()}>Search</StyledButtonSearch>
                 </SearchDiv>
             </SearchContainer>
             <TableContainer>
                     <ReportDataTable reportDataShipments={myData}
-                    subscribeToUpdatedShipments={() =>{
-                        if(state.subscribeToUpdatedShipments) return null
-                        subscribeToMore({
-                        document: SHIPMENTS_UPDATED_SUBSCRIPTION,
-                        updateQuery: (prev, { subscriptionData }) => {
-                            if(!subscriptionData.data){
-                                return prev
-                            }else{
-                            const updatedShipment = subscriptionData.data.shipmentUpdated;
-                            const previousShipments = prev.shipments;
-                            var shipmentsUpdated = Object.assign({},prev,{
-                                shipments:
-                                    [...previousShipments, updatedShipment]
-                            });
-                            return shipmentsUpdated
-                            }
-                        }
-                        })
-                        setState({
-                            subscribeToUpdatedShipments:true
-                        })
-                    }
-                }
                     />
             </TableContainer>
     </>

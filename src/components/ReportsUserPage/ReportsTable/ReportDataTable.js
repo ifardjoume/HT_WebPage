@@ -19,7 +19,6 @@ var MainTitle = Cookies.get('locale') === 'en' ? 'Reports' : 'Reportes';
 
 function ReportDataTable(props){
     var reportShipments = props.reportDataShipments.shipments
-    const { subscribeToUpdatedShipments } = props
     const { reportDataShipments } = props
     const [newData, setNewData] = useState(reportShipments)
     var received = newData.filter(obj => {
@@ -28,10 +27,6 @@ function ReportDataTable(props){
     useEffect(() => {
         setNewData(reportShipments);
     },[ reportDataShipments ])
-    useEffect(() => {
-        subscribeToUpdatedShipments();
-    },[])
-
     const columnsReports = [
         {
             name: 'ID',

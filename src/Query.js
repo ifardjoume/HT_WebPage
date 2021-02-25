@@ -105,6 +105,27 @@ query($from_date:Date!,$to_date:Date!){
 
 `;
 
+export const GET_MONTHLY_SHIPMENTS_FILTER = gql`
+query($origin_user_id:Int,$origin_id:Int, $destination_user_id:Int,$destination_id:Int,$status:String ){
+  shipments(
+    origin_user_id: $origin_user_id,
+    origin_id: $origin_id,
+    destination_user_id: $destination_user_id,
+    destination_id: $destination_id,
+    status: $status
+    ){
+    shipment_id
+      origin_id
+      origin_user_id
+      destination_user_id
+      destination_id
+      departure
+      arrival
+      status
+  }
+}
+`
+
 export const GET_MONTHLY_PAST_SHIPMENTS = gql`
 query($from_date:Date!,$to_date:Date!){
   shipments(from_date: $from_date, to_date: $to_date) {
