@@ -8,8 +8,7 @@ export const TableContainer = styled.div`
     @media screen and (max-width: 768px){
     flex-direction:column;
     padding:1px;
-    margin:10px;
-    margin-bottom:10px
+    margin-bottom:10px;
     }
 `
 

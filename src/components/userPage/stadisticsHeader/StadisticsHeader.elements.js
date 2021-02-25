@@ -4,12 +4,13 @@ export const StadisticsDiv = styled.div`
     display:flex;
     justify-content:center;
     flex-direction:row;
-    padding:20px 0;
+    padding:10px 0;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-    margin:20px 100px 20px 100px;
+    margin:20px 120px 20px 100px;
     border-radius:20px;
     @media screen and (max-width: 768px){
       margin:10px;
+      margin:20px 30px 20px 30px;
   }
 `
 export const StadisticWrapper = styled.div`
@@ -30,7 +31,7 @@ export const StadisticWrapper = styled.div`
   grid-template-areas:
     ". ."
     ". .";
-    padding: 0 20px;
+    padding: 0 10px;
   }
   @media screen and (max-width: 768px){
       padding:10px;
