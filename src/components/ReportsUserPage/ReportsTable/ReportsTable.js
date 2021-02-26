@@ -79,20 +79,14 @@ function ReportsTable(){
                     authorization : `Bearer ${token}`
                 },
                 "data": {
-                    "query": `query (
-                        $origin_user_id:Int!,
-                        $origin_id:String!,
-                        $destination_user_id:Int!,
-                        $destination_id:String,
-                        $status:String
+                    "query": `query( 
+                        origin_user_id: "${filter.senderValue}",
+                        origin_id: ${filter.originValue},
+                        destination_user_id: "${filter.receiverValue}", 
+                        destination_id: ${filter.destinationValue},
+                        status: "${filter.statusValue}"
                         ){
-                        shipments(
-                          origin_user_id: $origin_user_id,
-                          origin_id: $origin_id,
-                          destination_user_id: $destination_user_id,
-                          destination_id: $destination_id,
-                          status: $status
-                          ){
+                        shipments{
                           shipment_id
                             origin_id
                             origin_user_id
@@ -103,14 +97,7 @@ function ReportsTable(){
                             status
                         }
                       }
-                    `,
-                    "variables": {              
-                "origin_user_id" : filter.senderValue,
-                "origin_id": filter.originValue,
-                "destination_user_id": filter.receiverValue,
-                "destination_id": filter.destinationValue,
-                "status": filter.statusValue
-                    }
+                    `
                 }
             })
             .then((response) => {

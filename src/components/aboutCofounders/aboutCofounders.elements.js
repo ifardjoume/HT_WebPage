@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const InfoSec = styled.div`
     color: #fff;
@@ -94,4 +95,12 @@ flex-direction:row;
     flex-direction:column;
   }
 
+`
+export const LinkTo = styled(Link)`
+text-decoration:none;
+color:#333;
+&:hover{
+  text-decoration:none;
+color:#333;
+}
 `

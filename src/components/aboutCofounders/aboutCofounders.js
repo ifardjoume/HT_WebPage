@@ -14,7 +14,8 @@ import {
   Img,
   ImgWrapper,
   ImgCofounderContainer,
-  ImgWrapperRow
+  ImgWrapperRow,
+  LinkTo
 } from './aboutCofounders.elements';
 import { FormattedMessage } from "react-intl";
 
@@ -30,7 +31,7 @@ function AboutCofounders() {
                                 <Heading><FormattedMessage id="AboutTitle" defaultMessage="About Us"/></Heading>
                                 <Subtitle><FormattedMessage id="AboutDescriptionPart1" defaultMessage="H+Trace was founded in 2019 with the aim of incorporating innovation and technology into healthcare."/><br></br> <br></br> 
                                 <FormattedMessage id="AboutDescriptionPart2" defaultMessage="The medical industry works based on data, be it for diagnosis, treatment, care or clinical research. However, logistics is a blind spot without information.
-H+Trace was created to provide those essential data to improve this process."/><br></br><br></br> 
+                                        H+Trace was created to provide those essential data to improve this process."/><br></br><br></br> 
                                           <FormattedMessage id="AboutDescriptionPart3" defaultMessage="We seek to establish a new standard of good practices in healthcare transport."/></Subtitle>
                             </TextWrapper>
                         </InfoColumn>
@@ -38,6 +39,7 @@ H+Trace was created to provide those essential data to improve this process."/><
                             <ImgWrapper>
                                 <ImgWrapperRow>
                                 <ImgCofounderContainer>
+                                {/* <LinkTo to="/EmilianoBuitrago"><Img src={Image1} alt="EmilianoBuitrago" /></LinkTo> */}
                                 <Img src={Image1} alt="EmilianoBuitrago" />
                                 <TopLine>Emiliano Buitrago</TopLine>
                                 <Subtitle><FormattedMessage id="AboutCofoundersTitle1" defaultMessage="Management"/></Subtitle>
@@ -45,11 +47,13 @@ H+Trace was created to provide those essential data to improve this process."/><
                                 </ImgWrapperRow>
                                 <ImgWrapperRow>
                                 <ImgCofounderContainer>
+                                {/* <LinkTo to="/JavierCuello"><Img src={Image2} alt="JavierCuello" /></LinkTo> */}
                                 <Img src={Image2} alt="JavierCuello" />
                                 <TopLine>Javier Cuello</TopLine>
                                 <Subtitle><FormattedMessage id="AboutCofoundersTitle2" defaultMessage="Bussiness Development"/></Subtitle>
                                 </ImgCofounderContainer>
                                 <ImgCofounderContainer>
+                                {/* <LinkTo to="/IvanFardjoume"><Img src={Image3} alt="IvanFarjoume" /></LinkTo> */}
                                 <Img src={Image3} alt="IvanFarjoume" />
                                 <TopLine>Iván Fardjoume</TopLine>
                                 <Subtitle><FormattedMessage id="AboutCofoundersTitle3" defaultMessage="IT"/></Subtitle>
