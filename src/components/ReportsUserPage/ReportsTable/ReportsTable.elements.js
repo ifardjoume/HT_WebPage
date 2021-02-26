@@ -44,8 +44,9 @@ export const StyledButtonSearch = styled.button`
   font-size: 0.9rem;
   border: 0;
   border-radius: 5px;
-  height: 40px;
-  padding: 0 20px;
+  height: 30px;
+  padding: 0 10px;
+  margin-top:12px;
   cursor: pointer;
   box-sizing: border-box;
 `;

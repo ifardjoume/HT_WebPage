@@ -15,9 +15,12 @@ import {
 } from '../SearchHeader/SearchHeader.elements';
 import Cookies from 'js-cookie';
 import ReportDataTable from './ReportDataTable';
-import {SelectBox, Option} from './SelectBox'
+import {SelectBox, Option} from './SelectBox';
+import { ImSearch } from 'react-icons/im';
+import { Query } from 'react-apollo';
+import axios from 'axios';
 
-
+var token = Cookies.get("token");
 var SelectAlertOption1 = Cookies.get('locale') === 'en' ? 'All' : 'Todo';
 var SelectAlertOption2 = Cookies.get('locale') === 'en' ? 'Alerts' : 'Con alertas';
 var SelectAlertOption3 = Cookies.get('locale') === 'en' ? 'Doubt' : 'Dudoso';
@@ -29,52 +32,128 @@ var SelectAlertOptionReceiver = Cookies.get('locale') === 'en' ? 'Receiver' : 'D
 
 
 function ReportsTable(){
-    const [state,setState] = useState({
+    const [dataFiltered,setData] = useState();
+      var filter = {
         statusValue:null,
         originValue:null,
         destinationValue:null,
         receiverValue:null,
         senderValue:null
-      });
+      }
     const { loading:loadingBranches, error:errorBranches, data:resBranches } = useQuery(GET_BRANCHES);
     const { loading:loadingUsernames, error:errorUsernames, data:resUsernames } = useQuery(GET_USERNAMES);
     const { loading:loadingShipments, error:errorShipments, data:resShipments} = useQuery(GET_SHIPMENTS);
     if (loadingShipments) return 'Loading...';
     if (errorShipments) return `Error! ${errorShipments.message}`;
+    if (loadingBranches) return 'Loading...';
+    if (errorBranches) return `Error! ${errorShipments.message}`;
+    if (loadingUsernames) return 'Loading...';
+    if (errorUsernames) return `Error! ${errorShipments.message}`;
     var myData = resShipments;
     const handleChangeStatus = e => {
-        setState({ statusValue: e.target.value });
-        console.log(state.statusValue);
+        filter.statusValue =  e.target.value
+        console.log(filter.statusValue);
       };
       const handleChangeOrigin = e => {
-        setState({ originValue: e.target.value });
-        console.log(state.originValue);
+        filter.originValue = e.target.value
+        console.log(filter.originValue);
       };
       const handleChangeDestination = e => {
-        setState({ destinationValue: e.target.value });
-        console.log(state.destinationValue);
+        filter.destinationValue = e.target.value
+        console.log(filter.destinationValue);
       };
       const handleChangeSender = e => {
-        setState({ senderValue: e.target.value });
-        console.log(state.senderValue);
+        filter.senderValue = e.target.value
+        console.log(filter.senderValue);
       };
       const handleChangeReceiver = e => {
-        setState({ receiverValue: e.target.value });
-        console.log(state.receiverValue);
+        filter.receiverValue = e.target.value
+        console.log(filter.receiverValue);
       };
-    const handleSubmit = () => {
-        /* const { loading, error, data} = useQuery(GET_MONTHLY_SHIPMENTS_FILTER,{
-        origin_user_id: null,
-        origin_id: null,
-        destination_user_id: null,
-        destination_id: null,
-        status: selectedOption.target.value
-    });
-    if (loading) return 'Loading...';
-    if (error) return `Error! ${error.message}`;
-    var dataFilter = data
-    console.log(data) */
-    }
+    const handleSubmit = async () => {
+        try {
+             await axios({
+                "method": "GET",
+                "url": "https://api.h-trace.com:3000/graphql",
+                "headers": {
+                    authorization : `Bearer ${token}`
+                },
+                "data": {
+                    "query": `query (
+                        $origin_user_id:Int!,
+                        $origin_id:String!,
+                        $destination_user_id:Int!,
+                        $destination_id:String,
+                        $status:String
+                        ){
+                        shipments(
+                          origin_user_id: $origin_user_id,
+                          origin_id: $origin_id,
+                          destination_user_id: $destination_user_id,
+                          destination_id: $destination_id,
+                          status: $status
+                          ){
+                          shipment_id
+                            origin_id
+                            origin_user_id
+                            destination_user_id
+                            destination_id
+                            departure
+                            arrival
+                            status
+                        }
+                      }
+                    `,
+                    "variables": {              
+                "origin_user_id" : filter.senderValue,
+                "origin_id": filter.originValue,
+                "destination_user_id": filter.receiverValue,
+                "destination_id": filter.destinationValue,
+                "status": filter.statusValue
+                    }
+                }
+            })
+            .then((response) => {
+                setData(response.data)
+                console.log(dataFiltered)
+            })
+        } catch (e) {
+            console.log(e);
+        }
+
+
+
+
+
+       /*  <Query query={GET_MONTHLY_SHIPMENTS_FILTER} variables={{
+            origin_user_id: filter.senderValue,
+            origin_id: filter.originValue,
+            destination_user_id: filter.receiverValue,
+            destination_id: filter.destinationValue,
+            status: filter.statusValue
+        }} >
+            {({data, loading }) => {
+            if(loading) return 'loading...'
+            setData(data)
+            }}
+        </Query>
+        console.log(dataFiltered) */
+
+
+        /* fetch('https://api.h-trace.com:3000/graphql', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json',
+            authorization : `Bearer ${token}` },
+        body: JSON.stringify(GET_MONTHLY_SHIPMENTS_FILTER,{
+            origin_user_id: filter.senderValue,
+            origin_id: filter.originValue,
+            destination_user_id: filter.receiverValue,
+            destination_id: filter.destinationValue,
+            status: filter.statusValue
+        }),
+        })
+        .then(res => console.log(res.data)); */
+        }
 
     return (
         <>
@@ -126,7 +205,7 @@ function ReportsTable(){
                         <Option value="uncertain" description={SelectAlertOption3} />
                         <Option value="successful" description={SelectAlertOption4} />
                     </SelectBox>
-                    <StyledButtonSearch onClick={handleSubmit()}>Search</StyledButtonSearch>
+                    <StyledButtonSearch onClick={handleSubmit}><ImSearch/></StyledButtonSearch>
                 </SearchDiv>
             </SearchContainer>
             <TableContainer>

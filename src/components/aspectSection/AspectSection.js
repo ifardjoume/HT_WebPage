@@ -7,7 +7,7 @@ import {
     ListItemBottom,
     IconImage,
     ListIcon,
-    IconImageGeo,
+    IconImageGeo
 } from './AspectSection.elements'
 import geolocalizacion from '../../images/icons/geolocalizacion.png';
 import vibraciones from '../../images/icons/vibracion.png';

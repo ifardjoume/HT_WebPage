@@ -87,9 +87,11 @@ padding:15px;
 
 export const IconImage = styled.img`
   width:85px;
-  height:85px;
+  height:90px;
+  object-fit: contain;
 `
 export const IconImageGeo = styled.img`
-  width:80px;
-  height:100px;
+  width:85px;
+  height:95px;
+  object-fit: contain;
 `

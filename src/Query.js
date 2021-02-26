@@ -106,7 +106,7 @@ query($from_date:Date!,$to_date:Date!){
 `;
 
 export const GET_MONTHLY_SHIPMENTS_FILTER = gql`
-query($origin_user_id:Int,$origin_id:Int, $destination_user_id:Int,$destination_id:Int,$status:String ){
+query($origin_user_id:Int!,$origin_id:String!, $destination_user_id:Int,$destination_id:String,$status:String ){
   shipments(
     origin_user_id: $origin_user_id,
     origin_id: $origin_id,
