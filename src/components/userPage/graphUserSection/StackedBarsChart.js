@@ -71,6 +71,12 @@ const StackedBarsChart = (props) => {
         }  
     })
     arrayQueryPastShipments.push(res4)
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
+  if (queryLoading2) return 'Loading...';
+  if (queryError2) return `Error! ${queryError2.message}`;
+  if (queryLoading3) return 'Loading...';
+  if (queryError3) return `Error! ${error.message}`;
   if (queryLoading4) return 'Loading...';
   if (queryError4) return `Error! ${error.message}`;
   var shipmentsUncertain = [];

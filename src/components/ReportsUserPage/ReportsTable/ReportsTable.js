@@ -72,22 +72,20 @@ function ReportsTable(){
       };
     const handleSubmit = async () => {
         try {
-             await axios({
-                "method": "GET",
-                "url": "https://api.h-trace.com:3000/graphql",
-                "headers": {
+             await axios.get("https://api.h-trace.com:3000/graphql",{
+                headers: {
+                    'Content-Type': 'application/json',
+			        'Accept': 'application/json',
                     authorization : `Bearer ${token}`
                 },
-                "data": {
-                    "query": `query( 
+                data: `query( 
                         origin_user_id: "${filter.senderValue}",
                         origin_id: ${filter.originValue},
                         destination_user_id: "${filter.receiverValue}", 
                         destination_id: ${filter.destinationValue},
                         status: "${filter.statusValue}"
-                        ){
-                        shipments{
-                          shipment_id
+                        )shipments{
+                            shipment_id
                             origin_id
                             origin_user_id
                             destination_user_id
@@ -95,12 +93,9 @@ function ReportsTable(){
                             departure
                             arrival
                             status
-                        }
                       }
                     `
-                }
-            })
-            .then((response) => {
+            }).then((response) => {
                 setData(response.data)
                 console.log(dataFiltered)
             })
@@ -108,38 +103,6 @@ function ReportsTable(){
             console.log(e);
         }
 
-
-
-
-
-       /*  <Query query={GET_MONTHLY_SHIPMENTS_FILTER} variables={{
-            origin_user_id: filter.senderValue,
-            origin_id: filter.originValue,
-            destination_user_id: filter.receiverValue,
-            destination_id: filter.destinationValue,
-            status: filter.statusValue
-        }} >
-            {({data, loading }) => {
-            if(loading) return 'loading...'
-            setData(data)
-            }}
-        </Query>
-        console.log(dataFiltered) */
-
-
-        /* fetch('https://api.h-trace.com:3000/graphql', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json',
-            authorization : `Bearer ${token}` },
-        body: JSON.stringify(GET_MONTHLY_SHIPMENTS_FILTER,{
-            origin_user_id: filter.senderValue,
-            origin_id: filter.originValue,
-            destination_user_id: filter.receiverValue,
-            destination_id: filter.destinationValue,
-            status: filter.statusValue
-        }),
-        })
-        .then(res => console.log(res.data)); */
         }
 
     return (
