@@ -3,7 +3,7 @@ import { Bar } from 'react-chartjs-2';
 import styled from 'styled-components';
 import 'chartjs-adapter-moment';
 import Cookies from 'js-cookie';
-import {getPastShipments, getMonths } from './PastShipments';
+import { getMonths } from './PastShipments';
 import { GET_MONTHLY_PAST_SHIPMENTS } from '../../../Query';
 import { useQuery } from "@apollo/react-hooks";
 import moment from 'moment';

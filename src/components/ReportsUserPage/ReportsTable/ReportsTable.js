@@ -1,6 +1,5 @@
 import React,{useState} from 'react';
 import { GET_SHIPMENTS,
-    GET_MONTHLY_SHIPMENTS_FILTER,
     GET_USERNAMES,
     GET_BRANCHES
 } from '../../../Query';
@@ -17,8 +16,6 @@ import Cookies from 'js-cookie';
 import ReportDataTable from './ReportDataTable';
 import {SelectBox, Option} from './SelectBox';
 import { ImSearch } from 'react-icons/im';
-import { Query } from 'react-apollo';
-import axios from 'axios';
 
 var token = Cookies.get("token");
 var SelectAlertOption1 = Cookies.get('locale') === 'en' ? 'All' : 'Todo';
@@ -32,7 +29,7 @@ var SelectAlertOptionReceiver = Cookies.get('locale') === 'en' ? 'Receiver' : 'D
 
 
 function ReportsTable(){
-    const [dataFiltered,setData] = useState();
+    const [state,setState] = useState()
       var filter = {
         statusValue:null,
         originValue:null,
@@ -49,68 +46,67 @@ function ReportsTable(){
     if (errorBranches) return `Error! ${errorShipments.message}`;
     if (loadingUsernames) return 'Loading...';
     if (errorUsernames) return `Error! ${errorShipments.message}`;
-    var myData = resShipments;
+    var myData = resShipments
+    const handleSubmit = () => {
+        var receivedStatus = [];
+        var receivedOrigin = [];
+        var receivedDestination = [];
+        var receivedSender = [];
+        var receivedReceiver = [];
+        if(filter.statusValue !== null){
+            receivedStatus = resShipments.shipments.filter(obj => {
+                return obj.status === filter.statusValue
+            });
+        }
+        if(filter.originValue !== null){
+            receivedOrigin = resShipments.shipments.filter(obj => {
+                return obj.origin_id === filter.originValue
+            });
+        }
+        if(filter.destinationValue !== null){
+            receivedDestination = resShipments.shipments.filter(obj => {
+                return obj.destination_id === filter.destinationValue
+            });
+        }
+        if(filter.senderValue !== null){
+            receivedSender = resShipments.shipments.filter(obj => {
+                return obj.origin_user_id == filter.senderValue
+            });
+        }
+        if(filter.receiverValue !== null){
+            receivedReceiver = resShipments.shipments.filter(obj => {
+                return obj.destination_user_id == filter.receiverValue
+            });
+        }
+        const shipmentsFiltered = [...receivedStatus,...receivedOrigin,...receivedDestination,...receivedSender,...receivedReceiver]
+        const uniqueSet = new Set(shipmentsFiltered)
+        const noRepeatShipments = {shipments:[...uniqueSet]}
+        myData = noRepeatShipments;
+        setState(noRepeatShipments)
+        console.log(myData)
+    }
     const handleChangeStatus = e => {
         filter.statusValue =  e.target.value
-        console.log(filter.statusValue);
       };
       const handleChangeOrigin = e => {
         filter.originValue = e.target.value
-        console.log(filter.originValue);
       };
       const handleChangeDestination = e => {
         filter.destinationValue = e.target.value
-        console.log(filter.destinationValue);
       };
       const handleChangeSender = e => {
         filter.senderValue = e.target.value
-        console.log(filter.senderValue);
       };
       const handleChangeReceiver = e => {
         filter.receiverValue = e.target.value
-        console.log(filter.receiverValue);
       };
-    const handleSubmit = async () => {
-        try {
-             await axios.get("https://api.h-trace.com:3000/graphql",{
-                headers: {
-                    'Content-Type': 'application/json',
-			        'Accept': 'application/json',
-                    authorization : `Bearer ${token}`
-                },
-                data: `query( 
-                        origin_user_id: "${filter.senderValue}",
-                        origin_id: ${filter.originValue},
-                        destination_user_id: "${filter.receiverValue}", 
-                        destination_id: ${filter.destinationValue},
-                        status: "${filter.statusValue}"
-                        )shipments{
-                            shipment_id
-                            origin_id
-                            origin_user_id
-                            destination_user_id
-                            destination_id
-                            departure
-                            arrival
-                            status
-                      }
-                    `
-            }).then((response) => {
-                setData(response.data)
-                console.log(dataFiltered)
-            })
-        } catch (e) {
-            console.log(e);
-        }
-
-        }
 
     return (
         <>
             <SearchContainer>
                 <SearchDiv>
                 <SelectBox onChange={handleChangeOrigin}>
-                <option value="">{SelectAlertOptionOrigin}</option>
+                <option value={null}>{SelectAlertOptionOrigin}</option>
                         {resBranches.company.branches.map(function(branch){
                     return <Option
                     key={branch.branch_id}
@@ -120,7 +116,7 @@ function ReportsTable(){
                     })}
                 </SelectBox>
                 <SelectBox onChange={handleChangeDestination}>
-                <option value="">{SelectAlertOptionDestination}</option>
+                <option value={null}>{SelectAlertOptionDestination}</option>
                         {resBranches.company.branches.map(function(branch){
                     return <Option
                     key={branch.branch_id}
@@ -130,7 +126,7 @@ function ReportsTable(){
                     })}
                 </SelectBox>
                 <SelectBox onChange={handleChangeSender}>
-                        <option value="">{SelectAlertOptionSender}</option>
+                        <option value={null}>{SelectAlertOptionSender}</option>
                     {resUsernames.users.map(function(userTag){
                     return <Option 
                     key={userTag.username}
@@ -140,7 +136,7 @@ function ReportsTable(){
                     })}
                 </SelectBox>
                 <SelectBox onChange={handleChangeReceiver}>
-                        <option value="">{SelectAlertOptionReceiver}</option>
+                        <option value={null}>{SelectAlertOptionReceiver}</option>
                     {resUsernames.users.map(function(userTag){
                     return <Option 
                     key={userTag.username}
@@ -150,7 +146,7 @@ function ReportsTable(){
                     })}
                 </SelectBox>
                     <SelectBox onChange={handleChangeStatus}>
-                        <Option value="" description={SelectAlertOption1} />
+                        <Option value={null} description={SelectAlertOption1} />
                         <Option value="failed" description={SelectAlertOption2} />
                         <Option value="uncertain" description={SelectAlertOption3} />
                         <Option value="successful" description={SelectAlertOption4} />
