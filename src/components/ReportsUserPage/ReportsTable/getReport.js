@@ -6,7 +6,7 @@ function getReport(shipmentID){
     var token = Cookies.get("token");
             try {
                axios
-                .get('https://api.h-trace.com:3000/reports/'+ shipmentID, {
+                .get('https://api.h-trace.com/reports/'+ shipmentID, {
                   responseType: "blob",
                   headers:{
                     authorization : `Bearer ${token}`

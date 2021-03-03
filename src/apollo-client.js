@@ -8,13 +8,13 @@ import { getMainDefinition } from '@apollo/client/utilities';
 import { split } from 'apollo-link';
 
 const httpLink = createHttpLink({
-  uri: "https://api.h-trace.com:3000/graphql" 
+  uri: "https://api.h-trace.com/graphql" 
   /* "https://ec2-3-15-39-161.us-east-2.compute.amazonaws.com:3000/graphql" */,
    credentials: 'include'
 });
 const token = Cookies.get('token')
 const wsLink = new WebSocketLink({
-  uri: "wss://api.h-trace.com:3000/subscriptions" 
+  uri: "wss://api.h-trace.com/subscriptions" 
   /* "ws://ec2-3-15-39-161.us-east-2.compute.amazonaws.com:3000/subscriptions" */,
   options: {
     reconnect: true,

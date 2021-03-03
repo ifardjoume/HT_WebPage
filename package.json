@@ -46,6 +46,7 @@
     "reactstrap": "^8.7.1",
     "styled-components": "^5.2.1",
     "subscriptions-transport-ws": "^0.9.18",
+    "use-force-update": "^1.0.7",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

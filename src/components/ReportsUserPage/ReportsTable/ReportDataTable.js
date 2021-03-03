@@ -20,6 +20,7 @@ var MainTitle = Cookies.get('locale') === 'en' ? 'Reports' : 'Reportes';
 function ReportDataTable(props){
     var reportShipments = props.reportDataShipments.shipments
     const { reportDataShipments } = props
+    const { onRender } = props
     const [newData, setNewData] = useState(reportShipments)
     var received = newData.filter(obj => {
         return obj.status === "failed" || obj.status === "uncertain" || obj.status === "successful"
@@ -27,6 +28,9 @@ function ReportDataTable(props){
     useEffect(() => {
         setNewData(reportShipments);
     },[ reportDataShipments ])
+    useEffect(() => {
+        props.onRender()
+    },[])
     const columnsReports = [
         {
             name: 'ID',

@@ -81,9 +81,10 @@ function ReportsTable(){
         const shipmentsFiltered = [...receivedStatus,...receivedOrigin,...receivedDestination,...receivedSender,...receivedReceiver]
         const uniqueSet = new Set(shipmentsFiltered)
         const noRepeatShipments = {shipments:[...uniqueSet]}
+        console.log(noRepeatShipments)
         myData = noRepeatShipments;
-        setState(noRepeatShipments)
-        console.log(myData)
+        return noRepeatShipments;
+
     }
     const handleChangeStatus = e => {
         filter.statusValue =  e.target.value
@@ -155,7 +156,7 @@ function ReportsTable(){
                 </SearchDiv>
             </SearchContainer>
             <TableContainer>
-                    <ReportDataTable reportDataShipments={myData}
+                    <ReportDataTable reportDataShipments={myData} onRender={() => handleSubmit()}
                     />
             </TableContainer>
     </>
