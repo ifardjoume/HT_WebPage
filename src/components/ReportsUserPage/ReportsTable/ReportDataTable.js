@@ -17,10 +17,11 @@ import { HiDownload } from 'react-icons/hi';
 
 var MainTitle = Cookies.get('locale') === 'en' ? 'Reports' : 'Reportes';
 
+
 function ReportDataTable(props){
-    var reportShipments = props.reportDataShipments.shipments
+    var reportShipments = props.reportDataShipments
     const { reportDataShipments } = props
-    const { onRender } = props
+    //const { onRender } = props
     const [newData, setNewData] = useState(reportShipments)
     var received = newData.filter(obj => {
         return obj.status === "failed" || obj.status === "uncertain" || obj.status === "successful"
@@ -28,9 +29,9 @@ function ReportDataTable(props){
     useEffect(() => {
         setNewData(reportShipments);
     },[ reportDataShipments ])
-    useEffect(() => {
-        props.onRender()
-    },[])
+    /* useEffect(() => {
+        onRender()
+    },[]) */
     const columnsReports = [
         {
             name: 'ID',
@@ -64,9 +65,9 @@ function ReportDataTable(props){
         {
             name: 'Status',
             selector: 'alerts',
-            cell: row => row.alerts != null && row.alerts.length > 0 ? <IconContext.Provider value={{ color: '#00917c' }}><FaCheck /></IconContext.Provider>
+            cell: row => row.status !== "successful" ? <IconContext.Provider value={{ color: '#a9294f' }}><ImCross /></IconContext.Provider>
             :
-            <IconContext.Provider value={{ color: '#a9294f' }}><ImCross /></IconContext.Provider>
+            <IconContext.Provider value={{ color: '#00917c' }}><FaCheck /></IconContext.Provider>
         },
         {
             name: Cookies.get('locale') === 'en' ? 'Report' : 'Reporte',

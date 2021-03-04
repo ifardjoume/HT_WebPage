@@ -3,6 +3,8 @@ import { GET_SHIPMENTS,
     GET_USERNAMES,
     GET_BRANCHES
 } from '../../../Query';
+import Cookies from 'js-cookie';
+import { ImSearch } from 'react-icons/im';
 import { useQuery } from "@apollo/react-hooks";
 import { 
     TableContainer,
@@ -12,12 +14,10 @@ import {
     SearchContainer,
     SearchDiv
 } from '../SearchHeader/SearchHeader.elements';
-import Cookies from 'js-cookie';
 import ReportDataTable from './ReportDataTable';
 import {SelectBox, Option} from './SelectBox';
-import { ImSearch } from 'react-icons/im';
 
-var token = Cookies.get("token");
+
 var SelectAlertOption1 = Cookies.get('locale') === 'en' ? 'All' : 'Todo';
 var SelectAlertOption2 = Cookies.get('locale') === 'en' ? 'Alerts' : 'Con alertas';
 var SelectAlertOption3 = Cookies.get('locale') === 'en' ? 'Doubt' : 'Dudoso';
@@ -27,9 +27,10 @@ var SelectAlertOptionOrigin = Cookies.get('locale') === 'en' ? 'Departure' : 'Or
 var SelectAlertOptionSender = Cookies.get('locale') === 'en' ? 'Sender' : 'Remitente';
 var SelectAlertOptionReceiver = Cookies.get('locale') === 'en' ? 'Receiver' : 'Destinatario';
 
-
+var myData;
+var dataShipments;
 function ReportsTable(){
-    const [state,setState] = useState()
+    const [state,setState] = useState();
       var filter = {
         statusValue:null,
         originValue:null,
@@ -43,11 +44,14 @@ function ReportsTable(){
     if (loadingShipments) return 'Loading...';
     if (errorShipments) return `Error! ${errorShipments.message}`;
     if (loadingBranches) return 'Loading...';
-    if (errorBranches) return `Error! ${errorShipments.message}`;
+    if (errorBranches) return `Error! ${errorBranches.message}`;
     if (loadingUsernames) return 'Loading...';
-    if (errorUsernames) return `Error! ${errorShipments.message}`;
-    var myData = resShipments
-    const handleSubmit = () => {
+    if (errorUsernames) return `Error! ${errorUsernames.message}`;
+    dataShipments = resShipments.shipments
+    myData = dataShipments
+    //myData = resShipments.shipments.slice(0,(resShipments.shipments.length))
+    console.log("myData",myData)
+    function handleSubmit(){
         var receivedStatus = [];
         var receivedOrigin = [];
         var receivedDestination = [];
@@ -80,10 +84,15 @@ function ReportsTable(){
         }
         const shipmentsFiltered = [...receivedStatus,...receivedOrigin,...receivedDestination,...receivedSender,...receivedReceiver]
         const uniqueSet = new Set(shipmentsFiltered)
-        const noRepeatShipments = {shipments:[...uniqueSet]}
-        console.log(noRepeatShipments)
-        myData = noRepeatShipments;
-        return noRepeatShipments;
+        const noRepeatShipments = [...uniqueSet]
+        console.log(noRepeatShipments);
+        myData.splice(0,(myData.length))
+        console.log(myData)
+        myData.push(...noRepeatShipments)
+        console.log(myData)
+        myData = dataShipments
+        setState(myData);
+        //return noRepeatShipments;
 
     }
     const handleChangeStatus = e => {
@@ -156,7 +165,7 @@ function ReportsTable(){
                 </SearchDiv>
             </SearchContainer>
             <TableContainer>
-                    <ReportDataTable reportDataShipments={myData} onRender={() => handleSubmit()}
+                    <ReportDataTable reportDataShipments={myData} /* onRender={() => handleSubmit} */
                     />
             </TableContainer>
     </>

@@ -66,7 +66,7 @@ function DataTableReceived(props){
             name: Cookies.get('locale') === 'en' ? 'Alerts' : 'Alertas',
             selector: 'alerts',
             sortable: true,
-            cell: row => row.alerts.length <= 0 ? <IconContext.Provider value={{ color: '#00917c' }}><StyledButton onClick={(e) => handleShow(row.shipment_id)}><FaCheck /></StyledButton></IconContext.Provider>
+            cell: row => row.status === "successful" ? <IconContext.Provider value={{ color: '#00917c' }}><StyledButton onClick={(e) => handleShow(row.shipment_id)}><FaCheck /></StyledButton></IconContext.Provider>
                 :
                 <IconContext.Provider value={{ color: '#a9294f' }}><StyledButton onClick={(e) => handleShow(row.shipment_id)}><ImCross /></StyledButton></IconContext.Provider>
         }
