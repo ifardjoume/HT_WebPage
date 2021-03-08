@@ -3,14 +3,12 @@ import axios from 'axios';
 
 
 function getReport(shipmentID){
-    var token = Cookies.get("token");
+  const token = "Bearer " + Cookies.get('token');
+  axios.defaults.headers.common['Authorization'] = token;
             try {
                axios
                 .get('https://api.h-trace.com/reports/'+ shipmentID, {
                   responseType: "blob",
-                  headers:{
-                    authorization : `Bearer ${token}`
-                }
                 })
                 .then((response) => {
                   //Create a Blob from the PDF Stream
