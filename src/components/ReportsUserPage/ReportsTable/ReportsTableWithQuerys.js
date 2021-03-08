@@ -16,8 +16,10 @@ import {
 } from '../SearchHeader/SearchHeader.elements';
 import ReportDataTable from './ReportDataTable';
 import {SelectBox, Option} from './SelectBox';
+import axios from 'axios';
 
 
+const token = Cookies.get('token')
 var SelectAlertOption1 = Cookies.get('locale') === 'en' ? 'All' : 'Todo';
 var SelectAlertOption2 = Cookies.get('locale') === 'en' ? 'Alerts' : 'Con alertas';
 var SelectAlertOption3 = Cookies.get('locale') === 'en' ? 'Doubt' : 'Dudoso';
@@ -29,12 +31,12 @@ var SelectAlertOptionReceiver = Cookies.get('locale') === 'en' ? 'Receiver' : 'D
 
 var myData;
 var dataShipments;
-var receivedStatus = [];
+/* var receivedStatus = [];
 var receivedOrigin = [];
 var receivedDestination = [];
 var receivedSender = [];
 var receivedReceiver = [];
-var shipmentsFiltered
+var shipmentsFiltered */
 function ReportsTable(){
     const [state,setState] = useState();
       var filter = {
@@ -57,44 +59,51 @@ function ReportsTable(){
     myData = dataShipments
     //myData = resShipments.shipments.slice(0,(resShipments.shipments.length))
     console.log("myData",myData)
-    function handleSubmit(){
-        if(filter.statusValue !== null){
-            receivedStatus = dataShipments.filter(obj => {
-                return obj.status === filter.statusValue
-            });
+    async function handleSubmit(){
+        try {
+            await axios.get('https://api.h-trace.com/graphql',{
+                query: `query(
+                    $origin_user_id:Int!,
+                    $origin_id:String!,
+                    $destination_user_id:Int,
+                    $destination_id:String,
+                    $status:String ){
+                   shipments(
+                     origin_user_id: $origin_user_id,
+                     origin_id: $origin_id,
+                     destination_user_id: $destination_user_id,
+                     destination_id: $destination_id,
+                     status: $status
+                     ){
+                     shipment_id
+                       origin_id
+                       origin_user_id
+                       destination_user_id
+                       destination_id
+                       departure
+                       arrival
+                       status
+                   }
+                 }`
+                ,
+               variables: {
+                   origin_user_id: filter.senderValue,
+                   origin_id: `"${filter.originValue}"`,
+                   destination_user_id: filter.receiverValue, 
+                   destination_id: `"${filter.destinationValue}"`,
+                   status :  `"${filter.statusValue}"`
+                 },
+                 headers: {
+                    authorization : `Bearer ${token}`
+                }
+            })
+            .then((response) => {
+                setState(response.data)
+                console.log(response.data)
+            })
+        } catch (e) {
+            console.log(e);
         }
-        if(filter.originValue !== null){
-            receivedOrigin = dataShipments.filter(obj => {
-                return obj.origin_id === filter.originValue
-            });
-        }
-        if(filter.destinationValue !== null){
-            receivedDestination = dataShipments.filter(obj => {
-                return obj.destination_id === filter.destinationValue
-            });
-        }
-        if(filter.senderValue !== null){
-            receivedSender = dataShipments.filter(obj => {
-                return obj.origin_user_id == filter.senderValue
-            });
-        }
-        if(filter.receiverValue !== null){
-            receivedReceiver = dataShipments.filter(obj => {
-                return obj.destination_user_id == filter.receiverValue
-            });
-        }
-        shipmentsFiltered = [...receivedStatus,...receivedOrigin,...receivedDestination,...receivedSender,...receivedReceiver]
-        var uniqueSet = new Set(shipmentsFiltered)
-        var noRepeatShipments = {shipments:[...uniqueSet]}
-        console.log(noRepeatShipments);
-        myData.splice(0,(myData.length))
-        console.log(myData)
-        myData.push(...noRepeatShipments.shipments)
-        console.log(myData)
-        myData = dataShipments
-        setState(noRepeatShipments);
-        //return noRepeatShipments;
-
     }
     const handleChangeStatus = e => {
         filter.statusValue =  e.target.value

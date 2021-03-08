@@ -14,7 +14,6 @@ import { FaCheck } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
 import { IconContext } from 'react-icons';
 import { HiDownload } from 'react-icons/hi';
-
 var MainTitle = Cookies.get('locale') === 'en' ? 'Reports' : 'Reportes';
 
 
@@ -54,13 +53,13 @@ function ReportDataTable(props){
             name: Cookies.get('locale') === 'en' ? 'Arrival' : 'Destino',
             selector: 'destination_id',
             sortable:true,
-            cell: row => row.destination_id != null ? GetBranchName(row.destination_id) : <StyledP>En tránsito</StyledP>
+            cell: row => GetBranchName(row.destination_id)
         },
         {
             name: Cookies.get('locale') === 'en' ? 'Receiver' : 'Destinatario',
             selector: 'destination_user_id',
             sortable:true,
-            cell: row => row.destination_user_id != null ? GetUsernames(row.destination_user_id) : <StyledP>-</StyledP>
+            cell: row => GetUsernames(row.destination_user_id)
         },
         {
             name: 'Status',
@@ -73,6 +72,7 @@ function ReportDataTable(props){
             name: Cookies.get('locale') === 'en' ? 'Report' : 'Reporte',
             selector: 'shipment_id',
             sortable:true,
+            filterable:true,
             cell: row => row.destination_user_id != null && row.destination_id != null ? <StyledButton type="submit" onClick={(e) => getReport(row.shipment_id)}><HiDownload size={20} /></StyledButton> : <p>-</p>
         }
     ];
