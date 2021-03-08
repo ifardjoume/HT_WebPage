@@ -19,7 +19,11 @@ import {SelectBox, Option} from './SelectBox';
 import axios from 'axios';
 
 
-const token = Cookies.get('token')
+
+
+//const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjowLCJleHBpcmVzIjoiMjAyMS0wMy0wOVQxOTo0OTo0Ny4wODdaIiwicmVmcmVzaFRva2VuIjpmYWxzZSwiY2xpZW50QWRtaW4iOnRydWUsImlhdCI6MTYxNTIzMjk4N30.wqKw7AlG3AOI9aMr1_cAX74klsd1cf8RJgtZ6DlG-B4"
+const token = "Bearer " + Cookies.get('token');
+axios.defaults.headers.common['Authorization'] = token;
 var SelectAlertOption1 = Cookies.get('locale') === 'en' ? 'All' : 'Todo';
 var SelectAlertOption2 = Cookies.get('locale') === 'en' ? 'Alerts' : 'Con alertas';
 var SelectAlertOption3 = Cookies.get('locale') === 'en' ? 'Doubt' : 'Dudoso';
@@ -37,15 +41,16 @@ var receivedDestination = [];
 var receivedSender = [];
 var receivedReceiver = [];
 var shipmentsFiltered */
+
+var filter = {
+    statusValue:null,
+    originValue:null,
+    destinationValue:null,
+    receiverValue:null,
+    senderValue:null
+  }
 function ReportsTable(){
     const [state,setState] = useState();
-      var filter = {
-        statusValue:null,
-        originValue:null,
-        destinationValue:null,
-        receiverValue:null,
-        senderValue:null
-      }
     const { loading:loadingBranches, error:errorBranches, data:resBranches } = useQuery(GET_BRANCHES);
     const { loading:loadingUsernames, error:errorUsernames, data:resUsernames } = useQuery(GET_USERNAMES);
     const { loading:loadingShipments, error:errorShipments, data:resShipments} = useQuery(GET_SHIPMENTS);
@@ -58,10 +63,10 @@ function ReportsTable(){
     dataShipments = resShipments.shipments
     myData = dataShipments
     //myData = resShipments.shipments.slice(0,(resShipments.shipments.length))
-    console.log("myData",myData)
+    //console.log("myData",myData)
     async function handleSubmit(){
         try {
-            await axios.get('https://api.h-trace.com/graphql',{
+            await axios.post('https://api.h-trace.com/graphql',{
                 query: `query(
                     $origin_user_id:Int!,
                     $origin_id:String!,
@@ -88,18 +93,20 @@ function ReportsTable(){
                 ,
                variables: {
                    origin_user_id: filter.senderValue,
-                   origin_id: `"${filter.originValue}"`,
+                   origin_id: `${filter.originValue}`,
                    destination_user_id: filter.receiverValue, 
-                   destination_id: `"${filter.destinationValue}"`,
-                   status :  `"${filter.statusValue}"`
+                   destination_id: `${filter.destinationValue}`,
+                   status :  `${filter.statusValue}`
                  },
-                 headers: {
-                    authorization : `Bearer ${token}`
-                }
+                
             })
             .then((response) => {
+                var dataResponsed = response.data.data.shipments;
+                myData.splice(0,(myData.length))
+                myData.push(...dataResponsed)
+                console.log("dataFiltered",myData)
                 setState(response.data)
-                console.log(response.data)
+                console.log(filter)
             })
         } catch (e) {
             console.log(e);
@@ -115,10 +122,11 @@ function ReportsTable(){
         filter.destinationValue = e.target.value
       };
       const handleChangeSender = e => {
-        filter.senderValue = e.target.value
+        filter.senderValue = parseInt(e.target.value);
       };
       const handleChangeReceiver = e => {
-        filter.receiverValue = e.target.value
+        filter.receiverValue = parseInt(e.target.value);
+        console.log(filter.receiverValue);
       };
 
     return (
