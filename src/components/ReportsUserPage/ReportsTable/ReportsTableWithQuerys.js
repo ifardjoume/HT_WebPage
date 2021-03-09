@@ -17,6 +17,7 @@ import {
 import ReportDataTable from './ReportDataTable';
 import {SelectBox, Option} from './SelectBox';
 import axios from 'axios';
+import { SingleDatePickerInput } from 'react-dates';
 
 
 
@@ -41,6 +42,7 @@ var receivedDestination = [];
 var receivedSender = [];
 var receivedReceiver = [];
 var shipmentsFiltered */
+var nonValue = null
 
 var filter = {
     statusValue:null,
@@ -68,14 +70,14 @@ function ReportsTable(){
         try {
             await axios.post('https://api.h-trace.com/graphql',{
                 query: `query(
-                    $origin_user_id:Int!,
-                    $origin_id:String!,
+                    $origin_user_id:Int,
+                    $origin_id:String,
                     $destination_user_id:Int,
                     $destination_id:String,
                     $status:String ){
                    shipments(
                      origin_user_id: $origin_user_id,
-                     origin_id: $origin_id,
+                     origin_id: $origin_id ,
                      destination_user_id: $destination_user_id,
                      destination_id: $destination_id,
                      status: $status
@@ -113,19 +115,23 @@ function ReportsTable(){
         }
     }
     const handleChangeStatus = e => {
-        filter.statusValue =  e.target.value
+        filter.statusValue =  e.target.value === "null" ? null : e.target.value
+        console.log(filter.statusValue)
       };
       const handleChangeOrigin = e => {
-        filter.originValue = e.target.value
+        filter.originValue = e.target.value === "null" ? null : e.target.value
+        console.log(filter.originValue)
       };
       const handleChangeDestination = e => {
-        filter.destinationValue = e.target.value
+        filter.destinationValue = e.target.value === "null" ? null : e.target.value
+        console.log(filter.destinationValue)
       };
       const handleChangeSender = e => {
-        filter.senderValue = parseInt(e.target.value);
+        filter.senderValue = e.target.value === "null" ? null : parseInt(e.target.value);
+        console.log(filter.senderValue)
       };
       const handleChangeReceiver = e => {
-        filter.receiverValue = parseInt(e.target.value);
+        filter.receiverValue = e.target.value === "null" ? null : parseInt(e.target.value);
         console.log(filter.receiverValue);
       };
 
@@ -134,7 +140,7 @@ function ReportsTable(){
             <SearchContainer>
                 <SearchDiv>
                 <SelectBox onChange={handleChangeOrigin}>
-                <option value={null}>{SelectAlertOptionOrigin}</option>
+                <option value={"null"}>{SelectAlertOptionOrigin}</option>
                         {resBranches.company.branches.map(function(branch){
                     return <Option
                     key={branch.branch_id}
@@ -144,7 +150,7 @@ function ReportsTable(){
                     })}
                 </SelectBox>
                 <SelectBox onChange={handleChangeDestination}>
-                <option value={null}>{SelectAlertOptionDestination}</option>
+                <option value={"null"}>{SelectAlertOptionDestination}</option>
                         {resBranches.company.branches.map(function(branch){
                     return <Option
                     key={branch.branch_id}
@@ -154,7 +160,7 @@ function ReportsTable(){
                     })}
                 </SelectBox>
                 <SelectBox onChange={handleChangeSender}>
-                        <option value={null}>{SelectAlertOptionSender}</option>
+                        <option value={"null"}>{SelectAlertOptionSender}</option>
                     {resUsernames.users.map(function(userTag){
                     return <Option 
                     key={userTag.username}
@@ -164,7 +170,7 @@ function ReportsTable(){
                     })}
                 </SelectBox>
                 <SelectBox onChange={handleChangeReceiver}>
-                        <option value={null}>{SelectAlertOptionReceiver}</option>
+                        <option value={"null"}>{SelectAlertOptionReceiver}</option>
                     {resUsernames.users.map(function(userTag){
                     return <Option 
                     key={userTag.username}
@@ -174,7 +180,7 @@ function ReportsTable(){
                     })}
                 </SelectBox>
                     <SelectBox onChange={handleChangeStatus}>
-                        <Option value={null} description={SelectAlertOption1} />
+                        <Option value={"null"} description={SelectAlertOption1} />
                         <Option value="failed" description={SelectAlertOption2} />
                         <Option value="uncertain" description={SelectAlertOption3} />
                         <Option value="successful" description={SelectAlertOption4} />

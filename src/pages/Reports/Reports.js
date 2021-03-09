@@ -1,5 +1,5 @@
 import React from 'react';
-import ReportsTable from '../../components/ReportsUserPage/ReportsTable/ReportsTable';
+import ReportsTableWithQuerys from '../../components/ReportsUserPage/ReportsTable/ReportsTableWithQuerys';
 //import SearchHeader from '../../components/ReportsUserPage/SearchHeader/SearchHeader';
 import SidebarMenu from '../../components/userPage/sidebarMenu/SidebarMenu';
 //import { Task } from '../../Task';
@@ -8,7 +8,7 @@ const Reports = () => {
     return (
         <>
           <SidebarMenu />
-          <ReportsTable />
+          <ReportsTableWithQuerys />
         </>
     )
 }
