@@ -45,9 +45,9 @@ var shipmentsFiltered */
 var nonValue = null
 
 var filter = {
-    statusValue:null,
-    originValue:null,
-    destinationValue:null,
+    statusValue:"",
+    originValue:"",
+    destinationValue:"",
     receiverValue:null,
     senderValue:null
   }
@@ -115,15 +115,15 @@ function ReportsTable(){
         }
     }
     const handleChangeStatus = e => {
-        filter.statusValue =  e.target.value === "null" ? null : e.target.value
+        filter.statusValue =  e.target.value === "null" ? "" : e.target.value
         console.log(filter.statusValue)
       };
       const handleChangeOrigin = e => {
-        filter.originValue = e.target.value === "null" ? null : e.target.value
+        filter.originValue = e.target.value === "null" ? "" : e.target.value
         console.log(filter.originValue)
       };
       const handleChangeDestination = e => {
-        filter.destinationValue = e.target.value === "null" ? null : e.target.value
+        filter.destinationValue = e.target.value === "null" ? "" : e.target.value
         console.log(filter.destinationValue)
       };
       const handleChangeSender = e => {
