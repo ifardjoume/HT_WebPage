@@ -106,33 +106,25 @@ function ReportsTable(){
                 var dataResponsed = response.data.data.shipments;
                 myData.splice(0,(myData.length))
                 myData.push(...dataResponsed)
-                console.log("dataFiltered",myData)
                 setState(response.data)
-                console.log(filter)
             })
         } catch (e) {
-            console.log(e);
         }
     }
     const handleChangeStatus = e => {
         filter.statusValue =  e.target.value === "null" ? "" : e.target.value
-        console.log(filter.statusValue)
       };
       const handleChangeOrigin = e => {
         filter.originValue = e.target.value === "null" ? "" : e.target.value
-        console.log(filter.originValue)
       };
       const handleChangeDestination = e => {
         filter.destinationValue = e.target.value === "null" ? "" : e.target.value
-        console.log(filter.destinationValue)
       };
       const handleChangeSender = e => {
         filter.senderValue = e.target.value === "null" ? null : parseInt(e.target.value);
-        console.log(filter.senderValue)
       };
       const handleChangeReceiver = e => {
         filter.receiverValue = e.target.value === "null" ? null : parseInt(e.target.value);
-        console.log(filter.receiverValue);
       };
 
     return (
