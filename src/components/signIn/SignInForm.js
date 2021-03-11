@@ -16,7 +16,10 @@ import { useHistory } from "react-router-dom";
 import Cookies from 'js-cookie';
 import { FormattedMessage } from "react-intl";
 
-
+function setCookies(){
+    Cookies.set('locale', "en");
+    return "en"
+  }
 const errorMessage = Cookies.get('locale') === "en" ? "Wrong username or password" : "Usuario o contraseña incorrectos"
 
 function SignInForm(){
@@ -29,7 +32,9 @@ function SignInForm(){
     const [loginUser] = useMutation(LOGIN_USER, {
         update(_, result) {
           Cookies.set('token', result.data.login.token);
+          Cookies.set('locale', Cookies.get('locale') ? Cookies.get('locale') : setCookies());
           history.push('/user-area');
+          window.location.reload(false);
         },
         onError() {
           setErrors({message: errorMessage});
