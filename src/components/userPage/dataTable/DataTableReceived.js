@@ -45,19 +45,25 @@ function DataTableReceived(props){
             width: '60px'
         },
         {
-            name: Cookies.get('locale') === 'en' ? 'Departure' : 'Origen',
+            name: Cookies.get('locale') === 'en' ? 'Origin' : 'Origen',
             selector: 'origin_id',
             sortable: true,
             cell: row => GetBranchName(row.origin_id)
         },
         {
-            name: Cookies.get('locale') === 'en' ? 'Departure' : 'Hora de Llegada',
+            name: Cookies.get('locale') === 'en' ? 'Departure' : 'Hora de Salida',
+            selector: 'departure',
+            sortable: true,
+            cell: row => getDate(row.departure)
+        },
+        {
+            name: Cookies.get('locale') === 'en' ? 'Arrival' : 'Hora de Llegada',
             selector: 'arrival',
             sortable: true,
             cell: row => row.arrival != null ? getDate(row.arrival) : <p>En transito</p>
         },
         {
-            name: Cookies.get('locale') === 'en' ? 'Arrival' : 'Arribo',
+            name: Cookies.get('locale') === 'en' ? 'Destination' : 'Destino',
             selector: 'destination_id',
             sortable: true,
             cell: row => row.destination_id != null ? GetBranchName(row.destination_id) : <p>En tránsito</p>
