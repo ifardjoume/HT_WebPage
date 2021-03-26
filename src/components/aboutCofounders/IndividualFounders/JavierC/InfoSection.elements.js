@@ -85,13 +85,14 @@ export const Subtitle = styled.p`
 export const Img = styled.img`
   padding-right: 0;
   border: 0;
-  max-width: 100%;
+  max-width: 80%;
   vertical-align: middle;
   display: inline-block;
 `;
 
 export const ImgWrapper = styled.div`
-  max-width: 100%;
+  float: right;
+  max-width: 80%;
   display: flex;
  justify-content: flex-end;
  flex-direction:column;

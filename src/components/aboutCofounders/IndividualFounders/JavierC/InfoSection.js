@@ -11,7 +11,7 @@ import {
     Img,
     ImgWrapper
   } from './InfoSection.elements';
-import img1 from '../../../../images/personal_info.svg'
+import img1 from '../../../../images/javierc.jpeg'
 import { FormattedMessage } from "react-intl";
 
 

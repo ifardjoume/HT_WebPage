@@ -18,7 +18,11 @@ import {
   LinkTo
 } from './aboutCofounders.elements';
 import { FormattedMessage } from "react-intl";
+import {animateScroll as scroll} from 'react-scroll';
 
+const toggleHome = () => {
+    scroll.scrollToTop();
+}
 
 function AboutCofounders() {
   return (
@@ -39,22 +43,22 @@ function AboutCofounders() {
                             <ImgWrapper>
                                 <ImgWrapperRow>
                                 <ImgCofounderContainer>
-                                {/* <LinkTo to="/EmilianoBuitrago"><Img src={Image1} alt="EmilianoBuitrago" /></LinkTo> */}
-                                <Img src={Image1} alt="EmilianoBuitrago" />
+                                <LinkTo to="/EmilianoBuitrago"><Img src={Image1} alt="EmilianoBuitrago" onClick={toggleHome}/></LinkTo>
+                                {/*<Img src={Image1} alt="EmilianoBuitrago" />*/}
                                 <TopLine>Emiliano Buitrago</TopLine>
                                 <Subtitle><FormattedMessage id="AboutCofoundersTitle1" defaultMessage="Management"/></Subtitle>
                                 </ImgCofounderContainer>
                                 </ImgWrapperRow>
                                 <ImgWrapperRow>
                                 <ImgCofounderContainer>
-                                {/* <LinkTo to="/JavierCuello"><Img src={Image2} alt="JavierCuello" /></LinkTo> */}
-                                <Img src={Image2} alt="JavierCuello" />
+                                <LinkTo to="/JavierCuello"><Img src={Image2} alt="JavierCuello" onClick={toggleHome} /></LinkTo>
+                                {/*<Img src={Image2} alt="JavierCuello" />*/}
                                 <TopLine>Javier Cuello</TopLine>
                                 <Subtitle><FormattedMessage id="AboutCofoundersTitle2" defaultMessage="Bussiness Development"/></Subtitle>
                                 </ImgCofounderContainer>
                                 <ImgCofounderContainer>
-                                {/* <LinkTo to="/IvanFardjoume"><Img src={Image3} alt="IvanFarjoume" /></LinkTo> */}
-                                <Img src={Image3} alt="IvanFarjoume" />
+                                <LinkTo to="/IvanFardjoume"><Img src={Image3} alt="IvanFardjoume" onClick={toggleHome} /></LinkTo>
+                                {/*<Img src={Image3} alt="IvanFardjoume" />*/}
                                 <TopLine>Iván Fardjoume</TopLine>
                                 <Subtitle><FormattedMessage id="AboutCofoundersTitle3" defaultMessage="IT"/></Subtitle>
                                 </ImgCofounderContainer>
