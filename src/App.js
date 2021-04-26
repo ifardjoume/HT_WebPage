@@ -20,6 +20,7 @@ import IvanF from './pages/Cofounders/IvanF';
 import EmilianoB from './pages/Cofounders/EmilianoB';
 import ThisSystemPage from './pages/ThisSystemPage/ThisSystemPage';
 import LoadingScreen from './components/loadingPage/LoadingPage';
+import Prensa from './pages/PressPage/Prensa';
 
 function setCookies(){
   Cookies.set('locale', "en");
@@ -50,6 +51,7 @@ const App = () => {
           <Route exact path='/IvanFardjoume' component={IvanF} />
           <Route exact path='/JavierCuello' component={JavierC} />
           <Route exact path='/EmilianoBuitrago' component={EmilianoB} />
+          <Route exact path='/prensa' component={Prensa} />
           <GuardedRoute path='/user-area' component={UserPage}/>
           <GuardedRoute path='/reports' component={Reports}/>  
           <GuardedRoute path='/settings' component={Settings}/>         

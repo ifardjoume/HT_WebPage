@@ -19,7 +19,7 @@ const Footer = () => {
                 <FooterLinksWrapper>
                     <FooterLinkItems>
                         {/* Falta agregar rutas de los diferentes links */}
-                        <FooterLink to='under-construction'><FormattedMessage id="FooterPressTitle" defaultMessage="Press" /></FooterLink>
+                        <FooterLink to='prensa'><FormattedMessage id="FooterPressTitle" defaultMessage="Press" /></FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
                         <FooterLink to='under-construction'><FormattedMessage id="FooterJoinTitle" defaultMessage="Join Us" /></FooterLink>
