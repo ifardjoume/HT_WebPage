@@ -8,7 +8,7 @@ import {
     ImgWrapper
   } from './PressNote3.elements';
 import img1 from '../../../images/notas/Nota3.png'
-import img2 from '../../../images/notas/diarioconvoslogo.png'
+import img2 from '../../../images/notas/Clarín_logo.svg.png'
 
 const InfoSection = () => {
     return (
@@ -23,7 +23,7 @@ const InfoSection = () => {
                         </InfoColumnImage>
                         <InfoColumnImage>
                             <ImgWrapper>
-                                <a href="https://diarioconvos.com/2021/04/03/tres-cientificos-argentinos-desarrollaron-un-empaque-inteligente-para-trasladar-vacunas-medicamentos-y-organos/" target="_blank">
+                                <a href="https://www.clarin.com/economia/nueva-apuesta-banquero-agroindustria_0_q9EaUcf-I.html" target="_blank">
                                     <Img src={img1} alt="PressNote"/>
                                 </a>
                             </ImgWrapper>
