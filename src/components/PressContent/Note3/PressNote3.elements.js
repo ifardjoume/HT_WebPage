@@ -6,7 +6,7 @@ export const InfoSec = styled.div`
     color: #333;
     padding: 50px 0px 0px 0px;
     background:#fafafa;
-    height:106vh;
+    height:90vh;
 `;
 
 export const InfoRow = styled.div`

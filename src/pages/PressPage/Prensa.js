@@ -20,11 +20,10 @@ const IvanF = () => {
             <SideBar isOpen={isOpen} toggle={toggle} />
             <Navbar toggle= {toggle}/>
             <InfoSec />
-            <InfoSec2 />
-            <InfoSec3 />
             <InfoSec4 />
+            <InfoSec3 />
+            <InfoSec2 />
             <InfoSec5 />
-
             <Footer />
         </>
     )
